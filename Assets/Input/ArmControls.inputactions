@@ -1,0 +1,147 @@
+{
+    "name": "ArmControls",
+    "maps": [
+        {
+            "name": "Arm",
+            "id": "775c4aaf-9288-4f62-b16d-86aa3cbe32f1",
+            "actions": [
+                {
+                    "name": "ArmMode",
+                    "type": "Button",
+                    "id": "7683319b-1996-4ed0-89dd-e3c380479bf9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "ArmMove",
+                    "type": "Value",
+                    "id": "009f6dfa-1dd2-4938-bcb2-6d2a05d50c63",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "ArmAction",
+                    "type": "Button",
+                    "id": "869bcc9a-a60b-41d6-83e4-92f429414c05",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SelectPoint",
+                    "type": "Button",
+                    "id": "4e59de65-cfb1-4144-91d0-7c925a495945",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SelectOK",
+                    "type": "Button",
+                    "id": "d97d924f-d490-4d32-864d-654690bd5131",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SelectGrab",
+                    "type": "Button",
+                    "id": "4793807e-7b8b-4200-ae0a-e797c338b0d3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SelectRest",
+                    "type": "Button",
+                    "id": "c37b3415-a1d3-45ca-9a24-2f06fd291f4f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "id": "1b352426-a533-491f-8b75-4516e3746819",
+                    "path": "<Mouse>/rightButton",
+                    "action": "ArmMode"
+                },
+                {
+                    "id": "b2eb4b51-b37a-4d9e-8cff-3dc32253e53e",
+                    "path": "<Gamepad>/rightTrigger",
+                    "action": "ArmMode"
+                },
+                {
+                    "id": "7de3d356-617f-4cf1-bbe9-32a3ee43a038",
+                    "path": "<Mouse>/delta",
+                    "action": "ArmMove"
+                },
+                {
+                    "id": "6c3e4570-2e08-4fc4-8258-aa6880651f9c",
+                    "path": "<Gamepad>/rightStick",
+                    "action": "ArmMove"
+                },
+                {
+                    "id": "79711047-f62d-47bf-b370-d4d649271024",
+                    "path": "<Mouse>/leftButton",
+                    "action": "ArmAction"
+                },
+                {
+                    "id": "376ef7f2-132e-421f-aa2c-cb5c36c99919",
+                    "path": "<Gamepad>/leftTrigger",
+                    "action": "ArmAction"
+                },
+                {
+                    "id": "0b8f301b-a198-4e39-81bc-f6faab14d68b",
+                    "path": "<Gamepad>/buttonSouth",
+                    "action": "SelectPoint"
+                },
+                {
+                    "id": "8c0f8f5b-2962-4399-8ddf-985888a8820c",
+                    "path": "<Keyboard>/numpad1",
+                    "action": "SelectPoint"
+                },
+                {
+                    "id": "42c8e1a0-4c7e-48c2-bf16-ff1d64828855",
+                    "path": "<Gamepad>/buttonWest",
+                    "action": "SelectOK"
+                },
+                {
+                    "id": "b8b87d86-e7d2-4fb1-ac43-374d2dd5ed58",
+                    "path": "<Keyboard>/numpad2",
+                    "action": "SelectOK"
+                },
+                {
+                    "id": "c7f276a7-8d61-4a4b-9926-8582d1e51cf7",
+                    "path": "<Gamepad>/buttonNorth",
+                    "action": "SelectGrab"
+                },
+                {
+                    "id": "e3fe1f6b-4ae3-4356-ae1d-b794fb37db75",
+                    "path": "<Keyboard>/numpad3",
+                    "action": "SelectGrab"
+                },
+                {
+                    "id": "5be552ff-e873-4d90-bafc-54e4e8cf937c",
+                    "path": "<Gamepad>/buttonEast",
+                    "action": "SelectRest"
+                },
+                {
+                    "id": "81e4b453-06c8-46c5-a45d-83e1b4f23df5",
+                    "path": "<Keyboard>/numpad4",
+                    "action": "SelectRest"
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
