@@ -24,6 +24,11 @@ namespace Metroidbrainia
         [SerializeField] private StarterAssetsInputs starterInputs;
         [SerializeField] private InputActionAsset armControls;
         [SerializeField] private ArmView armView;
+        [Header("Automatic hand interaction")]
+        [SerializeField] private Camera interactionCamera;
+        [SerializeField, Min(0.01f)] private float interactionDistance = 2f;
+        [Tooltip("Include physical obstacles as well as interactables. Exclude the player's layer if needed.")]
+        [SerializeField] private LayerMask interactionLayers = Physics.DefaultRaycastLayers;
         [SerializeField, Min(0f)] private float mouseSensitivity = 1f;
         [SerializeField, Min(0f)] private float stickSpeed = 900f;
         [SerializeField] private UnityEvent onPointAction = new UnityEvent();
@@ -46,6 +51,10 @@ namespace Metroidbrainia
         private bool hasFocus = true;
         private bool paused;
         private bool waitForRelease;
+        private IHandInteractable activeInteractable;
+        private IHandInteractable hoveredInteractable;
+        private Collider hoveredCollider;
+        private bool freeHandReturning;
 
         private struct SavedBinding
         {
@@ -102,6 +111,8 @@ namespace Metroidbrainia
             }
 
             initialized = true;
+            if (interactionCamera == null)
+                interactionCamera = Camera.main;
             ActivateInput();
             armView.PlayPose(CurrentPose);
         }
@@ -198,7 +209,30 @@ namespace Metroidbrainia
             Vector2 movement = armMove.ReadValue<Vector2>();
             bool usingMouse = armMove.activeControl?.device is Mouse;
             Vector2 displacement = movement * (usingMouse ? mouseSensitivity : stickSpeed * Time.deltaTime);
+            if (activeInteractable != null)
+            {
+                if (!IsInteractionVisible(activeInteractable)
+                    || !activeInteractable.UpdateInteraction(interactionCamera, armView.GetScreenDisplacement(displacement)))
+                    EndHandInteraction();
+                return;
+            }
+
+            if (freeHandReturning)
+            {
+                if (displacement.sqrMagnitude < 0.000001f)
+                {
+                    // A held ArmMode must not immediately interrupt the completed interaction's return.
+                    if (armAction.WasPressedThisFrame())
+                        PerformArmAction();
+                    return;
+                }
+                freeHandReturning = false;
+                armView.BeginControl();
+            }
             armView.MoveHand(displacement);
+            DetectHandInteraction();
+            if (activeInteractable != null)
+                return;
 
             // Selection is processed first; only an actual action press emits a logical event.
             if (armAction.WasPressedThisFrame())
@@ -215,11 +249,97 @@ namespace Metroidbrainia
                 return;
 
             CurrentPose = requestedPose;
-            armView.PlayPose(CurrentPose);
+            if (activeInteractable == null)
+                armView.PlayPose(CurrentPose);
+        }
+
+        private static bool IsInteractableAlive(IHandInteractable interactable)
+        {
+            return interactable is MonoBehaviour component && component != null && component.isActiveAndEnabled;
+        }
+
+        private void DetectHandInteraction()
+        {
+            if (interactionCamera == null)
+                interactionCamera = Camera.main;
+
+            IHandInteractable candidate = null;
+            RaycastHit hit = default;
+            if (interactionCamera != null)
+            {
+                // Door colliders move without Rigidbodies; make this frame's transforms visible to queries.
+                Physics.SyncTransforms();
+                Ray ray = interactionCamera.ScreenPointToRay(GetHandScreenPosition());
+                if (Physics.Raycast(ray, out hit, interactionDistance, interactionLayers, QueryTriggerInteraction.Collide))
+                    candidate = hit.collider.GetComponentInParent<IHandInteractable>();
+            }
+
+            if (!IsInteractableAlive(candidate))
+                candidate = null;
+            if (hoveredInteractable != candidate || hoveredCollider != hit.collider)
+            {
+                EndHover();
+                hoveredInteractable = candidate;
+                hoveredCollider = hit.collider;
+            }
+            if (candidate == null || !candidate.TryBeginInteraction(interactionCamera, hit.collider))
+                return;
+
+            if (!armView.FollowWorldPoint(candidate.InteractionPoint, interactionCamera))
+            {
+                candidate.EndInteraction();
+                return;
+            }
+            activeInteractable = candidate;
+            // Retain contact until the ray leaves, including after a short captured feedback animation.
+            armView.PlayPose(ArmPose.Grab);
+        }
+
+        private bool IsInteractionVisible(IHandInteractable interactable)
+        {
+            if (!IsInteractableAlive(interactable) || interactionCamera == null || interactable.InteractionPoint == null)
+                return false;
+
+            Vector3 screenPoint = interactionCamera.WorldToScreenPoint(interactable.InteractionPoint.position);
+            if (screenPoint.z <= 0f || !interactionCamera.pixelRect.Contains(screenPoint))
+                return false;
+
+            Vector3 offset = interactable.InteractionPoint.position - interactionCamera.transform.position;
+            if (offset.magnitude > interactionDistance)
+                return false;
+
+            Physics.SyncTransforms();
+            Ray ray = interactionCamera.ScreenPointToRay(screenPoint);
+            if (!Physics.Raycast(ray, out RaycastHit hit, interactionDistance, interactionLayers, QueryTriggerInteraction.Collide))
+                return false;
+            return hit.collider.GetComponentInParent<IHandInteractable>() == interactable;
+        }
+
+        private void EndHover()
+        {
+            if (IsInteractableAlive(hoveredInteractable))
+                hoveredInteractable.EndInteraction();
+            hoveredInteractable = null;
+            hoveredCollider = null;
+        }
+
+        private void EndHandInteraction()
+        {
+            IHandInteractable previous = activeInteractable;
+            activeInteractable = null;
+            if (IsInteractableAlive(previous))
+                previous.EndInteraction();
+            if (armView != null)
+            {
+                armView.EndWorldFollow();
+                armView.PlayPose(CurrentPose);
+            }
+            freeHandReturning = true;
         }
 
         private void BeginArmMode()
         {
+            freeHandReturning = false;
             lookWasEnabled = look.enabled;
             look.Disable();
             starterInputs.LookInput(Vector2.zero);
@@ -233,18 +353,22 @@ namespace Metroidbrainia
                 return;
 
             IsArmModeActive = false;
+            if (activeInteractable != null)
+                EndHandInteraction();
+            EndHover();
             if (lookWasEnabled)
                 look.Enable();
 
             // Never replay a stored mouse delta from arm mode.
             starterInputs.LookInput(Vector2.zero);
             if (armView != null)
-                armView.RestoreBaseTransform();
+                armView.EndControl();
         }
 
         public void PerformArmAction()
         {
-            if (!initialized || !isActiveAndEnabled || !IsArmModeActive || CurrentPose == ArmPose.Rest)
+            if (!initialized || !isActiveAndEnabled || !IsArmModeActive
+                || activeInteractable != null || CurrentPose == ArmPose.Rest)
                 return;
 
             armView.PlayPose(CurrentPose);
