@@ -2,6 +2,12 @@ using UnityEngine;
 
 namespace Metroidbrainia
 {
+    public enum ScriptedDoorOpenDirection
+    {
+        Negative = -1,
+        Positive = 1
+    }
+
     [DisallowMultipleComponent]
     public sealed class DoorHandInteractable : MonoBehaviour, IHandInteractable
     {
@@ -12,6 +18,7 @@ namespace Metroidbrainia
         [SerializeField, Min(0.01f)] private float maxInteractionDistance = 1.8f;
         [SerializeField, Range(0.1f, 179f)] private float manualOpenThreshold = 10f;
         [SerializeField, Range(0.1f, 179f)] private float openAngle = 125f;
+        [SerializeField] private ScriptedDoorOpenDirection scriptedOpenDirection = ScriptedDoorOpenDirection.Positive;
         [SerializeField, Min(0.01f)] private float autoOpenSmoothTime = 0.3f;
         [SerializeField, Min(0.01f)] private float lockedShakeDuration = 0.18f;
         [Tooltip("Knob shake amplitude in degrees.")]
@@ -157,6 +164,20 @@ namespace Metroidbrainia
         public void Unlock()
         {
             canOpenByHand = true;
+        }
+
+        public void OpenAutomatically()
+        {
+            if (!initialized || !isActiveAndEnabled || IsOpen || autoOpening)
+                return;
+
+            Unlock();
+            RestoreKnob();
+            lockedInteraction = false;
+            closing = false;
+            openDirection = scriptedOpenDirection == ScriptedDoorOpenDirection.Negative ? -1f : 1f;
+            angleVelocity = 0f;
+            autoOpening = true;
         }
 
         private bool IsCloseEnough(Camera playerCamera)

@@ -260,19 +260,9 @@ namespace Metroidbrainia
 
         private void DetectHandInteraction()
         {
-            if (interactionCamera == null)
-                interactionCamera = Camera.main;
-
             IHandInteractable candidate = null;
-            RaycastHit hit = default;
-            if (interactionCamera != null)
-            {
-                // Door colliders move without Rigidbodies; make this frame's transforms visible to queries.
-                Physics.SyncTransforms();
-                Ray ray = interactionCamera.ScreenPointToRay(GetHandScreenPosition());
-                if (Physics.Raycast(ray, out hit, interactionDistance, interactionLayers, QueryTriggerInteraction.Collide))
-                    candidate = hit.collider.GetComponentInParent<IHandInteractable>();
-            }
+            if (TryRaycastHand(out RaycastHit hit))
+                candidate = hit.collider.GetComponentInParent<IHandInteractable>();
 
             if (!IsInteractableAlive(candidate))
                 candidate = null;
@@ -372,12 +362,32 @@ namespace Metroidbrainia
                 return;
 
             armView.PlayPose(CurrentPose);
+            if (TryRaycastHand(out RaycastHit hit))
+            {
+                IHandActionInteractable target = hit.collider.GetComponentInParent<IHandActionInteractable>();
+                if (target is MonoBehaviour component && component != null && component.isActiveAndEnabled)
+                    target.TryPerformHandAction(CurrentPose, interactionCamera, hit);
+            }
             switch (CurrentPose)
             {
                 case ArmPose.Point: onPointAction.Invoke(); break;
                 case ArmPose.OK: onOKAction.Invoke(); break;
                 case ArmPose.Grab: onGrabAction.Invoke(); break;
             }
+        }
+
+        private bool TryRaycastHand(out RaycastHit hit)
+        {
+            hit = default;
+            if (interactionCamera == null)
+                interactionCamera = Camera.main;
+            if (interactionCamera == null)
+                return false;
+
+            // Procedurally moved colliders have no Rigidbody; query their latest transforms.
+            Physics.SyncTransforms();
+            Ray ray = interactionCamera.ScreenPointToRay(GetHandScreenPosition());
+            return Physics.Raycast(ray, out hit, interactionDistance, interactionLayers, QueryTriggerInteraction.Collide);
         }
 
         public Vector2 GetHandScreenPosition()
