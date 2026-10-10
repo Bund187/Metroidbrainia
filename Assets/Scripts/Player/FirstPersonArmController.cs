@@ -211,6 +211,15 @@ namespace Metroidbrainia
             Vector2 displacement = movement * (usingMouse ? mouseSensitivity : stickSpeed * Time.deltaTime);
             if (activeInteractable != null)
             {
+                if (activeInteractable is IFreeHandInteractable freeInteraction)
+                {
+                    // A free-hand hold owns no movement input and keeps working with its world collider hidden.
+                    if (!IsInteractableAlive(activeInteractable) || !freeInteraction.IsInteractionActive)
+                        EndHandInteraction();
+                    else
+                        armView.MoveHand(displacement);
+                    return;
+                }
                 if (!IsInteractionVisible(activeInteractable)
                     || !activeInteractable.UpdateInteraction(interactionCamera, armView.GetScreenDisplacement(displacement)))
                     EndHandInteraction();
@@ -275,6 +284,18 @@ namespace Metroidbrainia
             if (candidate == null || !candidate.TryBeginInteraction(interactionCamera, hit.collider))
                 return;
 
+            if (candidate is IFreeHandInteractable freeInteraction)
+            {
+                if (!armView.TryPlayInteractionVisual(freeInteraction.HandVisual))
+                {
+                    candidate.EndInteraction();
+                    armView.PlayPose(CurrentPose);
+                    return;
+                }
+                activeInteractable = candidate;
+                return;
+            }
+
             if (!armView.FollowWorldPoint(candidate.InteractionPoint, interactionCamera))
             {
                 candidate.EndInteraction();
@@ -321,10 +342,11 @@ namespace Metroidbrainia
                 previous.EndInteraction();
             if (armView != null)
             {
-                armView.EndWorldFollow();
+                if (!(previous is IFreeHandInteractable) || !IsArmModeActive)
+                    armView.EndWorldFollow();
                 armView.PlayPose(CurrentPose);
             }
-            freeHandReturning = true;
+            freeHandReturning = !(previous is IFreeHandInteractable) || !IsArmModeActive;
         }
 
         private void BeginArmMode()

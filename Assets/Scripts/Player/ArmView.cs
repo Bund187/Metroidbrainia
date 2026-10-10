@@ -3,6 +3,12 @@ using UnityEngine.Serialization;
 
 namespace Metroidbrainia
 {
+    public enum HandInteractionVisual
+    {
+        Grab,
+        Hold
+    }
+
     // Follow after world objects and the player camera have completed their updates.
     [DefaultExecutionOrder(100)]
     [DisallowMultipleComponent]
@@ -28,6 +34,8 @@ namespace Metroidbrainia
         [SerializeField] private string pointState = "Base Layer.Arm_Point";
         [SerializeField] private string okState = "Base Layer.Arm_OK";
         [SerializeField] private string grabState = "Base Layer.Arm_Grab";
+        [SerializeField] private string holdState = "Base Layer.Arm_Hold";
+        private bool missingInteractionVisualReported;
 
         private Vector3 basePosition;
         private Quaternion baseRotation;
@@ -48,6 +56,8 @@ namespace Metroidbrainia
         private Transform followedPoint;
         private Camera followCamera;
         private const float ReturnTolerance = 0.1f;
+
+        public float InitialHandAngle { get; private set; }
 
         public bool Initialize()
         {
@@ -84,6 +94,8 @@ namespace Metroidbrainia
             }
 
             Canvas.ForceUpdateCanvases();
+            Vector3 initialHandRight = viewModel.InverseTransformVector(hand.TransformVector(Vector3.right));
+            InitialHandAngle = Mathf.Atan2(initialHandRight.y, initialHandRight.x) * Mathf.Rad2Deg;
             basePosition = armRoot.anchoredPosition3D;
             baseRotation = armRoot.localRotation;
             baseBodyPosition = armBody.anchoredPosition3D;
@@ -178,7 +190,8 @@ namespace Metroidbrainia
 
         private void LateUpdate()
         {
-            if (!initialized)
+            // SmoothDamp must not update its return velocity with a zero time step during pause.
+            if (!initialized || Time.deltaTime <= 0f)
                 return;
 
             if (followedPoint != null && followCamera != null)
@@ -270,6 +283,24 @@ namespace Metroidbrainia
 
             // Explicit zero restarts even the state that is already active.
             handAnimator.Play(Animator.StringToHash(state), 0, 0f);
+        }
+
+        public bool TryPlayInteractionVisual(HandInteractionVisual visual)
+        {
+            string state = visual == HandInteractionVisual.Hold ? holdState : grabState;
+            if (!initialized || handAnimator == null || string.IsNullOrEmpty(state)
+                || !handAnimator.HasState(0, Animator.StringToHash(state)))
+            {
+                if (!missingInteractionVisualReported)
+                {
+                    Debug.LogError($"Hand Animator is missing the interaction state '{state}'.", this);
+                    missingInteractionVisualReported = true;
+                }
+                return false;
+            }
+
+            handAnimator.Play(Animator.StringToHash(state), 0, 0f);
+            return true;
         }
 
         private string GetStatePath(ArmPose pose)

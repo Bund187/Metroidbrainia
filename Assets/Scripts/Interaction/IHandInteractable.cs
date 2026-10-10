@@ -11,4 +11,11 @@ namespace Metroidbrainia
         // Also called when an unsuccessful contact ends, so feedback can reset on exit.
         void EndInteraction();
     }
+
+    // A sustained interaction that leaves movement with ArmView and does not track world contact.
+    public interface IFreeHandInteractable : IHandInteractable
+    {
+        bool IsInteractionActive { get; }
+        HandInteractionVisual HandVisual { get; }
+    }
 }
