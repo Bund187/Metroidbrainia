@@ -19,6 +19,10 @@ MonoBehaviour:
     m_Key: document.clue.bells
     m_Metadata:
       m_Items: []
+  - m_Id: 54688064299008
+    m_Key: document.clue.bellsTest
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

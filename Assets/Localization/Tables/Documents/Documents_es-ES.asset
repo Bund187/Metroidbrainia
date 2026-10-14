@@ -22,6 +22,10 @@ MonoBehaviour:
     m_Localized: "Siempre me pareci\xF3 incre\xEDblemente basto y de poca educaci\xF3n aporrear una puerta como quien llama al ganado. En contraposici\xF3n el sonido de las campanas siempre fue de mi agrado. El tintineo suave y mel\xF3dico que anuncia la llegada de alguien me parece un acierto en lo que al recibimiento de una persona se refiere."
     m_Metadata:
       m_Items: []
+  - m_Id: 54688064299008
+    m_Localized: Comeme los huevos
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
