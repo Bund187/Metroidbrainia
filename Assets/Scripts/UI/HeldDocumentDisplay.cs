@@ -27,6 +27,11 @@ namespace Metroidbrainia
         private float rotationOffset;
         private float rotationVelocity;
         private bool visualInitialized;
+        private bool textStyleInitialized;
+        private TMP_FontAsset defaultFont;
+        private float defaultFontSize;
+        private Color defaultTextColor;
+        private Material defaultFontMaterial;
 
         public bool IsShowing(DocumentHandInteractable document)
         {
@@ -58,6 +63,7 @@ namespace Metroidbrainia
             documentImage.sprite = sprite;
             if (documentText != null)
             {
+                ApplyTextStyle(document);
                 documentText.text = string.Empty;
                 bool hasText = text != null && !text.IsEmpty;
                 documentText.enabled = hasText;
@@ -135,6 +141,35 @@ namespace Metroidbrainia
                 documentText.text = value;
         }
 
+        private void ApplyTextStyle(DocumentHandInteractable document)
+        {
+            if (!textStyleInitialized)
+            {
+                // HeldDocument starts inactive, so capture lazily before its first style change.
+                defaultFont = documentText.font;
+                defaultFontSize = documentText.fontSize;
+                defaultTextColor = documentText.color;
+                defaultFontMaterial = documentText.fontSharedMaterial;
+                textStyleInitialized = true;
+            }
+            documentText.font = document.DocumentFont != null ? document.DocumentFont : defaultFont;
+            if (document.DocumentFont == null)
+                documentText.fontSharedMaterial = defaultFontMaterial;
+            documentText.fontSize = Mathf.Max(1f, document.DocumentFontSize);
+            documentText.color = document.DocumentTextColor;
+        }
+
+        private void RestoreTextStyle()
+        {
+            if (!textStyleInitialized || documentText == null)
+                return;
+            documentText.font = defaultFont;
+            // A font change may select its default material; retain the authored base material preset.
+            documentText.fontSharedMaterial = defaultFontMaterial;
+            documentText.fontSize = defaultFontSize;
+            documentText.color = defaultTextColor;
+        }
+
         private void ClearDisplay()
         {
             ResetRotation();
@@ -148,6 +183,7 @@ namespace Metroidbrainia
             {
                 documentText.text = string.Empty;
                 documentText.enabled = false;
+                RestoreTextStyle();
             }
         }
 

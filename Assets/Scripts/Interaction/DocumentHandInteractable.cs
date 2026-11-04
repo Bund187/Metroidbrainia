@@ -1,4 +1,6 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Localization;
 
 namespace Metroidbrainia
@@ -11,13 +13,22 @@ namespace Metroidbrainia
         [SerializeField] private HeldDocumentDisplay heldDocumentDisplay;
         [SerializeField] private Sprite heldSprite;
         [SerializeField] private LocalizedString localizedText = new LocalizedString();
+        [Header("Text Style")]
+        [SerializeField] private TMP_FontAsset documentFont;
+        [SerializeField, Min(1f)] private float documentFontSize = 36f;
+        [SerializeField] private Color documentTextColor = Color.black;
+        [Header("Interaction")]
         [SerializeField, Min(0.01f)] private float maxInteractionDistance = 1.5f;
+        [SerializeField] private UnityEvent onPickedUp = new UnityEvent();
 
         private bool held;
         private bool rendererWasEnabled;
         private bool colliderWasEnabled;
 
         public Transform InteractionPoint => transform;
+        public TMP_FontAsset DocumentFont => documentFont;
+        public float DocumentFontSize => documentFontSize;
+        public Color DocumentTextColor => documentTextColor;
         public HandInteractionVisual HandVisual => HandInteractionVisual.Hold;
         public bool IsInteractionActive => held && worldRenderer != null && worldCollider != null
             && heldDocumentDisplay != null && heldDocumentDisplay.IsShowing(this);
@@ -45,6 +56,7 @@ namespace Metroidbrainia
             held = true;
             worldRenderer.enabled = false;
             worldCollider.enabled = false;
+            onPickedUp?.Invoke();
             return true;
         }
 

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Metroidbrainia
 {
@@ -8,11 +9,21 @@ namespace Metroidbrainia
     {
         [SerializeField] private List<BellInteractable> requiredSequence = new List<BellInteractable>();
         [SerializeField] private DoorHandInteractable targetDoor;
+        [SerializeField] private UnityEvent onSolved = new UnityEvent();
 
         private int nextExpectedIndex;
 
         public int NextExpectedIndex => nextExpectedIndex;
         public bool IsSolved { get; private set; }
+        public UnityEvent OnSolved => onSolved;
+
+        public void RestoreSolvedState(bool solved)
+        {
+            IsSolved = solved;
+            nextExpectedIndex = solved ? requiredSequence.Count : 0;
+            if (targetDoor != null)
+                targetDoor.RestoreOpenState(solved);
+        }
 
         public void NotifyBellRung(BellInteractable bell)
         {
@@ -33,6 +44,7 @@ namespace Metroidbrainia
                 targetDoor.Unlock();
                 targetDoor.OpenAutomatically();
             }
+            onSolved?.Invoke();
         }
     }
 }

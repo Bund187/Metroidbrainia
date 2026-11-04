@@ -37,6 +37,8 @@ namespace Metroidbrainia
         private bool gamepadConnected;
         private bool menuDevicesChanged;
         private bool initialized;
+        private MapScreenController mapOwner;
+        private float previousTimeScale = 1f;
 
         public bool IsPaused { get; private set; }
 
@@ -92,6 +94,8 @@ namespace Metroidbrainia
 
             if (IsPaused && (menuDevicesChanged || gamepadConnected != (Gamepad.all.Count > 0)))
                 ConfigureMenuDevices();
+            else if (mapOwner != null && menuDevicesChanged)
+                ConfigureMapDevices();
 
             // Starter Assets also changes cursor lock on application focus changes.
             ApplyCursor();
@@ -99,7 +103,7 @@ namespace Metroidbrainia
 
         public void TogglePause()
         {
-            if (!initialized || !isActiveAndEnabled)
+            if (!initialized || !isActiveAndEnabled || mapOwner != null)
                 return;
             if (IsPaused)
                 ResumeGameplay();
@@ -109,6 +113,79 @@ namespace Metroidbrainia
 
         private void PauseGameplay()
         {
+            SuspendGameplay();
+            IsPaused = true;
+            Time.timeScale = 0f;
+            pauseCanvas.SetActive(true);
+            uiInputModule.enabled = false;
+            uiInputModule.actionsAsset = menuActions;
+            ConfigureMenuDevices();
+        }
+
+        internal bool TryBeginMap(MapScreenController owner)
+        {
+            if (!initialized || !isActiveAndEnabled || IsPaused || mapOwner != null || owner == null
+                || playerInput == null || starterInputs == null || firstPersonController == null
+                || armController == null || uiInputModule == null || eventSystem == null)
+                return false;
+
+            SuspendGameplay();
+            mapOwner = owner;
+            Time.timeScale = 0f;
+            uiInputModule.enabled = false;
+            uiInputModule.actionsAsset = menuActions;
+            ConfigureMapDevices();
+            return true;
+        }
+
+        internal void EndMap(MapScreenController owner)
+        {
+            if (!ReferenceEquals(mapOwner, owner))
+                return;
+            mapOwner = null;
+            ResumeGameplay();
+        }
+
+        internal void AbandonMap(MapScreenController owner)
+        {
+            if (!ReferenceEquals(mapOwner, owner))
+                return;
+
+            // Teardown only: never reactivate PlayerInput or gameplay components.
+            mapOwner = null;
+            Time.timeScale = previousTimeScale;
+            if (menuActions != null)
+                menuActions.Disable();
+            if (uiInputModule != null)
+            {
+                uiInputModule.enabled = false;
+                uiInputModule.actionsAsset = previousUIActions;
+            }
+            enabledGameplayActions.Clear();
+            previousUIActions = null;
+            ApplyCursor();
+        }
+
+        private void ConfigureMapDevices()
+        {
+            menuDevicesChanged = false;
+            var mice = new List<InputDevice>();
+            foreach (InputDevice device in InputSystem.devices)
+            {
+                if (device is Mouse)
+                    mice.Add(device);
+            }
+            uiInputModule.enabled = false;
+            menuActions.Disable();
+            menuActions.devices = mice.ToArray();
+            uiInputModule.enabled = true;
+            eventSystem.SetSelectedGameObject(null);
+            ApplyCursor();
+        }
+
+        private void SuspendGameplay()
+        {
+            previousTimeScale = Time.timeScale;
             controllerWasEnabled = firstPersonController.enabled;
             armWasEnabled = armController.enabled;
             inputWasActive = playerInput.inputIsActive;
@@ -135,13 +212,6 @@ namespace Metroidbrainia
             starterInputs.cursorLocked = false;
             starterInputs.cursorInputForLook = false;
             ClearGameplayInput();
-
-            IsPaused = true;
-            Time.timeScale = 0f;
-            pauseCanvas.SetActive(true);
-            uiInputModule.enabled = false;
-            uiInputModule.actionsAsset = menuActions;
-            ConfigureMenuDevices();
         }
 
         private void ResumeGameplay()
@@ -191,7 +261,7 @@ namespace Metroidbrainia
             ClearGameplayInput();
             enabledGameplayActions.Clear();
             IsPaused = false;
-            Time.timeScale = 1f;
+            Time.timeScale = previousTimeScale;
             ApplyCursor();
         }
 
@@ -245,6 +315,12 @@ namespace Metroidbrainia
 
         private void ApplyCursor()
         {
+            if (mapOwner != null)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = false;
+                return;
+            }
             bool useMouse = IsPaused && Gamepad.all.Count == 0;
             Cursor.lockState = useMouse ? CursorLockMode.None : CursorLockMode.Locked;
             Cursor.visible = useMouse;
@@ -293,11 +369,12 @@ namespace Metroidbrainia
             InputSystem.onDeviceChange -= OnDeviceChange;
 
             // Scene teardown has no guaranteed destruction order. Never reactivate gameplay here.
-            if (IsPaused)
-                Time.timeScale = 1f;
+            if (IsPaused || mapOwner != null)
+                Time.timeScale = previousTimeScale;
             if (menuActions != null)
                 menuActions.Disable();
             IsPaused = false;
+            mapOwner = null;
             enabledGameplayActions.Clear();
             previousUIActions = null;
             menuDevicesChanged = false;

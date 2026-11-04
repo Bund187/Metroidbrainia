@@ -30,6 +30,38 @@ MonoBehaviour:
     m_Localized: Language
     m_Metadata:
       m_Items: []
+  - m_Id: 7267501757259776
+    m_Localized: Start New Game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7267648146857984
+    m_Localized: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7267723912765440
+    m_Localized: Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7267773808205824
+    m_Localized: Quit game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7267868331040768
+    m_Localized: This will erase your saved game. Continue?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7267983091392512
+    m_Localized: YES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7268075261222912
+    m_Localized: NO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7268141900324864
+    m_Localized: Loading
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

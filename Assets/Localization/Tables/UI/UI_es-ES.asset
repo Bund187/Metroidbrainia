@@ -30,6 +30,38 @@ MonoBehaviour:
     m_Localized: Idioma
     m_Metadata:
       m_Items: []
+  - m_Id: 7267501757259776
+    m_Localized: Nuevo Juego
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7267648146857984
+    m_Localized: Opciones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7267723912765440
+    m_Localized: Continuar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7267773808205824
+    m_Localized: Salir del juego
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7267868331040768
+    m_Localized: "Esto borrar\xE1 tu partida guardada. Continuar?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7267983091392512
+    m_Localized: SI
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7268075261222912
+    m_Localized: NO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7268141900324864
+    m_Localized: Cargando
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

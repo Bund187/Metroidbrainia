@@ -15,12 +15,172 @@ MonoBehaviour:
   m_TableCollectionName: Documents
   m_TableCollectionNameGuidString: f2215fb2d27c6d647a8602d4ad61d5a6
   m_Entries:
-  - m_Id: 67555909632
-    m_Key: document.clue.bells
-    m_Metadata:
-      m_Items: []
   - m_Id: 54688064299008
     m_Key: document.clue.bellsTest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2251481891880960
+    m_Key: document.Elisabeth.Habilitymemo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4342487563198464
+    m_Key: document.Elisabeth.BellHint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4342560908992512
+    m_Key: document.Elisabeth.Icon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5787300321910784
+    m_Key: map.room.entranceName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5787394165268480
+    m_Key: map.room.entranceSummary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5787508111925248
+    m_Key: map.room.bellRoomName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5787621194555392
+    m_Key: map.room.bellRoomSummary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6148121342337024
+    m_Key: map.discovery.question.bellRoomName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6148331808317440
+    m_Key: map.discovery.question.bellRoomSummary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6148580878671872
+    m_Key: map.discovery.note.bellNoteName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6148756104110080
+    m_Key: map.discovery.note.bellNoteSummary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6486756868579328
+    m_Key: map.room.diningRoomName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6486838598787072
+    m_Key: map.room.diningRoomSummary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6487175921491968
+    m_Key: map.room.readingRoomName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6487443450978304
+    m_Key: map.room.readingRoomSummary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6487786415022080
+    m_Key: map.room.bedRoomName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6487951733514240
+    m_Key: map.room.bedRoomSummary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6488386536038400
+    m_Key: map.room.bathRoomName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6488438373441536
+    m_Key: map.room.bathRoomSummary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6488639632924672
+    m_Key: map.room.studioRoomName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6488749255254016
+    m_Key: map.room.studioRoomSummary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6489093959933952
+    m_Key: map.room.darkRoomSummary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6489623415316480
+    m_Key: map.room.darkRoomName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6489936276840448
+    m_Key: map.room.kitchenRoomName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6490481435697152
+    m_Key: map.room.kitchenRoomSummary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6490764970647552
+    m_Key: map.room.secretpassageRoomName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6490853688565760
+    m_Key: map.room.secretpassageRoomSummary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6515358435729408
+    m_Key: map.discovery.note.strangeIconNoteName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6515644449513472
+    m_Key: map.discovery.note.strangeIconNoteSummary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6517163957772288
+    m_Key: map.discovery.note.memoSecretPassageNoteName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6517753408479232
+    m_Key: map.discovery.note.memoSecretPassageNoteSummary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6518954992689152
+    m_Key: map.discovery.question.bellsBlueprintDiscoveryName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6519211113668608
+    m_Key: map.discovery.question.bellsBlueprintDiscoverySummary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6520314379198464
+    m_Key: map.discovery.question.studioSwitchDiscoveryName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6520385447485440
+    m_Key: map.discovery.question.studioSwitchDiscoverySummary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6521139147137024
+    m_Key: map.discovery.question.wallIconDiscoveryName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6531445739053056
+    m_Key: map.discovery.question.wallIconDiscoverySummary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6532461935026176
+    m_Key: map.discovery.question.darkRoomDiscoveryName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6532579140657152
+    m_Key: map.discovery.question.darkRoomDiscoverySummary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6534001072627712
+    m_Key: map.discovery.question.secretPassagePostersDiscoveryName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6834931429105664
+    m_Key: map.discovery.question.secretPassagePostersDiscoverySummary
     m_Metadata:
       m_Items: []
   m_Metadata:

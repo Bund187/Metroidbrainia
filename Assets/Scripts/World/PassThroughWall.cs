@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Metroidbrainia
 {
@@ -15,6 +16,9 @@ namespace Metroidbrainia
         [SerializeField] private Transform originalSidePoint;
         [SerializeField] private Transform otherSidePoint;
         [SerializeField, Min(0f)] private float sideClearance = 0.3f;
+        [Tooltip("Ignore projected triangle fragments smaller than this screen area in pixels. Zero accepts any nonzero area.")]
+        [SerializeField, Min(0f)] private float minimumVisibleAreaPixels = 0.5f;
+        [SerializeField] private UnityEvent onCrossedToOtherSide = new UnityEvent();
 
         private enum PlayerSide
         {
@@ -31,6 +35,20 @@ namespace Metroidbrainia
         private PlayerSide currentSide;
         private bool initialized;
         private bool appearanceApplied;
+        private bool crossingFromOriginal;
+        private bool crossingTouchedWall;
+        private bool crossingEventSent;
+        private Vector3[] visibilityVertices;
+        private Vector3[] worldVisibilityVertices;
+        private int[] visibilityTriangles;
+        private readonly Vector3[] clipPolygonA = new Vector3[16];
+        private readonly Vector3[] clipPolygonB = new Vector3[16];
+        private static readonly int[] BoxTriangles =
+        {
+            0, 2, 6, 0, 6, 4, 1, 5, 7, 1, 7, 3,
+            0, 4, 5, 0, 5, 1, 2, 3, 7, 2, 7, 6,
+            0, 1, 3, 0, 3, 2, 4, 6, 7, 4, 7, 5
+        };
 
         public bool IsVisible { get; private set; }
         public bool IsPassable { get; private set; }
@@ -62,6 +80,7 @@ namespace Metroidbrainia
             }
 
             wallMeshFilter = wallRenderer.GetComponent<MeshFilter>();
+            CacheVisibilityGeometry();
             GetWallGeometry(out Vector3 center, out _, out _, out _);
             Vector3 direction = otherSidePoint.position - originalSidePoint.position;
             if (direction.sqrMagnitude < 0.000001f
@@ -117,16 +136,27 @@ namespace Metroidbrainia
             Bounds safetyBounds = wallBounds;
             safetyBounds.Expand(Mathf.Max(0f, sideClearance) * 2f);
             bool nearWall = safetyBounds.Intersects(playerBounds);
+            bool touchesWall = wallBounds.Intersects(playerBounds)
+                && Mathf.Abs(distance) < wallHalfThickness + playerHalfThickness;
+            bool completedSpecialCrossing = false;
 
             if (currentSide == PlayerSide.Crossing)
             {
+                crossingTouchedWall |= touchesWall;
                 if (clearOfWall)
+                {
                     currentSide = distance < 0f ? PlayerSide.Original : PlayerSide.Other;
+                    completedSpecialCrossing = currentSide == PlayerSide.Other && crossingFromOriginal && crossingTouchedWall;
+                    crossingFromOriginal = false;
+                    crossingTouchedWall = false;
+                }
             }
             else if (!clearOfWall && nearWall && (IsPassable || (starting
                 && wallBounds.Intersects(playerBounds)
                 && Mathf.Abs(distance) < wallHalfThickness + playerHalfThickness)))
             {
+                crossingFromOriginal = !starting && currentSide == PlayerSide.Original && IsPassable;
+                crossingTouchedWall = touchesWall;
                 currentSide = PlayerSide.Crossing;
             }
             else if (clearOfWall)
@@ -137,6 +167,35 @@ namespace Metroidbrainia
             GeometryUtility.CalculateFrustumPlanes(gameplayCamera, frustumPlanes);
             IsVisible = IntersectsFrustum();
             SetPassable(currentSide != PlayerSide.Original || !IsVisible);
+            if (completedSpecialCrossing && !crossingEventSent)
+            {
+                crossingEventSent = true;
+                onCrossedToOtherSide?.Invoke();
+            }
+        }
+
+        private void CacheVisibilityGeometry()
+        {
+            Mesh mesh = wallMeshFilter != null ? wallMeshFilter.sharedMesh : null;
+            if (mesh != null && mesh.isReadable)
+            {
+                visibilityVertices = mesh.vertices;
+                visibilityTriangles = mesh.triangles;
+            }
+            else
+            {
+                // Unreadable meshes still get an exact frustum test of their oriented local bounds.
+                Bounds bounds = mesh != null ? mesh.bounds : wallRenderer.localBounds;
+                visibilityVertices = new Vector3[8];
+                for (int i = 0; i < visibilityVertices.Length; i++)
+                {
+                    Vector3 sign = new Vector3((i & 1) == 0 ? -1f : 1f,
+                        (i & 2) == 0 ? -1f : 1f, (i & 4) == 0 ? -1f : 1f);
+                    visibilityVertices[i] = bounds.center + Vector3.Scale(bounds.extents, sign);
+                }
+                visibilityTriangles = BoxTriangles;
+            }
+            worldVisibilityVertices = new Vector3[visibilityVertices.Length];
         }
 
         private bool IntersectsFrustum()
@@ -160,7 +219,67 @@ namespace Metroidbrainia
                 if (plane.GetDistanceToPoint(center) + radius < 0f)
                     return false;
             }
-            return true;
+            // Six OBB/plane tests alone are conservative near frustum edges. Clip the actual
+            // mesh triangles to all planes and require a non-degenerate projected fragment.
+            Matrix4x4 matrix = meshTransform.localToWorldMatrix;
+            for (int i = 0; i < visibilityVertices.Length; i++)
+                worldVisibilityVertices[i] = matrix.MultiplyPoint3x4(visibilityVertices[i]);
+            float threshold = Mathf.Max(0f, minimumVisibleAreaPixels);
+            for (int i = 0; i + 2 < visibilityTriangles.Length; i += 3)
+            {
+                if (ClippedTriangleAreaPixels(worldVisibilityVertices[visibilityTriangles[i]],
+                    worldVisibilityVertices[visibilityTriangles[i + 1]],
+                    worldVisibilityVertices[visibilityTriangles[i + 2]]) > threshold)
+                    return true;
+            }
+            return false;
+        }
+
+        private float ClippedTriangleAreaPixels(Vector3 a, Vector3 b, Vector3 c)
+        {
+            Vector3[] input = clipPolygonA;
+            Vector3[] output = clipPolygonB;
+            input[0] = a;
+            input[1] = b;
+            input[2] = c;
+            int count = 3;
+            for (int planeIndex = 0; planeIndex < frustumPlanes.Length; planeIndex++)
+            {
+                Plane plane = frustumPlanes[planeIndex];
+                int outputCount = 0;
+                Vector3 previous = input[count - 1];
+                float previousDistance = plane.GetDistanceToPoint(previous);
+                for (int i = 0; i < count; i++)
+                {
+                    Vector3 current = input[i];
+                    float currentDistance = plane.GetDistanceToPoint(current);
+                    bool inside = currentDistance >= 0f;
+                    if (inside != (previousDistance >= 0f))
+                        output[outputCount++] = previous + (current - previous)
+                            * (previousDistance / (previousDistance - currentDistance));
+                    if (inside)
+                        output[outputCount++] = current;
+                    previous = current;
+                    previousDistance = currentDistance;
+                }
+                count = outputCount;
+                if (count < 3)
+                    return 0f;
+                Vector3[] swap = input;
+                input = output;
+                output = swap;
+            }
+
+            Vector3 first = gameplayCamera.WorldToViewportPoint(input[0]);
+            Vector3 last = gameplayCamera.WorldToViewportPoint(input[1]) - first;
+            float twiceArea = 0f;
+            for (int i = 2; i < count; i++)
+            {
+                Vector3 next = gameplayCamera.WorldToViewportPoint(input[i]) - first;
+                twiceArea += last.x * next.y - last.y * next.x;
+                last = next;
+            }
+            return Mathf.Abs(twiceArea) * 0.5f * gameplayCamera.pixelWidth * gameplayCamera.pixelHeight;
         }
 
         private void GetWallGeometry(out Vector3 center, out Vector3 halfX, out Vector3 halfY, out Vector3 halfZ)

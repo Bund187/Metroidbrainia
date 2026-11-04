@@ -40,6 +40,7 @@ namespace Metroidbrainia
         private bool lockedFeedbackShown;
         private bool lockedInteraction;
         private bool initialized;
+        private bool initialCanOpenByHand;
         private const float AngleTolerance = 0.1f;
         private const float DirectionSampleAngle = 5f;
 
@@ -68,7 +69,26 @@ namespace Metroidbrainia
             pointInHinge = doorHinge.InverseTransformPoint(interactionPoint.position);
             baseKnobPosition = knob.localPosition;
             baseKnobRotation = knob.localRotation;
+            initialCanOpenByHand = canOpenByHand;
             initialized = true;
+        }
+
+        public void RestoreOpenState(bool open)
+        {
+            if (!initialized || doorHinge == null)
+                return;
+            captured = false;
+            autoOpening = false;
+            closing = false;
+            lockedInteraction = false;
+            lockedFeedbackShown = false;
+            angleVelocity = 0f;
+            RestoreKnob();
+            canOpenByHand = open || initialCanOpenByHand;
+            openDirection = scriptedOpenDirection == ScriptedDoorOpenDirection.Negative ? -1f : 1f;
+            currentAngle = open ? openDirection * openAngle : 0f;
+            IsOpen = open;
+            ApplyAngle();
         }
 
         public bool TryBeginInteraction(Camera playerCamera, Collider hitCollider)

@@ -27,6 +27,38 @@ MonoBehaviour:
     m_Key: pause.language
     m_Metadata:
       m_Items: []
+  - m_Id: 7267501757259776
+    m_Key: title.newGame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7267648146857984
+    m_Key: title.options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7267723912765440
+    m_Key: title.continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7267773808205824
+    m_Key: title.quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7267868331040768
+    m_Key: title.newGameWarning
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7267983091392512
+    m_Key: title.yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7268075261222912
+    m_Key: title.no
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7268141900324864
+    m_Key: title.loading
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
