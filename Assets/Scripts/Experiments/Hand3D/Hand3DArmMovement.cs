@@ -122,13 +122,15 @@ namespace Metroidbrainia.Hand3DExperiment
             Mathf.Clamp(position.x, horizontalScreenLimits.x, horizontalScreenLimits.y),
             Mathf.Clamp(position.y, verticalScreenLimits.x, verticalScreenLimits.y));
 
-        private void LateUpdate()
+        private void LateUpdate() => UpdateMovement(Time.deltaTime);
+
+        private void UpdateMovement(float deltaTime)
         {
-            if (!initialized || Time.deltaTime <= 0f || !controlling && !returning) return;
+            if (!initialized || deltaTime <= 0f || (!controlling && !returning)) return;
             if (returning)
             {
                 screenPosition = Vector2.SmoothDamp(screenPosition, restScreenPosition, ref returnVelocity,
-                    returnSmoothTime, Mathf.Infinity, Time.deltaTime);
+                    returnSmoothTime, Mathf.Infinity, deltaTime);
                 // The authored rest pose can be outside the interactive screen limits, just like ArmView.
                 if (Vector2.Scale(screenPosition - restScreenPosition, referenceResolution).sqrMagnitude < 0.01f)
                 {
@@ -140,7 +142,7 @@ namespace Metroidbrainia.Hand3DExperiment
             }
             else
             {
-                float weight = movementSmoothing > 0f ? 1f - Mathf.Exp(-Time.deltaTime / movementSmoothing) : 1f;
+                float weight = movementSmoothing > 0f ? 1f - Mathf.Exp(-deltaTime / movementSmoothing) : 1f;
                 screenPosition = Vector2.Lerp(screenPosition, targetScreenPosition, weight);
             }
             RestoreRestPose();
@@ -203,3 +205,4 @@ namespace Metroidbrainia.Hand3DExperiment
         }
     }
 }
+
