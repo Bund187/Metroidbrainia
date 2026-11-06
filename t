@@ -1,0 +1,583 @@
+Assets/AddressableAssetsData.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/AddressableAssetsData.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/AddressableAssetsData.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/AddressableAssetsData/AddressableAssetSettings.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/AddressableAssetsData/AddressableAssetSettings.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/AddressableAssetsData/AddressableAssetSettings.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/AddressableAssetsData/AssetGroupTemplates.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/AddressableAssetsData/AssetGroupTemplates.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/AddressableAssetsData/AssetGroupTemplates.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/AddressableAssetsData/AssetGroupTemplates/Packed Assets.asset:56: trailing whitespace.
+[32m+[m[32m    m_AssemblyName:[m[41m [m
+Assets/AddressableAssetsData/AssetGroupTemplates/Packed Assets.asset:57: trailing whitespace.
+[32m+[m[32m    m_ClassName:[m[41m [m
+Assets/AddressableAssetsData/AssetGroupTemplates/Packed Assets.asset:69: trailing whitespace.
+[32m+[m[32m    m_Id:[m[41m [m
+Assets/AddressableAssetsData/AssetGroupTemplates/Packed Assets.asset:71: trailing whitespace.
+[32m+[m[32m    m_Id:[m[41m [m
+Assets/AddressableAssetsData/AssetGroupTemplates/Packed Assets.asset:74: trailing whitespace.
+[32m+[m[32m    m_AssemblyName:[m[41m [m
+Assets/AddressableAssetsData/AssetGroupTemplates/Packed Assets.asset:75: trailing whitespace.
+[32m+[m[32m    m_ClassName:[m[41m [m
+Assets/AddressableAssetsData/AssetGroupTemplates/Packed Assets.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/AddressableAssetsData/AssetGroupTemplates/Packed Assets.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/AddressableAssetsData/AssetGroupTemplates/Packed Assets.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Localization-Assets-Shared.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Localization-Assets-Shared.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Localization-Assets-Shared.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Localization-Locales.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Localization-Locales.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Localization-Locales.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Localization-String-Tables-English (en).asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Localization-String-Tables-English (en).asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Localization-String-Tables-English (en).asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Localization-String-Tables-Spanish (Spain) (es-ES).asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Localization-String-Tables-Spanish (Spain) (es-ES).asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Localization-String-Tables-Spanish (Spain) (es-ES).asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Default Local Group_BundledAssetGroupSchema.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Default Local Group_BundledAssetGroupSchema.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Default Local Group_BundledAssetGroupSchema.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Default Local Group_ContentUpdateGroupSchema.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Default Local Group_ContentUpdateGroupSchema.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Default Local Group_ContentUpdateGroupSchema.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-Assets-Shared_BundledAssetGroupSchema.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-Assets-Shared_BundledAssetGroupSchema.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-Assets-Shared_BundledAssetGroupSchema.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-Assets-Shared_ContentUpdateGroupSchema.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-Assets-Shared_ContentUpdateGroupSchema.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-Assets-Shared_ContentUpdateGroupSchema.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-Assets-Shared_LocalizationGroupSchema.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-Assets-Shared_LocalizationGroupSchema.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-Assets-Shared_LocalizationGroupSchema.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-Locales_BundledAssetGroupSchema.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-Locales_BundledAssetGroupSchema.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-Locales_BundledAssetGroupSchema.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-Locales_ContentUpdateGroupSchema.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-Locales_ContentUpdateGroupSchema.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-Locales_ContentUpdateGroupSchema.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-Locales_LocalizationGroupSchema.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-Locales_LocalizationGroupSchema.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-Locales_LocalizationGroupSchema.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-String-Tables-English (en)_BundledAssetGroupSchema.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-String-Tables-English (en)_BundledAssetGroupSchema.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-String-Tables-English (en)_BundledAssetGroupSchema.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-String-Tables-English (en)_ContentUpdateGroupSchema.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-String-Tables-English (en)_ContentUpdateGroupSchema.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-String-Tables-English (en)_ContentUpdateGroupSchema.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-String-Tables-English (en)_LocalizationGroupSchema.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-String-Tables-English (en)_LocalizationGroupSchema.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-String-Tables-English (en)_LocalizationGroupSchema.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-String-Tables-Spanish (Spain) (es-ES)_BundledAssetGroupSchema.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-String-Tables-Spanish (Spain) (es-ES)_BundledAssetGroupSchema.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-String-Tables-Spanish (Spain) (es-ES)_BundledAssetGroupSchema.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-String-Tables-Spanish (Spain) (es-ES)_ContentUpdateGroupSchema.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-String-Tables-Spanish (Spain) (es-ES)_ContentUpdateGroupSchema.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-String-Tables-Spanish (Spain) (es-ES)_ContentUpdateGroupSchema.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-String-Tables-Spanish (Spain) (es-ES)_LocalizationGroupSchema.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-String-Tables-Spanish (Spain) (es-ES)_LocalizationGroupSchema.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-String-Tables-Spanish (Spain) (es-ES)_LocalizationGroupSchema.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/AddressableAssetsData/DataBuilders.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/AddressableAssetsData/DataBuilders.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/AddressableAssetsData/DataBuilders.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/AddressableAssetsData/DataBuilders/BuildScriptFastMode.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/AddressableAssetsData/DataBuilders/BuildScriptFastMode.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/AddressableAssetsData/DataBuilders/BuildScriptFastMode.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/AddressableAssetsData/DataBuilders/BuildScriptPackedMode.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/AddressableAssetsData/DataBuilders/BuildScriptPackedMode.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/AddressableAssetsData/DataBuilders/BuildScriptPackedMode.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/AddressableAssetsData/DataBuilders/BuildScriptPackedPlayMode.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/AddressableAssetsData/DataBuilders/BuildScriptPackedPlayMode.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/AddressableAssetsData/DataBuilders/BuildScriptPackedPlayMode.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/AddressableAssetsData/DefaultObject.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/AddressableAssetsData/DefaultObject.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/AddressableAssetsData/DefaultObject.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Animations.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Animations.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Animations.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Animations/Arm.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Animations/Arm.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Animations/Arm.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Animations/Television.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Animations/Television.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Animations/Television.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Animations/Television/TV_News_Test.anim:192: trailing whitespace.
+[32m+[m[32m    path:[m[41m [m
+Assets/Animations/Television/TV_News_Test.anim.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Animations/Television/TV_News_Test.anim.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Animations/Television/TV_News_Test.anim.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Animations/Television/TelevisionGif_Test-Sheet_0.controller:69: trailing whitespace.
+[32m+[m[32m  m_Tag:[m[41m [m
+Assets/Animations/Television/TelevisionGif_Test-Sheet_0.controller:70: trailing whitespace.
+[32m+[m[32m  m_SpeedParameter:[m[41m [m
+Assets/Animations/Television/TelevisionGif_Test-Sheet_0.controller:71: trailing whitespace.
+[32m+[m[32m  m_MirrorParameter:[m[41m [m
+Assets/Animations/Television/TelevisionGif_Test-Sheet_0.controller:72: trailing whitespace.
+[32m+[m[32m  m_CycleOffsetParameter:[m[41m [m
+Assets/Animations/Television/TelevisionGif_Test-Sheet_0.controller:73: trailing whitespace.
+[32m+[m[32m  m_TimeParameter:[m[41m [m
+Assets/Animations/Television/TelevisionGif_Test-Sheet_0.controller.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Animations/Television/TelevisionGif_Test-Sheet_0.controller.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Animations/Television/TelevisionGif_Test-Sheet_0.controller.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Art Deco Furniture.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Art Deco Furniture.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Art Deco Furniture.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Fonts.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Fonts.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Fonts.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Fonts/Calittra SDF.asset:22: trailing whitespace.
+[32m+[m[32m  m_LockedProperties:[m[41m [m
+Assets/Fonts/Calittra SDF.asset:133: trailing whitespace.
+[32m+[m[32m  m_MipmapLimitGroupName:[m[41m [m
+Assets/Fonts/Calittra SDF.asset:150: trailing whitespace.
+[32m+[m[32m  m_PlatformBlob:[m[41m [m
+Assets/Fonts/Calittra SDF.asset:157: trailing whitespace.
+[32m+[m[32m    path:[m[41m [m
+Assets/Fonts/Calittra SDF.asset:196: trailing whitespace.
+[32m+[m[32m    sourceFontFileName:[m[41m [m
+Assets/Fonts/Calittra SDF.asset:207: trailing whitespace.
+[32m+[m[32m    characterSequence:[m[41m [m
+Assets/Fonts/Calittra SDF.asset:208: trailing whitespace.
+[32m+[m[32m    referencedFontAssetGUID:[m[41m [m
+Assets/Fonts/Calittra SDF.asset:209: trailing whitespace.
+[32m+[m[32m    referencedTextAssetGUID:[m[41m [m
+Assets/Fonts/Calittra SDF.asset:215: trailing whitespace.
+[32m+[m[32m  m_SourceFontFilePath:[m[41m [m
+Assets/Fonts/Calittra SDF.asset:7475: trailing whitespace.
+[32m+[m[32m    Name:[m[41m [m
+Assets/Fonts/Calittra SDF.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Fonts/Calittra SDF.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Fonts/Calittra SDF.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Fonts/Calittra.otf.meta:14: trailing whitespace.
+[32m+[m[32m  customCharacters:[m[41m [m
+Assets/Fonts/Calittra.otf.meta:20: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Fonts/Calittra.otf.meta:21: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Fonts/Calittra.otf.meta:22: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Fonts/Creativo Italic SDF.asset:24: trailing whitespace.
+[32m+[m[32m  m_MipmapLimitGroupName:[m[41m [m
+Assets/Fonts/Creativo Italic SDF.asset:41: trailing whitespace.
+[32m+[m[32m  m_PlatformBlob:[m[41m [m
+Assets/Fonts/Creativo Italic SDF.asset:48: trailing whitespace.
+[32m+[m[32m    path:[m[41m [m
+Assets/Fonts/Creativo Italic SDF.asset:87: trailing whitespace.
+[32m+[m[32m    sourceFontFileName:[m[41m [m
+Assets/Fonts/Creativo Italic SDF.asset:98: trailing whitespace.
+[32m+[m[32m    characterSequence:[m[41m [m
+Assets/Fonts/Creativo Italic SDF.asset:99: trailing whitespace.
+[32m+[m[32m    referencedFontAssetGUID:[m[41m [m
+Assets/Fonts/Creativo Italic SDF.asset:100: trailing whitespace.
+[32m+[m[32m    referencedTextAssetGUID:[m[41m [m
+Assets/Fonts/Creativo Italic SDF.asset:106: trailing whitespace.
+[32m+[m[32m  m_SourceFontFilePath:[m[41m [m
+Assets/Fonts/Creativo Italic SDF.asset:164: trailing whitespace.
+[32m+[m[32m    Name:[m[41m [m
+Assets/Fonts/Creativo Italic SDF.asset:209: trailing whitespace.
+[32m+[m[32m  m_LockedProperties:[m[41m [m
+Assets/Fonts/Creativo Italic SDF.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Fonts/Creativo Italic SDF.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Fonts/Creativo Italic SDF.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Fonts/Creativo Italic.otf.meta:14: trailing whitespace.
+[32m+[m[32m  customCharacters:[m[41m [m
+Assets/Fonts/Creativo Italic.otf.meta:20: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Fonts/Creativo Italic.otf.meta:21: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Fonts/Creativo Italic.otf.meta:22: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Fonts/Creativo Regular SDF.asset:41: trailing whitespace.
+[32m+[m[32m    sourceFontFileName:[m[41m [m
+Assets/Fonts/Creativo Regular SDF.asset:52: trailing whitespace.
+[32m+[m[32m    characterSequence:[m[41m [m
+Assets/Fonts/Creativo Regular SDF.asset:53: trailing whitespace.
+[32m+[m[32m    referencedFontAssetGUID:[m[41m [m
+Assets/Fonts/Creativo Regular SDF.asset:54: trailing whitespace.
+[32m+[m[32m    referencedTextAssetGUID:[m[41m [m
+Assets/Fonts/Creativo Regular SDF.asset:60: trailing whitespace.
+[32m+[m[32m  m_SourceFontFilePath:[m[41m [m
+Assets/Fonts/Creativo Regular SDF.asset:883: trailing whitespace.
+[32m+[m[32m    Name:[m[41m [m
+Assets/Fonts/Creativo Regular SDF.asset:928: trailing whitespace.
+[32m+[m[32m  m_LockedProperties:[m[41m [m
+Assets/Fonts/Creativo Regular SDF.asset:1039: trailing whitespace.
+[32m+[m[32m  m_MipmapLimitGroupName:[m[41m [m
+Assets/Fonts/Creativo Regular SDF.asset:1056: trailing whitespace.
+[32m+[m[32m  m_PlatformBlob:[m[41m [m
+Assets/Fonts/Creativo Regular SDF.asset:1063: trailing whitespace.
+[32m+[m[32m    path:[m[41m [m
+Assets/Fonts/Creativo Regular SDF.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Fonts/Creativo Regular SDF.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Fonts/Creativo Regular SDF.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Fonts/Creativo Regular.otf.meta:14: trailing whitespace.
+[32m+[m[32m  customCharacters:[m[41m [m
+Assets/Fonts/Creativo Regular.otf.meta:20: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Fonts/Creativo Regular.otf.meta:21: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Fonts/Creativo Regular.otf.meta:22: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Fonts/GrapeSoda SDF.asset:22: trailing whitespace.
+[32m+[m[32m  m_LockedProperties:[m[41m [m
+Assets/Fonts/GrapeSoda SDF.asset:150: trailing whitespace.
+[32m+[m[32m    sourceFontFileName:[m[41m [m
+Assets/Fonts/GrapeSoda SDF.asset:161: trailing whitespace.
+[32m+[m[32m    characterSequence:[m[41m [m
+Assets/Fonts/GrapeSoda SDF.asset:162: trailing whitespace.
+[32m+[m[32m    referencedFontAssetGUID:[m[41m [m
+Assets/Fonts/GrapeSoda SDF.asset:163: trailing whitespace.
+[32m+[m[32m    referencedTextAssetGUID:[m[41m [m
+Assets/Fonts/GrapeSoda SDF.asset:169: trailing whitespace.
+[32m+[m[32m  m_SourceFontFilePath:[m[41m [m
+Assets/Fonts/GrapeSoda SDF.asset:227: trailing whitespace.
+[32m+[m[32m    Name:[m[41m [m
+Assets/Fonts/GrapeSoda SDF.asset:274: trailing whitespace.
+[32m+[m[32m  m_MipmapLimitGroupName:[m[41m [m
+Assets/Fonts/GrapeSoda SDF.asset:291: trailing whitespace.
+[32m+[m[32m  m_PlatformBlob:[m[41m [m
+Assets/Fonts/GrapeSoda SDF.asset:298: trailing whitespace.
+[32m+[m[32m    path:[m[41m [m
+Assets/Fonts/GrapeSoda SDF.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Fonts/GrapeSoda SDF.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Fonts/GrapeSoda SDF.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Fonts/GrapeSoda.ttf.meta:14: trailing whitespace.
+[32m+[m[32m  customCharacters:[m[41m [m
+Assets/Fonts/GrapeSoda.ttf.meta:20: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Fonts/GrapeSoda.ttf.meta:21: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Fonts/GrapeSoda.ttf.meta:22: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/HauntedHospital_1_1.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/HauntedHospital_1_1.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/HauntedHospital_1_1.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/House Furniture Pack.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/House Furniture Pack.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/House Furniture Pack.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Input.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Input.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Input.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Input/ArmControls.inputactions.meta:7: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Input/ArmControls.inputactions.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Input/ArmControls.inputactions.meta:9: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Input/ArmControls.inputactions.meta:12: trailing whitespace.
+[32m+[m[32m  wrapperCodePath:[m[41m [m
+Assets/Input/ArmControls.inputactions.meta:13: trailing whitespace.
+[32m+[m[32m  wrapperClassName:[m[41m [m
+Assets/Input/ArmControls.inputactions.meta:14: trailing whitespace.
+[32m+[m[32m  wrapperCodeNamespace:[m[41m [m
+Assets/Localization.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Localization.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Localization.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Localization/Locales.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Localization/Locales.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Localization/Locales.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Localization/Locales/English (en).asset:20: trailing whitespace.
+[32m+[m[32m  m_CustomFormatCultureCode:[m[41m [m
+Assets/Localization/Locales/English (en).asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Localization/Locales/English (en).asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Localization/Locales/English (en).asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Localization/Locales/Spanish (Spain) (es-ES).asset:20: trailing whitespace.
+[32m+[m[32m  m_CustomFormatCultureCode:[m[41m [m
+Assets/Localization/Locales/Spanish (Spain) (es-ES).asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Localization/Locales/Spanish (Spain) (es-ES).asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Localization/Locales/Spanish (Spain) (es-ES).asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Localization/LocalizationSettings.asset:38: trailing whitespace.
+[32m+[m[32m      data:[m[41m [m
+Assets/Localization/LocalizationSettings.asset:46: trailing whitespace.
+[32m+[m[32m      data:[m[41m [m
+Assets/Localization/LocalizationSettings.asset:51: trailing whitespace.
+[32m+[m[32m          m_TableCollectionName:[m[41m [m
+Assets/Localization/LocalizationSettings.asset:62: trailing whitespace.
+[32m+[m[32m          m_TableCollectionName:[m[41m [m
+Assets/Localization/LocalizationSettings.asset:123: trailing whitespace.
+[32m+[m[32m        -[m[41m [m
+Assets/Localization/LocalizationSettings.asset:132: trailing whitespace.
+[32m+[m[32m      data:[m[41m [m
+Assets/Localization/LocalizationSettings.asset:135: trailing whitespace.
+[32m+[m[32m      data:[m[41m [m
+Assets/Localization/LocalizationSettings.asset:138: trailing whitespace.
+[32m+[m[32m      data:[m[41m [m
+Assets/Localization/LocalizationSettings.asset:141: trailing whitespace.
+[32m+[m[32m      data:[m[41m [m
+Assets/Localization/LocalizationSettings.asset:144: trailing whitespace.
+[32m+[m[32m      data:[m[41m [m
+Assets/Localization/LocalizationSettings.asset:151: trailing whitespace.
+[32m+[m[32m        -[m[41m [m
+Assets/Localization/LocalizationSettings.asset:159: trailing whitespace.
+[32m+[m[32m        -[m[41m [m
+Assets/Localization/LocalizationSettings.asset:167: trailing whitespace.
+[32m+[m[32m        -[m[41m [m
+Assets/Localization/LocalizationSettings.asset:176: trailing whitespace.
+[32m+[m[32m        -[m[41m [m
+Assets/Localization/LocalizationSettings.asset:203: trailing whitespace.
+[32m+[m[32m        -[m[41m [m
+Assets/Localization/LocalizationSettings.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Localization/LocalizationSettings.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Localization/LocalizationSettings.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Localization/Tables.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Localization/Tables.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Localization/Tables.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Localization/Tables/Documents.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Localization/Tables/Documents.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Localization/Tables/Documents.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Localization/Tables/Documents/Documents Shared Data.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Localization/Tables/Documents/Documents Shared Data.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Localization/Tables/Documents/Documents Shared Data.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Localization/Tables/Documents/Documents.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Localization/Tables/Documents/Documents.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Localization/Tables/Documents/Documents.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Localization/Tables/Documents/Documents_en.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Localization/Tables/Documents/Documents_en.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Localization/Tables/Documents/Documents_en.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Localization/Tables/Documents/Documents_es-ES.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Localization/Tables/Documents/Documents_es-ES.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Localization/Tables/Documents/Documents_es-ES.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Localization/Tables/InGameText.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Localization/Tables/InGameText.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Localization/Tables/InGameText.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Localization/Tables/InGameText/InGameText Shared Data.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Localization/Tables/InGameText/InGameText Shared Data.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Localization/Tables/InGameText/InGameText Shared Data.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Localization/Tables/InGameText/InGameText.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Localization/Tables/InGameText/InGameText.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Localization/Tables/InGameText/InGameText.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Localization/Tables/InGameText/InGameText_en.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Localization/Tables/InGameText/InGameText_en.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Localization/Tables/InGameText/InGameText_en.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Localization/Tables/InGameText/InGameText_es-ES.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Localization/Tables/InGameText/InGameText_es-ES.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Localization/Tables/InGameText/InGameText_es-ES.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Localization/Tables/UI.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Localization/Tables/UI.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Localization/Tables/UI.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Localization/Tables/UI/UI Shared Data.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Localization/Tables/UI/UI Shared Data.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Localization/Tables/UI/UI Shared Data.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Localization/Tables/UI/UI.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Localization/Tables/UI/UI.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Localization/Tables/UI/UI.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Localization/Tables/UI/UI_en.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Localization/Tables/UI/UI_en.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Localization/Tables/UI/UI_en.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Localization/Tables/UI/UI_es-ES.asset.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Localization/Tables/UI/UI_es-ES.asset.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Localization/Tables/UI/UI_es-ES.asset.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Models.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Models.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Models.meta:8: trailing whitespace.
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+Assets/Models/Art Deco Furniture.meta:6: trailing whitespace.
+[32m+[m[32m  userData:[m[41m [m
+Assets/Models/Art Deco Furniture.meta:7: trailing whitespace.
+[32m+[m[32m  assetBundleName:[m[41m [m
+Assets/Mod

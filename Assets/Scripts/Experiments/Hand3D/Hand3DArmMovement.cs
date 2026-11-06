@@ -38,15 +38,29 @@ namespace Metroidbrainia.Hand3DExperiment
         private bool initialized;
         private bool controlling;
         private bool returning;
+        private Hand3DModeController modes;
+        private Vector3 longitudinalAxis;
+        private Vector3 originalModelPosition;
+        private Quaternion originalModelRotation;
+        private Quaternion desiredHandInCamera;
 
         public bool IsReady => initialized;
         public Transform Hand => hand;
+        public Transform UpperArm => upperArm;
+        public Transform Forearm => forearm;
+        public Camera ArmCamera => armCamera;
+        public Hand3DModeController Modes => modes;
+        public Vector3 LongitudinalAxis => forearm.InverseTransformDirection(hand.position - forearm.position).normalized;
         public bool ControlsRotationOf(Transform bone) => bone == upperArm || bone == forearm;
 
         // The rig composes this with its wrist pose and remains the sole writer of wrist/finger rotations.
         public Quaternion HandRotationCompensation => initialized && isActiveAndEnabled
-            ? Quaternion.Inverse(hand.parent.rotation) * armCamera.transform.rotation * restHandRotationInCamera * Quaternion.Inverse(handRotation)
+            ? Quaternion.Inverse(hand.parent.rotation) * armCamera.transform.rotation * desiredHandInCamera * Quaternion.Inverse(handRotation)
             : Quaternion.identity;
+
+        public Quaternion ComposeHandRotation(Quaternion visualRotation, Quaternion poseOffset) => initialized && isActiveAndEnabled
+            ? Quaternion.Inverse(hand.parent.rotation) * armCamera.transform.rotation * desiredHandInCamera
+                * poseOffset * Quaternion.Inverse(handRotation) * visualRotation : visualRotation;
 
         private void OnEnable()
         {
@@ -59,6 +73,7 @@ namespace Metroidbrainia.Hand3DExperiment
             if (!ExperimentScope.IsAllowed(this) || armCamera == null || upperArm == null || forearm == null || hand == null
                 || upperArm == forearm || forearm == hand || !forearm.IsChildOf(upperArm) || !hand.IsChildOf(forearm)
                 || !upperArm.IsChildOf(transform) || upperArm.gameObject.scene != gameObject.scene
+                || armCamera.transform.IsChildOf(transform)
                 || hand.gameObject.scene != gameObject.scene || armCamera.gameObject.scene != gameObject.scene)
             {
                 Debug.LogError("In TestArmScene assign the pixel arm camera and UpperArm > Forearm > Hand scene chain.", this);
@@ -78,7 +93,11 @@ namespace Metroidbrainia.Hand3DExperiment
             handRotation = hand.localRotation;
             forearmPosition = forearm.localPosition;
             handPosition = hand.localPosition;
+            originalModelPosition = transform.localPosition;
+            originalModelRotation = transform.localRotation;
             restHandRotationInCamera = Quaternion.Inverse(armCamera.transform.rotation) * hand.rotation;
+            desiredHandInCamera = restHandRotationInCamera;
+            longitudinalAxis = LongitudinalAxis;
             handDepth = viewport.z;
             restScreenPosition = new Vector2(viewport.x, viewport.y);
             screenPosition = targetScreenPosition = restScreenPosition;
@@ -88,12 +107,46 @@ namespace Metroidbrainia.Hand3DExperiment
             if (bend.sqrMagnitude < 0.000001f) bend = armCamera.transform.right;
             bendDirectionInCamera = armCamera.transform.InverseTransformDirection(bend.normalized);
             initialized = true;
+            modes = GetComponent<Hand3DModeController>();
+            if (modes == null) modes = gameObject.AddComponent<Hand3DModeController>();
+            modes.Initialize(CaptureFrame());
             return true;
+        }
+
+        public ArmFrame CaptureFrame() => new ArmFrame
+        {
+            position = armCamera.transform.InverseTransformPoint(transform.position),
+            rotation = Quaternion.Inverse(armCamera.transform.rotation) * transform.rotation,
+            upper = upperArm.localRotation, forearm = forearm.localRotation,
+            hand = Quaternion.Inverse(armCamera.transform.rotation) * hand.rotation
+        };
+
+        public void ApplyFrame(ArmFrame frame)
+        {
+            transform.SetPositionAndRotation(armCamera.transform.TransformPoint(frame.position), armCamera.transform.rotation * frame.rotation);
+            upperArm.localRotation = frame.upper;
+            forearm.localRotation = frame.forearm;
+            if (initialized)
+            {
+                forearm.localPosition = forearmPosition;
+                hand.localPosition = handPosition;
+            }
+            desiredHandInCamera = frame.hand;
+        }
+
+        public void ToggleMode()
+        {
+            if (!initialized) return;
+            ArmFrame displayed = CaptureFrame();
+            displayed.hand = desiredHandInCamera;
+            modes.Toggle(displayed);
+            controlling = returning = false;
+            returnVelocity = Vector2.zero;
         }
 
         public void BeginControl()
         {
-            if (!initialized) return;
+            if (!initialized || modes.IsEditing || modes.IsTransitioning) return;
             controlling = true;
             returning = false;
             targetScreenPosition = screenPosition;
@@ -112,7 +165,7 @@ namespace Metroidbrainia.Hand3DExperiment
         // Stick input arrives integrated with deltaTime; relative mouse delta must not be integrated again.
         public void MoveHand(Vector2 displacement, bool usingMouse = false)
         {
-            if (!initialized || !controlling || displacement.sqrMagnitude == 0f) return;
+            if (!initialized || !controlling || modes.IsEditing || displacement.sqrMagnitude == 0f) return;
             Vector2 pixels = displacement * (usingMouse ? 1f : movementSpeed);
             targetScreenPosition = ClampToScreen(targetScreenPosition + new Vector2(
                 pixels.x / referenceResolution.x, pixels.y / referenceResolution.y));
@@ -126,7 +179,24 @@ namespace Metroidbrainia.Hand3DExperiment
 
         private void UpdateMovement(float deltaTime)
         {
-            if (!initialized || deltaTime <= 0f || (!controlling && !returning)) return;
+            if (!initialized || deltaTime <= 0f) return;
+            // Follow the dedicated camera after Starter Assets/Cinemachine. Never smooth camera attachment.
+            ApplyFrame(modes.TargetFrame);
+            Vector3 neutralViewport = armCamera.WorldToViewportPoint(hand.position);
+            restScreenPosition = new Vector2(neutralViewport.x, neutralViewport.y);
+            handDepth = neutralViewport.z;
+            Quaternion forearmInCamera = Quaternion.Inverse(armCamera.transform.rotation) * forearm.rotation;
+            ApplyFrame(modes.Evaluate(deltaTime, longitudinalAxis, forearmInCamera));
+            if (modes.IsEditing || modes.IsTransitioning)
+            {
+                screenPosition = targetScreenPosition = restScreenPosition;
+                return;
+            }
+            if (!controlling && !returning)
+            {
+                screenPosition = targetScreenPosition = restScreenPosition;
+                return;
+            }
             if (returning)
             {
                 screenPosition = Vector2.SmoothDamp(screenPosition, restScreenPosition, ref returnVelocity,
@@ -136,7 +206,6 @@ namespace Metroidbrainia.Hand3DExperiment
                 {
                     screenPosition = targetScreenPosition = restScreenPosition;
                     returning = false;
-                    RestoreRestPose();
                     return;
                 }
             }
@@ -145,7 +214,6 @@ namespace Metroidbrainia.Hand3DExperiment
                 float weight = movementSmoothing > 0f ? 1f - Mathf.Exp(-deltaTime / movementSmoothing) : 1f;
                 screenPosition = Vector2.Lerp(screenPosition, targetScreenPosition, weight);
             }
-            RestoreRestPose();
             Vector3 target = armCamera.ViewportToWorldPoint(new Vector3(screenPosition.x, screenPosition.y, handDepth));
             bool limited = SolveArm(target);
             if (limited && controlling)
@@ -192,6 +260,11 @@ namespace Metroidbrainia.Hand3DExperiment
         private void OnDisable()
         {
             if (initialized && upperArm != null && forearm != null && hand != null) RestoreRestPose();
+            if (initialized)
+            {
+                transform.localPosition = originalModelPosition;
+                transform.localRotation = originalModelRotation;
+            }
             initialized = controlling = returning = false;
         }
 

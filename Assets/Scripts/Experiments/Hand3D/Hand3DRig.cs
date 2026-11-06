@@ -63,6 +63,14 @@ namespace Metroidbrainia.Hand3DExperiment
         private float elapsed;
         private bool transitionPending;
         private Hand3DArmMovement armMovement;
+        private Quaternion wristOffset = Quaternion.identity;
+        private Quaternion wristFrom = Quaternion.identity;
+        private Quaternion wristTarget = Quaternion.identity;
+        private HandPose wristPose;
+        private bool wristEditing;
+        private float wristElapsed;
+        private float wristDuration = 0.2f;
+        private AnimationCurve wristEasing;
 
         public bool IsReady => initialized;
         public FingerBinding[] Fingers => fingers;
@@ -208,6 +216,7 @@ namespace Metroidbrainia.Hand3DExperiment
                 BeginTransition();
             }
             elapsed += Time.deltaTime;
+            UpdateWristOrientation(Time.deltaTime);
             float t = transitionDuration > 0f ? Mathf.SmoothStep(0f, 1f, Mathf.Clamp01(elapsed / transitionDuration)) : 1f;
             float clickWeight = poseActions != null ? poseActions.PointClickWeight : 0f;
             foreach (DrivenBone bone in driven)
@@ -219,8 +228,32 @@ namespace Metroidbrainia.Hand3DExperiment
                     rotation = Quaternion.Slerp(rotation, bone.joint.Flexed, clickWeight);
                 bone.visualRotation = rotation;
                 bone.transform.localRotation = armMovement != null && bone.transform == armMovement.Hand
-                    ? armMovement.HandRotationCompensation * rotation : rotation;
+                    ? armMovement.ComposeHandRotation(rotation, wristOffset) : rotation;
             }
+        }
+
+        private void UpdateWristOrientation(float deltaTime)
+        {
+            HandPose pose = poseRecognizer != null ? poseRecognizer.CurrentPose : null;
+            bool editing = armMovement != null && armMovement.Modes != null && armMovement.Modes.IsEditing;
+            Quaternion target = !editing && pose != null && pose.UseExplorationWrist ? pose.ExplorationWrist : Quaternion.identity;
+            if (pose != wristPose || editing != wristEditing || Quaternion.Angle(target, wristTarget) > 0.01f)
+            {
+                if (pose != null)
+                {
+                    wristDuration = pose.WristTransitionDuration;
+                    wristEasing = pose.WristTransitionEasing;
+                }
+                wristPose = pose;
+                wristEditing = editing;
+                wristFrom = wristOffset;
+                wristTarget = target;
+                wristElapsed = 0f;
+            }
+            wristElapsed += deltaTime;
+            float t = wristDuration > 0f ? Mathf.Clamp01(wristElapsed / wristDuration) : 1f;
+            float weight = t >= 1f ? 1f : wristEasing != null ? Mathf.Clamp01(wristEasing.Evaluate(t)) : Mathf.SmoothStep(0f, 1f, t);
+            wristOffset = Quaternion.Slerp(wristFrom, wristTarget, weight);
         }
 
         private void OnDisable()
@@ -236,6 +269,8 @@ namespace Metroidbrainia.Hand3DExperiment
             lookup.Clear();
             initialized = false;
             transitionPending = false;
+            wristOffset = wristFrom = wristTarget = Quaternion.identity;
+            wristPose = null;
         }
     }
 }

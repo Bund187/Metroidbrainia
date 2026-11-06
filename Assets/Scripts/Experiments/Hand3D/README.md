@@ -5,10 +5,10 @@ Uso exclusivo en `TestArmScene`. No requiere cambios en `Prototype`, assets WRAD
 ## Montaje
 
 1. Abre `TestArmScene`. Deshabilita únicamente su instancia de `FirstPersonArmController`, que actualmente no tiene `ArmView`. No apliques ese cambio al prefab de PlayerCapsule.
-2. Selecciona la instancia de escena `armsFBX`, por encima de los huesos de la mano elegida. Usa `GameObject > Metroidbrainia > Test Hand 3D > Add Experimental Controllers`. Esta operación explícita, con Undo, añade y conecta seis componentes locales; no aplica nada al asset importado.
+2. Selecciona la instancia de escena `armsFBX`, por encima de los huesos de la mano elegida. Usa `GameObject > Metroidbrainia > Test Hand 3D > Add Experimental Controllers`. Esta operación explícita, con Undo, añade y conecta los componentes experimentales locales; no aplica nada al asset importado.
 3. En `Hand3DInputController`, asigna el `PlayerInput` y `StarterAssetsInputs` de PlayerCapsule en esta escena. Mouse Sensitivity = 1 y Gamepad Sensitivity = 1 son los valores iniciales; ambos se ajustan en este componente.
 4. En `Hand3DArmMovement`, asigna la cámara que renderiza `RT_PixelArm` (en el archivo actual se llama `ArmCamera`), los tres huesos de la cadena Upper Arm > Forearm > Hand y opcionalmente un Elbow Hint. WRAD contiene `shoulder.r`, `forearm.r` y `wrist.r`: verifica esa jerarquía y usa el mismo lado en todo el montaje. Los huesos `.l` son la alternativa izquierda.
-5. No hacen falta componentes ni pivotes adicionales. Conserva la cadena y ajusta los parámetros de movimiento en pantalla descritos abajo. La cámara y la RenderTexture no se modifican.
+5. Añade Hand3DModeController mediante el botón del Inspector de Hand3DArmMovement. Conserva la cadena de huesos; no hace falta reparentarla ni añadir pivotes. Sigue la configuración de modos descrita abajo. La cámara y la RenderTexture no se modifican.
 6. En `Hand3DRig`, asigna opcionalmente el Animator de esta instancia si escribe sus huesos. El rig lo suspende durante la prueba y restaura su estado al deshabilitarse.
 
 ## Capturar dedos
@@ -46,60 +46,96 @@ Regresión manual: entra en OK con E/R desde extendidos; pulsa F para salir y F 
 
 Point admite la misma configuración opcional. No incluyas Upper Arm/Forearm en los overrides: los controla el movimiento. Si ajustas la muñeca, deja su posición de reposo correcta antes de Play. Ninguna previsualización cambia los estados lógicos.
 
+## Modos y configuración visual
+
+En la instancia `armsFBX` de TestArmScene, pulsa **Add Mode Controller (preserve finger data)** en `Hand3DArmMovement`. El botón añade `Hand3DModeController` con Undo y captura la exploración actual. También puedes reutilizar el menú **Add Experimental Controllers**, que conserva componentes y datos existentes. Si falta el componente al iniciar Play se crea uno temporal, pero avisa de las capturas pendientes: para conservar configuraciones, añádelo fuera de Play y guarda la escena.
+
+`Exploration` es el modo inicial. `RB` o cualquiera de las teclas Shift alternan con `HandEdit` una sola vez por pulsación. El Inspector muestra el modo actual durante Play. Transition Duration controla la duración del cambio; alternar a mitad de transición empieza desde la postura mostrada.
+
+### Capturar las referencias visuales
+
+1. Fuera de Play y con dedos neutros, coloca la instancia y sus articulaciones para reproducir la imagen 1: brazo desde abajo a la derecha, mano hacia centro-izquierda y palma hacia la izquierda. Pulsa **Capture Exploration**. Se guardan posición/rotación del modelo respecto a ArmCamera, rotaciones locales de hombro/antebrazo y orientación de muñeca respecto a cámara. No se capturan dedos ni se asumen valores cero.
+2. Coloca el brazo para la imagen 2: antebrazo elevado, palma hacia la cámara y mano en una posición frontal estable. Pulsa **Capture HandEdit / Right Limit**. Esta postura es el extremo derecho, ángulo cero, no el centro del recorrido. No cambies escalas ni longitudes para lograrla.
+3. Pulsa **Preview HandEdit / Right Limit**, gira solo el antebrazo sobre el eje longitudinal que une codo y muñeca hasta mostrar el dorso (imagen 3) y pulsa **Capture Left Inspection Limit**. La captura calcula el ángulo y el sentido usando el eje real del hueso; avisa si detecta flexión lateral en lugar de un giro longitudinal. Usa ambas previsualizaciones para comprobar los extremos. El valor inicial de -180 grados es orientativo hasta calibrarlo con este paso.
+4. Pulsa **Preview Exploration**, comprueba los dedos y guarda TestArmScene. Estas herramientas respetan Undo y marcan la escena como modificada; no cambian el FBX ni aplican overrides al asset importado.
+
+Los campos de ambas configuraciones son editables en el Inspector. Las posiciones se expresan en el espacio de ArmCamera y las rotaciones de huesos en sus espacios locales reales. Por eso permanecen relativas a pantalla al caminar o girar. El seguimiento de cámara no se suaviza; solo se suaviza el movimiento voluntario y las transiciones.
+
+### Orientaciones especiales de OK y Point
+
+Estas capturas son independientes de **Capture Visual Overrides** y no reemplazan su contenido:
+
+1. Pulsa **Preview Exploration** en el controlador de modos.
+2. Previsualiza la combinación y los overrides ya guardados de OK en el reconocedor.
+3. Gira únicamente la muñeca/mano para que la O mire al jugador, como en la imagen 4.
+4. En la entrada OK pulsa **Capture Exploration Wrist (separate from finger overrides)**. Esto activa Use Exploration Wrist y guarda un offset respecto a la muñeca neutra de Exploration.
+5. Repite desde Preview Exploration para Point: previsualiza sus dedos, alinea la mano con el antebrazo y orienta el dorso/índice como en la imagen 5. Captura en la entrada Point.
+6. Usa **Preview Exploration Wrist**, ajusta Wrist Transition Duration / Wrist Transition Easing y guarda. Para desactivar una orientación, desmarca Use Exploration Wrist. Las poses nuevas admiten los mismos campos y herramientas.
+
+No se incluyen rotaciones universales para OK/Point ni se cambian sus capturas anteriores: calibra las nuevas orientaciones sobre el modelo de tu escena. Captura siempre Exploration antes de las orientaciones de poses; si cambias después la orientación neutra, revisa esos offsets.
+
+En HandEdit las orientaciones adicionales de Exploration se desvanecen hacia identidad. Los overrides de dedos siguen funcionando. Al salir se recupera automáticamente el offset de la pose actual. Si una pose deja de reconocerse, vuelve suavemente a identidad, usando la duración anterior. El clic de Point sigue componiéndose sobre el índice.
+
 ## Controles
 
 | Función | Gamepad | Teclado / ratón |
 |---|---|---|
+| Alternar Exploration / HandEdit | RB | Shift |
 | Pulgar | R3 | E |
 | Índice | D-Pad Up | R |
 | Corazón | D-Pad Right | T |
 | Anular | D-Pad Down | F |
 | Meñique | D-Pad Left | G |
-| Mover mano en pantalla | RT mantenido + Right Stick | RMB mantenido + Mouse Delta |
-| Acción | LT, sin requerir RT | Pulsación de LMB |
+| Movimiento en Exploration | R2 + Right Stick | RMB + Mouse Delta |
+| Giro longitudinal en HandEdit | Left Stick horizontal | A / D |
+| Acción en ambos modos | L2 | LMB |
 
-Cada pulsación alterna el estado de un dedo. Las acciones y los dedos funcionan sin modo de movimiento. RMB no ejecuta acciones. Soltar RMB/RT inicia el regreso automático. Se eliminan la orientación por WASD/Left Stick, la profundidad manual y el reset por Tab/L3.
+Mantener RB/Shift no repite cambios. No hay giro vertical W/S. R2/RMB no mueve el brazo en HandEdit. Tras un cambio con R2/RMB mantenido debes soltarlo antes de iniciar un nuevo movimiento libre. Los dedos y acciones no requieren modo de movimiento. RMB no ejecuta acciones. Soltar R2/RMB en Exploration inicia el retorno suave, sin cambiar la combinación de dedos.
 
-El mapa `TestHand3D` es local y se crea en runtime. El PlayerInput utiliza una copia privada de las acciones. Mientras controlas el brazo se bloquean Look/Move/Jump/Sprint; al soltar se restauran sus estados previos. No se editan InputActions compartidas. LT no activa Sprint en esta instancia.
+Shift queda reservado al cambio de modo: se elimina su binding de Sprint solo en la copia privada de acciones del experimento (también se conserva la exclusión de L2/Sprint). No se modifican los assets de Input System compartidos.
 
-## Movimiento 3D
+## Responsabilidad de cada transformación
 
-La referencia es `ArmView` y `FirstPersonArmController` del sistema 2D, que se conservan sin modificaciones: objetivo acumulado en pantalla, límites y retorno con SmoothDamp. La mano ahora asciende al mover arriba, desciende al mover abajo y combina ambos ejes en diagonal. El objetivo se proyecta mediante la cámara del brazo a la profundidad inicial de la muñeca.
-
-La IK analítica de dos segmentos adapta el hombro y el codo al objetivo. Solo gira articulaciones: no cambia escalas, longitudes ni offsets del esqueleto para extenderlo. Un objetivo más lejano que el alcance real se limita a la distancia físicamente alcanzable. Por eso puede no alcanzar todas las esquinas del recorrido 2D; ajusta los límites de pantalla a la cobertura real del modelo. No hay control manual de profundidad ni estiramiento artificial.
-
-La orientación inicial de la mano se conserva respecto a la cámara mediante una compensación calculada por el movimiento y compuesta por `Hand3DRig` al escribir la muñeca. El rig sigue siendo el único escritor de la rotación final de muñeca y dedos. Las transiciones se calculan en el espacio de pose, antes de esa compensación; un Visual Override de muñeca se combina con ella, sin acumulación. Ningún retorno cambia estados de dedos, reconocimiento, overrides ni acciones. Las configuraciones ya capturadas se conservan.
-
-Al soltar, el objetivo vuelve suavemente al reposo, incluso si la postura inicial está fuera de los límites interactivos. Al terminar se recuperan exactamente las rotaciones y posiciones locales iniciales de la cadena. Si vuelves a mantener RMB/RT durante el retorno, continúas desde la posición actual.
-
-## Inspector
-
-Conserva las referencias existentes de `Hand3DArmMovement`: Arm Camera, Upper Arm, Forearm, Hand y el Elbow Hint opcional. No reasignes ni vuelvas a capturar los dedos. La posición de reposo se toma de la instancia al iniciar Play: para cambiarla, edita la postura inicial del brazo en la escena.
-
-| Componente / parámetro | Valor inicial | Efecto |
+| Transform / capa | Responsable | Función |
 |---|---|---|
-| Input / Mouse Sensitivity | 1 | Unidades de referencia por píxel de ratón; Mouse Delta no se multiplica por deltaTime |
-| Input / Gamepad Sensitivity | 1 | Multiplicador del stick derecho, integrado con deltaTime |
-| Movement / Movement Speed | 900 | Unidades de referencia por segundo a máxima entrada del stick |
-| Movement / Reference Resolution | 1920 × 1080 | Referencia de control, independiente de RT_PixelArm |
-| Movement / Movement Smoothing | 0.08 s | Suavizado del seguimiento; cero es inmediato |
-| Movement / Horizontal Screen Limits | 0.06–0.94 | Límites normalizados de pantalla para la muñeca |
-| Movement / Vertical Screen Limits | 0.06–0.94 | Límites normalizados de pantalla para la muñeca |
-| Movement / Return Smooth Time | 0.18 s | Tiempo de suavizado del regreso; menor significa más rápido |
+| Instancia armsFBX | Hand3DArmMovement | Sigue a ArmCamera con el offset capturado; transición entre configuraciones |
+| Upper Arm y Forearm | Hand3DArmMovement | Postura de modo, IK de pantalla y giro longitudinal alrededor de codo-muñeca |
+| Wrist / Hand | Hand3DRig | Una única escritura final: orientación del modo, offset de pose y override visual de muñeca si existe |
+| Huesos de dedos | Hand3DRig | Extended/Flexed, Visual Overrides y clic de Point |
+| Hand3DModeController | Sin escrituras de Transform en runtime | Estado, configuraciones capturadas, transición y límites de inspección |
 
-Los límites se aplican al objetivo de la muñeca. Deja margen para el volumen de los dedos. El alcance está determinado por las longitudes reales de Upper Arm–Forearm–Hand, sin parámetro de estiramiento. El Elbow Hint permite ajustar el lado hacia el que se dobla el codo sin modificar el modelo original.
+El movimiento se ejecuta después de Starter Assets/Cinemachine (orden 100); el rig compone después la muñeca/dedos (orden 200). Los giros no se acumulan sobre el resultado anterior. La inspección usa el eje real entre antebrazo y muñeca; por eso la muñeca permanece en el mismo punto al girar. No se reparenta ni escala el modelo.
 
-## Verificación en Play
+## Bloqueo del jugador
 
-1. Mantén RT/RMB y recorre horizontal, vertical y diagonalmente la pantalla. Arriba debe subir la mano, sin controlar directamente la profundidad. Comprueba flexión natural, límites y ausencia de cambios de escala/longitud.
-2. Prueba los extremos con ratón y gamepad. Al invertir la dirección desde el límite, la mano debe responder sin recorrer un objetivo invisible.
-3. Suelta RT/RMB: debe regresar suavemente a la postura inicial. Vuelve a activar durante el regreso: debe continuar desde la posición visible, sin saltos.
-4. Activa OK con E/R desde extendidos, mueve la mano y suelta: debe conservar OK y sus overrides durante todo el recorrido y retorno.
-5. Activa Point con E/T/F/G desde extendidos, lleva la mano a una esquina y pulsa LT/LMB: debe ejecutar el clic. Repite sin mantener RT/RMB; RMB por sí solo no ejecuta acciones.
-6. Alterna dedos mientras mueves y durante el regreso. Comprueba transiciones normales, cambio de gesto, clics y una futura pose con overrides de muñeca si la utilizas.
-7. WASD/Left Stick ya no orientan el brazo; Tab/L3 ya no lo restablecen. En modo de brazo, las entradas bloqueadas no deben mover personaje ni cámara; fuera del modo recuperan su funcionamiento normal.
-8. Pausa y reanuda, cambia el foco y prueba varias tasas de fotogramas. El stick conserva velocidad por segundo; el ratón conserva recorrido por píxel.
-9. Comprueba PixelArmCamera/ArmCamera y RT_PixelArm. Verifica aparte `Prototype` y las interacciones existentes: no se ha modificado ninguno de sus scripts ni assets.
+El experimento mantiene su mapa de entrada independiente y una copia privada de PlayerInput.actions. En HandEdit deshabilita Look, Move, Jump y Sprint de esa copia, limpia StarterAssetsInputs y suspende temporalmente el FirstPersonController de la instancia para evitar movimiento residual y gravedad durante la inspección. Guarda y restaura su estado enabled anterior. No desactiva PlayerInput ni las acciones de mano.
 
-Las herramientas y componentes siguen limitados a TestArmScene. No se añaden paquetes, componentes, pivotes ni sistemas paralelos.
+En Exploration, fuera del movimiento de brazo, restaura los controles anteriores. Durante R2/RMB bloquea las mismas acciones compartidas para que ratón/sticks no muevan simultáneamente cámara o jugador. El bloqueo se conserva al pasar de movimiento a edición y se libera al salir. Perder foco o pausar no reinicia dedos; los tiempos de transición no avanzan con deltaTime cero. No se modifican scripts de Starter Assets.
 
+## Parámetros útiles
+
+- **Exploration / HandEdit**: configuraciones completas capturables, sin coordenadas universales.
+- **Transition Duration**: cambio entre modos.
+- **Minimum Inspection Angle**: extremo izquierdo; **Maximum Inspection Angle** permanece en cero porque el inicio es el extremo derecho. **Inspection Axis Sign** lo calcula la captura del límite.
+- **Inspection Speed / Smoothing**: grados por segundo y suavizado del giro longitudinal.
+- **Movement Speed**: 900 unidades de referencia/s por defecto para el stick.
+- **Movement Smoothing**: 0.08 s por defecto; cero es inmediato.
+- **Reference Resolution**: 1920 × 1080, independiente de RT_PixelArm.
+- **Horizontal / Vertical Screen Limits**: límites normalizados de la muñeca (0.06–0.94 por defecto); reserva margen para los dedos.
+- **Return Smooth Time**: 0.18 s por defecto; menor es más rápido.
+- **Mouse / Gamepad Sensitivity**: en Hand3DInputController. El stick se integra con deltaTime; Mouse Delta ya es desplazamiento.
+- **Use Exploration Wrist / Exploration Wrist Euler / Wrist Transition Duration / Easing**: por pose, independientes de las capturas de dedos.
+
+La IK tiene longitudes fijas: puede no alcanzar todas las esquinas de pantalla. Ajusta límites y postura inicial al alcance real; no hay estiramiento artificial. La orientación exacta de las cinco imágenes requiere calibración con las herramientas anteriores.
+
+## Pruebas en Unity
+
+1. Camina y gira en Exploration: el brazo conserva su posición relativa a la cámara sin vibrar. Prueba R2/RMB, diagonales, límites y retorno suave.
+2. Entra en HandEdit con el brazo extendido y con dedos flexionados. La cámara y el personaje deben quedar inmóviles; no debe saltar ni correr. Mantén RB/Shift para comprobar que solo alterna una vez.
+3. Comprueba palma en el extremo derecho inicial; A/Left Stick izquierdo muestran lateral y dorso sin mover la muñeca. D vuelve al límite inicial y no lo sobrepasa. W/S no orientan la mano y R2/RMB no la desplaza.
+4. Alterna los cinco dedos y prueba OK/Point en ambos modos. Los overrides del círculo y el clic con L2/LMB deben conservarse durante giros y transiciones.
+5. Sal de HandEdit con OK activo: la configuración Exploration y la orientación especial de OK deben reaparecer suavemente, sin reiniciar dedos. Repite con Point y una combinación desconocida.
+6. Cambia de pose durante movimiento/transición y ejecuta clics mientras gira la muñeca. Alterna RB/Shift rápidamente: sin saltos ni deriva.
+7. Cambia de modo con R2/RMB mantenido: no debe activar movimiento libre al salir hasta soltar y volver a pulsar. Comprueba retorno al soltar en Exploration.
+8. Pausa/reanuda durante transición, pierde/recupera foco y comprueba restauración de controles al deshabilitar el experimento. No debe avanzar la transición durante la pausa.
+9. Guarda, vuelve a abrir y verifica configuraciones, extremos, orientaciones de pose y capturas anteriores. Comprueba renderizado pixelado y verifica aparte Prototype, sin editarlo.

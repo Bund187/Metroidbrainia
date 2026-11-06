@@ -25,6 +25,12 @@ namespace Metroidbrainia.Hand3DExperiment
         private InputAction armMode;
         private InputAction armMove;
         private InputAction action;
+        private InputAction toggleMode;
+        private InputAction inspect;
+        private bool gameplayBlocked;
+        private FirstPersonController characterController;
+        private bool characterWasEnabled;
+        private bool characterSuspended;
         private readonly InputAction[] fingerButtons = new InputAction[5];
         private readonly InputAction[] blockedGameplay = new InputAction[4];
         private readonly bool[] gameplayWasEnabled = new bool[4];
@@ -66,6 +72,13 @@ namespace Metroidbrainia.Hand3DExperiment
             armMove.expectedControlType = "Vector2";
             armMove.AddBinding("<Gamepad>/rightStick");
             armMove.AddBinding("<Mouse>/delta");
+            toggleMode = controls.AddAction("ToggleHandEdit", InputActionType.Button);
+            toggleMode.AddBinding("<Gamepad>/rightShoulder");
+            toggleMode.AddBinding("<Keyboard>/leftShift");
+            toggleMode.AddBinding("<Keyboard>/rightShift");
+            inspect = controls.AddAction("InspectHand", InputActionType.Value);
+            inspect.AddBinding("<Gamepad>/leftStick/x");
+            inspect.AddCompositeBinding("1DAxis").With("Negative", "<Keyboard>/a").With("Positive", "<Keyboard>/d");
             action = controls.AddAction("Action", InputActionType.Button);
             action.AddBinding("<Gamepad>/leftTrigger");
             action.AddBinding("<Mouse>/leftButton");
@@ -123,10 +136,13 @@ namespace Metroidbrainia.Hand3DExperiment
             }
             InputAction sprint = blockedGameplay[3];
             for (int i = 0; i < sprint.bindings.Count; i++)
-                if (string.Equals(sprint.bindings[i].path, "<Gamepad>/leftTrigger", StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(sprint.bindings[i].path, "<Gamepad>/leftTrigger", StringComparison.OrdinalIgnoreCase)
+                    || !string.IsNullOrEmpty(sprint.bindings[i].path)
+                        && sprint.bindings[i].path.IndexOf("shift", StringComparison.OrdinalIgnoreCase) >= 0)
                     sprint.ApplyBindingOverride(i, string.Empty);
             starterInputs.SprintInput(false);
             controls.Enable();
+            characterController = playerInput.GetComponent<FirstPersonController>();
         }
 
         private void RestoreEnabledActions(InputActionAsset asset)
@@ -145,14 +161,28 @@ namespace Metroidbrainia.Hand3DExperiment
                 EndArmMode();
                 return;
             }
-            bool held = armMode.IsPressed();
+            if (toggleMode.WasPressedThisFrame())
+            {
+                EndArmMode();
+                armMovement.ToggleMode();
+                waitForRelease = armMode.IsPressed();
+            }
+            bool editing = armMovement.Modes.IsEditing;
+            bool rawHeld = armMode.IsPressed();
+            bool held = rawHeld && !editing && !armMovement.Modes.IsTransitioning;
             if (waitForRelease)
             {
-                waitForRelease = held;
+                waitForRelease = rawHeld;
                 held = false;
             }
             if (held && !IsArmModeActive) BeginArmMode();
             else if (!held) EndArmMode();
+            SetGameplayBlocked(editing || IsArmModeActive);
+            SuspendCharacter(editing);
+            if (editing)
+                armMovement.Modes.Inspect(inspect.ReadValue<float>() * Time.deltaTime *
+                    (inspect.activeControl?.device is Gamepad ? gamepadSensitivity : 1f));
+            if (gameplayBlocked) ClearPlayerInput();
 
             for (int i = 0; i < fingerButtons.Length; i++)
                 if (fingerButtons[i].WasPressedThisFrame())
@@ -171,6 +201,24 @@ namespace Metroidbrainia.Hand3DExperiment
 
         private void BeginArmMode()
         {
+            SetGameplayBlocked(true);
+            armMovement.BeginControl();
+            IsArmModeActive = true;
+        }
+
+        private void SetGameplayBlocked(bool blocked)
+        {
+            if (gameplayBlocked == blocked) return;
+            gameplayBlocked = blocked;
+            if (!blocked)
+            {
+                if (starterInputs != null) starterInputs.cursorInputForLook = cursorLookWasEnabled;
+                for (int i = 0; i < blockedGameplay.Length; i++)
+                    if (gameplayWasEnabled[i] && blockedGameplay[i] != null && playerInput != null
+                        && playerInput.isActiveAndEnabled && playerInput.inputIsActive) blockedGameplay[i].Enable();
+                ClearPlayerInput();
+                return;
+            }
             cursorLookWasEnabled = starterInputs.cursorInputForLook;
             starterInputs.cursorInputForLook = false;
             for (int i = 0; i < blockedGameplay.Length; i++)
@@ -179,8 +227,18 @@ namespace Metroidbrainia.Hand3DExperiment
                 blockedGameplay[i].Disable();
             }
             ClearPlayerInput();
-            armMovement.BeginControl();
-            IsArmModeActive = true;
+        }
+
+        private void SuspendCharacter(bool suspended)
+        {
+            if (characterController == null || characterSuspended == suspended) return;
+            characterSuspended = suspended;
+            if (suspended)
+            {
+                characterWasEnabled = characterController.enabled;
+                characterController.enabled = false;
+            }
+            else characterController.enabled = characterWasEnabled;
         }
 
         private void EndArmMode()
@@ -188,10 +246,6 @@ namespace Metroidbrainia.Hand3DExperiment
             if (!IsArmModeActive)
                 return;
             IsArmModeActive = false;
-            if (starterInputs != null) starterInputs.cursorInputForLook = cursorLookWasEnabled;
-            for (int i = 0; i < blockedGameplay.Length; i++)
-                if (gameplayWasEnabled[i] && blockedGameplay[i] != null && playerInput != null
-                    && playerInput.isActiveAndEnabled && playerInput.inputIsActive) blockedGameplay[i].Enable();
             ClearPlayerInput();
             if (armMovement != null) armMovement.EndControl();
         }
@@ -220,6 +274,8 @@ namespace Metroidbrainia.Hand3DExperiment
         private void OnDisable()
         {
             EndArmMode();
+            SetGameplayBlocked(false);
+            SuspendCharacter(false);
             controls?.Disable();
             if (runtimePlayerActions == null)
                 return;

@@ -1,0 +1,55 @@
+M	Assets/AddressableAssetsData/AddressableAssetSettings.asset
+A	Assets/Art.meta
+A	Assets/Art/Arm.meta
+A	Assets/Editor.meta
+A	Assets/Editor/Experiments.meta
+A	Assets/Editor/Experiments/Hand3D.meta
+A	Assets/Editor/Experiments/Hand3D/Hand3DEditors.cs
+A	Assets/Editor/Experiments/Hand3D/Hand3DEditors.cs.meta
+A	Assets/Models/WRAD Arms.meta
+A	Assets/Models/WRAD Arms/LICENSE.txt
+A	Assets/Models/WRAD Arms/LICENSE.txt.meta
+A	Assets/Models/WRAD Arms/README.txt
+A	Assets/Models/WRAD Arms/README.txt.meta
+A	Assets/Models/WRAD Arms/arm_albedo_dark.png
+A	Assets/Models/WRAD Arms/arm_albedo_dark.png.meta
+A	Assets/Models/WRAD Arms/arm_albedo_pale.png
+A	Assets/Models/WRAD Arms/arm_albedo_pale.png.meta
+A	Assets/Models/WRAD Arms/arm_pixel_MAT.mat
+A	Assets/Models/WRAD Arms/arm_pixel_MAT.mat.meta
+A	Assets/Models/WRAD Arms/arms.blend
+A	Assets/Models/WRAD Arms/arms.blend.meta
+A	Assets/Models/WRAD Arms/arms.glb
+A	Assets/Models/WRAD Arms/arms.glb.meta
+A	Assets/Models/WRAD Arms/arms.mtl
+A	Assets/Models/WRAD Arms/arms.mtl.meta
+A	Assets/Models/WRAD Arms/arms.obj
+A	Assets/Models/WRAD Arms/arms.obj.meta
+A	Assets/Models/WRAD Arms/armsFBX.fbx
+A	Assets/Models/WRAD Arms/armsFBX.fbx.meta
+A	Assets/Scenes/TestArmScene.unity
+A	Assets/Scenes/TestArmScene.unity.meta
+A	Assets/Scripts/Experiments.meta
+A	Assets/Scripts/Experiments/Hand3D.meta
+A	Assets/Scripts/Experiments/Hand3D/Hand3DArmMovement.cs
+A	Assets/Scripts/Experiments/Hand3D/Hand3DArmMovement.cs.meta
+A	Assets/Scripts/Experiments/Hand3D/Hand3DFingerState.cs
+A	Assets/Scripts/Experiments/Hand3D/Hand3DFingerState.cs.meta
+A	Assets/Scripts/Experiments/Hand3D/Hand3DInputController.cs
+A	Assets/Scripts/Experiments/Hand3D/Hand3DInputController.cs.meta
+A	Assets/Scripts/Experiments/Hand3D/Hand3DPoseActions.cs
+A	Assets/Scripts/Experiments/Hand3D/Hand3DPoseActions.cs.meta
+A	Assets/Scripts/Experiments/Hand3D/Hand3DPoseRecognizer.cs
+A	Assets/Scripts/Experiments/Hand3D/Hand3DPoseRecognizer.cs.meta
+A	Assets/Scripts/Experiments/Hand3D/Hand3DRig.cs
+A	Assets/Scripts/Experiments/Hand3D/Hand3DRig.cs.meta
+A	Assets/Scripts/Experiments/Hand3D/README.md
+A	Assets/Scripts/Experiments/Hand3D/README.md.meta
+M	Assets/Settings/PC_RPAsset.asset
+A	Assets/Sprites/Arms/Arm Texture.meta
+A	Assets/Sprites/Arms/Arm Texture/arm_albedo_pale_pixel.png
+A	Assets/Sprites/Arms/Arm Texture/arm_albedo_pale_pixel.png.meta
+A	Assets/_Recovery/0 (3).unity
+A	Assets/_Recovery/0 (3).unity.meta
+M	Design.md
+M	ProjectSettings/TagManager.asset

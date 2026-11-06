@@ -66,6 +66,9 @@ namespace Metroidbrainia.Hand3DExperiment.Editor
             var recognizer = Add<Hand3DPoseRecognizer>(owner);
             var actions = Add<Hand3DPoseActions>(owner);
             var movement = Add<Hand3DArmMovement>(owner);
+            var modes = Add<Hand3DModeController>(owner);
+            if (!modes.Exploration.Captured && Hand3DModeEditing.Ready(movement))
+                Hand3DModeEditing.Capture(modes, movement, "exploration");
             var rig = Add<Hand3DRig>(owner);
             var input = Add<Hand3DInputController>(owner);
             Assign(recognizer, "fingerState", state);
@@ -170,6 +173,10 @@ namespace Metroidbrainia.Hand3DExperiment.Editor
             {
                 SerializedProperty pose = poses.GetArrayElementAtIndex(i);
                 EditorGUILayout.LabelField(pose.FindPropertyRelative("poseName").stringValue, EditorStyles.boldLabel);
+                if (GUILayout.Button("Capture Exploration Wrist (separate from finger overrides)"))
+                    Hand3DModeEditing.Wrist(recognizer, serializedObject, pose, true);
+                if (GUILayout.Button("Preview Exploration Wrist"))
+                    Hand3DModeEditing.Wrist(recognizer, serializedObject, pose, false);
                 if (rig != null && GUILayout.Button("Preview Base Finger Combination"))
                 {
                     var data = new SerializedObject(rig);

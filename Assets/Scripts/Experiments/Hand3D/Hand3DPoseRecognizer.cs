@@ -25,12 +25,21 @@ namespace Metroidbrainia.Hand3DExperiment
         [SerializeField] private PoseAction action;
         [SerializeField] private LocalBonePose[] visualOverrides = new LocalBonePose[0];
         [SerializeField] private UnityEvent onAction = new UnityEvent();
+        [Header("Exploration wrist (independent of finger overrides)")]
+        [SerializeField] private bool useExplorationWrist;
+        [SerializeField] private Vector3 explorationWristEuler;
+        [SerializeField, Min(0f)] private float wristTransitionDuration = 0.2f;
+        [SerializeField] private AnimationCurve wristTransitionEasing = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
 
         public string Name => poseName;
         public FlexedFingers Combination => flexedFingers;
         public PoseAction Action => action;
         public LocalBonePose[] VisualOverrides => visualOverrides;
         public UnityEvent OnAction => onAction;
+        public bool UseExplorationWrist => useExplorationWrist;
+        public Quaternion ExplorationWrist => Quaternion.Euler(explorationWristEuler);
+        public float WristTransitionDuration => wristTransitionDuration;
+        public AnimationCurve WristTransitionEasing => wristTransitionEasing;
 
         public HandPose(string name, FlexedFingers combination, PoseAction poseAction = PoseAction.None)
         {
