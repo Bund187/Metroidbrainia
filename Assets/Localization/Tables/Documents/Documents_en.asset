@@ -1,0 +1,191 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Documents_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: f2215fb2d27c6d647a8602d4ad61d5a6, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 54688064299008
+    m_Localized: Eat my balls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2251481891880960
+    m_Localized: You are more capable than you think, you just have to try.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4342487563198464
+    m_Localized: I remember when I could barely move anymore. My mother gave me a little bell to ring whenever I wanted something. All I had to do was ring it, and soon after, the door would open and there was my mother.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4342560908992512
+    m_Localized: 'When I began to lose my sight. It was as if the walls were disappearing and I fantasized about being able to walk right through them. I also remember seeing flashes of a strange icon, something like this:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5787300321910784
+    m_Localized: Entrance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5787394165268480
+    m_Localized: Seems like the entrance of the house
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5787508111925248
+    m_Localized: Bell Room
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5787621194555392
+    m_Localized: A room with bells hanging on the walls and a big door without knob.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6148121342337024
+    m_Localized: Four bells and a big door
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6148331808317440
+    m_Localized: I found a strange room with four bells and a big door.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6148580878671872
+    m_Localized: Bell note
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6148756104110080
+    m_Localized: A note talking about opening doors with bells
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6486756868579328
+    m_Localized: Dining Room
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6486838598787072
+    m_Localized: A big room with a wide table to eat.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6487175921491968
+    m_Localized: Reading Room
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6487443450978304
+    m_Localized: A small room with a couple of chairs and a small table.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6487786415022080
+    m_Localized: Bedroom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6487951733514240
+    m_Localized: A bedroom with a bed and a desk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6488386536038400
+    m_Localized: Bathroom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6488438373441536
+    m_Localized: A full equiped bathroom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6488639632924672
+    m_Localized: Studio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6488749255254016
+    m_Localized: A room with a big desk and a blueprint hanging on the wall
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6489093959933952
+    m_Localized: This room has no light
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6489623415316480
+    m_Localized: Dark Room
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6489936276840448
+    m_Localized: Kitchen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6490481435697152
+    m_Localized: A fully equiped kitchen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6490764970647552
+    m_Localized: Secret Passage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6490853688565760
+    m_Localized: A secret passage behind an invisible wall
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6515358435729408
+    m_Localized: Strange Icon Note
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6515644449513472
+    m_Localized: I found a note about blindness and walk through walls. It has the same icon I saw at the dining room.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6517163957772288
+    m_Localized: Memo Secret Passage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6517753408479232
+    m_Localized: 'In the secret passage I found a note saying: You are more capable than you think, you just have to try.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6518954992689152
+    m_Localized: Bells Blueprint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6519211113668608
+    m_Localized: In the study, there is a floor plan of part of the house on which several bells of different sizes are drawn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6520314379198464
+    m_Localized: Faulty Switch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6520385447485440
+    m_Localized: "There\u2019s a switch in the study that\u2019s sparking"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6521139147137024
+    m_Localized: Icon Wall
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6531445739053056
+    m_Localized: In the dining room there is a strange icon painted on the wall
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6532461935026176
+    m_Localized: Dark Room
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6532579140657152
+    m_Localized: There is a room totally dark
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6534001072627712
+    m_Localized: interacting Posters
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6834931429105664
+    m_Localized: In the secret passage, there are several posters hanging on the wall depicting hands interacting with various objects.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

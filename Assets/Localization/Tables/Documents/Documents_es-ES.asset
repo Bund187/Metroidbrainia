@@ -1,0 +1,191 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Documents_es-ES
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: es-ES
+  m_SharedData: {fileID: 11400000, guid: f2215fb2d27c6d647a8602d4ad61d5a6, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 54688064299008
+    m_Localized: Comeme los huevos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2251481891880960
+    m_Localized: "Puedes hacer m\xE1s de lo que crees. Solo tienes que probar."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4342487563198464
+    m_Localized: "Recuerdo cuando ya casi no me pod\xEDa mover. Mi madre me di\xF3 una campanita para cuando quer\xEDa pedir algo. Solo ten\xEDa que hacerla sonar y al poco tiempo se abr\xEDa la puerta y all\xED estaba mi madre."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4342560908992512
+    m_Localized: "Cuando empec\xE9 a perder la vista. Fu\xE9 como si las paredes desaparecieran y fantaseaba con poder atravesarlas. Tambi\xE9n recuerdo ver flashes de un extra\xF1o icono, algo as\xED:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5787300321910784
+    m_Localized: Recibidor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5787394165268480
+    m_Localized: Parece el recibidor de la casa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5787508111925248
+    m_Localized: "Habitaci\xF3n de las campanas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5787621194555392
+    m_Localized: "Una habitaci\xF3n con varias campanas colgando de la pared y una gran puerta sin pomo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6148121342337024
+    m_Localized: Cuatro campanas y una gran puerta
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6148331808317440
+    m_Localized: "He encontrado una extra\xF1a habitaci\xF3n con cuatro campanas y una gran puerta."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6148580878671872
+    m_Localized: Nota sobre campanas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6148756104110080
+    m_Localized: Una nota donde se menciona abrir una puerta con campanas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6486756868579328
+    m_Localized: Comedor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6486838598787072
+    m_Localized: "Una amplia habitaci\xF3n con una mesa para comer."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6487175921491968
+    m_Localized: Sala de lectura
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6487443450978304
+    m_Localized: "Peque\xF1a habitaci\xF3n con un par de sillas y una peque\xF1a mesa."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6487786415022080
+    m_Localized: Alcoba
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6487951733514240
+    m_Localized: "Una habitaci\xF3n con una cama y un escritorio."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6488386536038400
+    m_Localized: "Cuarto de ba\xF1o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6488438373441536
+    m_Localized: "Un cuarto de ba\xF1o totalmente equipado"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6488639632924672
+    m_Localized: Estudio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6488749255254016
+    m_Localized: "Una habitaci\xF3n con un escritorio grande y un plano colgando de la pared"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6489093959933952
+    m_Localized: "La luz de esta habitaci\xF3n est\xE1 apagada"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6489623415316480
+    m_Localized: "Habitaci\xF3n oscura"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6489936276840448
+    m_Localized: Cocina
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6490481435697152
+    m_Localized: Una cocina totalmente equipada.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6490764970647552
+    m_Localized: Pasaje Secreto
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6490853688565760
+    m_Localized: Un pasaje secreto tras una pared invisible
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6515358435729408
+    m_Localized: "Nota sobre el icono extra\xF1o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6515644449513472
+    m_Localized: "Encontr\xE9 una nota hablando de ceguera y traspasar paredes.\r\nTiene el mismo icono que vi en el comedor. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6517163957772288
+    m_Localized: Memo Pasaje Secreto
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6517753408479232
+    m_Localized: "En el pasaje secreto encontr\xE9 una nota que dec\xEDa: Eres m\xE1s capaz de lo que parece, solo tienes que intentarlo.\r\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6518954992689152
+    m_Localized: Plano Campanas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6519211113668608
+    m_Localized: "En el estudio hay un plano de una parte de la casa donde hab\xEDa dibujadas varias campanas en diferentes tama\xF1os"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6520314379198464
+    m_Localized: Interruptor Defectuoso
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6520385447485440
+    m_Localized: En el estudio hay un interruptor echando chispas.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6521139147137024
+    m_Localized: Icono en la pared
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6531445739053056
+    m_Localized: "En el comedor hay un extra\xF1o icono pintado en la pared"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6532461935026176
+    m_Localized: "Habitaci\xF3n Oscura"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6532579140657152
+    m_Localized: "Hay una habitaci\xF3n totalmente a oscuras"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6534001072627712
+    m_Localized: Posters sobre interactuar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6834931429105664
+    m_Localized: En el pasaje secreto hay varios posters colgados de la pared sobre manos interactuando con diferentes cosas.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

@@ -1,11 +1,3 @@
-Core
-Progresión basada en conocimiento.
-Pilares de diseño
-El conocimiento como única recompensa
-Sin enemigos
-Estética 3d lowpoly
-Suspense, terror psicologico
-Todo transcurre dentro de la casa.
 Prototipo
 Una puerta sin pomo cerrada.
 Varias campanas esparcidas por la habitación.
@@ -40,59 +32,7 @@ Plano ubicación campanas
 Manera de como tocar campanas.
 Nota simbolo Ø
 Mapa
-Guardar
-Pantalla de titulo
-Rediseñar la pantalla de mapa
-Añadir parte de lore en la parte del mapa
-Reordenar un poco la casa de forma que sea más creíble.
-Retocar los controles para que sean más fluidos, sobre todo con el gamepad.
 Sistemas
-Mano funcional
-Cada dedo de la mano se podrá extender o flexionar al toque de un botón. Si el dedo está flexionado se extiende y viceversa al tocar el botón correspondiente.
-Existen diferentes poses clave que se conseguirán teniendo cierta combinación de dedos extendidos/ flexionados.
-Pulgar e índice flexionados y el resto extendidos = Pose de OK.
-Todos flexionados menos el índice = Pose de apuntar.
-Se ha de preparar el sistema para más poses en el futuro.
-Controles
-
-Dedo
-Gamepad
-Teclado/Raton
-Pulgar
-Press right joystick
-E
-Índice
-Cross up
-R
-Corazón
-Cross right
-T
-Anular 
-Cross down
-F
-Meñique
-Cross left
-G
-
-
-Al pulsar el botón de acción (Left Trigger/ Mouse left button) según la pose que se tenga adoptada ocurrirá el evento que corresponda a la pose. Por ejemplo: en pose apuntar, mueve el dedo ligeramente como si hiciera click a un ratón.
-Si se presiona el botón de acción pero no se tiene ninguna pose reconocible, no hará nada.
-El brazo se moverá libremente controlado por el joystick derecho o el ratón si se mantiene presionado el botón right trigger o botón derecho del ratón. El movimiento del brazo es el siguiente:
-Girar el joystick derecho / mover el ratón a la izquierda: Se extiende el brazo hacia adelante mientras se mueve a la izquierda.
-Girar el joystick derecho / mover el ratón hacia arriba: Se extiende el brazo hacia delante.
-Girar el joystick derecho / mover el ratón a la derecha: Se extiende el brazo hacia adelante mientras se mueve a la derecha.
-Girar el joystick derecho / mover el ratón hacia abajo: Flexiona el brazo hacia el jugador.
-Girar hacia las diagonales: Mezcla extensión/ flexión con dirección.
-Girar el joystick izquierdo / Key A a la izquierda: Rota el antebrazo y mano hacia la izquierda.
-Girar el joystick izquierdo / Key D a la derecha: Rota el antebrazo y mano hacia la derecha.
-Girar el joystick izquierdo / Key W hacia arriba: Rota el antebrazo y mano hacia abajo.
-Girar el joystick izquierdo / Key S hacia abajo: Rota el antebrazo y mano hacia arriba.
-El objetivo es tener control total sobre el brazo y que el jugador pueda observar la mano desde todos los ángulos.
-Pulsando joystick izquierdo o Key Tab se vuelve a la posición original del brazo, mientras la mano mantiene los dedos que estuvieran extendidos/ flexionados.
-
-Hay que tener en cuenta que los eventos especiales pueden modificar el movimiento del brazo. Por ejemplo: Pose= OK, Left trigger= Presionado. Hace que la mano se aproxime al jugador imitando como si estuviera mirando a través de la abertura entre índice y pulgar. La mano y el brazo quedan fijas en ese lugar y el joystick derecho simplemente mueve la cámara con la mano fija en la visión del jugador, no importa que right trigger esté pulsado. Bloquea todo movimiento del brazo con el resto de controles.
-La mano ha de tener un collider para la interacción física con los objetos. El jugador ha de estar físicamente tocando un objeto para interactuar con él. Por ejemplo: Pose= Índice.  Right trigger= Presionado. El jugador mueve el brazo hasta una campana
-
 Poses
 Pulsando los botones cuadrado, X, O y triángulo cambias la posición de la mano.
 X= Apuntar.
@@ -178,14 +118,8 @@ La animación de las habitaciones consta de un fundido de invisible a visible. D
 La animación de los descubrimientos consta de un fundido de invisible a visible y luego se traza una línea (si aplica) conectando con otro descubrimiento.  Al seleccionar un descubrimiento si hay algo que añadir al resumen en texto también aparecerá gradualmente.
 Se podrá hacer zoom tanto en las habitaciones como en los descubrimientos.
 
-Elementos ambientales
-Televisor
-Un televisor está encendido por defecto o se enciende en algún momento disparado por un evento.
-Ha de mostrar una animación, generalmente en loop, en la pantalla del televisor.
-Emite luz desde la pantalla. Esta luz no ha de ser fija sino que parpadea imitando a una televisión.
-Un texto se ve encima de la pantalla y se hace más o menos grande dependiendo de la distancia del jugador.
-El texto está fijo en la escena pero rota, siempre mira hacia el jugador, de manera que va rotando según este gira para que pueda leerlo en todo momento.
-También reproduce un sonido que aumenta o disminuye según la distancia del jugador.
+
+
 Audio
 No poder abrir. Traqueteo del pomo.
 Abrir: Chirrido de la puerta según se abre.
@@ -225,64 +159,39 @@ Descubrimientos
 Campanas
 Habitación con campanas
 He encontrado una extraña habitación con cuatro campanas y una gran puerta.
-Tipo: Interrogante
 Posición: centro.
 Se relaciona con: Nada.
 
 Nota campanas
 Encontré una nota que mencionaba el uso de una campanilla para abrir una puerta.
-Tipo: documento
 Posición: izquierda.
 Se relaciona con: Habitación con campanas
 
 Plano campanas
-En el estudio hay un plano de una parte de la casa donde había dibujadas varias campanas en diferentes tamaños.
-Tipo: Interrogante
+En el estudio hay un plano de una parte de la casa donde había dibujadas varias campanas.
 Posición: Arriba.
 Se relaciona con: Habitación con campanas
 
 Memo pasaje secreto
-En el pasaje secreto encontré una nota que decía: Eres más capaz de lo que parece, solo tienes que intentarlo.
-Tipo: documento
+Al final del pasaje secreto había varios posters de manos interactuando con campanas y más cosas. Una nota se leía: Eres más capaz de lo que parece, solo tienes que intentarlo.
 Posición: izquierda- arriba.
 Se relaciona con: Nota campanas
 
 Interruptor defectuoso
 En el estudio hay un interruptor echando chispas.
-Tipo: Interrogante
 Posición: arriba-izquierda
 Se relaciona con: Plano campanas.
-
-Habitación oscura
-Una habitación está totalmente a oscuras..
-Tipo: Interrogante
-Posición: arriba-derecha
-Se relaciona con: Interruptor defectuoso.
-
-Posters interactuando
-En el pasaje secreto hay varios posters de manos interactuando con cosas colgando de la pared.
-Tipo: Interrogante
-Posición: arriba-derecha
-Se relaciona con: Habitación con campanas.
 Icono transparencia
 Icono en la pared
 En el comedor hay un extraño icono pintado en la pared.
-Tipo: Interrogante
 Posición: arriba-centro.
 Se relaciona con: Memo pasaje secreto.
 
 Nota con icono extraño
 Encontré una nota hablando de ceguera y traspasar paredes.
 Tiene el mismo icono que vi en el comedor.
-Tipo: documento
 Posición: arriba-derecha.
 Se relaciona con: Icono en la pared
-
-Cuando se marcan como resueltos los descubrimientos:
-Habitación oscura e interruptor: Al encender la luz.
-Icono en la pared: Al traspasar la pared de espaldas.
-Habitación con campanas y plano campanas: Al tocar las campanas correctamente.
-Posters interactuando: Al tocar las campanas correctamente O Al encender la luz. 
 
 Habitaciones
 Recibidor
@@ -328,32 +237,6 @@ Notas: 1
 Memo pasaje secreto.
 Interrogantes: 1
 Hay varios pósters en la pared de manos interactuando con cosas.
-Pantalla de título
-Es una pantalla de título sencilla y minimalista.
-Tiene una imagen de fondo y hasta cuatro botones.
-Los botones serán en forma de texto únicamente. Al pasar por encima cambiarán de color resaltado a rojo brillante. Al pulsarlo volverán a su color original.
-Los textos de los botones obtendrán su texto dependiendo del lenguaje de Localization.
-Los botones deben de ser legibles en cualquier resolución. 
-Se navegará entre ellos con el cursor del ratón y click izquierdo para aceptar o con left joystick/ cruceta y button south para aceptar, para gamepad.
-Los cuatro botones en mismo orden que se deben de mostrar:
-“Start New Game”: Al clicar, comienza el juego. Si se detecta un archivo de guardado se muestra un pequeño aviso en el centro de la pantalla diciendo: “Esto borrará tu actual partida guardada. Continuar?” junto a dos botones que dicen “Si” y “No”. Si se pulsa “Si” se inicia el juego sobreescribiendo la partida guardada. Si se pulsa “No” se cierra el aviso sin hacer nada más.
-Continue: Solo se muestra si se detecta un archivo de guardado. Continua la partida cargando el archivo de guardado.
-Options: Al clicar, se mantiene la misma imagen de fondo; los botones desaparecen y se muestra una pantalla con las opciones.
-Salir del juego: Al clicar, cierra el juego.
-Las opciones:
-Lenguaje: se muestran las banderas del lenguaje disponible una al lado de la otra. Similar al menú de pausa del juego.
-Como se cierran las opciones: En teclado + raton: Se muestra un icono de cerrar, al hacer click cierra la pantalla de opciones. Gamepad: botón east.
-Tanto al comenzar un juego nuevo como al continuar una partida guardada se cargará la escena Prototype. Al estar todo el juego en una sola escena se ha de valorar el crear una pantalla de carga con todo lo que ello implica.
-
-Sistema de Guardado
-Se guarda siempre en el mismo slot. No hay diferentes. Desde el menú de inicio se puede continuar la partida guardada o borrar la partida en curso y empezar una nueva.
-Lo que se guarda:
-Eventos especiales: Puerta campanas abiertas, interruptor del estudio encendido.
-Todo lo relacionado con mapa y descubrimientos: Habitaciones, iconos, iconos resueltos, nodos, conexiones, variantes de habitación.
-Configuración de las opciones.
-Cuando se guarda:
-Al cerrar el juego.
-Al hacer un nuevo descubrimiento o una nueva habitación.
 
 Idea global
 ¿Qué quiero que sienta el jugador?
@@ -396,21 +279,6 @@ Dos puertas oscuras, una al lado de otra. Al entrar en cualquiera se vuelve a la
 
 Puedo ponerle un reloj hexagonal o muy característico al jugador en la mano. De esta forma puedo luego identificarlo como el propio jugador cuando quiera revelar que has estado hablando de él durante la historia.
 
-Reglas del mundo:
-Colores como números.
-Acontecimientos en horas pares o impares
-
-Conocimiento también es aprender cómo se comporta algo. Por ejemplo: la arena en gemelo brasa sube y te puede matar. En el juego puedo poner habitaciones que se comporten de ciertas maneras.
-
-En la tv al principio del juego tengo que poner algo que incita la curiosidad del jugador. Algo que plantee una de las grandes preguntas del juego. Se puede poner un noticiero donde insta a la población a quedarse en casa, cerrar puertas y ventanas, buscar refugio. De esa forma el jugador piensa que el protagonista se ha metido en la casa huyendo de algo.
-
-Humaniza a Elisabeth y Morgan. Que hagan chistes o hablen de cosas comunes, objetivos, pequeñas cosas
-
-Debería de además del mapa y descubrimientos tener un diario para ir apuntando las intrahistorias de los NPCs y la propia
-
-El personaje llega a una estancia donde una de las puertas está abierta pero en el techo de la pared. A la altura del jugador, “encima” de la puerta, se lee “ALÉJATE” si el jugador se aleja lo suficiente y se sube a una silla podrá ver el símbolo de desaparecer escrito en el fondo de la habitación al revés. Esa es la pista para decirle que tiene que entrar de espaldas a la habitación. De esa manera unimos a Morgan y Elisabeth. 
-
-
 Historia
 Antes de empezar el juego se ve una pantalla negra y unas letras que dicen:
 “He tenido el sueño más extraño de mi vida
@@ -420,7 +288,7 @@ No se si he dejado de soñar…”
 
 El personaje se despierta en una casa extraña.
 
-El protagonista tenía una vida soñada. Una mujer que le quería y un niño de 6 años que le idolatraba, un trabajo que pagaba las facturas de sobra pero él quería más, quería viajar más, experimentar más, vivir más, nada era suficiente. En consecuencia de esto empezó a descuidar lo importante: perderse las primeras veces de su hijo, faltar a compromisos, no pasar tiempo con su familia, descuidar a su esposa. Hasta que llegó el fin del mundo. Lo pillo solo trabajando en la oficina. No le dió tiempo ni de pensar en nadie. La onda expansiva de la bomba nuclear acabó con él en un segundo.
+El protagonista tenía una vida soñada. Una mujer que le quería y un niño de 6 años que le idolatraba, un trabajo que pagaba las facturas de sobra pero él quería más, quería viajar más, experimentar más, vivir más, nada era suficiente. En consecuencia de esto empezó a descuidar lo importante: perderse primeras veces de su hijo, faltar a compromisos, no pasar tiempo con su familia, descuidar a su esposa. Hasta que llegó el fin del mundo. Lo pillo solo trabajando en la oficina. No le dió tiempo ni de pensar en nadie. La onda expansiva de la bomba nuclear acabó con él en un segundo.
 
 En su paso por la casa ha de darse cuenta de cómo murió, de lo que perdió teniéndolo todo y de aceptarlo.
 
@@ -431,47 +299,15 @@ Documento diciendo cosas como: “lo tenía todo, todo aquello por lo que muchos
 “Querías más, más dinero, más viajes, más diversión y solo tenías menos”
 “El mundo estaba convulsionando, era momento para estar en familia. Tu no pensabas así”
 “-Hey, esta noche se sale, te recojo después del trabajo”
-Mensajes de tu mujer a un familiar contándole lo que tu haces sin juicio simplemente esperando que estés más con ellos.
 
 
 
 Personajes
-¿Cómo te pone a prueba la casa?
-Para todos los que pasan por ella debería de ser igual.
-Te muestra varias historias, tú no sabes cual es la tuya para que empatices con todas. No te juzga, te deja a ti hacerlo. 
-Primero te introduce el desarrollo de cada historia y personaje
-Luego te confronta con lo que ha hecho y sus consecuencias
-Luego muestra la culpa
-Por ultimo redención y ascenso.
+Elisabeth
+Una niña que murió a los 15 años. Fué afectada por una enfermedad degenerativa que la fué dejando inmovil y ciega. Acabó con su vida ahogándose en la bañera. Su paso por la casa la ayuda a entender su suicidió y aprender a perdonarse por el dolor causado a su familia.
 
- Elisabeth, la culpa de existir:
-Era una niña normal. Empezó con la enfermedad poco a poco. Su madre se desvivía por ella. Se culpa del malvivir de su madre. Decide morir para así liberar a su madre de la carga que ella misma suponía.
-Consigue suicidarse. Su madre no puede soportarlo y se destroza la vida a base de medicamentos y alcohol.
-Elisabeth entiende el sufrimiento de su madre ante la pérdida y valora su propia existencia.
-Comprende que su dolor era real pero el de su madre también. Lamenta su decisión al aprender el valor de su vida y se libera de culpa por existir.
-Relación con las reglas de la casa:
-Incapacidad física: No poder llegar a ciertos lugares? Ver cosas pero no alcanzarlas?
-Incapacidad visual. Poder traspasar paredes u objetos al no verlas. 
-Culpa por existir. Suicidio para avanzar por ciertos lugares?
-
-Morgan: La culpa de haber causado daño.
-Se refugiaba en su trabajo para ocultar su soledad. Muchas horas ocupado. Total productividad. Sentimiento de profundo vacío.
-Demasiado estrés. Un fallo decisivo en un plano provoca un derrumbe que mata a 6 trabajadores y a él mismo.
-Morgan entiende que si no hubiera forzado tanto su vida a base de trabajo, esto no hubiera pasado y no sería un asesino.
-Entiende el valor de la vida, el peligro de los límites y acepta esas 6 vidas como su penitencia.
-Relación con las reglas de la casa:
-Mediciones complejas: Relacionar números con colores? ¿Cantidad de objetos en una habitación como indicadores para avanzar?
-Relación con los espacios: Reglas abstractas sobre habitaciones? Habitaciones dadas la vuelta, geometrías imposibles, mobiliario cambiante…
-Conocimiento sobre puertas distintas, diferentes sistemas de apertura o existencia?
-
-Protagonista
-Vida perfecta. Mujer encantadora e hijo joven. Trabajo acomodado y sin falta de dinero. Quiere a su familia pero necesita más. Más diversión, excesos, placer, más dinero. La vida sabe a poco cuando lo tienes todo.
-El mundo está convulsionando, es momento de estar con los tuyos pero decide otro camino. Mínima atención a su familia y máxima por placeres inmediatos con chutes de dopamina. Como fiestas, otras mujeres y drogas seguidas de sentimiento de culpa en bucle. Finalmente el mundo se rompe, las guerras se acrecientan y algo que él jamás pensó que pasaría ocurre. Una bomba nuclear estalla en su ciudad barriendo todo, amigos, familia y él mismo.
-El personaje contempla su vida y nada tiene sentido, se siente inmensamente vacío.
-Tenía lo verdaderamente importante delante y no supo apreciarlo. Ya nada puede cambiarlo, solo queda aceptarlo.
-Relación con las reglas de la casa:
-Mecánica principal de la mano y gestos. Desde el principio tienes algo que vale oro, tu mano. No la valoras (porque no sabes como usarla) pero desde el principio tiene alto potencial. Varios gestos que cambian la interacción con la casa: interactuar con todo tipo de cosas; ver cosas que de otra manera no se puede ver; defenderte o parar cosas que te impiden avanzar, etc.
-
+Morgan
+Un arquitecto alcohólico. Murió junto a varios de sus compañeros al derrumbarse un edificio por una negligencia suya. Su paso por la casa le hace ver sus errores, llorar la pérdida y aceptar la culpa.
 
 
 
@@ -481,15 +317,16 @@ Ajustar el tamaño de los textos y la fuente dinámicamente según el documento.
 Efecto del televisor
 Las pestañas del mapa han de ser más grandes. Un cuadrado para cada una quedaría mejor.
 Zoom tanto en las habitaciones como en los descubrimientos
-Repensar como diseñar los nodos con la info porque actualmente cabe muy poca información cuando estos se expanden
 
 
 
 
 
-
-
-
-
-
+Base del mapa: abrir/cerrar, congelación, input, dos pestañas y cursor.
+Sistema de estado: habitaciones y descubrimientos, Undiscovered/Pending/Revealed.
+Habitaciones: triggers, dibujo progresivo y panel de información.
+Descubrimientos: nodos, conexiones y panel.
+Notificaciones durante gameplay.
+Animaciones pendientes al abrir cada pestaña.
+Sonidos, pulido y finalmente persistencia/save.
 

@@ -1,0 +1,2082 @@
+fileFormatVersion: 2
+guid: 4c4747359695efb47a62061a5e6a2719
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7417139081841362694
+    second: TelevisionGif_Test-Sheet_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af8bd218d47011990800000000000000
+      internalID: -7417139081841362694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6246c1fdbc572ff44afcbc4545494958
+      internalID: 796928213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc15407ae374028498db252fde578841
+      internalID: 326769993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6eec10fca9eb3824a895639912c88050
+      internalID: 693202039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ade47884149f3f438bda2e42a5b2126
+      internalID: -1309204204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2837f121e9831af44b0483625db4fe84
+      internalID: -447518891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f64642e68946ca45988214d25a65fe5
+      internalID: 373142740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1253
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d3f15ad32a10b448ae8806ec03f5b88
+      internalID: 270825649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 470f7887704ea6e48a5042442d9d58d7
+      internalID: -1634472783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1611
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eac3bdfef04acf438079d2930a0d52f
+      internalID: -1639442579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e107a2f90654cd84ab4f3e48817eb855
+      internalID: 1483705628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1969
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 573f28490a675904b8e799b5d0f3e3c6
+      internalID: -761466989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 2148
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11f387a545982ed4091f2ea48b39a408
+      internalID: 211476249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 2327
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ff28c5c05d0df94a815df2fc1014b30
+      internalID: -1587583962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 2506
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c83e01393877d324ca3d2a65a54f0bf6
+      internalID: -2113576983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 2685
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1153ac413b6bf64293547d2867d70c3
+      internalID: 2108828768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 2864
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef08067e0d992d14eb09e261ba274d21
+      internalID: 433481131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 3043
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4effb446225517f4e9ce53ad2230c0fe
+      internalID: 902146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 3222
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea8cab24c9b1ca7498b8978da759c9c9
+      internalID: -1757819339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 3401
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34b109a34c7195a49a95a4bbc771f0ec
+      internalID: -50174870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 3580
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 297c8635cc2cc6849ad2990f161a81f1
+      internalID: 119691514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 3759
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1d0e783e70c864489465a65550d09d9
+      internalID: 465829220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 3938
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3690029718bc6114fac49587e3c5defd
+      internalID: -2133674285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 4117
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1f8cdd8a5754be4c9b322d5da0f9ce4
+      internalID: 1082795028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 4296
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f367e216c160e61409832c77769a9c80
+      internalID: -1088676432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 4475
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c9e7c575375d9a49a0e5bec6d8f0092
+      internalID: -1068482386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 4654
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cee00b5e6ba7a5d43b42aea7f113c282
+      internalID: 1295669026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 4833
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c8add279117c45498585a4cec38acb0
+      internalID: -344561101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 5012
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1915d6a2d7bfafa409363b7437dc5f9b
+      internalID: -1465435005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 5191
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65314685d9176264eae3977fb7e56de8
+      internalID: 671863502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 5370
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b74fdc92aa28fb4ba91d22746e4fba5
+      internalID: 561943188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 5549
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b911c8dcbef8ba46aed7d9368621105
+      internalID: 745526505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 5728
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba200ca46b4489c4bac4cb0b5d085c77
+      internalID: 274105795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 5907
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4092d968967211248bfe5a41a1f01f2e
+      internalID: 127176727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 6086
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6059935d2b15bbe48b8b08b846ef82b2
+      internalID: -1820245376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 6265
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d528a3326e7ff743b148b97abeea95d
+      internalID: -1684212742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 6444
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 408765dc2063e4641baa650d5a814c17
+      internalID: 225692902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 6623
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1461f14b5ede4d844bf290d2d4fd4712
+      internalID: 1388234433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 6802
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cd100efa1310f248bac313650eb03f2
+      internalID: -115154510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 6981
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5b2e87d2f2a5984aa0240b3583b7555
+      internalID: -733583111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 7160
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f62c7f959911e5644a0b55ba90f43aa6
+      internalID: -1430141481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 7339
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f50194f1bc4325d47bf437414735838a
+      internalID: -2091577545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 7518
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 346fe7062e24c2940b79f20fde289134
+      internalID: -60472624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 7697
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5db43112aee37234498965fd5f0c0c15
+      internalID: 600742170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 7876
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b92e5e5246ce14f4f962ac07b417f16d
+      internalID: -979570901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 8055
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fb25c06f092c8d4cbc06b809b7f2cea
+      internalID: -1227104121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 8234
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16468c014afd37744b5e898563c877b6
+      internalID: 1173022395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 8413
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eed96e298a475248a7c85f7324d7db5
+      internalID: -1198014334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 8592
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab71886174dcfb547bda8e7886d76041
+      internalID: 29001126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 8771
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e63b4aaacbdf7464daee54706c1c6d36
+      internalID: -1214585595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 8950
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8e237ca7b36cdf43ad9236e75780f89
+      internalID: 1306506060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 9129
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60bf3fe53895ec9419522ddcbab3de49
+      internalID: 1325323955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 9308
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a62772a984497646a946a0b32b73eef
+      internalID: -748195404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 9487
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a49aab6a668d9c44aff0e1a862fc870
+      internalID: 1551760184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 9666
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 854d479b2ad9e784492fb7aae10ec847
+      internalID: -1413240624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 9845
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1073cac66d7f0c342b6df06801afad33
+      internalID: 1311138905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 10024
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d25f7115a42baeb419ac5b3d08eeee9f
+      internalID: 472786366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 10203
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4f319ea25b923e4c88b63d7bf5e982f
+      internalID: 1258556375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 10382
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c112faa04887a94db7ea35b3c467f7f
+      internalID: 560726989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 10561
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81d60cc9544ae7e4182c561b239fe7ab
+      internalID: -1863783350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 10740
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bfaf33781d62564a844c33678c96bbd
+      internalID: 1185746866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 10919
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05ecf544521dbe440bd75eb25cc63c52
+      internalID: -934596408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_62
+      rect:
+        serializedVersion: 2
+        x: 11098
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fce0aa6fee87d04ab6adf6b43ff30d0
+      internalID: 1445224649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_63
+      rect:
+        serializedVersion: 2
+        x: 11277
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36d0152f2d534fd48a353e1ac3291fac
+      internalID: 1462757017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_64
+      rect:
+        serializedVersion: 2
+        x: 11456
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69bd37577a1303d4297669608bf57f01
+      internalID: 619537331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_65
+      rect:
+        serializedVersion: 2
+        x: 11635
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58c9bff4fff8a0647a24e2be88439a3b
+      internalID: 71673349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_66
+      rect:
+        serializedVersion: 2
+        x: 11814
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f741cfc73826d143928d8e12fc993b6
+      internalID: -1743978449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_67
+      rect:
+        serializedVersion: 2
+        x: 11993
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4049923a272f8e4f8aefa464eca9635
+      internalID: -639076692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_68
+      rect:
+        serializedVersion: 2
+        x: 12172
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f15ad8828e627c4c854dd104a529bd2
+      internalID: -1010998981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_69
+      rect:
+        serializedVersion: 2
+        x: 12351
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 889290feea5884143bf95a7b30d0aca1
+      internalID: 1307315866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_70
+      rect:
+        serializedVersion: 2
+        x: 12530
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a4b398a2fc97594abcfe5df764745a3
+      internalID: 1967284530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_71
+      rect:
+        serializedVersion: 2
+        x: 12709
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3a365ed4c64f774486ab3193f2ba9ce
+      internalID: -264159254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_72
+      rect:
+        serializedVersion: 2
+        x: 12888
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f665d166d070824c9e8ace51db446c3
+      internalID: 601465578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_73
+      rect:
+        serializedVersion: 2
+        x: 13067
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3c34f2b6bb7ea946b7ad64ed619b1f2
+      internalID: 1366473923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_74
+      rect:
+        serializedVersion: 2
+        x: 13246
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a77948e87ad3c6c40b4b375fb65053c5
+      internalID: 1203572934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_75
+      rect:
+        serializedVersion: 2
+        x: 13425
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 914a64cc6324ce44f983e5f699836587
+      internalID: 1134137137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_76
+      rect:
+        serializedVersion: 2
+        x: 13604
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d31fdf5ba34e404681e6b8a9eb229be
+      internalID: 2016603618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_77
+      rect:
+        serializedVersion: 2
+        x: 13783
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f81d7a5d2582bee4d9efc7ae940f8e6c
+      internalID: -665143543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_78
+      rect:
+        serializedVersion: 2
+        x: 13962
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4169d2bd17dccc142a28e37b5c4514f1
+      internalID: -770844942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_79
+      rect:
+        serializedVersion: 2
+        x: 14141
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f253f1952d3b39a4a960ae57c0a6ace0
+      internalID: -874822473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_80
+      rect:
+        serializedVersion: 2
+        x: 14320
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08cf28378a7fb944d895c61c172336cd
+      internalID: 313110064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_81
+      rect:
+        serializedVersion: 2
+        x: 14499
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a72204bb3d1bf94180c7173e3a6060b
+      internalID: -450303838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_82
+      rect:
+        serializedVersion: 2
+        x: 14678
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73a5963c856743048ab95c49c2694114
+      internalID: 999313663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TelevisionGif_Test-Sheet_83
+      rect:
+        serializedVersion: 2
+        x: 14857
+        y: 0
+        width: 179
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 782088242afb3b649821ee8c8003ee24
+      internalID: -1724580172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ff0bd3d6031535a49b1fa7838748a91a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":179.0,"y":135.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      TelevisionGif_Test-Sheet_0: -7417139081841362694
+      TelevisionGif_Test-Sheet_1: 796928213
+      TelevisionGif_Test-Sheet_10: 1483705628
+      TelevisionGif_Test-Sheet_11: -761466989
+      TelevisionGif_Test-Sheet_12: 211476249
+      TelevisionGif_Test-Sheet_13: -1587583962
+      TelevisionGif_Test-Sheet_14: -2113576983
+      TelevisionGif_Test-Sheet_15: 2108828768
+      TelevisionGif_Test-Sheet_16: 433481131
+      TelevisionGif_Test-Sheet_17: 902146
+      TelevisionGif_Test-Sheet_18: -1757819339
+      TelevisionGif_Test-Sheet_19: -50174870
+      TelevisionGif_Test-Sheet_2: 326769993
+      TelevisionGif_Test-Sheet_20: 119691514
+      TelevisionGif_Test-Sheet_21: 465829220
+      TelevisionGif_Test-Sheet_22: -2133674285
+      TelevisionGif_Test-Sheet_23: 1082795028
+      TelevisionGif_Test-Sheet_24: -1088676432
+      TelevisionGif_Test-Sheet_25: -1068482386
+      TelevisionGif_Test-Sheet_26: 1295669026
+      TelevisionGif_Test-Sheet_27: -344561101
+      TelevisionGif_Test-Sheet_28: -1465435005
+      TelevisionGif_Test-Sheet_29: 671863502
+      TelevisionGif_Test-Sheet_3: 693202039
+      TelevisionGif_Test-Sheet_30: 561943188
+      TelevisionGif_Test-Sheet_31: 745526505
+      TelevisionGif_Test-Sheet_32: 274105795
+      TelevisionGif_Test-Sheet_33: 127176727
+      TelevisionGif_Test-Sheet_34: -1820245376
+      TelevisionGif_Test-Sheet_35: -1684212742
+      TelevisionGif_Test-Sheet_36: 225692902
+      TelevisionGif_Test-Sheet_37: 1388234433
+      TelevisionGif_Test-Sheet_38: -115154510
+      TelevisionGif_Test-Sheet_39: -733583111
+      TelevisionGif_Test-Sheet_4: -1309204204
+      TelevisionGif_Test-Sheet_40: -1430141481
+      TelevisionGif_Test-Sheet_41: -2091577545
+      TelevisionGif_Test-Sheet_42: -60472624
+      TelevisionGif_Test-Sheet_43: 600742170
+      TelevisionGif_Test-Sheet_44: -979570901
+      TelevisionGif_Test-Sheet_45: -1227104121
+      TelevisionGif_Test-Sheet_46: 1173022395
+      TelevisionGif_Test-Sheet_47: -1198014334
+      TelevisionGif_Test-Sheet_48: 29001126
+      TelevisionGif_Test-Sheet_49: -1214585595
+      TelevisionGif_Test-Sheet_5: -447518891
+      TelevisionGif_Test-Sheet_50: 1306506060
+      TelevisionGif_Test-Sheet_51: 1325323955
+      TelevisionGif_Test-Sheet_52: -748195404
+      TelevisionGif_Test-Sheet_53: 1551760184
+      TelevisionGif_Test-Sheet_54: -1413240624
+      TelevisionGif_Test-Sheet_55: 1311138905
+      TelevisionGif_Test-Sheet_56: 472786366
+      TelevisionGif_Test-Sheet_57: 1258556375
+      TelevisionGif_Test-Sheet_58: 560726989
+      TelevisionGif_Test-Sheet_59: -1863783350
+      TelevisionGif_Test-Sheet_6: 373142740
+      TelevisionGif_Test-Sheet_60: 1185746866
+      TelevisionGif_Test-Sheet_61: -934596408
+      TelevisionGif_Test-Sheet_62: 1445224649
+      TelevisionGif_Test-Sheet_63: 1462757017
+      TelevisionGif_Test-Sheet_64: 619537331
+      TelevisionGif_Test-Sheet_65: 71673349
+      TelevisionGif_Test-Sheet_66: -1743978449
+      TelevisionGif_Test-Sheet_67: -639076692
+      TelevisionGif_Test-Sheet_68: -1010998981
+      TelevisionGif_Test-Sheet_69: 1307315866
+      TelevisionGif_Test-Sheet_7: 270825649
+      TelevisionGif_Test-Sheet_70: 1967284530
+      TelevisionGif_Test-Sheet_71: -264159254
+      TelevisionGif_Test-Sheet_72: 601465578
+      TelevisionGif_Test-Sheet_73: 1366473923
+      TelevisionGif_Test-Sheet_74: 1203572934
+      TelevisionGif_Test-Sheet_75: 1134137137
+      TelevisionGif_Test-Sheet_76: 2016603618
+      TelevisionGif_Test-Sheet_77: -665143543
+      TelevisionGif_Test-Sheet_78: -770844942
+      TelevisionGif_Test-Sheet_79: -874822473
+      TelevisionGif_Test-Sheet_8: -1634472783
+      TelevisionGif_Test-Sheet_80: 313110064
+      TelevisionGif_Test-Sheet_81: -450303838
+      TelevisionGif_Test-Sheet_82: 999313663
+      TelevisionGif_Test-Sheet_83: -1724580172
+      TelevisionGif_Test-Sheet_9: -1639442579
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

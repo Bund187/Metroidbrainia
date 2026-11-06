@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 803f32b4c23c04f438777b53d716cdaa, type: 3}
+  m_Name: TVBroadcast_Entrance
+  m_EditorClassIdentifier: Assembly-CSharp::Metroidbrainia.TVBroadcastSequence
+  animationClip: {fileID: 7400000, guid: 8f2e5d3fb4d22b241b9c5d07a1179055, type: 2}
+  segments:
+  - startTime: 1.63
+    endTime: 2.47
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:c28f3d581285b6344a516a44214d2ae2
+      m_TableEntryReference:
+        m_KeyId: 7321509888
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+  - startTime: 2.47
+    endTime: 3.31
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:c28f3d581285b6344a516a44214d2ae2
+      m_TableEntryReference:
+        m_KeyId: 4023346618368
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+  - startTime: 3.31
+    endTime: 4.15
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:c28f3d581285b6344a516a44214d2ae2
+      m_TableEntryReference:
+        m_KeyId: 4123632427008
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+  - startTime: 4.15
+    endTime: 5
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:c28f3d581285b6344a516a44214d2ae2
+      m_TableEntryReference:
+        m_KeyId: 4194700713984
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []
