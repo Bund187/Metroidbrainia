@@ -43,6 +43,10 @@ namespace Metroidbrainia.Hand3DExperiment
         private Vector3 originalModelPosition;
         private Quaternion originalModelRotation;
         private Quaternion desiredHandInCamera;
+        private Transform contactPoint;
+        private Vector3 contactTarget;
+        private bool returningFromContact;
+        private float releaseDepth;
 
         public bool IsReady => initialized;
         public Transform Hand => hand;
@@ -50,6 +54,7 @@ namespace Metroidbrainia.Hand3DExperiment
         public Transform Forearm => forearm;
         public Camera ArmCamera => armCamera;
         public Hand3DModeController Modes => modes;
+        public bool HasContact => contactPoint != null;
         public Vector3 LongitudinalAxis => forearm.InverseTransformDirection(hand.position - forearm.position).normalized;
         public bool ControlsRotationOf(Transform bone) => bone == upperArm || bone == forearm;
 
@@ -137,9 +142,11 @@ namespace Metroidbrainia.Hand3DExperiment
         public void ToggleMode()
         {
             if (!initialized) return;
+            ReleaseContact();
             ArmFrame displayed = CaptureFrame();
             displayed.hand = desiredHandInCamera;
             modes.Toggle(displayed);
+            returningFromContact = false;
             controlling = returning = false;
             returnVelocity = Vector2.zero;
         }
@@ -156,6 +163,7 @@ namespace Metroidbrainia.Hand3DExperiment
         public void EndControl()
         {
             if (!initialized || !controlling) return;
+            ReleaseContact();
             controlling = false;
             returning = true;
             targetScreenPosition = restScreenPosition;
@@ -169,6 +177,39 @@ namespace Metroidbrainia.Hand3DExperiment
             Vector2 pixels = displacement * (usingMouse ? 1f : movementSpeed);
             targetScreenPosition = ClampToScreen(targetScreenPosition + new Vector2(
                 pixels.x / referenceResolution.x, pixels.y / referenceResolution.y));
+        }
+
+        public Vector2 GetScreenDisplacement(Vector2 integratedInput, bool usingMouse, Camera worldCamera)
+        {
+            Vector2 pixels = integratedInput * (usingMouse ? 1f : movementSpeed);
+            return new Vector2(pixels.x / referenceResolution.x * worldCamera.pixelWidth,
+                pixels.y / referenceResolution.y * worldCamera.pixelHeight);
+        }
+
+        public void FollowContact(Transform gripPoint, Vector3 target)
+        {
+            if (!initialized || modes.IsEditing || !controlling) return;
+            contactPoint = gripPoint;
+            contactTarget = target;
+            returningFromContact = false;
+        }
+
+        public void ReleaseContact()
+        {
+            if (contactPoint == null) return;
+            contactPoint = null;
+            Vector3 viewport = armCamera.WorldToViewportPoint(hand.position);
+            screenPosition = targetScreenPosition = new Vector2(viewport.x, viewport.y);
+            releaseDepth = viewport.z;
+            returningFromContact = true;
+        }
+
+        // Called by the rig after its final wrist orientation is known. Only this component rotates arm joints.
+        public void ResolveContactAfterPose()
+        {
+            if (contactPoint == null) return;
+            Vector3 gripOffset = contactPoint.position - hand.position;
+            SolveArm(contactTarget - gripOffset);
         }
 
         private Vector2 ClampToScreen(Vector2 position) => new Vector2(
@@ -197,12 +238,21 @@ namespace Metroidbrainia.Hand3DExperiment
                 screenPosition = targetScreenPosition = restScreenPosition;
                 return;
             }
+            if (HasContact) return;
+            float targetDepth = handDepth;
+            if (returningFromContact)
+            {
+                float weight = movementSmoothing > 0f ? 1f - Mathf.Exp(-deltaTime / movementSmoothing) : 1f;
+                releaseDepth = Mathf.Lerp(releaseDepth, handDepth, weight);
+                if (Mathf.Abs(releaseDepth - handDepth) < 0.0001f) returningFromContact = false;
+                else targetDepth = releaseDepth;
+            }
             if (returning)
             {
                 screenPosition = Vector2.SmoothDamp(screenPosition, restScreenPosition, ref returnVelocity,
                     returnSmoothTime, Mathf.Infinity, deltaTime);
                 // The authored rest pose can be outside the interactive screen limits, just like ArmView.
-                if (Vector2.Scale(screenPosition - restScreenPosition, referenceResolution).sqrMagnitude < 0.01f)
+                if (!returningFromContact && Vector2.Scale(screenPosition - restScreenPosition, referenceResolution).sqrMagnitude < 0.01f)
                 {
                     screenPosition = targetScreenPosition = restScreenPosition;
                     returning = false;
@@ -214,7 +264,7 @@ namespace Metroidbrainia.Hand3DExperiment
                 float weight = movementSmoothing > 0f ? 1f - Mathf.Exp(-deltaTime / movementSmoothing) : 1f;
                 screenPosition = Vector2.Lerp(screenPosition, targetScreenPosition, weight);
             }
-            Vector3 target = armCamera.ViewportToWorldPoint(new Vector3(screenPosition.x, screenPosition.y, handDepth));
+            Vector3 target = armCamera.ViewportToWorldPoint(new Vector3(screenPosition.x, screenPosition.y, targetDepth));
             bool limited = SolveArm(target);
             if (limited && controlling)
             {
@@ -259,6 +309,8 @@ namespace Metroidbrainia.Hand3DExperiment
 
         private void OnDisable()
         {
+            contactPoint = null;
+            returningFromContact = false;
             if (initialized && upperArm != null && forearm != null && hand != null) RestoreRestPose();
             if (initialized)
             {

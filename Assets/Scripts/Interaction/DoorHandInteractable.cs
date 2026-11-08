@@ -46,6 +46,7 @@ namespace Metroidbrainia
 
         public Transform InteractionPoint => interactionPoint;
         public bool IsOpen { get; private set; }
+        public bool IsAutoOpening => autoOpening;
 
         private void Awake()
         {

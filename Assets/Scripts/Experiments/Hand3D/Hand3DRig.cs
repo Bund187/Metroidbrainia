@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -71,6 +71,7 @@ namespace Metroidbrainia.Hand3DExperiment
         private float wristElapsed;
         private float wristDuration = 0.2f;
         private AnimationCurve wristEasing;
+        private Hand3DInteractionPose interactionPose;
 
         public bool IsReady => initialized;
         public FingerBinding[] Fingers => fingers;
@@ -118,6 +119,7 @@ namespace Metroidbrainia.Hand3DExperiment
 
             Hand3DArmMovement movement = GetComponent<Hand3DArmMovement>();
             armMovement = movement;
+            interactionPose = GetComponent<Hand3DInteractionPose>();
             foreach (DrivenBone bone in driven)
                 if (movement != null && movement.ControlsRotationOf(bone.transform))
                     return Fail("Finger joints cannot own arm bones controlled by movement.");
@@ -146,8 +148,44 @@ namespace Metroidbrainia.Hand3DExperiment
                 animatorWasEnabled = animatorToSuspend.enabled;
                 animatorToSuspend.enabled = false;
             }
+            if (interactionPose != null)
+            foreach (var profile in new[] { interactionPose.Overrides, interactionPose.HandHoldOverrides })
+            {
+                var grabBones = new HashSet<Transform>();
+                foreach (LocalBonePose entry in profile)
+                {
+                    if (entry == null || !entry.Captured || !ValidBone(entry.Bone) || !grabBones.Add(entry.Bone)
+                        || movement != null && movement.ControlsRotationOf(entry.Bone))
+                        return Fail("Grab overrides need captured, unique scene bones, excluding arm joints controlled by movement.");
+                    if (!lookup.ContainsKey(entry.Bone)) AddBone(entry.Bone, null, default);
+                }
+            }
             if (movement != null && movement.IsReady && !lookup.ContainsKey(movement.Hand))
                 AddBone(movement.Hand, null, default);
+            if (interactionPose != null)
+            foreach (var profile in new[] { interactionPose.AdditionalBones, interactionPose.HandHoldBones })
+            {
+                var additionalBones = new HashSet<Transform>();
+                foreach (Hand3DInteractionPose.AdditionalBone entry in profile)
+                {
+                    if (entry == null || !entry.Captured || !ValidBone(entry.Bone) || !additionalBones.Add(entry.Bone)
+                        || movement != null && (movement.ControlsRotationOf(entry.Bone) || !entry.Bone.IsChildOf(movement.Forearm)))
+                        return Fail("Capture Neutral and Grab for unique wrist/forearm Twist bones. Main forearm/upper arm are reserved for IK.");
+                    if (lookup.TryGetValue(entry.Bone, out DrivenBone existing) && existing.joint != null)
+                        return Fail("Additional Grab bones must not duplicate configured finger joints.");
+                    if (!lookup.ContainsKey(entry.Bone)) AddBone(entry.Bone, null, default);
+                    // Wrist uses the movement's reference basis; other extra bones restore their captured neutral.
+                    if (movement == null || entry.Bone != movement.Hand)
+                        lookup[entry.Bone].original = lookup[entry.Bone].visualRotation = entry.Neutral;
+                }
+            }
+            if (interactionPose != null && interactionPose.UseHoldPositions)
+                foreach (var entry in interactionPose.HandHoldPositions)
+                {
+                    if (entry == null || !lookup.TryGetValue(entry.Bone, out var bone) || bone.joint == null)
+                        return Fail("HandHold translations must reference configured finger joints only.");
+                    entry.Bone.localPosition = entry.Neutral;
+                }
             initialized = true;
             BeginTransition();
             foreach (DrivenBone bone in driven)
@@ -205,9 +243,11 @@ namespace Metroidbrainia.Hand3DExperiment
 
         private void RequestTransition() => transitionPending = true;
 
-        private void LateUpdate()
+        private void LateUpdate() => UpdateRig(Time.deltaTime);
+
+        private void UpdateRig(float deltaTime)
         {
-            if (!initialized || Time.deltaTime <= 0f)
+            if (!initialized || deltaTime <= 0f)
                 return;
             // Finger and recognition events can arrive together; start once from the displayed rotations.
             if (transitionPending)
@@ -215,8 +255,10 @@ namespace Metroidbrainia.Hand3DExperiment
                 transitionPending = false;
                 BeginTransition();
             }
-            elapsed += Time.deltaTime;
-            UpdateWristOrientation(Time.deltaTime);
+            elapsed += deltaTime;
+            UpdateWristOrientation(deltaTime);
+            if (interactionPose != null) interactionPose.Tick(deltaTime);
+            float grabWeight = interactionPose != null && interactionPose.isActiveAndEnabled ? interactionPose.Weight : 0f;
             float t = transitionDuration > 0f ? Mathf.SmoothStep(0f, 1f, Mathf.Clamp01(elapsed / transitionDuration)) : 1f;
             float clickWeight = poseActions != null ? poseActions.PointClickWeight : 0f;
             foreach (DrivenBone bone in driven)
@@ -227,8 +269,27 @@ namespace Metroidbrainia.Hand3DExperiment
                 if (bone.joint != null && bone.finger == Finger.Index && clickWeight > 0f)
                     rotation = Quaternion.Slerp(rotation, bone.joint.Flexed, clickWeight);
                 bone.visualRotation = rotation;
+                Quaternion grabRotation = bone.joint != null ? bone.joint.Flexed : rotation;
+                if (interactionPose != null && interactionPose.TryGetRotation(bone.transform, out Quaternion capturedGrab))
+                    grabRotation = capturedGrab;
+                if (interactionPose != null && interactionPose.TryGetAdditionalBone(bone.transform, out var additional))
+                    grabRotation = armMovement != null && bone.transform == armMovement.Hand
+                        ? bone.original * Quaternion.Inverse(additional.Neutral) * additional.Grab : additional.Grab;
+                rotation = Quaternion.Slerp(rotation, grabRotation, grabWeight);
                 bone.transform.localRotation = armMovement != null && bone.transform == armMovement.Hand
-                    ? armMovement.ComposeHandRotation(rotation, wristOffset) : rotation;
+                    ? armMovement.ComposeHandRotation(rotation, Quaternion.Slerp(wristOffset, Quaternion.identity, grabWeight))
+                        * (interactionPose != null && interactionPose.isActiveAndEnabled ? interactionPose.WristOffset : Quaternion.identity) : rotation;
+            }
+            if (interactionPose != null && interactionPose.UseHoldPositions)
+                foreach (var entry in interactionPose.HandHoldPositions)
+                    if (entry != null && entry.Bone != null)
+                        entry.Bone.localPosition = Vector3.Lerp(entry.Neutral, entry.Hold, interactionPose.HandHoldWeight);
+            if (armMovement != null && armMovement.HasContact)
+            {
+                Quaternion worldRotation = armMovement.Hand.rotation;
+                armMovement.ResolveContactAfterPose();
+                // IK changes the wrist parent; the rig restores its final orientation without a competing writer.
+                armMovement.Hand.rotation = worldRotation;
             }
         }
 
@@ -264,6 +325,9 @@ namespace Metroidbrainia.Hand3DExperiment
             if (poseRecognizer != null) poseRecognizer.PoseChanged -= RequestTransition;
             foreach (DrivenBone bone in driven)
                 if (bone.transform != null) bone.transform.localRotation = bone.original;
+            if (interactionPose != null && interactionPose.UseHoldPositions)
+                foreach (var entry in interactionPose.HandHoldPositions)
+                    if (entry != null && entry.Bone != null) entry.Bone.localPosition = entry.Neutral;
             if (animatorToSuspend != null) animatorToSuspend.enabled = animatorWasEnabled;
             driven.Clear();
             lookup.Clear();
@@ -274,3 +338,4 @@ namespace Metroidbrainia.Hand3DExperiment
         }
     }
 }
+

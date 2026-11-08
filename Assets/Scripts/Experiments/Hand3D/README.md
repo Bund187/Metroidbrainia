@@ -139,3 +139,8 @@ La IK tiene longitudes fijas: puede no alcanzar todas las esquinas de pantalla. 
 7. Cambia de modo con R2/RMB mantenido: no debe activar movimiento libre al salir hasta soltar y volver a pulsar. Comprueba retorno al soltar en Exploration.
 8. Pausa/reanuda durante transición, pierde/recupera foco y comprueba restauración de controles al deshabilitar el experimento. No debe avanzar la transición durante la pausa.
 9. Guarda, vuelve a abrir y verifica configuraciones, extremos, orientaciones de pose y capturas anteriores. Comprueba renderizado pixelado y verifica aparte Prototype, sin editarlo.
+
+## Puertas con mano 3D
+
+Configuración, calibración física, captura de Grab y pruebas: [DOOR_INTERACTION.md](DOOR_INTERACTION.md).
+
