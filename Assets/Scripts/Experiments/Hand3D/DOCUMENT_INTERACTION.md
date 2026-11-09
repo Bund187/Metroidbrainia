@@ -20,9 +20,21 @@ Las puertas conservan su detección, límites, empuje, bloqueo y motor DoorHandI
 
 ## Presentación legible
 
-El documento se muestra como Image + TMP_Text bajo un mismo RectTransform en el Canvas Overlay normal, antes del RawImage del brazo para que los dedos se dibujen por delante. No entra en RT_PixelArm. Sprite, texto, fuente, color y cambios de idioma siguen unidos y a resolución normal de UI.
+El documento se muestra como Image + TMP_Text bajo un mismo RectTransform en el Canvas Overlay normal. Durante HandHold, el orden es: RawImage base del brazo, documento/texto, copia del mismo RawImage recortada al pulgar. El papel no entra en RT_PixelArm. Sprite, texto, fuente, color y cambios de idioma siguen unidos y a resolución normal de UI.
 
-Hand3DDocumentDisplay se ejecuta después del rig y alinea Paper Grip con la proyección de DocumentHoldPoint. Attachment Duration suaviza únicamente la adquisición: después no se introduce retraso en el seguimiento. Screen Offset usa píxeles de referencia a 1080p; Rotation Offset y Visual Scale ajustan la presentación frontal de la unidad completa. Paper Grip es el DocumentGripPoint copiado dentro del papel: ajustarlo para elegir qué borde sujetan los dedos. DocumentHoldPoint se ajusta en el espacio local de la muñeca, sin tocar las articulaciones de los dedos.
+Hand3DDocumentDisplay se ejecuta después del rig y alinea Paper Grip con la proyección de DocumentHoldPoint. Pickup Transition Duration suaviza posición, escala y orientación iniciales; después no se introduce retraso en el seguimiento. Held Document Screen Height controla la altura aparente del papel respecto a Game (0.58 por defecto), teniendo en cuenta CanvasScaler y preserveAspect. Escala el papel y el texto uniformemente sin cambiar el tamaño de fuente configurado. Document Hold Offset usa píxeles de referencia a 1080p; Document Hold Rotation ajusta la unidad completa. Los campos anteriores de offset y duración se migran conservando sus valores. Paper Grip es el DocumentGripPoint dentro del papel: ajustarlo para elegir qué borde sujetan los dedos. DocumentHoldPoint se ajusta en el espacio local de la muñeca, sin tocar las articulaciones de los dedos.
+
+Al soltar, Release Transition Duration (0.18 s inicial) devuelve la presentación hacia la proyección/tamaño del documento del mundo; después la oculta y reactiva el original. El original permanece oculto durante esa transición para evitar duplicación. Si el documento o los componentes se desactivan/destruyen, la limpieza es inmediata. No se mueve ni escala el documento del mundo.
+
+## Pulgar delante del papel
+
+Hand3DThumbOverlay es una máscara stencil de UI. Sus 66 triángulos seleccionados proceden de vértices dominados por los huesos del pulgar derecho de WRAD. La selección se guarda en la escena; durante el juego BakeMesh permite seguir la deformación real sin cambiar Read/Write del FBX. Los vértices se proyectan a través del RectTransform/UV del RawImage, por lo que la máscara acompaña al brazo, a los huesos y al encuadre. La imagen que se ve por esa máscara es la misma RT_PixelArm: conserva iluminación, colores y pixelado. No hay otra cámara, RenderTexture ni copia del rig que escriba huesos.
+
+La escena ya contiene Hand3DThumbOverlay > PixelThumb, inactivo hasta sujetar un documento. **GameObject > Metroidbrainia > Test Hand 3D > Prepare Document Visuals** crea/reconstruye sus referencias e índices mediante Undo. También se incluye en Prepare Document Interaction. Regenerar después de cambiar el mesh o los bindings del pulgar. No aplica cambios al modelo ni a prefabs compartidos.
+
+En Hand3DDocumentDisplay, usar **Select DocumentHoldPoint** y **Select Paper Grip** para ajustar visualmente esos Transform. Probar Hold Offset/Rotation en Play y copiar los valores deseados al Inspector fuera de Play. Mantener Paper Grip cerca del borde, fuera del texto central; el punto existente está cerca del borde derecho del papel. No se imponen ejes o un offset fijo del pulgar.
+
+Es composición 2D guiada por geometría, no profundidad física entre mano y papel. La captura HandHold debe dejar visible el pulgar en la imagen del brazo: si está oculto por la palma, la máscara no reconstruye una vista oculta. El extremo de la máscara en la base del pulgar puede necesitar revisión visual. En esquinas el papel puede recortarse; no se desplaza la mano para recentrarlo ni se cambian sus límites.
 
 Mientras se sostiene, el renderer y collider originales se ocultan y se restauran al terminar. Su Transform, jerarquía, materiales y escala nunca se modifican. Soltar R2/RMB, cambiar a HandEdit, desactivar componentes o destruir/desactivar el documento cancela la sujeción. No hay física de caída ni comprobación repetida de distancia inicial. Las acciones de pose se suspenden durante la sujeción, como en el flujo original; los botones individuales de dedos siguen funcionando y actualizan la combinación lógica que se recuperará al soltar.
 
@@ -49,12 +61,12 @@ Activar Debug Contact en Hand3DDocumentInteractor: muestra cantidad, candidata, 
 
 ## Verificación
 
-Compilación C# comprobada contra las referencias actuales de Unity: cero errores. Superadas 35 comprobaciones aisladas de documentos y 128 de regresión/serialización. Usan entrada simulada y comprueban adquisición, distancia, pared, barrido rápido, múltiples documentos, objetivo persistente, exclusión con puertas, ocultación/restauración, eventos, captura de HandHold, posiciones opcionales, seguimiento de Paper Grip, texto y recuperación de OK/Point. La copia de la escena final reabierta resuelve tres documentos, nueve puertas, UI, fuente y punto de sujeción; preparar de nuevo no duplica componentes.
+Compilación C# comprobada contra las referencias actuales de Unity: cero errores. Superadas 47 comprobaciones aisladas de documentos y 128 de regresión/serialización. Incluyen adquisición, distancia, pared, barrido rápido, múltiples documentos, objetivo persistente, exclusión con puertas, ocultación/restauración, eventos, captura de HandHold, seguimiento de Paper Grip, texto, recuperación de OK/Point, altura al 58 %, escalas de Canvas 0.5/1/2 y transiciones de recogida/devolución. Una prueba gráfica independiente renderiza el stencil real de UI con una malla skinned sintética y comprueba por píxeles que solo su región aparece delante del papel y sigue el movimiento del hueso. También se han comprobado selección y BakeMesh sobre WRAD real con su FBX no legible en runtime. La copia de la escena final reabierta resuelve tres documentos, nueve puertas y la máscara de 66 triángulos; preparar de nuevo no duplica componentes.
 
-Estas comprobaciones NO validan el aspecto en Game ni un cambio real de idioma cargado desde las tablas del proyecto. Revisar manualmente:
+Estas comprobaciones NO validan el aspecto final de WRAD sujetando el papel en Game ni un cambio real de idioma cargado desde las tablas del proyecto. Revisar manualmente:
 
 - Los tres documentos: proximidad, R2 mantenido antes del contacto, cruce rápido, rechazo desde lejos y detrás de una pared.
-- Ajuste de DocumentHoldPoint y Paper Grip: borde sujeto, tamaño y orientación legibles, dedos delante del papel, sin saltos durante movimiento/retorno.
+- Ajuste de DocumentHoldPoint y Paper Grip: pulgar delante del borde, otros dedos detrás, tamaño y orientación legibles, sin saltos durante movimiento/retorno. Probar centro y esquinas con distintas resoluciones/relaciones de aspecto.
 - Sprite y texto de cada documento, fuente/tamaño/color y cambio de idioma real mientras está sujeto.
 - Desde OK y Point: coger, cambiar dedos, soltar y comprobar círculo, orientación y acciones restauradas.
 - HandEdit, desactivar/destruir documento y soltar R2: sin UI residual ni objetos ocultos.

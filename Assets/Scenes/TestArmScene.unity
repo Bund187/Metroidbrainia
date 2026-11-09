@@ -5287,6 +5287,91 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4587523157403921925, guid: e02109bd99e998b48835943574f2068c, type: 3}
   m_PrefabInstance: {fileID: 462332344}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &463242384
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 463242386}
+  - component: {fileID: 463242388}
+  - component: {fileID: 463242387}
+  - component: {fileID: 463242385}
+  m_Layer: 5
+  m_Name: Hand3DThumbOverlay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &463242385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463242384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddfd723285c04b1489d06d7586c4ce0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Metroidbrainia.Hand3DExperiment.Hand3DThumbOverlay
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  thumbRenderer: {fileID: 1246806750}
+  armCamera: {fileID: 749073066}
+  armDisplay: {fileID: 1511958091}
+  thumbImage: {fileID: 1907892673}
+  thumbTriangles: 4b0000005b000000510000005b0000005c0000005a0000005b0000005d0000005c0000004b0000005d0000005b0000005d0000005e0000005c0000004b0000005f0000005d0000005d000000610000005e0000005f000000610000005d00000061000000620000005e00000060000000630000005f0000005f0000006300000061000000600000006400000063000000610000006500000062000000630000006500000061000000650000006600000062000000640000006700000063000000630000006700000065000000640000006800000067000000650000006900000066000000670000006900000065000000690000006a00000066000000680000006b00000067000000670000006b00000069000000680000006c0000006b000000690000006d0000006a0000006b0000006d000000690000006d0000006e0000006a0000006d0000006f0000006e0000006c000000700000006b0000006b000000700000006d0000006d000000700000006f0000006c0000007100000070000000710000006f000000700000007f0000008900000080000000890000008a000000800000008e000000890000007f000000890000008f0000008a0000008f000000900000008a000000a0000000a10000008e0000008e000000a100000089000000a0000000a2000000a1000000a10000008f00000089000000a2000000a3000000a1000000a1000000a30000008f000000a2000000a4000000a3000000a3000000a50000008f0000008f000000a500000090000000a5000000a600000090000000a4000000a7000000a3000000a3000000a7000000a5000000a4000000a8000000a7000000a5000000a9000000a6000000a7000000a9000000a5000000a9000000aa000000a6000000a8000000ab000000a7000000a7000000ab000000a9000000a8000000ac000000ab000000a9000000ad000000aa000000ab000000ad000000a9000000ad000000ae000000aa000000af000000ae000000ad000000ac000000b0000000ab000000ab000000b0000000ad000000af000000ad000000b0000000ac000000b1000000b0000000b1000000af000000b0000000i
+--- !u!224 &463242386
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463242384}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1907892675}
+  m_Father: {fileID: 1769055712}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &463242387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463242384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Mask
+  m_ShowMaskGraphic: 0
+--- !u!222 &463242388
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463242384}
+  m_CullTransparentMesh: 1
 --- !u!1 &479056618
 GameObject:
   m_ObjectHideFlags: 0
@@ -17299,6 +17384,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c067ebdf1d575fc41a2c7830367164e0, type: 3}
+--- !u!137 &1246806750 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7303110969578990368, guid: 55e197b20808e9349a4188cb28d51665, type: 3}
+  m_PrefabInstance: {fileID: 1857483749}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1246890565
 GameObject:
   m_ObjectHideFlags: 0
@@ -25318,7 +25408,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
   m_UseReflectionProbes: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -25337,6 +25427,7 @@ RectTransform:
   m_Children:
   - {fileID: 810367883}
   - {fileID: 1511958090}
+  - {fileID: 463242386}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -29063,10 +29154,13 @@ MonoBehaviour:
   paperGrip: {fileID: 1766724367}
   documentImage: {fileID: 2063674}
   documentText: {fileID: 1911626807}
-  screenOffset: {x: 0, y: 0}
-  rotationOffset: {x: 0, y: 0, z: 0}
+  thumbOverlay: {fileID: 463242385}
+  heldDocumentScreenHeight: 0.58
+  documentHoldOffset: {x: 0, y: 0}
+  documentHoldRotation: {x: 0, y: 0, z: 0}
+  pickupTransitionDuration: 0.12
+  releaseTransitionDuration: 0.18
   visualScale: 1
-  attachmentDuration: 0.12
 --- !u!114 &1857483780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29925,6 +30019,78 @@ MonoBehaviour:
   doorRoot: {fileID: 1902179643}
   gripLocalOffset: {x: 0, y: 0, z: 0}
   grabWristEulerOffset: {x: 0, y: 0, z: 0}
+--- !u!1 &1907892672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1907892675}
+  - component: {fileID: 1907892674}
+  - component: {fileID: 1907892673}
+  m_Layer: 5
+  m_Name: PixelThumb
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1907892673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907892672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 8400000, guid: 53f0af2167a92264086fc9b82ce9b238, type: 2}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1907892674
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907892672}
+  m_CullTransparentMesh: 1
+--- !u!224 &1907892675
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907892672}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 463242386}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -320, y: -240}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1911498984
 PrefabInstance:
   m_ObjectHideFlags: 0

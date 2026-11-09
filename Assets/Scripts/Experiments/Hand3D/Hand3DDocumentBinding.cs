@@ -19,20 +19,21 @@ namespace Metroidbrainia.Hand3DExperiment
         [SerializeField] private UnityEvent onPickedUp = new UnityEvent();
         private static readonly HashSet<Hand3DDocumentBinding> active = new HashSet<Hand3DDocumentBinding>();
         private Hand3DDocumentDisplay display;
-        private bool held, rendererWasEnabled, colliderWasEnabled;
+        private bool held, releasing, rendererWasEnabled, colliderWasEnabled;
         public DocumentHandInteractable Document => document;
         public Vector3 ContactPosition => document.InteractionPoint.position;
         public bool IsHeld => held && display != null && display.IsShowing(this);
         public float MaximumDistance => maxInteractionDistance;
+        public Bounds WorldBounds => worldRenderer != null ? worldRenderer.bounds : new Bounds(transform.position, Vector3.zero);
         public bool IsReady => isActiveAndEnabled && document != null && document.isActiveAndEnabled
-            && !held && worldRenderer != null && worldRenderer.enabled
+            && !held && !releasing && worldRenderer != null && worldRenderer.enabled
             && worldCollider != null && worldCollider.enabled && heldSprite != null;
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void ResetRegistry() => active.Clear();
         private void OnEnable() { if (ExperimentScope.IsAllowed(this)) active.Add(this); }
-        private void OnDisable() { EndHold(); active.Remove(this); }
-        private void OnDestroy() { EndHold(); active.Remove(this); }
+        private void OnDisable() { EndHold(true); active.Remove(this); }
+        private void OnDestroy() { EndHold(true); active.Remove(this); }
         public static void Collect(Scene scene, List<Hand3DDocumentBinding> result)
         {
             result.Clear();
@@ -53,11 +54,25 @@ namespace Metroidbrainia.Hand3DExperiment
             return IsHeld && document != null && document.isActiveAndEnabled && isActiveAndEnabled;
         }
 
-        public void EndHold()
+        public void EndHold(bool immediate = false)
         {
-            if (!held) return;
+            if (!held && !releasing) return;
             held = false;
-            if (display != null) display.Hide(this);
+            if (immediate || display == null)
+            {
+                if (display != null) display.Hide(this);
+                FinishReturn();
+            }
+            else if (!releasing)
+            {
+                releasing = true;
+                display.Release(this, FinishReturn);
+            }
+        }
+
+        private void FinishReturn()
+        {
+            releasing = false;
             display = null;
             if (worldRenderer != null) worldRenderer.enabled = rendererWasEnabled;
             if (worldCollider != null) worldCollider.enabled = colliderWasEnabled;

@@ -86,6 +86,7 @@ namespace Metroidbrainia.Hand3DExperiment.Editor
             }
             EditorSceneManager.MarkSceneDirty(scene);
             Undo.CollapseUndoOperations(undo);
+            Hand3DDocumentVisualPreparation.PrepareFor(display);
             Debug.Log($"[Hand3D Documents] Prepared {count} scene documents. Adjust DocumentHoldPoint/paper grip and capture HandHold; no shared assets changed.", interactor);
         }
 
