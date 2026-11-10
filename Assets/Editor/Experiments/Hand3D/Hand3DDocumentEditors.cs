@@ -18,8 +18,8 @@ namespace Metroidbrainia.Hand3DExperiment.Editor
             { Debug.LogWarning("Open TestArmScene outside Play before preparing documents."); return; }
             var movement = scene.GetRootGameObjects().SelectMany(root => root.GetComponentsInChildren<Hand3DArmMovement>(true)).FirstOrDefault();
             var contact = movement != null ? movement.GetComponent<Hand3DDoorInteractor>() : null;
-            if (movement == null || movement.Hand == null || contact == null)
-            { Debug.LogWarning("Prepare the experimental arm and its existing contact adapter first."); return; }
+            if (movement == null || movement.Hand == null)
+            { Debug.LogWarning("Prepare the experimental arm first."); return; }
             Undo.IncrementCurrentGroup();
             int undo = Undo.GetCurrentGroup();
             Undo.SetCurrentGroupName("Prepare experimental documents");
@@ -35,13 +35,14 @@ namespace Metroidbrainia.Hand3DExperiment.Editor
                 Undo.RegisterCreatedObjectUndo(item, "Create document hold point");
                 Undo.SetTransformParent(item.transform, movement.Hand, "Parent hold point");
                 point = item.transform;
-                point.localPosition = contact.HandGripPoint != null ? contact.HandGripPoint.localPosition : Vector3.zero;
+                point.localPosition = contact != null && contact.HandGripPoint != null ? contact.HandGripPoint.localPosition : Vector3.zero;
                 point.localRotation = Quaternion.identity;
             }
             var displayData = new SerializedObject(display);
             Set(displayData, "movement", movement);
             Set(displayData, "documentHoldPoint", point);
-            var armDisplay = new SerializedObject(contact).FindProperty("armDisplay").objectReferenceValue as RawImage;
+            var armDisplay = contact != null ? new SerializedObject(contact).FindProperty("armDisplay").objectReferenceValue as RawImage
+                : Hand3DScreenProjection.FindDisplay(movement.ArmCamera);
             Set(displayData, "armDisplay", armDisplay);
             if (displayData.FindProperty("visualRoot").objectReferenceValue == null)
             {
@@ -60,6 +61,7 @@ namespace Metroidbrainia.Hand3DExperiment.Editor
             Set(interactionData, "pose", pose);
             Set(interactionData, "display", display);
             interactionData.ApplyModifiedProperties();
+            ConfigureContact(interactor, movement, contact);
 
             // Seed only the NEW profile from the rig's captured flexed fingers. Existing Grab stays byte-for-byte intact.
             var poseData = new SerializedObject(pose);
@@ -92,6 +94,43 @@ namespace Metroidbrainia.Hand3DExperiment.Editor
 
         private static T Ensure<T>(GameObject owner) where T : Component => owner.GetComponent<T>() ?? Undo.AddComponent<T>(owner);
         private static void Set(SerializedObject data, string field, Object value) => data.FindProperty(field).objectReferenceValue = value;
+
+        // Explicit Editor-only migration. Existing scene settings are copied, never guessed from class defaults.
+        public static void ConfigureContact(Hand3DDocumentInteractor interactor, Hand3DArmMovement movement, Hand3DDoorInteractor source)
+        {
+            if (Application.isPlaying || interactor.gameObject.scene.name != "TestArmScene") return;
+            var data = new SerializedObject(interactor);
+            var detection = data.FindProperty("detection");
+            if (detection.FindPropertyRelative("worldCamera").objectReferenceValue != null) return;
+            Undo.RecordObject(interactor, "Configure independent document contact");
+            if (source != null)
+            {
+                var original = new SerializedObject(source);
+                foreach (string field in new[] { "worldCamera", "handGripPoint", "armDisplay", "worldDisplay" })
+                    detection.FindPropertyRelative(field).objectReferenceValue = original.FindProperty(field).objectReferenceValue;
+                detection.FindPropertyRelative("gripScreenOffset").vector2Value = original.FindProperty("gripScreenOffset").vector2Value;
+                detection.FindPropertyRelative("interactionLayers").intValue = original.FindProperty("interactionLayers").intValue;
+            }
+            else
+            {
+                Camera world = interactor.gameObject.scene.GetRootGameObjects().SelectMany(r => r.GetComponentsInChildren<Camera>(true))
+                    .FirstOrDefault(c => c != movement.ArmCamera && c.CompareTag("MainCamera"));
+                Transform grip = movement.Hand.Find("HandGripPoint");
+                if (grip == null)
+                {
+                    var point = new GameObject("HandGripPoint"); Undo.RegisterCreatedObjectUndo(point, "Create visual contact point");
+                    point.transform.SetParent(movement.Hand, false); grip = point.transform;
+                }
+                detection.FindPropertyRelative("worldCamera").objectReferenceValue = world;
+                detection.FindPropertyRelative("handGripPoint").objectReferenceValue = grip;
+                detection.FindPropertyRelative("armDisplay").objectReferenceValue = Hand3DScreenProjection.FindDisplay(movement.ArmCamera);
+                detection.FindPropertyRelative("worldDisplay").objectReferenceValue = Hand3DScreenProjection.FindDisplay(world);
+            }
+            data.ApplyModifiedProperties();
+            PrefabUtility.RecordPrefabInstancePropertyModifications(interactor);
+            EditorUtility.SetDirty(interactor);
+            EditorSceneManager.MarkSceneDirty(interactor.gameObject.scene);
+        }
 
         public static void Sync(Hand3DDocumentBinding binding, DocumentHandInteractable document)
         {

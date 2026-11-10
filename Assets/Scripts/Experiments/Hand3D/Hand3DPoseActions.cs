@@ -11,11 +11,13 @@ namespace Metroidbrainia.Hand3DExperiment
         [SerializeField, Range(0f, 1f)] private float pointClickAmplitude = 0.18f;
 
         private bool clicking;
+        private Hand3DInteractionCoordinator interactions;
         private float elapsed;
         public float PointClickWeight { get; private set; }
 
         private void OnEnable()
         {
+            interactions = GetComponent<Hand3DInteractionCoordinator>();
             if (poseRecognizer == null)
                 poseRecognizer = GetComponent<Hand3DPoseRecognizer>();
             if (poseRecognizer != null)
@@ -25,7 +27,8 @@ namespace Metroidbrainia.Hand3DExperiment
 
         public bool TryExecute()
         {
-            if (!isActiveAndEnabled || !ExperimentScope.IsAllowed(this) || Time.timeScale <= 0f || clicking)
+            if (!isActiveAndEnabled || !ExperimentScope.IsAllowed(this) || Time.timeScale <= 0f || clicking
+                || interactions != null && !interactions.CanExecuteGestureAction)
                 return false;
             HandPose pose = poseRecognizer != null ? poseRecognizer.CurrentPose : null;
             if (pose == null || pose.Action == PoseAction.None)
@@ -50,7 +53,7 @@ namespace Metroidbrainia.Hand3DExperiment
                 CancelAction();
         }
 
-        private void CancelAction()
+        public void CancelAction()
         {
             clicking = false;
             elapsed = 0f;

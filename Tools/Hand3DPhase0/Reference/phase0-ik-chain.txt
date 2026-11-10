@@ -1,0 +1,3 @@
+UpperArm=PlayerCapsule/Capsule/armsFBX/arms/root/shoulder.r/bicep.r
+Forearm=PlayerCapsule/Capsule/armsFBX/arms/root/shoulder.r/bicep.r/forearm.r
+Hand=PlayerCapsule/Capsule/armsFBX/arms/root/shoulder.r/bicep.r/forearm.r/wrist.r

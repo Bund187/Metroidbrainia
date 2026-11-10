@@ -1,0 +1,43 @@
+{
+    "unity": "6000.6.3f1",
+    "scope": "Current unmodified runtime; isolated Editor stepping and synthetic interaction targets. No Game visual validation.",
+    "results": [
+        {
+            "id": "REF",
+            "status": "PASS",
+            "detail": "Executed in isolated Unity Editor.",
+            "assertions": 7
+        },
+        {
+            "id": "F32",
+            "status": "PASS",
+            "detail": "Executed in isolated Unity Editor.",
+            "assertions": 547
+        },
+        {
+            "id": "ACT",
+            "status": "PASS",
+            "detail": "Executed in isolated Unity Editor.",
+            "assertions": 8
+        },
+        {
+            "id": "MOV",
+            "status": "PASS",
+            "detail": "Executed in isolated Unity Editor.",
+            "assertions": 15
+        },
+        {
+            "id": "INT",
+            "status": "FAIL",
+            "detail": "System.Exception: Locked door feedback did not begin\r\n  at Metroidbrainia.Phase0Validation.Check (System.Boolean value, System.String message) [0x00016] in C:\\Users\\Bund187\\AppData\\Local\\Temp\\MetroidbrainiaPhase0-20261109\\Assets\\Editor\\Phase0Validation\\Phase0Validation.cs:39 \r\n  at Metroidbrainia.Phase0Validation.InteractionsAndLifecycle () [0x00465] in C:\\Users\\Bund187\\AppData\\Local\\Temp\\MetroidbrainiaPhase0-20261109\\Assets\\Editor\\Phase0Validation\\Phase0Validation.cs:246 \r\n  at Metroidbrainia.Phase0Validation.Group (System.String id, System.Action test) [0x0000b] in C:\\Users\\Bund187\\AppData\\Local\\Temp\\MetroidbrainiaPhase0-20261109\\Assets\\Editor\\Phase0Validation\\Phase0Validation.cs:64 ",
+            "assertions": 7
+        },
+        {
+            "id": "VISUAL",
+            "status": "PENDING",
+            "detail": "Real Game/URP, physical input, localization, auto-open/locked animation timing and final thumb pixels require the manual protocol.",
+            "assertions": 0
+        }
+    ],
+    "assertions": 584
+}

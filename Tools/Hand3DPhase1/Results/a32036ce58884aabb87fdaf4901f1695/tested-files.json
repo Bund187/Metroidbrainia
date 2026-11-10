@@ -1,0 +1,37 @@
+﻿[
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DDoorInteractor.cs",
+        "sha256":  "348A117EEDB8B60532786AE7492E50C6CE9666B733FB457E9DAEE218A480F958",
+        "matchesTestedCopy":  true
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DDocumentInteractor.cs",
+        "sha256":  "F8628C44B17FA0D98FF5936423D57D87389C99D55E97A7210E968F2F7C324851",
+        "matchesTestedCopy":  true
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DDocumentDisplay.cs",
+        "sha256":  "46010A4198F5BB5BF3E64C4B983920D2243954A4CF1CDA6C725A13F616E3A02E",
+        "matchesTestedCopy":  true
+    },
+    {
+        "path":  "Assets/Editor/Experiments/Hand3D/Hand3DDocumentEditors.cs",
+        "sha256":  "88D57D19DE932A47A8CCFBAB4E56953803BD9CFE3EFE8C130AB8123E67B8032C",
+        "matchesTestedCopy":  true
+    },
+    {
+        "path":  "Assets/Scenes/TestArmScene.unity",
+        "sha256":  "B5BD5AE7D986EEF563A9EF72CEC3EE6316EFE22F713B887E7D0E3D992185ECBF",
+        "matchesTestedCopy":  true
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DContactDetection.cs",
+        "sha256":  "E0511DD841CAF6E929A6CA4349EC160E43BE5BB0C1882B629385D819E6F2F845",
+        "matchesTestedCopy":  true
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DContactDetection.cs.meta",
+        "sha256":  "EC20358DB82689B62075BF0FA0CDD5B3E6260143725A3870175615859EEA7BE8",
+        "matchesTestedCopy":  true
+    }
+]

@@ -1,0 +1,22 @@
+[
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DInteractionCoordinator.cs",
+        "sha256":  "236CB01EC08AD9BD72F1A7DC867816953E8E8070848F1C28B9B9594AF2A76FF8"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DInputController.cs",
+        "sha256":  "BB1D6378A30C6F27427969B4CCCBD873530627378098979E0EFC459DE904C1AB"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DDoorInteractor.cs",
+        "sha256":  "23E2F3347DFB0B1DC9A0ABB94E83BB2638D5831A6128582535BB88F12A755385"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DDocumentInteractor.cs",
+        "sha256":  "94A1D7CC505999B3D87E844D1CA28C337DFD980FB940BF968ABB8482F2F172C2"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DPoseActions.cs",
+        "sha256":  "A3C116F64C05FB58AC8397921D0D14751468A898CE7E6B5016A1C1DD791194AA"
+    }
+]

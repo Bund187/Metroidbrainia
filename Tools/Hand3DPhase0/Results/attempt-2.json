@@ -1,0 +1,49 @@
+{
+    "unity": "6000.6.3f1",
+    "scope": "Current unmodified runtime; isolated Editor stepping and synthetic interaction targets. No Game visual validation.",
+    "results": [
+        {
+            "id": "REF",
+            "status": "PASS",
+            "detail": "Executed in isolated Unity Editor.",
+            "assertions": 7
+        },
+        {
+            "id": "F32",
+            "status": "PASS",
+            "detail": "Executed in isolated Unity Editor.",
+            "assertions": 547
+        },
+        {
+            "id": "ACT",
+            "status": "PASS",
+            "detail": "Executed in isolated Unity Editor.",
+            "assertions": 8
+        },
+        {
+            "id": "INPUT",
+            "status": "PASS",
+            "detail": "Executed in isolated Unity Editor.",
+            "assertions": 9
+        },
+        {
+            "id": "MOV",
+            "status": "PASS",
+            "detail": "Executed in isolated Unity Editor.",
+            "assertions": 15
+        },
+        {
+            "id": "INT",
+            "status": "FAIL",
+            "detail": "System.Exception: Door threshold did not hand off to automatic opening\r\n  at Metroidbrainia.Phase0Validation.Check (System.Boolean value, System.String message) [0x00016] in C:\\Users\\Bund187\\AppData\\Local\\Temp\\MetroidbrainiaPhase0-20261109\\Assets\\Editor\\Phase0Validation\\Phase0Validation.cs:39 \r\n  at Metroidbrainia.Phase0Validation.InteractionsAndLifecycle () [0x0062c] in C:\\Users\\Bund187\\AppData\\Local\\Temp\\MetroidbrainiaPhase0-20261109\\Assets\\Editor\\Phase0Validation\\Phase0Validation.cs:290 \r\n  at Metroidbrainia.Phase0Validation.Group (System.String id, System.Action test) [0x0000b] in C:\\Users\\Bund187\\AppData\\Local\\Temp\\MetroidbrainiaPhase0-20261109\\Assets\\Editor\\Phase0Validation\\Phase0Validation.cs:65 ",
+            "assertions": 9
+        },
+        {
+            "id": "VISUAL",
+            "status": "PENDING",
+            "detail": "Real Game/URP, physical input, localization, auto-open/locked animation timing and final thumb pixels require the manual protocol.",
+            "assertions": 0
+        }
+    ],
+    "assertions": 595
+}

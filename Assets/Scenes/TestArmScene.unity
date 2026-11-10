@@ -29128,6 +29128,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Metroidbrainia.Hand3DExperiment.Hand3DDocumentInteractor
   contact: {fileID: 1857483776}
+  detection:
+    worldCamera: {fileID: 1668637022}
+    handGripPoint: {fileID: 690538582}
+    armDisplay: {fileID: 1511958091}
+    worldDisplay: {fileID: 0}
+    gripScreenOffset: {x: 0, y: 0}
+    interactionLayers:
+      serializedVersion: 2
+      m_Bits: 4294967291
   input: {fileID: 0}
   movement: {fileID: 1857483771}
   pose: {fileID: 1857483777}

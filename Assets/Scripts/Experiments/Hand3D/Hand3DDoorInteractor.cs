@@ -16,7 +16,7 @@ namespace Metroidbrainia.Hand3DExperiment
 
     [DefaultExecutionOrder(220)]
     [DisallowMultipleComponent]
-    public sealed class Hand3DDoorInteractor : MonoBehaviour
+    public sealed class Hand3DDoorInteractor : MonoBehaviour, IHand3DInteractionSession
     {
         [SerializeField] private Camera worldCamera;
         [SerializeField] private Transform handGripPoint;
@@ -51,22 +51,22 @@ namespace Metroidbrainia.Hand3DExperiment
         private Hand3DDoorBinding activeBinding;
         private DoorHandInteractable selectedCandidate;
         private float discoveryElapsed;
-        private bool attemptedThisHold, wasArmMode, grabbing;
+        private bool attemptedThisHold, wasArmMode;
         private Vector3 snapFrom;
         private float snapElapsed, gripViewDepth;
         private FirstPersonArmController legacyController;
         private Hand3DInteractionCoordinator coordinator;
         private Hand3DDoorDebug diagnostics;
-        private bool hasPreviousHand, sweepAvailable;
-        private Vector2 previousHand, sweepStart, previousScreenSize;
-        public bool IsGrabbing => grabbing;
+        private Hand3DContactDetection.Sweep sweep;
+        private readonly Hand3DContactDetection detection = new Hand3DContactDetection();
+        public bool IsGrabbing => coordinator != null && coordinator.Owns(this);
         public Camera WorldCamera => worldCamera;
         public Transform HandGripPoint => handGripPoint;
         public Hand3DDoorDebug DebugInfo => diagnostics;
-        public float ScreenContactRadiusPixels => screenContactRadius * Screen.height / 1080f;
+        public float ScreenContactRadiusPixels => Hand3DContactDetection.ReferencePixels(screenContactRadius, Screen.height);
         public int CompatibleDoorCount => doors.Count;
         public bool TryGetWorldScreen(Vector3 position, out Vector2 screen, out string reason) =>
-            Hand3DScreenProjection.TryWorldToScreen(worldCamera, worldDisplay, position, out screen, out reason);
+            detection.TryWorldToScreen(position, out screen, out reason);
 
         private void Awake()
         {
@@ -79,6 +79,7 @@ namespace Metroidbrainia.Hand3DExperiment
         private void Start()
         {
             coordinator = GetComponent<Hand3DInteractionCoordinator>();
+            if (coordinator != null) { coordinator.ArmControlEnded -= EndArmSession; coordinator.ArmControlEnded += EndArmSession; }
             if (armMovement == null) armMovement = GetComponent<Hand3DArmMovement>();
             if (input == null) input = GetComponent<Hand3DInputController>();
             if (grabPose == null) grabPose = GetComponent<Hand3DInteractionPose>();
@@ -100,6 +101,8 @@ namespace Metroidbrainia.Hand3DExperiment
         {
             if (armDisplay == null) armDisplay = Hand3DScreenProjection.FindDisplay(armMovement.ArmCamera);
             if (worldDisplay == null) worldDisplay = Hand3DScreenProjection.FindDisplay(worldCamera);
+            detection.Configure(worldCamera, handGripPoint, armDisplay, worldDisplay, gripScreenOffset, interactionLayers);
+            detection.Bind(armMovement, input, transform);
         }
 
         public void RefreshDoors()
@@ -127,16 +130,14 @@ namespace Metroidbrainia.Hand3DExperiment
 
         public bool TryGetHandScreen(out Vector2 point, out string reason)
         {
-            bool visible = Hand3DScreenProjection.TryWorldToScreen(armMovement.ArmCamera, armDisplay, handGripPoint.position, out point, out reason);
-            point += gripScreenOffset * Screen.height / 1080f;
-            return visible;
+            ResolveDisplays();
+            var hand = detection.SampleHand(); point = hand.point; reason = hand.reason;
+            return hand.visible;
         }
 
         public static float DistanceToScreenSegment(Vector2 point, Vector2 start, Vector2 end)
         {
-            Vector2 direction = end - start;
-            float t = direction.sqrMagnitude > 0.0001f ? Mathf.Clamp01(Vector2.Dot(point - start, direction) / direction.sqrMagnitude) : 0f;
-            return Vector2.Distance(point, start + direction * t);
+            return Hand3DContactDetection.DistanceToScreenSegment(point, start, end);
         }
 
         private Collider KnobCollider(DoorHandInteractable door)
@@ -151,31 +152,27 @@ namespace Metroidbrainia.Hand3DExperiment
             return null;
         }
 
-        private bool Evaluate(DoorHandInteractable door, bool acquiring, out Hand3DDoorDebug result)
+        private bool Evaluate(DoorHandInteractable door, bool acquiring, Hand3DContactDetection.HandSample hand, ref bool synchronized, out Hand3DDoorDebug result)
         {
             result = new Hand3DDoorDebug { pixelDistance = float.PositiveInfinity, playerDistance = float.PositiveInfinity,
                 doorName = door != null ? (door.transform.parent != null ? door.transform.parent.name + "/" : "") + door.name : "Ninguna" };
-            result.handVisible = TryGetHandScreen(out result.handScreen, out string handReason);
+            result.handVisible = hand.visible; result.handScreen = hand.point;
             if (door == null || door.InteractionPoint == null || door.gameObject.scene != gameObject.scene)
             { result.reason = "No hay puerta/pomo candidato en TestArmScene"; return false; }
-            result.handleVisible = Hand3DScreenProjection.TryWorldToScreen(worldCamera, worldDisplay,
-                GripPosition(door), out result.handleScreen, out string handleReason);
-            result.playerDistance = Vector3.Distance(worldCamera.transform.position, door.InteractionPoint.position);
-            result.withinReach = result.playerDistance <= maximumReach;
-            if (result.handVisible && result.handleVisible)
-                result.pixelDistance = Vector2.Distance(result.handScreen, result.handleScreen);
-            result.radius = ScreenContactRadiusPixels;
-            result.sweptDistance = acquiring && sweepAvailable && result.handVisible && result.handleVisible
-                ? DistanceToScreenSegment(result.handleScreen, sweepStart, result.handScreen) : result.pixelDistance;
-            result.usedSweep = result.pixelDistance > result.radius && result.sweptDistance <= result.radius;
-            result.withinContact = result.sweptDistance <= result.radius;
+            if (!door.isActiveAndEnabled) { result.reason = "DoorHandInteractable deshabilitado"; return false; }
+            if (door.IsOpen || door.IsAutoOpening) { result.reason = "Puerta abierta o en apertura automática"; return false; }
+            var contact = detection.Evaluate(hand, sweep, GripPosition(door), door.InteractionPoint.position, screenContactRadius, acquiring);
+            result.handleVisible = contact.visible; result.handleScreen = contact.point;
+            result.playerDistance = contact.distance; result.withinReach = contact.WithinReach(maximumReach);
+            result.pixelDistance = contact.separation; result.radius = contact.radius; result.sweptDistance = contact.sweptDistance;
+            result.usedSweep = contact.UsedSweep; result.withinContact = contact.WithinContact;
             result.knobReady = KnobCollider(door) != null;
-            result.obstacle = FindObstacle(door, out Collider blocker);
+            Collider blocker = null;
+            if ((!acquiring || result.handVisible && result.withinContact) && result.handleVisible && result.withinReach && result.knobReady)
+                result.obstacle = FindObstacle(door, ref synchronized, out blocker);
             result.blocker = blocker != null ? blocker.name + " (capa " + blocker.gameObject.layer + ")" : "Ninguno";
-            if (!door.isActiveAndEnabled) result.reason = "DoorHandInteractable deshabilitado";
-            else if (door.IsOpen || door.IsAutoOpening) result.reason = "Puerta abierta o en apertura automática";
-            else if (acquiring && !result.handVisible) result.reason = "Mano: " + handReason;
-            else if (!result.handleVisible) result.reason = "Pomo: " + handleReason;
+            if (acquiring && !result.handVisible) result.reason = "Mano: " + hand.reason;
+            else if (!result.handleVisible) result.reason = "Pomo: " + contact.reason;
             else if (!result.withinReach) result.reason = $"Fuera de alcance: {result.playerDistance:F3} > {maximumReach:F2} m";
             else if (result.obstacle) result.reason = "Obstáculo independiente: " + result.blocker;
             else if (!result.knobReady) result.reason = "Pomo sin trigger Collider habilitado";
@@ -186,42 +183,31 @@ namespace Metroidbrainia.Hand3DExperiment
             return result.validCandidate;
         }
 
-        private bool FindObstacle(DoorHandInteractable door, out Collider blocker)
+        private bool FindObstacle(DoorHandInteractable door, ref bool synchronized, out Collider blocker)
         {
             var binding = BindingFor(door);
-            return HasWorldObstacle(door.InteractionPoint.position,
-                binding != null ? binding.DoorRoot : door.transform, out blocker);
+            return detection.HasObstacle(door.InteractionPoint.position,
+                binding != null ? binding.DoorRoot : door.transform, ref synchronized, out blocker);
         }
 
         public bool HasWorldObstacle(Vector3 point, Transform targetRoot, out Collider blocker)
         {
-            blocker = null;
-            Vector3 offset = point - worldCamera.transform.position;
-            float nearest = float.PositiveInfinity;
-            // No extra distance past the handle: geometry behind it cannot block access.
-            foreach (RaycastHit hit in Physics.RaycastAll(worldCamera.transform.position, offset.normalized,
-                Mathf.Max(0f, offset.magnitude - 0.001f), interactionLayers, QueryTriggerInteraction.Ignore))
-            {
-                Transform item = hit.collider.transform;
-                if (item.IsChildOf(transform) || input.PlayerRoot != null && item.IsChildOf(input.PlayerRoot)) continue;
-                if (targetRoot != null && item.IsChildOf(targetRoot)) continue;
-                if (hit.distance < nearest) { nearest = hit.distance; blocker = hit.collider; }
-            }
-            return blocker != null;
+            ResolveDisplays(); bool synchronized = false;
+            return detection.HasObstacle(point, targetRoot, ref synchronized, out blocker);
         }
 
         public bool IsReachableAndVisible(DoorHandInteractable door)
         {
             if (door == null || door.InteractionPoint == null || worldCamera == null || !door.isActiveAndEnabled) return false;
+            ResolveDisplays(); bool synchronized = false;
             return Vector3.Distance(worldCamera.transform.position, door.InteractionPoint.position) <= maximumReach
                 && Hand3DScreenProjection.TryWorldToScreen(worldCamera, worldDisplay, door.InteractionPoint.position, out _, out _)
-                && !FindObstacle(door, out _);
+                && !FindObstacle(door, ref synchronized, out _);
         }
 
         public bool ProcessMovement(Vector2 integratedInput, bool usingMouse)
         {
             if (!isActiveAndEnabled || !IsGrabbing) return false;
-            Physics.SyncTransforms();
             if (!CanContinue()) { Cancel(); return true; }
             if (!activeDoor.UpdateInteraction(worldCamera, armMovement.GetScreenDisplacement(integratedInput, usingMouse, worldCamera)))
             {
@@ -243,22 +229,28 @@ namespace Metroidbrainia.Hand3DExperiment
 
         private bool CanContinue()
         {
+            ResolveDisplays();
+            return CanContinue(detection.SampleHand());
+        }
+
+        private bool CanContinue(Hand3DContactDetection.HandSample hand)
+        {
             if (activeDoor == null) { diagnostics.reason = "Puerta/pomo eliminado"; diagnostics.validCandidate = false; return false; }
             if (!input.IsArmModeActive || armMovement.Modes.IsEditing || armMovement.Modes.IsTransitioning
                 || !armMovement.isActiveAndEnabled || !grabPose.isActiveAndEnabled)
             { diagnostics.reason = "Modo de brazo, movimiento o capa Grab desactivados"; diagnostics.validCandidate = false; return false; }
-            return Evaluate(activeDoor, false, out diagnostics);
+            bool synchronized = false;
+            return Evaluate(activeDoor, false, hand, ref synchronized, out diagnostics);
         }
 
         private void LateUpdate() => Tick(Time.deltaTime);
 
         private void Tick(float deltaTime)
         {
-            if (deltaTime <= 0f) { hasPreviousHand = sweepAvailable = false; return; }
+            if (deltaTime <= 0f) { sweep.Reset(); return; }
             if (worldCamera == null || armMovement == null || handGripPoint == null || input == null || grabPose == null)
             { diagnostics.reason = "Faltan referencias de interacción"; EndArmSession(); return; }
             ResolveDisplays();
-            Physics.SyncTransforms();
             discoveryElapsed += deltaTime;
             if (discoveryElapsed >= doorRefreshInterval) RefreshDoors();
             else Hand3DDoorBinding.Collect(gameObject.scene, doors);
@@ -266,33 +258,29 @@ namespace Metroidbrainia.Hand3DExperiment
             if (!armMode)
             {
                 EndArmSession();
-                if (debugContact) SelectCandidate(out _);
+                if (debugContact) { bool synchronized = false; SelectCandidate(detection.SampleHand(), ref synchronized, out _); }
                 diagnostics.reason = armMovement.Modes.IsEditing ? "HandEdit: interacción desactivada"
                     : armMovement.Modes.IsTransitioning ? "Transición de modo" : "Mantén R2/RMB en Exploration";
                 diagnostics.validCandidate = false;
                 return;
             }
-            if (!wasArmMode) { attemptedThisHold = false; hasPreviousHand = false; RefreshDoors(); }
+            if (!wasArmMode) { attemptedThisHold = false; sweep.Reset(); RefreshDoors(); }
             wasArmMode = true;
-            bool handVisible = TryGetHandScreen(out Vector2 handScreen, out _);
-            Vector2 screenSize = new Vector2(Screen.width, Screen.height);
-            sweepAvailable = hasPreviousHand && handVisible && previousScreenSize == screenSize;
-            sweepStart = previousHand;
-            previousHand = handScreen;
-            previousScreenSize = screenSize;
-            hasPreviousHand = handVisible;
+            var hand = detection.SampleHand();
+            sweep.Advance(hand, new Vector2(Screen.width, Screen.height));
             if (IsGrabbing)
             {
-                if (!CanContinue()) Cancel();
+                if (!CanContinue(hand)) Cancel();
                 else FollowHandle(deltaTime);
                 return;
             }
             if (attemptedThisHold)
-            { if (debugContact) SelectCandidate(out _); diagnostics.validCandidate = false; diagnostics.reason = "Intento finalizado: suelta R2/RMB para reintentar"; return; }
+            { if (debugContact) { bool synchronized = false; SelectCandidate(hand, ref synchronized, out _); } diagnostics.validCandidate = false; diagnostics.reason = "Intento finalizado: suelta R2/RMB para reintentar"; return; }
             if (coordinator != null && !coordinator.CanAcquire(this))
             { diagnostics.reason = "Otra interacción ocupa la mano"; diagnostics.validCandidate = false; return; }
             rejectedThisFrame.Clear();
-            DoorHandInteractable candidate = SelectCandidate(out Collider knob);
+            bool physicsSynchronized = false;
+            DoorHandInteractable candidate = SelectCandidate(hand, ref physicsSynchronized, out Collider knob);
             Hand3DDoorDebug lastRefusal = default;
             bool refused = false;
             while (candidate != null && !candidate.TryBeginInteraction(worldCamera, knob))
@@ -302,24 +290,24 @@ namespace Metroidbrainia.Hand3DExperiment
                 lastRefusal.reason = "DoorHandInteractable.TryBeginInteraction devolvió false (estado o alcance de esta instancia)";
                 refused = true;
                 rejectedThisFrame.Add(candidate);
-                candidate = SelectCandidate(out knob);
+                candidate = SelectCandidate(hand, ref physicsSynchronized, out knob);
             }
             if (candidate == null) { if (refused) diagnostics = lastRefusal; return; }
-            if (coordinator != null && !coordinator.TryAcquire(this)) { candidate.EndInteraction(); return; }
+            var binding = BindingFor(candidate);
+            if (coordinator == null || !coordinator.TryAcquire(this, Hand3DInteractionState.Door, true,
+                binding != null ? binding.WristOffset : Quaternion.identity)) { candidate.EndInteraction(); return; }
             activeDoor = feedbackDoor = candidate;
             activeBinding = BindingFor(candidate);
-            grabbing = true;
             snapElapsed = 0f;
             snapFrom = handGripPoint.position;
             // Keep the ViewModel depth. The real door's depth must never drive the visual mesh into a wall.
             gripViewDepth = armMovement.ArmCamera.WorldToViewportPoint(handGripPoint.position).z;
-            grabPose.SetGrab(true, activeBinding != null ? activeBinding.WristOffset : Quaternion.identity);
             FollowHandle(deltaTime);
             if (!IsGrabbing) return;
             if (logInteractions) Debug.Log("[Hand3D Door] Projected contact and world reach accepted; Grab started.", activeDoor);
         }
 
-        private DoorHandInteractable SelectCandidate(out Collider knob)
+        private DoorHandInteractable SelectCandidate(Hand3DContactDetection.HandSample hand, ref bool synchronized, out Collider knob)
         {
             knob = null;
             DoorHandInteractable selected = null;
@@ -327,12 +315,12 @@ namespace Metroidbrainia.Hand3DExperiment
             float bestRejected = float.PositiveInfinity;
             selectedCandidate = null;
             diagnostics = new Hand3DDoorDebug { reason = "No hay puertas candidatas", doorName = "Ninguna", pixelDistance = float.PositiveInfinity };
-            diagnostics.handVisible = TryGetHandScreen(out diagnostics.handScreen, out _);
+            diagnostics.handVisible = hand.visible; diagnostics.handScreen = hand.point;
             foreach (Hand3DDoorBinding binding in doors)
             {
                 DoorHandInteractable door = binding.Door;
                 if (rejectedThisFrame.Contains(door)) continue;
-                bool valid = Evaluate(door, true, out Hand3DDoorDebug result);
+                bool valid = Evaluate(door, true, hand, ref synchronized, out Hand3DDoorDebug result);
                 if (valid && (selected == null || BetterContact(result, bestContact)))
                 { selected = door; bestContact = result; diagnostics = result; }
                 else if (selected == null && result.sweptDistance <= bestRejected)
@@ -380,15 +368,17 @@ namespace Metroidbrainia.Hand3DExperiment
 
         public void Cancel()
         {
+            if (coordinator != null) coordinator.Release(this);
+            sweep.Reset();
+        }
+
+        void IHand3DInteractionSession.ReleaseInteraction()
+        {
             DoorHandInteractable previous = activeDoor;
             activeDoor = null;
             activeBinding = null;
-            grabbing = false;
-            hasPreviousHand = sweepAvailable = false;
+            sweep.Reset();
             if (previous != null) previous.EndInteraction();
-            if (grabPose != null && (coordinator == null || coordinator.Owns(this))) grabPose.SetGrab(false);
-            if (armMovement != null && (coordinator == null || coordinator.Owns(this))) armMovement.ReleaseContact();
-            if (coordinator != null) coordinator.Release(this);
         }
 
         public void EndArmSession()
@@ -401,8 +391,17 @@ namespace Metroidbrainia.Hand3DExperiment
             rejectedThisFrame.Clear();
         }
 
-        private void OnDisable() => EndArmSession();
-        private void OnEnable() { if (legacyController != null) legacyController.enabled = false; }
+        private void OnDisable()
+        {
+            EndArmSession();
+            if (coordinator != null) coordinator.ArmControlEnded -= EndArmSession;
+        }
+        private void OnEnable()
+        {
+            if (legacyController != null) legacyController.enabled = false;
+            coordinator = GetComponent<Hand3DInteractionCoordinator>();
+            if (coordinator != null) { coordinator.ArmControlEnded -= EndArmSession; coordinator.ArmControlEnded += EndArmSession; }
+        }
 
         private static string State(bool value) => value ? "SI" : "NO";
 
@@ -459,7 +458,7 @@ namespace Metroidbrainia.Hand3DExperiment
             if (d.handVisible)
             {
                 DebugCircle(d.handScreen, 7f, Color.cyan);
-                if (sweepAvailable) DebugLine(sweepStart, d.handScreen, Color.cyan);
+                if (this.sweep.Available) DebugLine(this.sweep.Start, d.handScreen, Color.cyan);
             }
             if (d.handleVisible)
             {

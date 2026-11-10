@@ -43,8 +43,7 @@ namespace Metroidbrainia.Hand3DExperiment
         private bool hasFocus = true;
         private bool applicationPaused;
         private bool waitForRelease;
-        private Hand3DDoorInteractor doorInteractor;
-        private Hand3DDocumentInteractor documentInteractor;
+        private Hand3DInteractionCoordinator interactions;
 
         public bool IsArmModeActive { get; private set; }
         public bool IsArmButtonHeld => armMode != null && armMode.IsPressed();
@@ -69,8 +68,7 @@ namespace Metroidbrainia.Hand3DExperiment
                 return;
             }
             controls = new InputActionMap("TestHand3D");
-            doorInteractor = GetComponent<Hand3DDoorInteractor>();
-            documentInteractor = GetComponent<Hand3DDocumentInteractor>();
+            interactions = GetComponent<Hand3DInteractionCoordinator>();
             armMode = controls.AddAction("ArmMode", InputActionType.Button);
             armMode.AddBinding("<Gamepad>/rightTrigger");
             armMode.AddBinding("<Mouse>/rightButton");
@@ -199,12 +197,11 @@ namespace Metroidbrainia.Hand3DExperiment
                 Vector2 movement = armMove.ReadValue<Vector2>();
                 bool mouse = armMove.activeControl != null && armMove.activeControl.device is Mouse;
                 Vector2 integrated = movement * (mouse ? mouseSensitivity : gamepadSensitivity * Time.deltaTime);
-                if (doorInteractor == null || !doorInteractor.isActiveAndEnabled || !doorInteractor.ProcessMovement(integrated, mouse))
+                if (interactions == null || !interactions.ProcessMovement(integrated, mouse))
                     armMovement.MoveHand(integrated, mouse);
             }
             // Deliberately independent of ArmMode. R3 remains a separate button from right-stick axes.
-            if (action.WasPressedThisFrame() && (doorInteractor == null || !doorInteractor.IsGrabbing)
-                && (documentInteractor == null || !documentInteractor.IsHolding))
+            if (action.WasPressedThisFrame())
                 poseActions.TryExecute();
         }
 
@@ -255,8 +252,7 @@ namespace Metroidbrainia.Hand3DExperiment
             if (!IsArmModeActive)
                 return;
             IsArmModeActive = false;
-            if (doorInteractor != null) doorInteractor.EndArmSession();
-            if (documentInteractor != null) documentInteractor.Cancel();
+            if (interactions != null) interactions.EndArmSession();
             ClearPlayerInput();
             if (armMovement != null) armMovement.EndControl();
         }

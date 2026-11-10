@@ -137,7 +137,7 @@ namespace Metroidbrainia.Hand3DExperiment
 
         private void SourceFrame(out Vector3 grip, out Vector3 scale, out Quaternion rotation)
         {
-            var contact = GetComponent<Hand3DDoorInteractor>();
+            var contact = GetComponent<Hand3DDocumentInteractor>();
             Vector2 center = paperGrip.position;
             float height = Screen.height * 0.12f;
             rotation = baseRotation;

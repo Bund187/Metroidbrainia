@@ -1,0 +1,51 @@
+{
+    "unity": "6000.6.3f1",
+    "scope": "Current unmodified runtime; isolated Editor stepping and synthetic interaction targets. No Game visual validation.",
+    "runId": "ab2146887fb94dbfb51128203b1c875a",
+    "generatedUtc": "2026-11-09T15:05:32.8904879Z",
+    "results": [
+        {
+            "id": "REF",
+            "status": "PASS",
+            "detail": "Executed in isolated Unity Editor.",
+            "assertions": 7
+        },
+        {
+            "id": "F32",
+            "status": "PASS",
+            "detail": "Executed in isolated Unity Editor.",
+            "assertions": 547
+        },
+        {
+            "id": "ACT",
+            "status": "PASS",
+            "detail": "Executed in isolated Unity Editor.",
+            "assertions": 8
+        },
+        {
+            "id": "INPUT",
+            "status": "FAIL",
+            "detail": "System.Exception: Action enabled states not restored\r\n  at Metroidbrainia.Phase0Validation.Check (System.Boolean value, System.String message) [0x00016] in C:\\Users\\Bund187\\AppData\\Local\\Temp\\MetroidbrainiaPhase0-20261109\\Assets\\Editor\\Phase0Validation\\Phase0Validation.cs:39 \r\n  at Metroidbrainia.Phase0Validation.InputBlocking () [0x001a6] in C:\\Users\\Bund187\\AppData\\Local\\Temp\\MetroidbrainiaPhase0-20261109\\Assets\\Editor\\Phase0Validation\\Phase0Validation.cs:233 \r\n  at Metroidbrainia.Phase0Validation.Group (System.String id, System.Action test) [0x0000b] in C:\\Users\\Bund187\\AppData\\Local\\Temp\\MetroidbrainiaPhase0-20261109\\Assets\\Editor\\Phase0Validation\\Phase0Validation.cs:66 ",
+            "assertions": 6
+        },
+        {
+            "id": "MOV",
+            "status": "PASS",
+            "detail": "Executed in isolated Unity Editor.",
+            "assertions": 15
+        },
+        {
+            "id": "INT",
+            "status": "FAIL",
+            "detail": "System.InvalidOperationException: Sequence contains more than one matching element\r\n  at System.Linq.Enumerable.Single[TSource] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] predicate) [0x0004a] in <f1b392d8fe224ca2b1f9fab1000b77eb>:0 \r\n  at Metroidbrainia.Phase0Validation.Call (System.Object target, System.String method, System.Object[] args) [0x00014] in C:\\Users\\Bund187\\AppData\\Local\\Temp\\MetroidbrainiaPhase0-20261109\\Assets\\Editor\\Phase0Validation\\Phase0Validation.cs:36 \r\n  at Metroidbrainia.Phase0Validation.InteractionsAndLifecycle () [0x00a71] in C:\\Users\\Bund187\\AppData\\Local\\Temp\\MetroidbrainiaPhase0-20261109\\Assets\\Editor\\Phase0Validation\\Phase0Validation.cs:319 \r\n  at Metroidbrainia.Phase0Validation.Group (System.String id, System.Action test) [0x0000b] in C:\\Users\\Bund187\\AppData\\Local\\Temp\\MetroidbrainiaPhase0-20261109\\Assets\\Editor\\Phase0Validation\\Phase0Validation.cs:66 ",
+            "assertions": 16
+        },
+        {
+            "id": "VISUAL",
+            "status": "PENDING",
+            "detail": "Real Game/URP, physical input, localization, auto-open/locked animation timing and final thumb pixels require the manual protocol.",
+            "assertions": 0
+        }
+    ],
+    "assertions": 599
+}

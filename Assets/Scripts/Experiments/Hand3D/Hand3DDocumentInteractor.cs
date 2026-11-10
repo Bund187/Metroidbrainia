@@ -6,9 +6,11 @@ namespace Metroidbrainia.Hand3DExperiment
     [DefaultExecutionOrder(225)]
     [DisallowMultipleComponent]
     [RequireComponent(typeof(Hand3DInteractionCoordinator))]
-    public sealed class Hand3DDocumentInteractor : MonoBehaviour
+    public sealed class Hand3DDocumentInteractor : MonoBehaviour, IHand3DInteractionSession
     {
-        [SerializeField] private Hand3DDoorInteractor contact;
+        // Kept only to preserve old scene references. Runtime detection never reads this field.
+        [SerializeField, HideInInspector] private MonoBehaviour contact;
+        [SerializeField] private Hand3DContactDetection detection = new Hand3DContactDetection();
         [SerializeField] private Hand3DInputController input;
         [SerializeField] private Hand3DArmMovement movement;
         [SerializeField] private Hand3DInteractionPose pose;
@@ -20,8 +22,9 @@ namespace Metroidbrainia.Hand3DExperiment
         private Hand3DInteractionCoordinator coordinator;
         private readonly List<Hand3DDocumentBinding> documents = new List<Hand3DDocumentBinding>();
         private Hand3DDocumentBinding active, candidate;
-        private Vector2 previousHand, previousSize, handScreen, documentScreen;
-        private bool hasPrevious, handVisible, documentVisible;
+        private Hand3DContactDetection.Sweep sweep;
+        private Vector2 handScreen, documentScreen;
+        private bool handVisible, documentVisible;
         private float visualDistance, worldDistance;
         private string reason = "Mantén R2/RMB en Exploration", blocker = "ninguno";
         public bool IsHolding => active != null;
@@ -30,23 +33,26 @@ namespace Metroidbrainia.Hand3DExperiment
         private void Awake()
         {
             coordinator = GetComponent<Hand3DInteractionCoordinator>();
-            if (contact == null) contact = GetComponent<Hand3DDoorInteractor>();
             if (input == null) input = GetComponent<Hand3DInputController>();
             if (movement == null) movement = GetComponent<Hand3DArmMovement>();
             if (pose == null) pose = GetComponent<Hand3DInteractionPose>();
             if (display == null) display = GetComponent<Hand3DDocumentDisplay>();
+            detection.Bind(movement, input, transform);
         }
+
+        public bool TryGetWorldScreen(Vector3 position, out Vector2 screen, out string reason) =>
+            detection.TryWorldToScreen(position, out screen, out reason);
 
         private void LateUpdate() => Tick(Time.deltaTime);
 
         private void Tick(float deltaTime)
         {
             if (!ExperimentScope.IsAllowed(this)) return;
-            if (contact == null || !contact.isActiveAndEnabled || input == null || movement == null || pose == null
+            if (input == null || movement == null || pose == null || !detection.IsReady
                 || !movement.isActiveAndEnabled || !pose.isActiveAndEnabled || display == null || !display.isActiveAndEnabled)
             { Cancel(); reason = "Referencias o componentes de interacción desactivados"; return; }
             bool held = input.IsArmModeActive && !movement.Modes.IsEditing && !movement.Modes.IsTransitioning;
-            if (!held) { Cancel(); hasPrevious = false; reason = "Mantén R2/RMB en Exploration"; return; }
+            if (!held) { Cancel(); reason = "Mantén R2/RMB en Exploration"; return; }
             if (active != null)
             {
                 if (!active.IsHeld || active.Document == null || !active.Document.isActiveAndEnabled) Cancel();
@@ -55,40 +61,37 @@ namespace Metroidbrainia.Hand3DExperiment
             }
             // A destroyed binding can compare null while still leaving this hand's lease active.
             if (coordinator.Owns(this)) { Cancel(); return; }
-            if (deltaTime <= 0f) { hasPrevious = false; return; }
-            bool visible = contact.TryGetHandScreen(out Vector2 hand, out string handReason);
-            Vector2 size = new Vector2(Screen.width, Screen.height);
-            bool sweep = hasPrevious && visible && previousSize == size;
+            if (deltaTime <= 0f) { sweep.Reset(); return; }
+            detection.ResolveDisplays();
+            var hand = detection.SampleHand();
             if (!coordinator.CanAcquire(this))
-            { hasPrevious = false; reason = "Puerta u otra interacción ocupa la mano / restaurando pose"; return; }
+            { sweep.Reset(); reason = "Puerta u otra interacción ocupa la mano / restaurando pose"; return; }
+            sweep.Advance(hand, new Vector2(Screen.width, Screen.height));
             Hand3DDocumentBinding.Collect(gameObject.scene, documents);
             candidate = null;
             float best = float.PositiveInfinity, rejected = float.PositiveInfinity;
             bool hasRejected = false;
-            float radius = screenContactRadius * Screen.height / 1080f;
+            bool synchronized = false;
             foreach (var item in documents)
             {
-                bool projected = contact.TryGetWorldScreen(item.ContactPosition, out Vector2 screen, out string projectionReason);
-                float distance = Vector3.Distance(contact.WorldCamera.transform.position, item.ContactPosition);
-                float separation = visible && projected ? Vector2.Distance(hand, screen) : float.PositiveInfinity;
-                float swept = sweep && projected ? Hand3DDoorInteractor.DistanceToScreenSegment(screen, previousHand, hand) : separation;
-                bool obstacle = contact.HasWorldObstacle(item.ContactPosition, item.transform, out Collider hit);
-                string failure = !item.IsReady ? "Documento sin datos visuales válidos o no disponible"
-                    : !visible ? "Mano: " + handReason : !projected ? "Documento: " + projectionReason
-                    : distance > Mathf.Min(maximumReach, item.MaximumDistance) ? "Fuera del alcance inicial"
-                    : obstacle ? "Obstáculo: " + hit.name : swept > radius ? "Fuera de la zona visual" : null;
-                float score = separation <= radius ? separation : radius + swept;
+                if (!item.IsReady) continue;
+                var result = detection.Evaluate(hand, sweep, item.ContactPosition, item.ContactPosition, screenContactRadius, true);
+                string failure = !hand.visible ? "Mano: " + hand.reason : !result.visible ? "Documento: " + result.reason
+                    : !result.WithinReach(Mathf.Min(maximumReach, item.MaximumDistance)) ? "Fuera del alcance inicial"
+                    : !result.WithinContact ? "Fuera de la zona visual" : null;
+                Collider hit = null;
+                if (failure == null && detection.HasObstacle(item.ContactPosition, item.transform, ref synchronized, out hit))
+                    failure = "Obstáculo: " + hit.name;
+                float score = result.Score;
                 if (failure == null && score < best)
-                { candidate = item; best = score; SaveDebug(hand, screen, visible, projected, separation, distance, "Contacto válido", hit); }
-                else if (candidate == null && (!hasRejected || separation < rejected))
-                { hasRejected = true; rejected = separation; SaveDebug(hand, screen, visible, projected, separation, distance, failure, hit); }
+                { candidate = item; best = score; SaveDebug(hand.point, result.point, hand.visible, result.visible, result.separation, result.distance, "Contacto válido", hit); }
+                else if (candidate == null && (!hasRejected || result.separation < rejected))
+                { hasRejected = true; rejected = result.separation; SaveDebug(hand.point, result.point, hand.visible, result.visible, result.separation, result.distance, failure, hit); }
             }
-            previousHand = hand; previousSize = size; hasPrevious = visible;
             if (documents.Count == 0) reason = "No hay documentos preparados activos";
-            if (candidate == null || !coordinator.TryAcquire(this)) return;
+            if (candidate == null || !coordinator.TryAcquire(this, Hand3DInteractionState.Document, false, Quaternion.identity)) return;
             active = candidate;
             if (!active.BeginHold(display)) { Cancel(); reason = "No se pudo mostrar el documento"; return; }
-            pose.SetHandHold(true);
             reason = "HandHold iniciado";
         }
 
@@ -101,12 +104,16 @@ namespace Metroidbrainia.Hand3DExperiment
 
         public void Cancel()
         {
+            if (coordinator != null) coordinator.Release(this);
+            sweep.Reset();
+        }
+        bool IHand3DInteractionSession.ProcessMovement(Vector2 integratedInput, bool usingMouse) => false;
+        void IHand3DInteractionSession.ReleaseInteraction()
+        {
             var previous = active;
             active = null;
             if (previous != null) previous.EndHold();
-            if (coordinator != null && coordinator.Owns(this))
-            { if (pose != null) pose.SetHandHold(false); coordinator.Release(this); }
-            hasPrevious = false;
+            sweep.Reset();
         }
         private void OnDisable() => Cancel();
         private void OnGUI()

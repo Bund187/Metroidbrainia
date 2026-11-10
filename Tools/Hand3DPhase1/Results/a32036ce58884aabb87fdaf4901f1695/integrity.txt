@@ -1,0 +1,1 @@
+Protected production files and accepted artifacts unchanged. Scene differs only by added document contact settings.
