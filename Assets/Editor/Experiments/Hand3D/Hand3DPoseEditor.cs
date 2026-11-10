@@ -19,6 +19,7 @@ namespace Metroidbrainia.Hand3DExperiment.Editor
         [SerializeField] private P.Channels channels=P.Channels.Rotation;
         [SerializeField] private bool segmentPositions, jointDetails;
         [SerializeField] private bool showJoints, showValues;
+        [SerializeField] private bool includeUnassignedRuntime;
         [SerializeField] private string[] custom=Array.Empty<string>(), companions=Array.Empty<string>();
         private Hand3DPosePreview preview;
         private Vector2 scroll;
@@ -153,6 +154,8 @@ namespace Metroidbrainia.Hand3DExperiment.Editor
             if(extraRole==S.Role.Finger)extraFinger=(Finger)EditorGUILayout.EnumPopup("Logical finger",extraFinger);
             if(GUILayout.Button("Add joint to catalog"))Run(()=>{Restore();library.AddJoint(rig,extraBone,extraRole,extraRole==S.Role.Finger?(int)extraFinger:-1);Changed();});
             saveName=EditorGUILayout.TextField("New library filename",saveName);if(GUILayout.Button("Save Library"))SaveChanges();
+            includeUnassignedRuntime=EditorGUILayout.Toggle("Copy unassigned profiles to runtime",includeUnassignedRuntime);
+            if(GUILayout.Button("Export explicit functional runtime COPY"))Run(()=>{Restore();Hand3DRuntimePoseExport.ExportDialog(rig,library,includeUnassignedRuntime);});
             EditorGUILayout.LabelField("Storage",Hand3DPoseLibrary.Folder);EditorGUILayout.LabelField("Saved asset",AssetDatabase.GetAssetPath(library));EditorGUILayout.EndScrollView();
         }
         private static string Label(P profile)=>string.IsNullOrEmpty(profile.displayName)?profile.id:profile.displayName+" ["+profile.id+"]";

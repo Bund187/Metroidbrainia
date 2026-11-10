@@ -106,6 +106,8 @@ namespace Metroidbrainia.Hand3DExperiment.Editor
         {
             DrawDefaultInspector();
             var rig = (Hand3DRig)target;
+            if(Application.isPlaying)EditorGUILayout.LabelField("Effective pose backend",rig.UniversalActive?"Universal":"Legacy");
+            if(!string.IsNullOrEmpty(rig.UniversalError))EditorGUILayout.HelpBox(rig.UniversalError,MessageType.Error);
             if (!Hand3DEditing.CanEdit(rig))
             {
                 EditorGUILayout.HelpBox("Capture/preview is available only on scene instances in TestArmScene, outside Play Mode.", MessageType.Info);

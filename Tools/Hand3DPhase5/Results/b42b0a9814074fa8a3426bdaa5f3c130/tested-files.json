@@ -1,0 +1,50 @@
+[
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DRig.cs",
+        "sha256":  "9B5A3177BDE29D7A20E37C252644EB37092C6116F41AF35C6E6904D3CFFBFFA0"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DArmMovement.cs",
+        "sha256":  "B0C812CAE5265CCD93AB105EFB77F8031E8CCDEB52988780FB5A93907C006ACA"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DModeController.cs",
+        "sha256":  "86D37B66DAE6CEF70958432A520D094B183CFDF985D49909C7678777666C2A7C"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DInteractionPose.cs",
+        "sha256":  "A26F23FF9FC9DA9BD54B11429C26A06601B252B974C17B3736D7925D9595CF90"
+    },
+    {
+        "path":  "Assets/Editor/Experiments/Hand3D/Hand3DPoseEditor.cs",
+        "sha256":  "FACBEF084A925288D2BCA8836A2C65FB544907B5146E31B018F95C04BCFC9CD3"
+    },
+    {
+        "path":  "Assets/Editor/Experiments/Hand3D/Hand3DEditors.cs",
+        "sha256":  "BDF5F8DCD809867A1D0D2F72B0D3E69E7D8B9A063DBE678E7D4604EBC0B8F56A"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DRuntimePoses.cs",
+        "sha256":  "3A53D4F3D0187785C5259796E43C60AEABF3BFFE93703143B28159E2B17803DA"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DPoseComposition.cs",
+        "sha256":  "58E35EE18D1F4FCFC4525B4800F4E8E3C7A0B08345FAAAEA110D62CC4C0C21B0"
+    },
+    {
+        "path":  "Assets/Editor/Experiments/Hand3D/Hand3DRuntimePoseExport.cs",
+        "sha256":  "A8D868D797AE8E81E6BF5DE671F2273838445AEACCEA45AC4362F50FA09224EB"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DRuntimePoses.cs.meta",
+        "sha256":  "8A78BEF7D41DCE2F5AE95F57F75C823A19C6760140CFC9D05D0667FC5492EB30"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DPoseComposition.cs.meta",
+        "sha256":  "6539543934E750A0C349F55369E7E7FA2434DCB31D2B5F87D90EA792C0AFAAB4"
+    },
+    {
+        "path":  "Assets/Editor/Experiments/Hand3D/Hand3DRuntimePoseExport.cs.meta",
+        "sha256":  "47C507112C23F7481C69B427E36202AC459A7E312E9FE93D79B2DA80E893CB9F"
+    }
+]

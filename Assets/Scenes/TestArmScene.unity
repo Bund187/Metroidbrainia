@@ -5326,6 +5326,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+  visualization: 0
+  maskColor: {r: 1, g: 0, b: 1, a: 1}
   thumbRenderer: {fileID: 1246806750}
   armCamera: {fileID: 749073066}
   armDisplay: {fileID: 1511958091}
@@ -28679,6 +28681,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03752c9c6f651cc41ba8279c5233f373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Metroidbrainia.Hand3DExperiment.Hand3DRig
+  poseSystem: 1
+  runtimePoses: {fileID: 11400000, guid: 14084029b3a05284db51242c9973ed1d, type: 2}
   fingerState: {fileID: 1857483774}
   poseRecognizer: {fileID: 1857483773}
   poseActions: {fileID: 1857483772}

@@ -1,0 +1,2 @@
+PASS
+Runtime asset loaded and Universal evaluated in a standalone player without Editor assemblies.

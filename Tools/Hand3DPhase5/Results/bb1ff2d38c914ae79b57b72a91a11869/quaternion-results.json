@@ -1,0 +1,16 @@
+{
+    "runId": "bb1ff2d38c914ae79b57b72a91a11869",
+    "firstViolation": "",
+    "firstStack": "",
+    "sourceMaximum": "Mode.exploration / arms/root/shoulder.r/bicep.r",
+    "scope": "Numerical stress in isolated Unity Editor; no Game visual approval.",
+    "assertions": 93004,
+    "quaternionErrors": 0,
+    "universalErrors": 0,
+    "legacyErrors": 0,
+    "trsCalls": 5522990,
+    "maxTrsDeviation": 0.000001213946827949286,
+    "maxWorldDeviation": 0.000002515801840408116,
+    "maxSerializedDeviation": 1.8171453852744435e-7,
+    "reproduced": true
+}

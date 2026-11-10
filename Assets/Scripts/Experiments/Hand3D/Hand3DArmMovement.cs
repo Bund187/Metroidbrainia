@@ -47,6 +47,7 @@ namespace Metroidbrainia.Hand3DExperiment
         private Vector3 contactTarget;
         private bool returningFromContact;
         private float releaseDepth;
+        private Hand3DRig rig;
 
         public bool IsReady => initialized;
         public Transform Hand => hand;
@@ -54,6 +55,12 @@ namespace Metroidbrainia.Hand3DExperiment
         public Transform Forearm => forearm;
         public Camera ArmCamera => armCamera;
         public Hand3DModeController Modes => modes;
+        public Vector3 ReferenceLongitudinalAxis => longitudinalAxis;
+        public Vector3 LastUniversalRequestedTarget { get; private set; }
+        public Vector3 LastUniversalFeasibleTarget { get; private set; }
+        public float LastUniversalReachError { get; private set; }
+        public bool LastUniversalTargetLimited { get; private set; }
+        public void SetUniversalReferenceOrientation(Quaternion inCamera) => desiredHandInCamera=inCamera;
         public bool HasContact => contactPoint != null;
         public Vector3 LongitudinalAxis => forearm.InverseTransformDirection(hand.position - forearm.position).normalized;
         public bool ControlsRotationOf(Transform bone) => bone == upperArm || bone == forearm;
@@ -75,6 +82,7 @@ namespace Metroidbrainia.Hand3DExperiment
         public bool Initialize()
         {
             if (initialized) return true;
+            rig=GetComponent<Hand3DRig>();
             if (!ExperimentScope.IsAllowed(this) || armCamera == null || upperArm == null || forearm == null || hand == null
                 || upperArm == forearm || forearm == hand || !forearm.IsChildOf(upperArm) || !hand.IsChildOf(forearm)
                 || !upperArm.IsChildOf(transform) || upperArm.gameObject.scene != gameObject.scene
@@ -128,6 +136,7 @@ namespace Metroidbrainia.Hand3DExperiment
 
         public void ApplyFrame(ArmFrame frame)
         {
+            if(rig!=null && rig.UniversalActive)return;
             transform.SetPositionAndRotation(armCamera.transform.TransformPoint(frame.position), armCamera.transform.rotation * frame.rotation);
             upperArm.localRotation = frame.upper;
             forearm.localRotation = frame.forearm;
@@ -207,6 +216,7 @@ namespace Metroidbrainia.Hand3DExperiment
         // Called by the rig after its final wrist orientation is known. Only this component rotates arm joints.
         public void ResolveContactAfterPose()
         {
+            if(rig!=null && rig.UniversalActive)return;
             if (contactPoint == null) return;
             Vector3 gripOffset = contactPoint.position - hand.position;
             SolveArm(contactTarget - gripOffset);
@@ -221,24 +231,31 @@ namespace Metroidbrainia.Hand3DExperiment
         private void UpdateMovement(float deltaTime)
         {
             if (!initialized || deltaTime <= 0f) return;
+            if(rig!=null){rig.PreparePoseSystem();if(rig.UniversalActive)return;}
             // Follow the dedicated camera after Starter Assets/Cinemachine. Never smooth camera attachment.
             ApplyFrame(modes.TargetFrame);
-            Vector3 neutralViewport = armCamera.WorldToViewportPoint(hand.position);
-            restScreenPosition = new Vector2(neutralViewport.x, neutralViewport.y);
-            handDepth = neutralViewport.z;
+            Vector3 neutral=hand.position;
             Quaternion forearmInCamera = Quaternion.Inverse(armCamera.transform.rotation) * forearm.rotation;
             ApplyFrame(modes.Evaluate(deltaTime, longitudinalAxis, forearmInCamera));
+            if(!AdvanceTarget(deltaTime,neutral,out Vector3 target))return;
+            bool limited=SolveArm(target);AcceptReachedTarget(limited,hand.position);
+        }
+
+        private bool AdvanceTarget(float deltaTime,Vector3 neutral,out Vector3 target)
+        {
+            target=default;
+            Vector3 neutralViewport=armCamera.WorldToViewportPoint(neutral);restScreenPosition=new Vector2(neutralViewport.x,neutralViewport.y);handDepth=neutralViewport.z;
             if (modes.IsEditing || modes.IsTransitioning)
             {
                 screenPosition = targetScreenPosition = restScreenPosition;
-                return;
+                return false;
             }
             if (!controlling && !returning)
             {
                 screenPosition = targetScreenPosition = restScreenPosition;
-                return;
+                return false;
             }
-            if (HasContact) return;
+            if (HasContact) return false;
             float targetDepth = handDepth;
             if (returningFromContact)
             {
@@ -256,7 +273,7 @@ namespace Metroidbrainia.Hand3DExperiment
                 {
                     screenPosition = targetScreenPosition = restScreenPosition;
                     returning = false;
-                    return;
+                    return false;
                 }
             }
             else
@@ -264,12 +281,15 @@ namespace Metroidbrainia.Hand3DExperiment
                 float weight = movementSmoothing > 0f ? 1f - Mathf.Exp(-deltaTime / movementSmoothing) : 1f;
                 screenPosition = Vector2.Lerp(screenPosition, targetScreenPosition, weight);
             }
-            Vector3 target = armCamera.ViewportToWorldPoint(new Vector3(screenPosition.x, screenPosition.y, targetDepth));
-            bool limited = SolveArm(target);
+            target = armCamera.ViewportToWorldPoint(new Vector3(screenPosition.x, screenPosition.y, targetDepth));
+            return true;
+        }
+        private void AcceptReachedTarget(bool limited,Vector3 position)
+        {
             if (limited && controlling)
             {
                 // Do not accumulate an invisible target beyond the physical reach of the skeleton.
-                Vector3 reached = armCamera.WorldToViewportPoint(hand.position);
+                Vector3 reached = armCamera.WorldToViewportPoint(position);
                 screenPosition = targetScreenPosition = new Vector2(reached.x, reached.y);
             }
         }
@@ -277,6 +297,15 @@ namespace Metroidbrainia.Hand3DExperiment
         private bool SolveArm(Vector3 target)
         {
             Vector3 shoulder = upperArm.position;
+            Vector3 pole=elbowHint!=null?elbowHint.position-shoulder:armCamera.transform.TransformDirection(bendDirectionInCamera);
+            bool limited=CalculateElbow(ref target,shoulder,pole,out Vector3 elbow);
+            upperArm.rotation = Quaternion.FromToRotation(forearm.position - shoulder, elbow - shoulder) * upperArm.rotation;
+            forearm.rotation = Quaternion.FromToRotation(hand.position - forearm.position, target - forearm.position) * forearm.rotation;
+            return limited;
+        }
+
+        private bool CalculateElbow(ref Vector3 target,Vector3 shoulder,Vector3 pole,out Vector3 elbow)
+        {
             Vector3 toTarget = target - shoulder;
             float rawDistance = toTarget.magnitude;
             Vector3 direction = rawDistance > 0.000001f ? toTarget / rawDistance : armCamera.transform.forward;
@@ -284,19 +313,34 @@ namespace Metroidbrainia.Hand3DExperiment
             float maximumReach = upperLength + forearmLength - 0.000001f;
             float distance = Mathf.Clamp(rawDistance, minimumReach, maximumReach);
             target = shoulder + direction * distance;
-            Vector3 pole = elbowHint != null ? elbowHint.position - shoulder
-                : armCamera.transform.TransformDirection(bendDirectionInCamera);
             pole -= direction * Vector3.Dot(pole, direction);
             if (pole.sqrMagnitude < 0.000001f) pole = Vector3.Cross(direction, armCamera.transform.forward);
             if (pole.sqrMagnitude < 0.000001f) pole = Vector3.Cross(direction, armCamera.transform.up);
             pole.Normalize();
             float along = Mathf.Clamp((upperLength * upperLength + distance * distance - forearmLength * forearmLength)
                 / (2f * distance), -upperLength, upperLength);
-            Vector3 elbow = shoulder + direction * along + pole * Mathf.Sqrt(Mathf.Max(0f, upperLength * upperLength - along * along));
-            // Only rotate the joints. Segment offsets and scales always keep their authored values.
-            upperArm.rotation = Quaternion.FromToRotation(forearm.position - shoulder, elbow - shoulder) * upperArm.rotation;
-            forearm.rotation = Quaternion.FromToRotation(hand.position - forearm.position, target - forearm.position) * forearm.rotation;
+            elbow = shoulder + direction * along + pole * Mathf.Sqrt(Mathf.Max(0f, upperLength * upperLength - along * along));
             return Mathf.Abs(distance - rawDistance) > 0.00001f;
+        }
+
+        public bool AdvanceUniversalTarget(float deltaTime,Vector3 referenceHand,Hand3DPoseComposition.Frame pose,out Vector3 target)
+        {
+            bool moving=AdvanceTarget(deltaTime,referenceHand,out target);
+            if(HasContact){target=contactTarget-(pose.worldPositions[pose.Index(contactPoint)]-pose.worldPositions[pose.Index(hand)]);return true;}
+            return moving;
+        }
+        public bool SolveUniversal(Hand3DPoseComposition.Frame pose,Vector3 target,Vector3 referenceElbow)
+        {
+            int u=pose.Index(upperArm),f=pose.Index(forearm),h=pose.Index(hand);Vector3 shoulder=pose.worldPositions[u];
+            Vector3 pole=elbowHint!=null?elbowHint.position-shoulder:referenceElbow-shoulder;
+            LastUniversalRequestedTarget=target;
+            bool limited=CalculateElbow(ref target,shoulder,pole,out Vector3 elbow);
+            LastUniversalFeasibleTarget=target;LastUniversalTargetLimited=limited;
+            pose.SetWorldRotation(u,Quaternion.FromToRotation(pose.worldPositions[f]-shoulder,elbow-shoulder)*pose.worldRotations[u]);
+            pose.SetWorldRotation(f,Quaternion.FromToRotation(pose.worldPositions[h]-pose.worldPositions[f],target-pose.worldPositions[f])*pose.worldRotations[f]);
+            LastUniversalReachError=Vector3.Distance(pose.worldPositions[h],target);
+            if(!HasContact)AcceptReachedTarget(limited,pose.worldPositions[h]);
+            return limited;
         }
 
         private void RestoreRestPose()
@@ -311,8 +355,10 @@ namespace Metroidbrainia.Hand3DExperiment
         {
             contactPoint = null;
             returningFromContact = false;
-            if (initialized && upperArm != null && forearm != null && hand != null) RestoreRestPose();
-            if (initialized)
+            bool universal=rig!=null && rig.UniversalActive;
+            if(universal)rig.RestoreAuthoredPose();
+            if (!universal && initialized && upperArm != null && forearm != null && hand != null) RestoreRestPose();
+            if (!universal && initialized)
             {
                 transform.localPosition = originalModelPosition;
                 transform.localRotation = originalModelRotation;

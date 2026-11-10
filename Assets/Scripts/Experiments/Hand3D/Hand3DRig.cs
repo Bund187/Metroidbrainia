@@ -8,6 +8,10 @@ namespace Metroidbrainia.Hand3DExperiment
     [DisallowMultipleComponent]
     public sealed class Hand3DRig : MonoBehaviour
     {
+        public enum PoseSystem { Legacy, Universal }
+        [Header("Experimental pose backend (Legacy remains the default)")]
+        [SerializeField] private PoseSystem poseSystem = PoseSystem.Legacy;
+        [SerializeField] private Hand3DRuntimePoses runtimePoses;
         [Serializable]
         public sealed class Joint
         {
@@ -72,6 +76,18 @@ namespace Metroidbrainia.Hand3DExperiment
         private float wristDuration = 0.2f;
         private AnimationCurve wristEasing;
         private Hand3DInteractionPose interactionPose;
+        private Transform[] authoredBones;
+        private Vector3[] authoredPositions;
+        private Quaternion[] authoredRotations;
+        private Hand3DPoseComposition composition;
+        private PoseSystem lastSystem;
+        private Hand3DRuntimePoses lastRuntimePoses;
+        private string universalError;
+        public bool UniversalActive { get; private set; }
+        public PoseSystem SelectedPoseSystem => poseSystem;
+        public Hand3DRuntimePoses RuntimePoses => runtimePoses;
+        public string UniversalError => universalError;
+        public Hand3DPoseComposition UniversalComposition => composition;
 
         public bool IsReady => initialized;
         public FingerBinding[] Fingers => fingers;
@@ -93,6 +109,8 @@ namespace Metroidbrainia.Hand3DExperiment
         {
             if (initialized)
                 return true;
+            authoredBones=GetComponentsInChildren<Transform>(true);authoredPositions=new Vector3[authoredBones.Length];authoredRotations=new Quaternion[authoredBones.Length];
+            for(int i=0;i<authoredBones.Length;i++){authoredPositions[i]=authoredBones[i].localPosition;authoredRotations[i]=authoredBones[i].localRotation;}
             if (fingerState == null) fingerState = GetComponent<Hand3DFingerState>();
             if (poseRecognizer == null) poseRecognizer = GetComponent<Hand3DPoseRecognizer>();
             if (poseActions == null) poseActions = GetComponent<Hand3DPoseActions>();
@@ -184,14 +202,16 @@ namespace Metroidbrainia.Hand3DExperiment
                 {
                     if (entry == null || !lookup.TryGetValue(entry.Bone, out var bone) || bone.joint == null)
                         return Fail("HandHold translations must reference configured finger joints only.");
-                    entry.Bone.localPosition = entry.Neutral;
+                    if(poseSystem==PoseSystem.Legacy)entry.Bone.localPosition = entry.Neutral;
                 }
             initialized = true;
             BeginTransition();
+            lastSystem=PoseSystem.Legacy;lastRuntimePoses=runtimePoses;
+            if(poseSystem==PoseSystem.Universal)PreparePoseSystem();
             foreach (DrivenBone bone in driven)
             {
                 bone.visualRotation = bone.target;
-                bone.transform.localRotation = bone.target;
+                if(!UniversalActive)bone.transform.localRotation = bone.target;
             }
             elapsed = transitionDuration;
             return true;
@@ -245,10 +265,49 @@ namespace Metroidbrainia.Hand3DExperiment
 
         private void LateUpdate() => UpdateRig(Time.deltaTime);
 
+        public void SelectPoseSystem(PoseSystem system,Hand3DRuntimePoses profiles=null)
+        {poseSystem=system;if(profiles!=null)runtimePoses=profiles;PreparePoseSystem();}
+        public void RestoreAuthoredPose()
+        {
+            if(authoredBones==null)return;
+            for(int i=0;i<authoredBones.Length;i++)if(authoredBones[i]!=null && (composition==null || composition.OwnsBone(authoredBones[i]))){authoredBones[i].localPosition=authoredPositions[i];authoredBones[i].localRotation=authoredRotations[i];}
+        }
+        public void PreparePoseSystem()
+        {
+            if(!initialized || lastSystem==poseSystem && lastRuntimePoses==runtimePoses)return;
+            if(UniversalActive)RestoreAuthoredPose();
+            UniversalActive=false;composition=null;if(armMovement!=null && armMovement.Modes!=null)armMovement.Modes.SetUniversalTiming(false);
+            lastSystem=poseSystem;lastRuntimePoses=runtimePoses;universalError=null;
+            if(poseSystem==PoseSystem.Universal)
+            {
+                try
+                {
+                    if(runtimePoses==null)throw new InvalidOperationException("Assign a runtime pose asset (the Editor library cannot be used in a player).");
+                    composition=new Hand3DPoseComposition(this,armMovement,runtimePoses,authoredPositions,authoredRotations);UniversalActive=true;return;
+                }
+                catch(Exception error){universalError=error.Message;Debug.LogError("[Hand3D Universal] Configuration rejected; using Legacy. "+universalError,this);}
+            }
+            ResetLegacyState();
+        }
+        private void ResetLegacyState()
+        {
+            BeginTransition();elapsed=transitionDuration;wristOffset=wristFrom=wristTarget=Quaternion.identity;wristPose=null;wristElapsed=0f;
+            foreach(var bone in driven){bone.visualRotation=bone.start=bone.target;}
+        }
+
         private void UpdateRig(float deltaTime)
         {
             if (!initialized || deltaTime <= 0f)
                 return;
+            PreparePoseSystem();
+            if(UniversalActive)
+            {
+                if(armMovement==null || !armMovement.isActiveAndEnabled || !armMovement.IsReady){if(interactionPose!=null)interactionPose.Tick(deltaTime);return;}
+                try {composition.Evaluate(deltaTime,fingerState,poseRecognizer,poseActions,interactionPose).Commit();transitionPending=false;}
+                catch(Exception error)
+                {RestoreAuthoredPose();UniversalActive=false;composition=null;armMovement.Modes.SetUniversalTiming(false);universalError=error.Message;ResetLegacyState();Debug.LogError("[Hand3D Universal] Evaluation rejected; using Legacy. "+universalError,this);}
+                return;
+            }
             // Finger and recognition events can arrive together; start once from the displayed rotations.
             if (transitionPending)
             {
@@ -323,9 +382,11 @@ namespace Metroidbrainia.Hand3DExperiment
                 return;
             fingerState.Changed -= RequestTransition;
             if (poseRecognizer != null) poseRecognizer.PoseChanged -= RequestTransition;
-            foreach (DrivenBone bone in driven)
+            bool universal=UniversalActive;
+            if(universal)RestoreAuthoredPose();
+            else foreach (DrivenBone bone in driven)
                 if (bone.transform != null) bone.transform.localRotation = bone.original;
-            if (interactionPose != null && interactionPose.UseHoldPositions)
+            if (!universal && interactionPose != null && interactionPose.UseHoldPositions)
                 foreach (var entry in interactionPose.HandHoldPositions)
                     if (entry != null && entry.Bone != null) entry.Bone.localPosition = entry.Neutral;
             if (animatorToSuspend != null) animatorToSuspend.enabled = animatorWasEnabled;
@@ -335,6 +396,7 @@ namespace Metroidbrainia.Hand3DExperiment
             transitionPending = false;
             wristOffset = wristFrom = wristTarget = Quaternion.identity;
             wristPose = null;
+            UniversalActive=false;composition=null;if(armMovement!=null && armMovement.Modes!=null)armMovement.Modes.SetUniversalTiming(false);
         }
     }
 }

@@ -1,0 +1,41 @@
+{
+    "runId": "b2e61fd6cd9c439f8378ed0b72baea31",
+    "scope": "Real Legacy/Universal evaluation on independently reloaded scenes. Numeric/bone comparison; no final Game visual approval.",
+    "assertions": 47056,
+    "maxPosition": 0.0626482218503952,
+    "maxRotation": 9.378361701965332,
+    "maxFingerRotation": 0.0,
+    "maxWristRotation": 0.0,
+    "cases": [
+        {
+            "name": "runtime_data_and_explicit_copy",
+            "status": "FAIL",
+            "detail": "System.Exception: Runtime assembly references Editor\r\n  at Metroidbrainia.Phase5Validation.Check (System.Boolean value, System.String message) [0x00016] in C:\\Users\\Bund187\\AppData\\Local\\Temp\\MetroidbrainiaPhase0-20261109\\Assets\\Editor\\Phase1Validation\\Phase5Validation.cs:33 \r\n  at Metroidbrainia.Phase5Validation+<>c.<Run>b__22_0 () [0x0001f] in C:\\Users\\Bund187\\AppData\\Local\\Temp\\MetroidbrainiaPhase0-20261109\\Assets\\Editor\\Phase1Validation\\Phase5Validation.cs:82 \r\n  at Metroidbrainia.Phase5Validation.Case (System.String name, System.Action action) [0x00000] in C:\\Users\\Bund187\\AppData\\Local\\Temp\\MetroidbrainiaPhase0-20261109\\Assets\\Editor\\Phase1Validation\\Phase5Validation.cs:76 "
+        },
+        {
+            "name": "32_fingers_modes_and_timed_transitions",
+            "status": "PASS",
+            "detail": "Independent scene loads, same effective inputs; current runtime components."
+        },
+        {
+            "name": "movement_and_return_comparison",
+            "status": "FAIL",
+            "detail": "System.Exception: Position difference sample=0 bone=arms/root/shoulder.r/bicep.r/forearm.r error=0,06264822\r\n  at Metroidbrainia.Phase5Validation.Check (System.Boolean value, System.String message) [0x00016] in C:\\Users\\Bund187\\AppData\\Local\\Temp\\MetroidbrainiaPhase0-20261109\\Assets\\Editor\\Phase1Validation\\Phase5Validation.cs:33 \r\n  at Metroidbrainia.Phase5Validation.Compare (Metroidbrainia.Phase5Validation+Sample[] legacy, Metroidbrainia.Phase5Validation+Sample[] universal, System.Single positionTolerance, System.Single bodyAngleTolerance) [0x00127] in C:\\Users\\Bund187\\AppData\\Local\\Temp\\MetroidbrainiaPhase0-20261109\\Assets\\Editor\\Phase1Validation\\Phase5Validation.cs:134 \r\n  at Metroidbrainia.Phase5Validation+<>c.<Run>b__22_2 () [0x00000] in C:\\Users\\Bund187\\AppData\\Local\\Temp\\MetroidbrainiaPhase0-20261109\\Assets\\Editor\\Phase1Validation\\Phase5Validation.cs:86 \r\n  at Metroidbrainia.Phase5Validation.Case (System.String name, System.Action action) [0x00000] in C:\\Users\\Bund187\\AppData\\Local\\Temp\\MetroidbrainiaPhase0-20261109\\Assets\\Editor\\Phase1Validation\\Phase5Validation.cs:76 "
+        },
+        {
+            "name": "full_body_reference_ik_and_limits",
+            "status": "PASS",
+            "detail": "Independent scene loads, same effective inputs; current runtime components."
+        },
+        {
+            "name": "switching_partial_masks_pause",
+            "status": "PASS",
+            "detail": "Independent scene loads, same effective inputs; current runtime components."
+        },
+        {
+            "name": "universal_door_document_lifecycle",
+            "status": "PASS",
+            "detail": "Independent scene loads, same effective inputs; current runtime components."
+        }
+    ]
+}

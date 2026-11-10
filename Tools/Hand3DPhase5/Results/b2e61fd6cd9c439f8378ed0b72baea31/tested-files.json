@@ -1,0 +1,38 @@
+[
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DRig.cs",
+        "sha256":  "9B5A3177BDE29D7A20E37C252644EB37092C6116F41AF35C6E6904D3CFFBFFA0"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DArmMovement.cs",
+        "sha256":  "05048011F8D0DB2B1F27BF72AB8EF974ED20A683366334832FA356C9AB46C787"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DModeController.cs",
+        "sha256":  "86D37B66DAE6CEF70958432A520D094B183CFDF985D49909C7678777666C2A7C"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DInteractionPose.cs",
+        "sha256":  "A26F23FF9FC9DA9BD54B11429C26A06601B252B974C17B3736D7925D9595CF90"
+    },
+    {
+        "path":  "Assets/Editor/Experiments/Hand3D/Hand3DPoseEditor.cs",
+        "sha256":  "FACBEF084A925288D2BCA8836A2C65FB544907B5146E31B018F95C04BCFC9CD3"
+    },
+    {
+        "path":  "Assets/Editor/Experiments/Hand3D/Hand3DEditors.cs",
+        "sha256":  "BDF5F8DCD809867A1D0D2F72B0D3E69E7D8B9A063DBE678E7D4604EBC0B8F56A"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DRuntimePoses.cs",
+        "sha256":  "3A53D4F3D0187785C5259796E43C60AEABF3BFFE93703143B28159E2B17803DA"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DPoseComposition.cs",
+        "sha256":  "394715998C377C69676195789F8876D5280008C43FA0BC8A8BACAEA7901BB43B"
+    },
+    {
+        "path":  "Assets/Editor/Experiments/Hand3D/Hand3DRuntimePoseExport.cs",
+        "sha256":  "A8D868D797AE8E81E6BF5DE671F2273838445AEACCEA45AC4362F50FA09224EB"
+    }
+]

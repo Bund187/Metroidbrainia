@@ -57,6 +57,7 @@ namespace Metroidbrainia.Hand3DExperiment
         public AdditionalBone[] AdditionalBones => additionalGrabBones;
         public Quaternion WristOffset => wristOffset;
         public bool IsHandHolding => handHolding && grabbing;
+        public bool UsesHandHoldProfile => handHolding;
         public LocalBonePose[] HandHoldOverrides => handHoldOverrides;
         public AdditionalBone[] HandHoldBones => additionalHandHoldBones;
         public FingerPosition[] HandHoldPositions => handHoldPositions;
@@ -100,10 +101,12 @@ namespace Metroidbrainia.Hand3DExperiment
         }
 
         public void Tick(float deltaTime)
+            => Tick(deltaTime,handHolding ? handHoldTransitionDuration : transitionDuration);
+
+        public void Tick(float deltaTime,float duration)
         {
             if (deltaTime <= 0f) return;
             elapsed += deltaTime;
-            float duration = handHolding ? handHoldTransitionDuration : transitionDuration;
             float t = duration > 0f ? Mathf.Clamp01(elapsed / duration) : 1f;
             Weight = Mathf.Lerp(from, grabbing ? 1f : 0f, Mathf.SmoothStep(0f, 1f, t));
             wristOffset = Quaternion.Slerp(wristFrom, wristTarget, Mathf.SmoothStep(0f, 1f, t));

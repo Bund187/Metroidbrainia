@@ -58,9 +58,15 @@ namespace Metroidbrainia.Hand3DExperiment
         [SerializeField] private float inspectionAxisSign = 1f;
         private ArmFrame fallback, from;
         private float elapsed, targetAngle, angle;
+        private bool universalTiming;
+        private float universalExplorationDuration, universalEditDuration;
+        private float Duration => universalTiming ? (IsEditing ? universalEditDuration : universalExplorationDuration) : transitionDuration;
         public Hand3DMode Mode { get; private set; }
         public bool IsEditing => Mode == Hand3DMode.HandEdit;
-        public bool IsTransitioning => elapsed < transitionDuration;
+        public bool IsTransitioning => elapsed < Duration;
+        public float TransitionWeight => Duration > 0f ? Mathf.SmoothStep(0f,1f,Mathf.Clamp01(elapsed/Duration)) : 1f;
+        public void SetUniversalTiming(bool active,float explorationDuration=0f,float editDuration=0f)
+        { float progress=Duration>0f?Mathf.Clamp01(elapsed/Duration):1f;universalTiming=active;universalExplorationDuration=explorationDuration;universalEditDuration=editDuration;elapsed=progress*Duration; }
         public ArmConfiguration Exploration => exploration;
         public ArmConfiguration HandEdit => handEdit;
         public float InspectionAngle => angle * inspectionAxisSign;
@@ -96,11 +102,13 @@ namespace Metroidbrainia.Hand3DExperiment
         }
 
         public ArmFrame Evaluate(float deltaTime, Vector3 longitudinalAxis, Quaternion forearmInCamera)
+            => EvaluateReference(deltaTime,longitudinalAxis,forearmInCamera,TargetFrame);
+
+        public ArmFrame EvaluateReference(float deltaTime, Vector3 longitudinalAxis, Quaternion forearmInCamera,ArmFrame target)
         {
             elapsed += deltaTime;
             float weight = inspectionSmoothing > 0f ? 1f - Mathf.Exp(-deltaTime / inspectionSmoothing) : 1f;
             angle = Mathf.Lerp(angle, targetAngle, weight);
-            ArmFrame target = TargetFrame;
             if (IsEditing)
             {
                 Quaternion roll = Quaternion.AngleAxis(InspectionAngle, longitudinalAxis);
@@ -109,7 +117,7 @@ namespace Metroidbrainia.Hand3DExperiment
                 target.forearm *= roll;
                 target.hand = cameraRoll * target.hand;
             }
-            float t = transitionDuration > 0f ? Mathf.SmoothStep(0f, 1f, Mathf.Clamp01(elapsed / transitionDuration)) : 1f;
+            float t = TransitionWeight;
             return t < 1f ? ArmFrame.Lerp(from, target, t) : target;
         }
 

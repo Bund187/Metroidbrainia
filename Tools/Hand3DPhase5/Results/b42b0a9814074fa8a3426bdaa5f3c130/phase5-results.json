@@ -1,0 +1,41 @@
+{
+    "runId": "b42b0a9814074fa8a3426bdaa5f3c130",
+    "scope": "Real Legacy/Universal evaluation on independently reloaded scenes. Numeric/bone comparison; no final Game visual approval.",
+    "assertions": 55420,
+    "maxPosition": 0.08036526292562485,
+    "maxRotation": 12.089037895202637,
+    "maxFingerRotation": 0.0,
+    "maxWristRotation": 0.0,
+    "cases": [
+        {
+            "name": "runtime_data_and_explicit_copy",
+            "status": "PASS",
+            "detail": "Independent scene loads, same effective inputs; current runtime components."
+        },
+        {
+            "name": "32_fingers_modes_and_timed_transitions",
+            "status": "PASS",
+            "detail": "Independent scene loads, same effective inputs; current runtime components."
+        },
+        {
+            "name": "movement_and_return_comparison",
+            "status": "PASS",
+            "detail": "Independent scene loads, same effective inputs; current runtime components."
+        },
+        {
+            "name": "full_body_reference_ik_and_limits",
+            "status": "PASS",
+            "detail": "Independent scene loads, same effective inputs; current runtime components."
+        },
+        {
+            "name": "switching_partial_masks_pause",
+            "status": "PASS",
+            "detail": "Independent scene loads, same effective inputs; current runtime components."
+        },
+        {
+            "name": "universal_door_document_lifecycle",
+            "status": "PASS",
+            "detail": "Independent scene loads, same effective inputs; current runtime components."
+        }
+    ]
+}

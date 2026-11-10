@@ -1,0 +1,54 @@
+[
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DPoseComposition.cs",
+        "sha256":  "33BDBA8A84CBB7BDBBB0BD8D8C2B06BCA9D21CF69F8C436345F2792B51E3F902"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DRuntimePoses.cs",
+        "sha256":  "FE876832304F6EEEAEBF16F88CFE10842C9C9A7BF4D8B0D15E8B6CE318FD6FAC"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DPoseComposition.cs",
+        "sha256":  "33BDBA8A84CBB7BDBBB0BD8D8C2B06BCA9D21CF69F8C436345F2792B51E3F902"
+    },
+    {
+        "path":  "Assets/Editor/Experiments/Hand3D/Hand3DRuntimePoseExport.cs",
+        "sha256":  "A8D868D797AE8E81E6BF5DE671F2273838445AEACCEA45AC4362F50FA09224EB"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DRuntimePoses.cs.meta",
+        "sha256":  "8A78BEF7D41DCE2F5AE95F57F75C823A19C6760140CFC9D05D0667FC5492EB30"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DPoseComposition.cs.meta",
+        "sha256":  "6539543934E750A0C349F55369E7E7FA2434DCB31D2B5F87D90EA792C0AFAAB4"
+    },
+    {
+        "path":  "Assets/Editor/Experiments/Hand3D/Hand3DRuntimePoseExport.cs.meta",
+        "sha256":  "47C507112C23F7481C69B427E36202AC459A7E312E9FE93D79B2DA80E893CB9F"
+    },
+    {
+        "path":  "Assets/Experiments/Hand3D/RuntimePoses/TestArmRuntimePoses.asset",
+        "sha256":  "B1121CC22E785191C021E447EEB7B86DA85837380495FDE03ED3FA0BAFF7B48E"
+    },
+    {
+        "path":  "Assets/Experiments/Hand3D/RuntimePoses/TestArmRuntimePoses.asset.meta",
+        "sha256":  "51073EA78DAABDAAFB3919C952942E7549372D21FE82B48ECEA99110CA59A8C2"
+    },
+    {
+        "path":  "Assets/Experiments.meta",
+        "sha256":  "AEBC460C14AA115119CA7AFA66996DCF307E8EDD0672FE156118CA02EB1862AC"
+    },
+    {
+        "path":  "Assets/Experiments/Hand3D.meta",
+        "sha256":  "8A957B3D831D91BA73623F19C0E8004002239CFE3F85B88CEFE171E1DC66123F"
+    },
+    {
+        "path":  "Assets/Experiments/Hand3D/RuntimePoses.meta",
+        "sha256":  "B5DF8868387AD3609E4B097509D53F01D916A9BAF3C1DEFE08FAE51B1BB845C3"
+    },
+    {
+        "path":  "Assets/Scenes/TestArmScene.unity",
+        "sha256":  "5CA8F2B79C52C06B372EA95A582307B676EC99345912E943B5D9F2BF472B00DC"
+    }
+]

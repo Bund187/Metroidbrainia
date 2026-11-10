@@ -1,0 +1,67 @@
+{
+    "runId": "45b53544c66d4587b45809a0795cd627",
+    "scope": "Real Unity Editor stage/window and asset APIs in the isolated project. Programmatic UI lifecycle; no manual Scene View visual validation.",
+    "assertions": 940,
+    "cases": [
+        {
+            "name": "open_close_without_edits",
+            "status": "PASS",
+            "detail": "Real Editor window/stage, isolated project; no final visual judgement."
+        },
+        {
+            "name": "masks_and_generic_profiles",
+            "status": "PASS",
+            "detail": "Real Editor window/stage, isolated project; no final visual judgement."
+        },
+        {
+            "name": "local_preview_and_weights",
+            "status": "PASS",
+            "detail": "Real Editor window/stage, isolated project; no final visual judgement."
+        },
+        {
+            "name": "camera_and_special_wrist_preview",
+            "status": "PASS",
+            "detail": "Real Editor window/stage, isolated project; no final visual judgement."
+        },
+        {
+            "name": "full_capture_only_selected_profile",
+            "status": "PASS",
+            "detail": "Real Editor window/stage, isolated project; no final visual judgement."
+        },
+        {
+            "name": "partial_capture_repeat_and_channels",
+            "status": "PASS",
+            "detail": "Real Editor window/stage, isolated project; no final visual judgement."
+        },
+        {
+            "name": "geometry_permission_and_rejection",
+            "status": "PASS",
+            "detail": "Real Editor window/stage, isolated project; no final visual judgement."
+        },
+        {
+            "name": "relative_capture_roundtrip",
+            "status": "PASS",
+            "detail": "Real Editor window/stage, isolated project; no final visual judgement."
+        },
+        {
+            "name": "undo_redo_data_and_preview_transforms",
+            "status": "PASS",
+            "detail": "Real Editor window/stage, isolated project; no final visual judgement."
+        },
+        {
+            "name": "save_reload_and_storage_protection",
+            "status": "PASS",
+            "detail": "Real Editor window/stage, isolated project; no final visual judgement."
+        },
+        {
+            "name": "window_switch_cancel_close_and_play_exit",
+            "status": "PASS",
+            "detail": "Real Editor window/stage, isolated project; no final visual judgement."
+        },
+        {
+            "name": "invalid_references_and_catalog_extension",
+            "status": "PASS",
+            "detail": "Real Editor window/stage, isolated project; no final visual judgement."
+        }
+    ]
+}
