@@ -1,0 +1,50 @@
+{
+    "runId": "8fc500d748314c83aada6862f31bb3d9",
+    "scope": "Isolated data migration, source recovery and existing rig comparisons. No profile application engine or visual validation.",
+    "assertions": 1212,
+    "profiles": 13,
+    "joints": 22,
+    "values": 79,
+    "cases": [
+        {
+            "name": "non_destructive_schema_idempotence",
+            "status": "PASS",
+            "detail": "Isolated Editor conversion/data comparison; no new runtime consumer."
+        },
+        {
+            "name": "all_values_spaces_masks_and_neutrals",
+            "status": "PASS",
+            "detail": "Isolated Editor conversion/data comparison; no new runtime consumer."
+        },
+        {
+            "name": "all_32_masks_against_current_rig",
+            "status": "PASS",
+            "detail": "Isolated Editor conversion/data comparison; no new runtime consumer."
+        },
+        {
+            "name": "timings_and_weighted_curves",
+            "status": "PASS",
+            "detail": "Isolated Editor conversion/data comparison; no new runtime consumer."
+        },
+        {
+            "name": "archive_roundtrip_cross_scene_reload_and_events",
+            "status": "PASS",
+            "detail": "Isolated Editor conversion/data comparison; no new runtime consumer."
+        },
+        {
+            "name": "invalid_missing_duplicate_and_uncaptured",
+            "status": "PASS",
+            "detail": "Isolated Editor conversion/data comparison; no new runtime consumer."
+        },
+        {
+            "name": "optional_positions_and_inactive_captures",
+            "status": "PASS",
+            "detail": "Isolated Editor conversion/data comparison; no new runtime consumer."
+        },
+        {
+            "name": "full_body_mask_and_ik_representation_only",
+            "status": "PASS",
+            "detail": "Isolated Editor conversion/data comparison; no new runtime consumer."
+        }
+    ]
+}

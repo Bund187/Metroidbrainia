@@ -1,0 +1,30 @@
+[
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DPoseProfile.cs",
+        "sha256":  "9E9E631269DAE60B103F3A87CEDC3B21DBF15A2EB641DE8BA941FB7E0E1BFA8D"
+    },
+    {
+        "path":  "Assets/Editor/Experiments/Hand3D/Hand3DPoseLibrary.cs",
+        "sha256":  "3676EBC19DE5CABA65036222DD618A94F6EBD9B93B3C035A9437F7E70A55B46E"
+    },
+    {
+        "path":  "Assets/Editor/Experiments/Hand3D/Hand3DPosePreview.cs",
+        "sha256":  "DE8F3B3D8A716E3805D4D196DDBF703FD2E5B46682C671EFC473DEAD4781EDA3"
+    },
+    {
+        "path":  "Assets/Editor/Experiments/Hand3D/Hand3DPoseEditor.cs",
+        "sha256":  "A53AFCAAE39B432B438A754CB1F9F8BF3CE6BC1D96198132FC05D21A66DE210E"
+    },
+    {
+        "path":  "Assets/Editor/Experiments/Hand3D/Hand3DPoseLibrary.cs.meta",
+        "sha256":  "23FC34331A0B19B3F329EA579E79AE6118F698290D9A6014465E5A148FAC1931"
+    },
+    {
+        "path":  "Assets/Editor/Experiments/Hand3D/Hand3DPosePreview.cs.meta",
+        "sha256":  "A59D57A9D75BE3635214F9332245237DAF0ED16867128FAB440825743CAA0176"
+    },
+    {
+        "path":  "Assets/Editor/Experiments/Hand3D/Hand3DPoseEditor.cs.meta",
+        "sha256":  "508BB15F2D072E067CDDCC2AB0CD805F0F9A1F3847179696241ACF376F36E625"
+    }
+]

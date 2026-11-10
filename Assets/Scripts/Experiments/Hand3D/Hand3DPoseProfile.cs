@@ -1,0 +1,124 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace Metroidbrainia.Hand3DExperiment
+{
+    // Data only. Nothing in the current hand runtime reads or applies these profiles.
+    [Serializable]
+    public sealed class Hand3DPoseProfile
+    {
+        [Flags] public enum Channels { None = 0, Position = 1, Rotation = 2 }
+        [Flags] public enum Context { Exploration = 1, HandEdit = 2, GrabDoor = 4, GrabDocument = 8, Action = 16 }
+        public enum Space { ParentLocal, CameraRelative, ExplorationWristOffset }
+        public enum Operation { Absolute, Offset, RestLocalNeutralDelta }
+        public enum Easing { SmoothStep, CurveClampedOrSmoothStep }
+
+        [Serializable] public sealed class Transition
+        {
+            public float duration, releaseDuration;
+            public Easing easing;
+            public AnimationCurve curve;
+            // Current wrist transitions reuse the last gesture's timing when recognition becomes null.
+            public bool retainTimingOnUnrecognizedGesture;
+        }
+
+        [Serializable] public sealed class JointValue
+        {
+            public string jointPath, referenceId, sourceProperty;
+            public Channels storedChannels, influenceChannels;
+            [Range(0f, 1f)] public float weight;
+            public Space space;
+            public Operation operation;
+            public Vector3 position, sourceEuler;
+            public Quaternion rotation = Quaternion.identity;
+            public bool captured, captureFlagPresent = true, enabled = true;
+            public bool allowSegmentPosition;
+            public string neutralJointPath;
+            public bool neutralCaptured;
+            public Vector3 neutralPosition, neutralEuler;
+            public Quaternion neutralRotation = Quaternion.identity;
+        }
+
+        // Public fields are intentional for a portable, directly inspectable serialization DTO, not Inspector controls.
+        public string id;
+        public string displayName;
+        public int fingerCombination = -1;
+        public bool fingersOnly, fallbackToFlexedFingers;
+        public Context contexts;
+        public Transition transition = new Transition();
+        public JointValue[] joints = Array.Empty<JointValue>();
+
+        public Channels Influence(string path)
+        {
+            var result = Channels.None;
+            foreach (var value in joints)
+                if (value.jointPath == path && value.enabled && value.weight > 0f) result |= value.influenceChannels;
+            return result;
+        }
+    }
+
+    [Serializable]
+    public sealed class Hand3DPoseProfileSet
+    {
+        public enum Role { Root, Shoulder, UpperArm, Forearm, Wrist, Twist, Finger }
+        [Serializable] public sealed class JointReference
+        {
+            public string path, globalId, parentId;
+            public Role role;
+            public int finger = -1, joint = -1;
+            // A source reference/invariant, not a newly authored pose capture.
+            public Vector3 sourceLocalPosition, sourceLocalScale;
+            public Quaternion sourceLocalRotation;
+        }
+        public int version = 1;
+        public string sourceRootId, cameraId;
+        public JointReference[] skeleton = Array.Empty<JointReference>();
+        public Hand3DPoseProfile[] profiles = Array.Empty<Hand3DPoseProfile>();
+        public string[] solverJointPaths = Array.Empty<string>();
+        public string wristPath;
+        public bool deriveElbowPreferenceFromReference = true, preserveWristAfterIK = true;
+
+        public string[] Validate()
+        {
+            var errors = new List<string>();
+            var bones = new Dictionary<string, JointReference>();
+            foreach (var bone in skeleton)
+            {
+                if (bone == null || string.IsNullOrEmpty(bone.path) || bones.ContainsKey(bone.path)) { errors.Add("Missing/duplicate skeleton path"); continue; }
+                bones.Add(bone.path, bone);
+            }
+            var ids = new HashSet<string>();
+            foreach (var profile in profiles)
+            {
+                if (profile == null || string.IsNullOrEmpty(profile.id) || !ids.Add(profile.id)) { errors.Add("Missing/duplicate profile ID"); continue; }
+                var used = new Dictionary<string, Hand3DPoseProfile.Channels>();
+                foreach (var value in profile.joints)
+                {
+                    string label = profile.id + ": " + value?.sourceProperty;
+                    if (value == null || !bones.TryGetValue(value.jointPath ?? "", out var bone)) { errors.Add(label + " missing bone"); continue; }
+                    if (used.TryGetValue(value.jointPath, out var channels) && (channels & value.storedChannels) != 0) errors.Add(label + " duplicate channel");
+                    used[value.jointPath] = channels | value.storedChannels;
+                    if ((value.influenceChannels & ~value.storedChannels) != 0 || ((int)value.storedChannels & ~3) != 0) errors.Add(label + " incompatible channels");
+                    if (float.IsNaN(value.weight) || value.weight < 0f || value.weight > 1f) errors.Add(label + " invalid weight");
+                    if ((!value.captured || !value.enabled) && value.influenceChannels != 0) errors.Add(label + " uncaptured/disabled influence");
+                    if (profile.fingersOnly && bone.role != Role.Finger && value.influenceChannels != 0) errors.Add(label + " finger mask contains body joint");
+                    if ((value.influenceChannels & Hand3DPoseProfile.Channels.Position) != 0 && bone.role != Role.Root && bone.role != Role.Shoulder && bone.role != Role.Finger
+                        && (!value.allowSegmentPosition || value.space!=Hand3DPoseProfile.Space.ParentLocal || Mathf.Abs((value.operation==Hand3DPoseProfile.Operation.Offset?value.position+bone.sourceLocalPosition:value.position).magnitude-bone.sourceLocalPosition.magnitude) > .000001f)) errors.Add(label + " segment translation requires explicit permission, parent space and unchanged length");
+                    if (value.space == Hand3DPoseProfile.Space.CameraRelative && value.referenceId != cameraId) errors.Add(label + " camera reference mismatch");
+                    if (value.space == Hand3DPoseProfile.Space.ParentLocal && value.referenceId != bone.parentId) errors.Add(label + " parent reference mismatch");
+                    if (value.space == Hand3DPoseProfile.Space.ExplorationWristOffset && (bone.role != Role.Wrist || value.operation != Hand3DPoseProfile.Operation.Offset || profile.contexts != Hand3DPoseProfile.Context.Exploration || value.referenceId != cameraId)) errors.Add(label + " incompatible wrist offset");
+                    if (value.operation == Hand3DPoseProfile.Operation.RestLocalNeutralDelta && (bone.role != Role.Wrist || value.influenceChannels != 0 && (!value.neutralCaptured || value.neutralJointPath != value.jointPath))) errors.Add(label + " invalid neutral reference");
+                    var q = value.rotation;
+                    float norm = q.x*q.x+q.y*q.y+q.z*q.z+q.w*q.w;
+                    if ((value.storedChannels & Hand3DPoseProfile.Channels.Rotation) != 0 && (float.IsNaN(norm) || Mathf.Abs(norm-1f) > .001f)) errors.Add(label + " invalid quaternion");
+                }
+                if (profile.transition == null || profile.transition.duration < 0f || profile.transition.releaseDuration < 0f) errors.Add(profile.id + " invalid timing");
+            }
+            foreach (string path in solverJointPaths)
+                if (!bones.TryGetValue(path, out var bone) || bone.role != Role.UpperArm && bone.role != Role.Forearm) errors.Add("Invalid solver joint: " + path);
+            if (!bones.TryGetValue(wristPath ?? "", out var wrist) || wrist.role != Role.Wrist) errors.Add("Invalid wrist reference");
+            return errors.ToArray();
+        }
+    }
+}

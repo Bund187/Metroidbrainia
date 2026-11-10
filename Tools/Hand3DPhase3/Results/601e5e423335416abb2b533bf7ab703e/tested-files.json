@@ -1,0 +1,10 @@
+[
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DPoseProfile.cs",
+        "sha256":  "EA165266B919E1BDD13CA8BB93F8DD3F6230E5E084C7E649BD541411C082E650"
+    },
+    {
+        "path":  "Assets/Editor/Experiments/Hand3D/Hand3DPoseConversion.cs",
+        "sha256":  "F1F7E763960C0765F079EAB34AFC4E912BABCA05B049406E318B40D88CF01D13"
+    }
+]

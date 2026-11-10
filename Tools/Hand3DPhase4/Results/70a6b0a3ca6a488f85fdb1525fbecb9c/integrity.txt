@@ -1,0 +1,1 @@
+All previous files unchanged except the data-only pose schema. Functional runtime, TestArmScene, legacy editors/captures and all accepted phase artifacts unchanged. Three new Editor sources and Unity-generated metas allowed.
