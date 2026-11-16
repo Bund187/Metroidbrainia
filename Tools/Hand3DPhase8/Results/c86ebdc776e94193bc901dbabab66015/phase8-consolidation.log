@@ -1,0 +1,643 @@
+VBCSCompilerPreWarmer: watching VBCSCompiler (PID 23972)
+VBCSCompilerPreWarmer: pre-warm launched (dotnet PID 48520)
+VBCSCompiler prewarm took 20.81 ms
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.6/staging' branch; Version is '6000.6.3f1 (45d8eee7de74) revision 4577518'; Using compiler version '194234433'; Build Type 'Release'
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Bund187" at "2026-11-16T10:30:51.5864637Z"
+OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'es' Physical Memory: 15613 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-11-16T10:30:51Z
+
+COMMAND LINE ARGUMENTS:
+D:\Programas\UnityHub\Editor\6000.6.3f1\Editor\Unity.exe
+-batchmode
+-projectPath
+C:\Users\Bund187\AppData\Local\Temp\MetroidbrainiaPhase0-20261109
+-executeMethod
+Metroidbrainia.Phase8Validation.Run
+-phase0RunId
+c86ebdc776e94193bc901dbabab66015
+-phase1RunId
+c86ebdc776e94193bc901dbabab66015
+-phase2RunId
+c86ebdc776e94193bc901dbabab66015
+-phase3RunId
+c86ebdc776e94193bc901dbabab66015
+-phase4RunId
+c86ebdc776e94193bc901dbabab66015
+-phase5RunId
+c86ebdc776e94193bc901dbabab66015
+-logFile
+C:\Users\Bund187\AppData\Local\Temp\MetroidbrainiaPhase0-20261109\phase8-consolidation.log
+Successfully changed project path to: C:\Users\Bund187\AppData\Local\Temp\MetroidbrainiaPhase0-20261109
+C:/Users/Bund187/AppData/Local/Temp/MetroidbrainiaPhase0-20261109
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 52676, path: "D:/Programas/UnityHub/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-remapper-allocator-initial-capacity=32768"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-main-allocator-mimalloc-enabled=1"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+Logging is directed to a specific file, skipping project log.
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.3+d7ffd15
+  Session Id:              49f5acf8112b45b09e3f0978858b4368
+  Correlation Id:          cf5378452fc56cdc8cb586f08ed52061
+  External correlation Id: 4984861622282801408
+  Machine Id:              fNKQIaIwRho+k53X39hJZVgeX8A=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-Bund187" (connect: 0.00s, validation: 0.00s, handshake: 0.02s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Bund187-notifications" at "2026-11-16T10:30:51.6091243Z"
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-8V63-KRHM-ENRG-D3YG-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 2703812-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.00
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-8V63-KRHM-ENRG-D3YG-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 2703812-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Module] Licensing Background thread has ended after 0.03s
+Player connection [19836]  Target information:
+
+Player connection [19836]  * "[IP] 192.168.0.21 [Port] 55505 [Flags] 2 [Guid] 723451793 [EditorId] 723451793 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-T5V2U9N) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [19836] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [19836] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Package Manager] Connected to IPC stream "Upm-22932" after 0.2 seconds.
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-8V63-KRHM-ENRG-D3YG-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 2703812-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Library Redirect Path: Library/
+Launching Unity Data Store - D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Tools/Unity.DataStore.exe 
+Unity Data Store artifact dir = Library/DataStore, working dir = C:/Users/Bund187/AppData/Local/Temp/MetroidbrainiaPhase0-20261109Unity Data Store running and initialised
+[Physics::Module] Selected backend (deferred post-plugins).
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Initialize engine version: 6000.6.3f1 (45d8eee7de74)
+[EntityIdStore] init: VM path (explicit commit), pageSize=4096, blockCount=1048576, entitiesPerBlock=256, slots reserved=4294967296 bytes
+[Subsystems] Discovering subsystems at path D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Bund187/AppData/Local/Temp/MetroidbrainiaPhase0-20261109/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3070 Laptop GPU (ID=0x249d)
+    Vendor:   NVIDIA
+    VRAM:     8020 MB
+    Driver:   32.0.15.6607
+Initialize mono
+Mono path[0] = 'D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed'
+Mono path[1] = 'D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/BCLExtensions/runtime/netstandard2.1'
+Mono path[2] = 'D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56932
+CodeReloadManager initialized
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Register platform support module: D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-8V63-KRHM-ENRG-D3YG-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 2703812-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Register platform support module: D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-8V63-KRHM-ENRG-D3YG-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 2703812-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Register platform support module: D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Registered in 0.006760 seconds.
+Native extension for Android target not found
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Package Manager log level set to [2]
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:False
+Scripting: successfully reloaded assembly
+- Finished resetting the current domain, in  0.688 seconds
+Domain Reload Profiling: 1271ms
+	BeginReloadAssembly (168ms)
+		CreateAndSetChildDomain (20ms)
+	RebuildCommonClasses (6ms)
+	RebuildNativeTypeToScriptingClass (17ms)
+	initialDomainReloadingComplete (71ms)
+	LoadAllAssembliesAndSetupDomain (320ms)
+		LoadAssemblies (148ms)
+		TypeCache.Refresh (214ms)
+			TypeCache.ScanAssembly (200ms)
+		AnalyzeDomain (1ms)
+	FinalizeReload (690ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (10ms)
+			BeforeProcessingInitializeOnLoad (108ms)
+			ProcessInitializeOnLoadAttributes (127ms)
+			ProcessInitializeOnLoadMethodAttributes (223ms)
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-8V63-KRHM-ENRG-D3YG-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 2703812-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Application.AssetDatabase Initial Refresh Start
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 77 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.analytics@3.8.2 (location: C:\Users\Bund187\AppData\Local\Temp\MetroidbrainiaPhase0-20261109\Library\PackageCache\com.unity.analytics@c9d14a6bdec6)
+    com.unity.purchasing@4.15.0 (location: C:\Users\Bund187\AppData\Local\Temp\MetroidbrainiaPhase0-20261109\Library\PackageCache\com.unity.purchasing@ffbc76639aab)
+    com.unity.xr.legacyinputhelpers@3.0.1 (location: C:\Users\Bund187\AppData\Local\Temp\MetroidbrainiaPhase0-20261109\Library\PackageCache\com.unity.xr.legacyinputhelpers@3f62d634f63b)
+    com.unity.services.core@1.18.0 (location: C:\Users\Bund187\AppData\Local\Temp\MetroidbrainiaPhase0-20261109\Library\PackageCache\com.unity.services.core@3464cb68d709)
+    com.unity.services.analytics@6.3.0 (location: C:\Users\Bund187\AppData\Local\Temp\MetroidbrainiaPhase0-20261109\Library\PackageCache\com.unity.services.analytics@cde4e6cf92f9)
+  Built-in packages:
+    com.unity.2d.tilemap@1.0.0 (location: C:\Users\Bund187\AppData\Local\Temp\MetroidbrainiaPhase0-20261109\Library\PackageCache\com.unity.2d.tilemap@4a51245c030d)
+    com.unity.multiplayer.center@2.0.1 (location: C:\Users\Bund187\AppData\Local\Temp\MetroidbrainiaPhase0-20261109\Library\PackageCache\com.unity.multiplayer.center@549886182930)
+  Local packages:
+    com.unity.2d.sprite@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.2d.sprite@26bcb5e737a2 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.2d.sprite@26bcb5e737a2)
+    com.unity.addressables@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.addressables@42676f2a154e (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.addressables@42676f2a154e)
+    com.unity.ai.navigation@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.ai.navigation@134dd6a3b97b (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.ai.navigation@134dd6a3b97b)
+    com.unity.burst@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.burst@626e66ab421b (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.burst@626e66ab421b)
+    com.unity.cinemachine@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.cinemachine@f53aa49b3acc (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.cinemachine@f53aa49b3acc)
+    com.unity.cloud.gltfast@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.cloud.gltfast@11ddc2436f97 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.cloud.gltfast@11ddc2436f97)
+    com.unity.collab-proxy@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.collab-proxy@4628d2ba6ea4 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.collab-proxy@4628d2ba6ea4)
+    com.unity.collections@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.collections@10fff0607388 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.collections@10fff0607388)
+    com.unity.ext.nunit@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.ext.nunit@0198eae3b53e (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.ext.nunit@0198eae3b53e)
+    com.unity.graph-authoring@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.graph-authoring@cfd2588851ee (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.graph-authoring@cfd2588851ee)
+    com.unity.ide.rider@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.ide.rider@1f60b3138684 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.ide.rider@1f60b3138684)
+    com.unity.ide.visualstudio@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.ide.visualstudio@a99d56dec63f (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.ide.visualstudio@a99d56dec63f)
+    com.unity.inputsystem@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.inputsystem@7a4e1a2a8194 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.inputsystem@7a4e1a2a8194)
+    com.unity.localization@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.localization@ef5a0677859d (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.localization@ef5a0677859d)
+    com.unity.mathematics@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.mathematics@8306a64d0cd6 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.mathematics@8306a64d0cd6)
+    com.unity.nuget.mono-cecil@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.nuget.mono-cecil@ecb9724e46ff (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.nuget.mono-cecil@ecb9724e46ff)
+    com.unity.nuget.newtonsoft-json@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.nuget.newtonsoft-json@4dfd81071c64 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.nuget.newtonsoft-json@4dfd81071c64)
+    com.unity.probuilder@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.probuilder@48aa4279218a (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.probuilder@48aa4279218a)
+    com.unity.profiling.core@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.profiling.core@8a49f7027d06 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.profiling.core@8a49f7027d06)
+    com.unity.render-pipelines.core@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.render-pipelines.core@02d75770e4b3 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.render-pipelines.core@02d75770e4b3)
+    com.unity.render-pipelines.universal@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.render-pipelines.universal@327d93d1cbc8 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.render-pipelines.universal@327d93d1cbc8)
+    com.unity.render-pipelines.universal-config@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.render-pipelines.universal-config@561422b74439 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.render-pipelines.universal-config@561422b74439)
+    com.unity.scriptablebuildpipeline@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.scriptablebuildpipeline@61526b33bf2c (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.scriptablebuildpipeline@61526b33bf2c)
+    com.unity.searcher@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.searcher@a463122f2c00 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.searcher@a463122f2c00)
+    com.unity.settings-manager@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.settings-manager@0b8638c5ce86 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.settings-manager@0b8638c5ce86)
+    com.unity.shadergraph@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.shadergraph@1dd0fd24b57e (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.shadergraph@1dd0fd24b57e)
+    com.unity.splines@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.splines@edbe9aefec91 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.splines@edbe9aefec91)
+    com.unity.test-framework@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.test-framework@80f691d4262b (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.test-framework@80f691d4262b)
+    com.unity.test-framework.performance@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.test-framework.performance@b6023decb532 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.test-framework.performance@b6023decb532)
+    com.unity.timeline@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.timeline@c56d56b0070b (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.timeline@c56d56b0070b)
+    com.unity.ugui@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.ugui@0727b404f3a0 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.ugui@0727b404f3a0)
+    com.unity.visualscripting@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.visualscripting@4edfcc09512f (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.visualscripting@4edfcc09512f)
+    com.unity.modules.accessibility@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.accessibility (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.accessibility)
+    com.unity.modules.adaptiveperformance@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.adaptiveperformance (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.adaptiveperformance)
+    com.unity.modules.ai@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.ai (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.ai)
+    com.unity.modules.androidjni@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.androidjni (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.androidjni)
+    com.unity.modules.animation@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.animation (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.animation)
+    com.unity.modules.assetbundle@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.assetbundle (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.assetbundle)
+    com.unity.modules.audio@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.audio (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.audio)
+    com.unity.modules.cloth@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.cloth (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.cloth)
+    com.unity.modules.director@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.director (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.director)
+    com.unity.modules.hierarchycore@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.hierarchycore (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.hierarchycore)
+    com.unity.modules.imageconversion@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.imageconversion (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.imageconversion)
+    com.unity.modules.imgui@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.imgui (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.jsonserialize (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.particlesystem (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.particlesystem)
+    com.unity.modules.physics@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.physics (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.physics)
+    com.unity.modules.physics2d@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.physics2d (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.physics2d)
+    com.unity.modules.physicscore2d@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.physicscore2d (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.physicscore2d)
+    com.unity.modules.screencapture@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.screencapture (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.screencapture)
+    com.unity.modules.subsystems@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.subsystems (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.subsystems)
+    com.unity.modules.terrain@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.terrain (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.terrainphysics (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.terrainphysics)
+    com.unity.modules.tetgen@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.tetgen (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.tetgen)
+    com.unity.modules.tilemap@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.tilemap (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.tilemap)
+    com.unity.modules.timelinefoundation@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.timelinefoundation (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.timelinefoundation)
+    com.unity.modules.ui@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.ui (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.ui)
+    com.unity.modules.uielements@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.uielements (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.uielements)
+    com.unity.modules.umbra@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.umbra (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.umbra)
+    com.unity.modules.unityanalytics@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unityanalytics (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unityanalytics)
+    com.unity.modules.unitywebrequest@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unitywebrequest (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unitywebrequestaudio (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unitywebrequesttexture (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unitywebrequestwww (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vectorgraphics@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.vectorgraphics (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.vectorgraphics)
+    com.unity.modules.vehicles@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.vehicles (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.vehicles)
+    com.unity.modules.video@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.video (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.video)
+    com.unity.modules.wind@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.wind (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.wind)
+    com.unity.modules.xr@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.xr (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.xr)
+[Package Manager] com.unity.analytics is deprecated: This package is deprecated and won't be compatible with future Unity versions. It will only receive critical updates, with no new features or bug fixes. Migrate to Unity Analytics: https://docs.unity.com/en-us/analytics
+[Package Manager] com.unity.purchasing@4.15.0 is deprecated: Unity IAP 4 is unsupported as of June 8, 2026. IAP 5 is the supported version going forward.
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.02 seconds
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Starting: D:\Programas\UnityHub\Editor\6000.6.3f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/Bund187/AppData/Local/Temp/MetroidbrainiaPhase0-20261109
+DisplayProgressbar: Compiling Scripts
+ExitCode: 0 Duration: 0s334ms
+[1360/1802  0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+*** Tundra build success (0.30 seconds), 1 items updated, 1802 evaluated
+AssetDatabase: script compilation time: 0.966438s
+Begin MonoManager ReloadAssembly
+Total cache size 268309718
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+Refreshing native plugins compatible for Editor in 4.21 ms, found 4 plugins.
+Native extension for Android target not found
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-Metroidbrainia
+ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
+Scripting: successfully reloaded assembly
+- Finished resetting the current domain, in  1.596 seconds
+Domain Reload Profiling: 3023ms
+	BeginReloadAssembly (418ms)
+		DisableScriptedObjects (36ms)
+		CreateAndSetChildDomain (180ms)
+	RebuildCommonClasses (9ms)
+	RebuildNativeTypeToScriptingClass (16ms)
+	initialDomainReloadingComplete (73ms)
+	LoadAllAssembliesAndSetupDomain (908ms)
+		LoadAssemblies (482ms)
+		TypeCache.Refresh (256ms)
+			TypeCache.ScanAssembly (238ms)
+		AnalyzeDomain (111ms)
+			BuildScriptInfoCaches (100ms)
+			ResolveRequiredComponents (9ms)
+	FinalizeReload (1597ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (10ms)
+			BeforeProcessingInitializeOnLoad (122ms)
+			ProcessInitializeOnLoadAttributes (421ms)
+			ProcessInitializeOnLoadMethodAttributes (563ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (3ms)
+		AwakeInstancesAfterBackupRestoration (28ms)
+Starting new worker id: 0 with log in C:/Users/Bund187/AppData/Local/Temp/MetroidbrainiaPhase0-20261109/Logs/AssetImportWorkerHW0.log
+Importing 'GUID: 833b0479e7faa324cb8080f5599aad2d - Path: Assets/Scenes/TestArmScene.unity' with importer (DefaultImporter)
+Imported 'GUID: 833b0479e7faa324cb8080f5599aad2d' -> (Import Result ID: 'f8743b2f8bbdb5790e468be579ee6357') in 0.007 seconds [static dependencies only]. Details - ImportResultOutputID=03c609134f195eb01826671aace8ce2b DependenciesID=e6dbcaf1fdefc0e503e2a308065446ba StaticDependenciesID=7b02f078c37e82487cf401326a0ae55d 
+Refreshing native plugins compatible for Editor in 4.40 ms, found 4 plugins.
+
+Asset Pipeline Refresh (id=b6ca88e0248b104499c5c39c513d2972): Total: 5.350 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	(Values over 0.05ms)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=1 ms, native=2498 ms
+		Asset DB Callback time: managed=230 ms, native=39 ms
+		Scripting: domain reloads=1, domain reload time=1503 ms, compile time=969 ms, other=106 ms
+		Project Asset Count: scripts=2280, non-scripts=4472
+		Asset File Changes: new=0, changed=1, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokePackagesCallback: 66.925ms
+	ApplyChangesToAssetFolders: 3.344ms
+	Scan: 219.377ms
+	Collect global state as custom dependencies: 23.849ms
+	OnSourceAssetsModified: 0.639ms
+	CategorizeScriptCompilationAssets: 62.335ms
+	ProcessAssetsWithTransientArtifactChanges: 140.079ms
+	CategorizeAssets: 90.645ms
+	CompileScripts: 969.457ms
+	ImportOutOfDateAssets: 1642.423ms (1613.362ms without children)
+		ImportManagerImport: 9.542ms (1.770ms without children)
+		ReloadNativeAssets: 0.084ms
+		UnloadImportedAssets: 3.397ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 1.407ms
+		ImportSchedulerStart: 14.616ms
+	PostProcessAllAssets: 233.156ms
+		XRBuildSystem.XRAssetImported 1.206ms
+		VCAutoAddAssetPostprocess 0.938ms
+		MonoPostProcessAllAssets: 230.470ms
+			AssetPostprocessor.OnPostprocessAllAssets 132.616ms
+			StyleCatalogPostProcessor.OnPostprocessAllAssets 25.469ms
+			UniversalRenderPipelineGlobalSettingsPostprocessor.OnPostprocessAllAssets 15.640ms
+			BuilderAssetPostprocessor.OnPostprocessAllAssets 10.094ms
+			AddressablesAssetPostProcessor.OnPostprocessAllAssets 4.279ms
+			SyncVS.PostprocessSyncProject 3.555ms
+			WindowAssetPostprocessingWatcher.OnPostprocessAllAssets 2.725ms
+			SpriteSlicePostprocessor.OnPostprocessAllAssets 2.477ms
+			AssetChangedListener.OnPostprocessAllAssets 1.646ms
+			SpeedTree9Postprocessor.OnPostprocessAllAssets 1.644ms
+			ShaderGraphAssetPostProcessor.OnPostprocessAllAssets 1.468ms
+			RetainedModeAssetPostprocessor.OnPostprocessAllAssets 1.442ms
+			LocalizationAssetPostProcessor.OnPostprocessAllAssets 1.095ms
+			EditModeScopePostprocessor.OnPostprocessAllAssets 0.940ms
+			ArtifactBrowserPostProcessor.OnPostprocessAllAssets 0.814ms
+			RenderPipelineGlobalSettingsPostprocessor.OnPostprocessAllAssets 0.759ms
+			MaterialPostprocessor.OnPostprocessAllAssets 0.733ms
+			SpriteEditorTexturePostprocessor.OnPostprocessAllAssets 0.623ms
+			UVCSAssetPostprocessor.OnPostprocessAllAssets 0.618ms
+			ShaderReflectionAssetPostProcessor.OnPostprocessAllAssets 0.597ms
+			CinemachineSettings.OnPostprocessAllAssets 0.568ms
+			AudioMixerPostprocessor.OnPostprocessAllAssets 0.548ms
+			InputActionAssetPostprocessor.OnPostprocessAllAssets 0.361ms
+			TextAssetPostProcessor.OnPostprocessAllAssets 0.323ms
+			AssetProcessor.OnPostprocessAllAssets 0.321ms
+			PostProcessor.OnPostprocessAllAssets 0.318ms
+			AssetDatabaseCallbacks.OnPostprocessAllAssets 0.316ms
+			ReferencedClipsPostProcessor.OnPostprocessAllAssets 0.311ms
+			AssetPathToTypes.OnPostprocessAllAssets 0.296ms
+			TMPro_TexturePostProcessor.OnPostprocessAllAssets 0.294ms
+			AssetEvents.OnPostprocessAllAssets 0.290ms
+			ConfigAssetsTracker.OnPostprocessAllAssets 0.286ms
+			InputActionJsonNameModifierAssetProcessor.OnPostprocessAllAssets 0.271ms
+			DomainReloadProcessor.OnPostprocessAllAssets 0.238ms
+			ScenarioDriftAssetsTracker.OnPostprocessAllAssets 0.204ms
+			TerrainToolbarOverlayPostProcessor.OnPostprocessAllAssets 0.196ms
+			AssetReloadNotifier.OnPostprocessAllAssets 0.181ms
+			SamplePostprocessor.OnPostprocessAllAssets 0.150ms
+			SpeedTreePostProcessor.OnPostprocessAllAssets 0.146ms
+			PipelineAssetProcessor.OnPostprocessAllAssets 0.142ms
+			ThemePostprocessor.OnPostprocessAllAssets 0.140ms
+			ProjectSettingsPostprocessor.OnPostprocessAllAssets 0.129ms
+			AudioContainerPostProcessor.OnPostprocessAllAssets 0.129ms
+	PostAssetChangesProfiler: 6.122ms
+	UnloadStreamsBegin: 1.536ms
+	PersistCurrentRevisions: 0.215ms
+	GenerateScriptTypeHashes: 3.336ms
+	GenerateScriptTypeSerializationHashes: 5.817ms
+	Untracked: 1860.934ms
+
+Application.AssetDatabase Initial Refresh End
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Scanning for USB devices : 8.984ms
+Initializing Unity extensions:
+Unloading 116 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 10043 unused Assets / (16.6 MB). Loaded Objects now: 10938.
+Memory consumption went from 499.4 MB to 482.7 MB.
+Total: 22.942600 ms (FindLiveObjects: 0.894400 ms CreateObjectMapping: 0.591700 ms MarkObjects: 15.600100 ms  DeleteObjects: 5.527600 ms)
+
+Opening scene 'Assets/Scenes/TestArmScene.unity'
+Worker ready: AssetImportWorkerHW0 0
+Unloading 25 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/TestArmScene.unity'
+	Deserialize:            71.208 ms
+	Integration:            160.733 ms
+	Integration of assets:  6.981 ms
+	Thread Wait Time:       -3.619 ms
+	Total Operation Time:   235.302 ms
+Unloading 21 unused Assets / (Unknown). Loaded Objects now: 13092.
+Memory consumption went from 497.5 MB to 498.9 MB.
+Total: 17.817200 ms (FindLiveObjects: 0.974600 ms CreateObjectMapping: 0.295300 ms MarkObjects: 16.086600 ms  DeleteObjects: 0.071200 ms)
+
+Importing 'GUID: 723c423874caf4a45b99051f4294ac5c - Path: Assets/Editor/Experiments/Hand3D/PoseProfiles/Phase8-c86ebdc776e94193bc901dbabab66015publish.asset' with importer (NativeFormatImporter)
+Imported 'GUID: 723c423874caf4a45b99051f4294ac5c' -> (Import Result ID: '25479d305d1b2de1981c3dc3e7608943') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=4bc0314305edd4bd5afb4a2726771ea6 DependenciesID=f8a5f2d863efc2bf539f82ac1e5e5be9 StaticDependenciesID=3dd42e75f9a04cc33da9323ecde240da 
+Refreshing native plugins compatible for Editor in 4.37 ms, found 4 plugins.
+Asset Pipeline Refresh (id=a01b5d9bd016d974887ee52cb847ca10): Total: 0.128 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: 723c423874caf4a45b99051f4294ac5c - Path: Assets/Editor/Experiments/Hand3D/PoseProfiles/Phase8-c86ebdc776e94193bc901dbabab66015publish.asset' with importer (NativeFormatImporter)
+Imported 'GUID: 723c423874caf4a45b99051f4294ac5c' -> (Import Result ID: '25479d305d1b2de1981c3dc3e7608943') in 0.001 seconds [static dependencies only]. Details - ImportResultOutputID=4bc0314305edd4bd5afb4a2726771ea6 DependenciesID=f8a5f2d863efc2bf539f82ac1e5e5be9 StaticDependenciesID=3dd42e75f9a04cc33da9323ecde240da 
+Refreshing native plugins compatible for Editor in 4.27 ms, found 4 plugins.
+Asset Pipeline Refresh (id=e684c2f69602f7446a31bb98c55c5cff): Total: 0.029 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: c36e85d63437d784e8137cec13f8dd35 - Path: Assets/Experiments/Hand3D/RuntimePoses/Phase8-c86ebdc776e94193bc901dbabab66015publish.asset' with importer (NativeFormatImporter)
+Imported 'GUID: c36e85d63437d784e8137cec13f8dd35' -> (Import Result ID: '5f8f50ab00ecfb7b1c8551d2cf0bec5f') in 0.001 seconds [static dependencies only]. Details - ImportResultOutputID=d96d12064491e443be3228a33fcf7aed DependenciesID=e1bc0e0e1a40d1949ca641863c2d356c StaticDependenciesID=ba591523103bf4623c5189b6a9fd2bf7 
+Refreshing native plugins compatible for Editor in 4.29 ms, found 4 plugins.
+Asset Pipeline Refresh (id=5bd80b18664810e4680c7846543c5a22): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: 723c423874caf4a45b99051f4294ac5c - Path: Assets/Editor/Experiments/Hand3D/PoseProfiles/Phase8-c86ebdc776e94193bc901dbabab66015publish.asset' with importer (NativeFormatImporter)
+Imported 'GUID: 723c423874caf4a45b99051f4294ac5c' -> (Import Result ID: 'f13b0b944159d4f384cd9d09146ad49d') in 0.001 seconds [static dependencies only]. Details - ImportResultOutputID=4bc0314305edd4bd5afb4a2726771ea6 DependenciesID=84a5503f26dd51ec4d4568b30b473140 StaticDependenciesID=d5d4b065fe7c19ff837e788c4561abc5 
+Refreshing native plugins compatible for Editor in 4.07 ms, found 4 plugins.
+Asset Pipeline Refresh (id=f912707e1f7d42745b0ebd737361facb): Total: 0.047 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: c36e85d63437d784e8137cec13f8dd35 - Path: Assets/Experiments/Hand3D/RuntimePoses/Phase8-c86ebdc776e94193bc901dbabab66015publish.asset' with importer (NativeFormatImporter)
+Imported 'GUID: c36e85d63437d784e8137cec13f8dd35' -> (Import Result ID: 'cbeccffea67048c7084e46a7a914dcad') in 0.001 seconds [static dependencies only]. Details - ImportResultOutputID=d96d12064491e443be3228a33fcf7aed DependenciesID=a37a07588c775dfb4445fdb5ea32d03d StaticDependenciesID=68d9cc7c44e7bbae92023239f5c7f984 
+Refreshing native plugins compatible for Editor in 3.99 ms, found 4 plugins.
+Asset Pipeline Refresh (id=406badac6fb91b0479c243f182b43d5f): Total: 0.046 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: c36e85d63437d784e8137cec13f8dd35 - Path: Assets/Experiments/Hand3D/RuntimePoses/Phase8-c86ebdc776e94193bc901dbabab66015publish.asset' with importer (NativeFormatImporter)
+Imported 'GUID: c36e85d63437d784e8137cec13f8dd35' -> (Import Result ID: '5f8f50ab00ecfb7b1c8551d2cf0bec5f') in 0.001 seconds [static dependencies only]. Details - ImportResultOutputID=d96d12064491e443be3228a33fcf7aed DependenciesID=e1bc0e0e1a40d1949ca641863c2d356c StaticDependenciesID=ba591523103bf4623c5189b6a9fd2bf7 
+Refreshing native plugins compatible for Editor in 3.96 ms, found 4 plugins.
+Asset Pipeline Refresh (id=5986e53885a08fb4dab84b2bf71faa7e): Total: 0.044 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: c36e85d63437d784e8137cec13f8dd35 - Path: Assets/Experiments/Hand3D/RuntimePoses/Phase8-c86ebdc776e94193bc901dbabab66015publish.asset' with importer (NativeFormatImporter)
+Imported 'GUID: c36e85d63437d784e8137cec13f8dd35' -> (Import Result ID: 'cbeccffea67048c7084e46a7a914dcad') in 0.001 seconds [static dependencies only]. Details - ImportResultOutputID=d96d12064491e443be3228a33fcf7aed DependenciesID=a37a07588c775dfb4445fdb5ea32d03d StaticDependenciesID=68d9cc7c44e7bbae92023239f5c7f984 
+Refreshing native plugins compatible for Editor in 3.94 ms, found 4 plugins.
+Asset Pipeline Refresh (id=ad8523931df49e94fbe803a33444b179): Total: 0.045 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: c36e85d63437d784e8137cec13f8dd35 - Path: Assets/Experiments/Hand3D/RuntimePoses/Phase8-c86ebdc776e94193bc901dbabab66015publish.asset' with importer (NativeFormatImporter)
+Imported 'GUID: c36e85d63437d784e8137cec13f8dd35' -> (Import Result ID: 'cbeccffea67048c7084e46a7a914dcad') in 0.001 seconds [static dependencies only]. Details - ImportResultOutputID=d96d12064491e443be3228a33fcf7aed DependenciesID=a37a07588c775dfb4445fdb5ea32d03d StaticDependenciesID=68d9cc7c44e7bbae92023239f5c7f984 
+Refreshing native plugins compatible for Editor in 3.97 ms, found 4 plugins.
+Asset Pipeline Refresh (id=716d278d5ab394e48bd67c3ac172d206): Total: 0.024 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Opening scene 'Assets/Scenes/TestArmScene.unity'
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/TestArmScene.unity'
+	Deserialize:            16.112 ms
+	Integration:            36.582 ms
+	Integration of assets:  0.552 ms
+	Thread Wait Time:       -0.271 ms
+	Total Operation Time:   52.974 ms
+Unloading 50 unused Assets / (103.7 KB). Loaded Objects now: 13095.
+Memory consumption went from 472.4 MB to 472.3 MB.
+Total: 16.185400 ms (FindLiveObjects: 0.821800 ms CreateObjectMapping: 0.253400 ms MarkObjects: 14.721200 ms  DeleteObjects: 0.078300 ms)
+
+Importing 'GUID: d36dbc0802575f2408d503dd27f3efd4 - Path: Assets/Editor/Experiments/Hand3D/PoseProfiles/Phase8-c86ebdc776e94193bc901dbabab66015execution.asset' with importer (NativeFormatImporter)
+Imported 'GUID: d36dbc0802575f2408d503dd27f3efd4' -> (Import Result ID: '42ead85694091c562535ad07d646dd7b') in 0.001 seconds [static dependencies only]. Details - ImportResultOutputID=a44e50f757cdc7295655a54211a042b9 DependenciesID=98f20775b03fea4c55743f1a091d81a9 StaticDependenciesID=cc0c4114676a4cbfbd1980c63bedc630 
+Refreshing native plugins compatible for Editor in 4.11 ms, found 4 plugins.
+Asset Pipeline Refresh (id=5935d838cf674814fa211a5eafbc7b7d): Total: 0.076 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: d36dbc0802575f2408d503dd27f3efd4 - Path: Assets/Editor/Experiments/Hand3D/PoseProfiles/Phase8-c86ebdc776e94193bc901dbabab66015execution.asset' with importer (NativeFormatImporter)
+Imported 'GUID: d36dbc0802575f2408d503dd27f3efd4' -> (Import Result ID: '42ead85694091c562535ad07d646dd7b') in 0.001 seconds [static dependencies only]. Details - ImportResultOutputID=a44e50f757cdc7295655a54211a042b9 DependenciesID=98f20775b03fea4c55743f1a091d81a9 StaticDependenciesID=cc0c4114676a4cbfbd1980c63bedc630 
+Refreshing native plugins compatible for Editor in 4.44 ms, found 4 plugins.
+Asset Pipeline Refresh (id=bbffb9ee6a3df8b4c9079dfba848c3f1): Total: 0.026 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: 9f30551d95809f948b05263efcc32166 - Path: Assets/Experiments/Hand3D/RuntimePoses/Phase8-c86ebdc776e94193bc901dbabab66015execution.asset' with importer (NativeFormatImporter)
+Imported 'GUID: 9f30551d95809f948b05263efcc32166' -> (Import Result ID: 'c680f74ca8b416a9c7d687cfbeb553a6') in 0.001 seconds [static dependencies only]. Details - ImportResultOutputID=94d5a9dbf0338cf3916150d22470cace DependenciesID=c22851083ae9c3f8bd2d97fea91b273b StaticDependenciesID=50dd448753f73d337f17d94e8f19a161 
+Refreshing native plugins compatible for Editor in 4.22 ms, found 4 plugins.
+Asset Pipeline Refresh (id=a4394396f42ffa7418560782c13a87a8): Total: 0.054 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: d36dbc0802575f2408d503dd27f3efd4 - Path: Assets/Editor/Experiments/Hand3D/PoseProfiles/Phase8-c86ebdc776e94193bc901dbabab66015execution.asset' with importer (NativeFormatImporter)
+Imported 'GUID: d36dbc0802575f2408d503dd27f3efd4' -> (Import Result ID: 'db609e94c17203327950b293c2dabc15') in 0.001 seconds [static dependencies only]. Details - ImportResultOutputID=a44e50f757cdc7295655a54211a042b9 DependenciesID=f5d92ee1e2af916f0630406617c70715 StaticDependenciesID=e53ca87afdf82ec7d509d31549b69e98 
+Refreshing native plugins compatible for Editor in 4.04 ms, found 4 plugins.
+Asset Pipeline Refresh (id=8e4b18c90f4ca0b43b816b5d618e64d9): Total: 0.046 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: 9f30551d95809f948b05263efcc32166 - Path: Assets/Experiments/Hand3D/RuntimePoses/Phase8-c86ebdc776e94193bc901dbabab66015execution.asset' with importer (NativeFormatImporter)
+Imported 'GUID: 9f30551d95809f948b05263efcc32166' -> (Import Result ID: '1b9fce400d46b6e322bde85b382151e7') in 0.001 seconds [static dependencies only]. Details - ImportResultOutputID=94d5a9dbf0338cf3916150d22470cace DependenciesID=7800b542e5c7c9c40954f07a4ce56321 StaticDependenciesID=56f14fe8576005c4082de7367c05cdab 
+Refreshing native plugins compatible for Editor in 4.29 ms, found 4 plugins.
+Asset Pipeline Refresh (id=610fe70c754037644b01f8a87d193740): Total: 0.045 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Opening scene 'Assets/Scenes/TestArmScene.unity'
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/TestArmScene.unity'
+	Deserialize:            16.430 ms
+	Integration:            37.716 ms
+	Integration of assets:  0.539 ms
+	Thread Wait Time:       -0.470 ms
+	Total Operation Time:   54.215 ms
+Unloading 50 unused Assets / (104.9 KB). Loaded Objects now: 13095.
+Memory consumption went from 472.4 MB to 472.3 MB.
+Total: 15.980800 ms (FindLiveObjects: 0.914100 ms CreateObjectMapping: 0.236700 ms MarkObjects: 14.412900 ms  DeleteObjects: 0.071500 ms)
+
+Opening scene 'Assets/Scenes/TestArmScene.unity'
+Unloading 21 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/TestArmScene.unity'
+	Deserialize:            16.301 ms
+	Integration:            36.545 ms
+	Integration of assets:  0.431 ms
+	Thread Wait Time:       -0.293 ms
+	Total Operation Time:   52.984 ms
+Unloading 21 unused Assets / (52.5 KB). Loaded Objects now: 13095.
+Memory consumption went from 472.3 MB to 472.2 MB.
+Total: 15.429600 ms (FindLiveObjects: 0.900400 ms CreateObjectMapping: 0.237600 ms MarkObjects: 13.772400 ms  DeleteObjects: 0.060000 ms)
+
+Importing 'GUID: fbec43ccdbbbb7a498415208da7f4f70 - Path: Assets/Editor/Experiments/Hand3D/PoseProfiles/Phase8-c86ebdc776e94193bc901dbabab66015reject.asset' with importer (NativeFormatImporter)
+Imported 'GUID: fbec43ccdbbbb7a498415208da7f4f70' -> (Import Result ID: '274f2c4b6b8ae70517f084cd839f8a76') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=ce161654bb898037ae544703ac7e61c2 DependenciesID=45ca3aae6a7e49f2db54b0e238be49be StaticDependenciesID=e53c733abc2a72cdb2f9172a6c292506 
+Refreshing native plugins compatible for Editor in 3.76 ms, found 4 plugins.
+Asset Pipeline Refresh (id=8b5b71f45b4ad6e44988b364fc53d433): Total: 0.069 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: fbec43ccdbbbb7a498415208da7f4f70 - Path: Assets/Editor/Experiments/Hand3D/PoseProfiles/Phase8-c86ebdc776e94193bc901dbabab66015reject.asset' with importer (NativeFormatImporter)
+Imported 'GUID: fbec43ccdbbbb7a498415208da7f4f70' -> (Import Result ID: '274f2c4b6b8ae70517f084cd839f8a76') in 0.001 seconds [static dependencies only]. Details - ImportResultOutputID=ce161654bb898037ae544703ac7e61c2 DependenciesID=45ca3aae6a7e49f2db54b0e238be49be StaticDependenciesID=e53c733abc2a72cdb2f9172a6c292506 
+Refreshing native plugins compatible for Editor in 4.06 ms, found 4 plugins.
+Asset Pipeline Refresh (id=ded7eecf169e03648ab387f36c03baf8): Total: 0.024 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: 1f66b1f3c9457764d801ab8675d235ce - Path: Assets/Experiments/Hand3D/RuntimePoses/Phase8-c86ebdc776e94193bc901dbabab66015reject.asset' with importer (NativeFormatImporter)
+Imported 'GUID: 1f66b1f3c9457764d801ab8675d235ce' -> (Import Result ID: '132bd727d4d2209f40e0fa44330750c4') in 0.001 seconds [static dependencies only]. Details - ImportResultOutputID=20661195af7fd7008b1fad61b1b9d2e4 DependenciesID=2a397eb5b6d51f7a1f66918f92318acd StaticDependenciesID=2e30e98da4b4814e5c6492a8dc395dcc 
+Refreshing native plugins compatible for Editor in 4.08 ms, found 4 plugins.
+Asset Pipeline Refresh (id=88e6bac43efecb94e915bfd82f729ee1): Total: 0.051 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Opening scene 'Assets/Scenes/TestArmScene.unity'
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/TestArmScene.unity'
+	Deserialize:            16.293 ms
+	Integration:            35.946 ms
+	Integration of assets:  0.334 ms
+	Thread Wait Time:       0.027 ms
+	Total Operation Time:   52.600 ms
+Unloading 50 unused Assets / (104.5 KB). Loaded Objects now: 13095.
+Memory consumption went from 472.5 MB to 472.4 MB.
+Total: 15.270200 ms (FindLiveObjects: 0.901000 ms CreateObjectMapping: 0.220200 ms MarkObjects: 13.736900 ms  DeleteObjects: 0.073000 ms)
+
+Opening scene 'Assets/Scenes/TestArmScene.unity'
+Unloading 20 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/TestArmScene.unity'
+	Deserialize:            15.954 ms
+	Integration:            35.486 ms
+	Integration of assets:  0.315 ms
+	Thread Wait Time:       0.107 ms
+	Total Operation Time:   51.863 ms
+Unloading 20 unused Assets / (50.9 KB). Loaded Objects now: 13095.
+Memory consumption went from 472.3 MB to 472.2 MB.
+Total: 15.969700 ms (FindLiveObjects: 0.752300 ms CreateObjectMapping: 0.207200 ms MarkObjects: 14.614300 ms  DeleteObjects: 0.053200 ms)
+
+Opening scene 'Assets/Scenes/TestArmScene.unity'
+Unloading 20 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/TestArmScene.unity'
+	Deserialize:            16.166 ms
+	Integration:            36.410 ms
+	Integration of assets:  0.539 ms
+	Thread Wait Time:       0.115 ms
+	Total Operation Time:   53.230 ms
+Unloading 20 unused Assets / (50.9 KB). Loaded Objects now: 13095.
+Memory consumption went from 472.4 MB to 472.3 MB.
+Total: 15.476000 ms (FindLiveObjects: 0.902000 ms CreateObjectMapping: 0.246600 ms MarkObjects: 13.927300 ms  DeleteObjects: 0.054900 ms)
+
+Assign unique scene bones and capture both Extended and Flexed for every joint before Play.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object)
+UnityEngine.Debug:LogError (object,UnityEngine.Object)
+Metroidbrainia.Hand3DExperiment.Hand3DRig:Fail (string) (at Assets/Scripts/Experiments/Hand3D/Hand3DRig.cs:235)
+Metroidbrainia.Hand3DExperiment.Hand3DRig:Initialize () (at Assets/Scripts/Experiments/Hand3D/Hand3DRig.cs:131)
+Metroidbrainia.Phase8Validation:InitializationBoundary () (at Assets/Editor/Phase1Validation/Phase8Validation.cs:176)
+Metroidbrainia.Phase8Validation:Case (string,System.Action) (at Assets/Editor/Phase1Validation/Phase8Validation.cs:25)
+Metroidbrainia.Phase8Validation:Run () (at Assets/Editor/Phase1Validation/Phase8Validation.cs:34)
+
+(Filename: Assets/Scripts/Experiments/Hand3D/Hand3DRig.cs Line: 235)
+
+MonoPathRemapper: Attempts to remap: 22770; Successful remaps: 2
+Serialized file version minimum: 23, current 23
+Killing ADB server in 2,0672538 seconds.
+Importing 'GUID: 0f31343d3db6721419ca7279b1181110 - Path: Assets/AddressableAssetsData/AddressableAssetSettings.asset' with importer (NativeFormatImporter)
+Imported 'GUID: 0f31343d3db6721419ca7279b1181110' -> (Import Result ID: '9fe4f7f6ce7394c88cdd5468e6aacb62') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=af6632718cddd6c8a24435dfb0299d3c DependenciesID=f5a5c5752f8a3f8ad5ce37101f4e9488 StaticDependenciesID=6d840eb2ca850e55378261f693c0b5a9 
+Refreshing native plugins compatible for Editor in 4.16 ms, found 4 plugins.
+Asset Pipeline Refresh (id=c167a88830a666f4b8a13f58756d153c): Total: 0.056 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input Polling Thread exited.
+Input System module state changed to: Shutdown.
+[Licensing::IpcConnector] LicenseClient-Bund187-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-Bund187 channel disconnected successfully.
+Lingering sessions upon destruction of worker manager
+Unity Data Store service was successfully shut down
+UDS shutting down local client system
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+CodeReloadManager destroyed
+VBCSCompilerPreWarmer: requested VBCSCompiler shutdown
+Checking for leaked weakptr:
+  Found no leaked weakptrs.
+[Package Manager] Server process was shutdown
+##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1794825068122,"processId":22932,"allocatedMemory":19764353,"memoryLabels":[{"Default":214876},{"Permanent":15516},{"NewDelete":69815},{"Thread":4198024},{"Manager":35389},{"VertexData":8},{"Geometry":816},{"Texture":24},{"Shader":850574},{"Material":68},{"GfxDevice":55968},{"Animation":2688},{"FreeType":8},{"FontEngine":736},{"Physics":1970},{"Physics2D":16},{"Serialization":67200},{"Input":42840},{"JobScheduler":256},{"TextLib":336},{"Mono":48},{"MonoCode":10688},{"ScriptingNativeRuntime":1307568},{"BaseObject":50928},{"Resource":1252},{"Renderer":2376},{"Transform":4685},{"File":7389},{"WebCam":616},{"Culling":32},{"Terrain":11442},{"Wind":24},{"STL":40},{"String":604603},{"StaticString":3808},{"Utility":2674806},{"Curl":2676},{"PoolAlloc":2360},{"AI":80},{"TypeTree":25309},{"ScriptManager":12656},{"CodeReload":448},{"RuntimeInitializeOnLoadManager":64},{"Sprites":102},{"SpriteAtlas":120},{"GI":7816},{"Director":6560},{"CloudService":7296},{"WebRequest":4880},{"VR":49650},{"SceneManager":608},{"Video":64},{"LazyScriptCache":32},{"Camera":729},{"Secure":2377},{"SerializationCache":9256},{"APIUpdating":10320},{"Subsystems":336},{"VirtualTexturing":57888},{"StaticSafetyDebugInfo":278528},{"Analytics":768},{"Hierarchy":1188},{"UIElements":40},{"CoreStats":14456},{"Identifiers":7152},{"Gui":128},{"EditorUtility":135667},{"VersionControl":8},{"Undo":931},{"AssetDatabase":8874231},{"AssetImporter":40},{"EditorGi":328},{"UnityConnect":40441},{"Upm":1912},{"UpmDiagnostics":8},{"AssetCompliance":96},{"DrivenProperties":72},{"LocalIPC":213},{"ProfilerEditor":9746},{"CoreBusinessMetrics":3604},{"Windowing":456},{"Licensing":824},{"AssetReference":32},{"IPCStream":32}]}

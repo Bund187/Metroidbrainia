@@ -108,7 +108,7 @@ namespace Metroidbrainia.Hand3DExperiment.Editor
             }
             if (!Hand3DEditing.CanEdit(modes)) return;
             var movement = modes.GetComponent<Hand3DArmMovement>();
-            EditorGUILayout.HelpBox("Capture neutral Exploration first. Pose the arm and palm for inspection, then Capture HandEdit: this is the right endpoint (0 degrees). Capture the left endpoint by rolling only the forearm around its longitudinal axis. Restore Preview Exploration and save before Play. Finger data is never captured here.", MessageType.Info);
+            EditorGUILayout.HelpBox("Universal mode poses are edited/published in Pose Editor. Capture/preview of Exploration and HandEdit here belongs to the Legacy backup. Inspection limits, speed, smoothing and axis sign are shared settings: the left-limit tool still configures inspection for both backends. Do not remove existing captures while Legacy remains available.", MessageType.Info);
             if (GUILayout.Button("Capture Exploration")) Hand3DModeEditing.Capture(modes, movement, "exploration");
             if (modes.Exploration.Captured && GUILayout.Button("Preview Exploration")) Hand3DModeEditing.Preview(movement, modes.Exploration.Frame);
             if (GUILayout.Button("Capture HandEdit / Right Limit")) Hand3DModeEditing.Capture(modes, movement, "handEdit");

@@ -1,0 +1,77 @@
+{
+    "runId": "33de532165ff48489fd0f5a66c0bf49a",
+    "scope": "Isolated Unity numeric/state tests; no final Game visual approval.",
+    "assertions": 92495,
+    "cases": [
+        {
+            "name": "32_combinations_False",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "point_curve_modes_restore_False",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "instant_multiple_events_reentrancy_False",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "cancellation_lifecycle_False",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "actual_door_document_interrupt_False",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "continuous_actions_movement_False",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "32_combinations_True",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "point_curve_modes_restore_True",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "instant_multiple_events_reentrancy_True",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "cancellation_lifecycle_True",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "actual_door_document_interrupt_True",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "continuous_actions_movement_True",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "profile_channels_priority_ik_restore",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "environment_mode_and_arm_gate",
+            "status": "PASS",
+            "detail": ""
+        }
+    ]
+}

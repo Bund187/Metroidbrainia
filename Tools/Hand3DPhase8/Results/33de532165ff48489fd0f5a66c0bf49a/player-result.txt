@@ -1,0 +1,2 @@
+PASS
+Runtime actions, PointClick and events executed in both modes and both backends; original/configured events each fired exactly four times. No Game visual approval.

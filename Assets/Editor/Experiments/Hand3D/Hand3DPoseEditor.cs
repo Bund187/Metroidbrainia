@@ -19,7 +19,6 @@ namespace Metroidbrainia.Hand3DExperiment.Editor
         [SerializeField] private P.Channels channels=P.Channels.Rotation;
         [SerializeField] private bool segmentPositions, jointDetails;
         [SerializeField] private bool showJoints, showValues;
-        [SerializeField] private bool includeUnassignedRuntime;
         [SerializeField] private string[] custom=Array.Empty<string>(), companions=Array.Empty<string>();
         private Hand3DPosePreview preview;
         private Vector2 scroll;
@@ -29,6 +28,10 @@ namespace Metroidbrainia.Hand3DExperiment.Editor
         private Transform extraBone;
         private S.Role extraRole=S.Role.Twist;
         private Finger extraFinger;
+        [SerializeField] private Hand3DRuntimePoses runtimeTarget;
+        [SerializeField] private string[] publishIds=Array.Empty<string>();
+        [SerializeField] private bool initialCopy;
+        private string publicationReview;
         public Hand3DPoseLibrary Library => library;
         public Hand3DPosePreview Preview => preview;
 
@@ -52,7 +55,7 @@ namespace Metroidbrainia.Hand3DExperiment.Editor
         {
             Hand3DPoseLibrary.ValidateBinding(source,value.Data);Restore();
             if(library!=null && library!=value && !EditorUtility.IsPersistent(library))DestroyImmediate(library);
-            rig=source;library=value;selectedId=null;referenceId=null;companions=Array.Empty<string>();fingerprint=JsonUtility.ToJson(value.Data);savedSnapshot=EditorJsonUtility.ToJson(value);wasDirty=EditorUtility.IsDirty(value);
+            rig=source;library=value;runtimeTarget=source.RuntimePoses;publishIds=Array.Empty<string>();publicationReview=null;selectedId=null;referenceId=null;companions=Array.Empty<string>();fingerprint=JsonUtility.ToJson(value.Data);savedSnapshot=EditorJsonUtility.ToJson(value);wasDirty=EditorUtility.IsDirty(value);
         }
         public void SelectProfile(string id)
         {
@@ -69,7 +72,7 @@ namespace Metroidbrainia.Hand3DExperiment.Editor
             preview.Capture(Hand3DPosePreview.SelectPaths(library.Data,mask,custom),channels,segmentPositions);Changed();
         }
         public void Restore(){if(preview!=null)preview.Restore();preview=null;}
-        private void Changed(){fingerprint=JsonUtility.ToJson(library.Data);hasUnsavedChanges=true;Repaint();}
+        private void Changed(){publicationReview=null;fingerprint=JsonUtility.ToJson(library.Data);hasUnsavedChanges=true;Repaint();}
         private void Run(Action operation){try{operation();notice=null;}catch(Exception error){notice=error.Message;}}
         public override void SaveChanges()
         {
@@ -88,7 +91,7 @@ namespace Metroidbrainia.Hand3DExperiment.Editor
         private P.Context CurrentContext => context==ContextView.Exploration?P.Context.Exploration:context==ContextView.HandEdit?P.Context.HandEdit:context==ContextView.Action?P.Context.Action:P.Context.GrabDoor|P.Context.GrabDocument;
         private void OnGUI()
         {
-            if(EditorApplication.isPlayingOrWillChangePlaymode){EditorGUILayout.HelpBox("Pose editing is available only in Edit Mode. Play keeps the legacy runtime.",MessageType.Info);return;}
+            if(EditorApplication.isPlayingOrWillChangePlaymode){EditorGUILayout.HelpBox("Pose editing and publication are available only in Edit Mode. Play uses the backend and runtime asset selected on Hand3DRig.",MessageType.Info);return;}
             scroll=EditorGUILayout.BeginScrollView(scroll);
             EditorGUILayout.HelpBox("Preview edits a disposable stage copy. Capture changes only the selected universal profile. Legacy captures are never written.",MessageType.Info);
             var source=(Hand3DRig)EditorGUILayout.ObjectField("TestArmScene rig",rig,typeof(Hand3DRig),true);
@@ -154,9 +157,36 @@ namespace Metroidbrainia.Hand3DExperiment.Editor
             if(extraRole==S.Role.Finger)extraFinger=(Finger)EditorGUILayout.EnumPopup("Logical finger",extraFinger);
             if(GUILayout.Button("Add joint to catalog"))Run(()=>{Restore();library.AddJoint(rig,extraBone,extraRole,extraRole==S.Role.Finger?(int)extraFinger:-1);Changed();});
             saveName=EditorGUILayout.TextField("New library filename",saveName);if(GUILayout.Button("Save Library"))SaveChanges();
-            includeUnassignedRuntime=EditorGUILayout.Toggle("Copy unassigned profiles to runtime",includeUnassignedRuntime);
-            if(GUILayout.Button("Export explicit functional runtime COPY"))Run(()=>{Restore();Hand3DRuntimePoseExport.ExportDialog(rig,library,includeUnassignedRuntime);});
+            DrawPublication();
             EditorGUILayout.LabelField("Storage",Hand3DPoseLibrary.Folder);EditorGUILayout.LabelField("Saved asset",AssetDatabase.GetAssetPath(library));EditorGUILayout.EndScrollView();
+        }
+        private void DrawPublication()
+        {
+            EditorGUILayout.Space();EditorGUILayout.LabelField("Publish selected Universal profiles",EditorStyles.boldLabel);
+            var next=(Hand3DRuntimePoses)EditorGUILayout.ObjectField("Runtime target",runtimeTarget,typeof(Hand3DRuntimePoses),false);
+            if(next!=runtimeTarget){runtimeTarget=next;publicationReview=null;}
+            EditorGUILayout.HelpBox("Save Library first. Only checked IDs are added/updated; assignments and other profiles stay unchanged. Test profiles are never selected automatically. New IDs need an explicit runtime/action assignment before Play.",MessageType.Info);
+            if(GUILayout.Button("Select current profile only")){publishIds=string.IsNullOrEmpty(selectedId)?Array.Empty<string>():new[]{selectedId};publicationReview=null;}
+            foreach(var profile in library.Data.profiles)
+            {
+                bool chosen=publishIds.Contains(profile.id),checkedNow=EditorGUILayout.ToggleLeft(Label(profile),chosen);
+                if(chosen!=checkedNow){publishIds=checkedNow?publishIds.Concat(new[]{profile.id}).ToArray():publishIds.Where(id=>id!=profile.id).ToArray();publicationReview=null;}
+            }
+            if(GUILayout.Button("Validate and review selected publication"))Run(()=>{Restore();publicationReview=Hand3DRuntimePoseExport.ReviewSelected(rig,library,runtimeTarget,publishIds);});
+            if(!string.IsNullOrEmpty(publicationReview))EditorGUILayout.HelpBox(publicationReview,MessageType.Info);
+            using(new EditorGUI.DisabledScope(string.IsNullOrEmpty(publicationReview)))
+                if(GUILayout.Button("Confirm selective publication..."))Run(()=>
+                {
+                    Restore();string summary=Hand3DRuntimePoseExport.ReviewSelected(rig,library,runtimeTarget,publishIds);
+                    if(!EditorUtility.DisplayDialog("Publish selected Universal profiles",summary,"Publish selected profiles","Cancel"))return;
+                    Hand3DRuntimePoseExport.PublishSelected(rig,library,runtimeTarget,publishIds);publicationReview=null;
+                });
+            initialCopy=EditorGUILayout.Foldout(initialCopy,"Initial migration / new runtime asset (advanced)");
+            if(initialCopy)
+            {
+                EditorGUILayout.HelpBox("Creates only the 13 migrated functional profiles. Publish any additional profiles through the explicit selection above.",MessageType.Info);
+                if(GUILayout.Button("Export initial functional runtime COPY"))Run(()=>{Restore();Hand3DRuntimePoseExport.ExportDialog(rig,library);});
+            }
         }
         private static string Label(P profile)=>string.IsNullOrEmpty(profile.displayName)?profile.id:profile.displayName+" ["+profile.id+"]";
         private void DrawProfile()

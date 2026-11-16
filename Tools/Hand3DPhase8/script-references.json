@@ -1,0 +1,410 @@
+﻿[
+    {
+        "path":  "Assets\\Scripts\\Experiments\\Hand3D\\Hand3DArmMovement.cs",
+        "guid":  "5f04e81530cd4ae4f83b14d1b8e58c01",
+        "types":  [
+                      "Hand3DArmMovement"
+                  ],
+        "serializedReferences":  [
+                                     "Assets\\Scenes\\TestArmScene.unity"
+                                 ]
+    },
+    {
+        "path":  "Assets\\Scripts\\Experiments\\Hand3D\\Hand3DContactDetection.cs",
+        "guid":  "bae6162208977e545981be00782c7b5b",
+        "types":  [
+                      "Hand3DContactDetection",
+                      "HandSample",
+                      "Sweep",
+                      "Contact"
+                  ],
+        "serializedReferences":  [
+
+                                 ]
+    },
+    {
+        "path":  "Assets\\Scripts\\Experiments\\Hand3D\\Hand3DDocumentBinding.cs",
+        "guid":  "4d70cb94f54b275409f98f11b0ce1459",
+        "types":  [
+                      "Hand3DDocumentBinding"
+                  ],
+        "serializedReferences":  [
+                                     "Assets\\Scenes\\TestArmScene.unity"
+                                 ]
+    },
+    {
+        "path":  "Assets\\Scripts\\Experiments\\Hand3D\\Hand3DDocumentDisplay.cs",
+        "guid":  "0c0d353b1678af145b0e24d7f8ca4291",
+        "types":  [
+                      "Hand3DDocumentDisplay"
+                  ],
+        "serializedReferences":  [
+                                     "Assets\\Scenes\\TestArmScene.unity"
+                                 ]
+    },
+    {
+        "path":  "Assets\\Scripts\\Experiments\\Hand3D\\Hand3DDocumentInteractor.cs",
+        "guid":  "f73996c615c949e48a2af7569890d29e",
+        "types":  [
+                      "Hand3DDocumentInteractor"
+                  ],
+        "serializedReferences":  [
+                                     "Assets\\Scenes\\TestArmScene.unity"
+                                 ]
+    },
+    {
+        "path":  "Assets\\Scripts\\Experiments\\Hand3D\\Hand3DDoorBinding.cs",
+        "guid":  "f4e974b7c6e928a46897ef246ab29224",
+        "types":  [
+                      "Hand3DDoorBinding"
+                  ],
+        "serializedReferences":  [
+                                     "Assets\\Scenes\\TestArmScene.unity"
+                                 ]
+    },
+    {
+        "path":  "Assets\\Scripts\\Experiments\\Hand3D\\Hand3DDoorInteractor.cs",
+        "guid":  "6dbe072eebc579d4d9e690cb49ae1e6b",
+        "types":  [
+                      "Hand3DDoorDebug",
+                      "Hand3DDoorInteractor"
+                  ],
+        "serializedReferences":  [
+                                     "Assets\\Scenes\\TestArmScene.unity"
+                                 ]
+    },
+    {
+        "path":  "Assets\\Scripts\\Experiments\\Hand3D\\Hand3DEventAction.cs",
+        "guid":  "6a6e8a493a3164c44865d2e6ec896ff5",
+        "types":  [
+                      "Hand3DEventAction"
+                  ],
+        "serializedReferences":  [
+
+                                 ]
+    },
+    {
+        "path":  "Assets\\Scripts\\Experiments\\Hand3D\\Hand3DFingerState.cs",
+        "guid":  "be427109ad16f134898e69d3cd3f9083",
+        "types":  [
+                      "Finger",
+                      "FlexedFingers",
+                      "Hand3DFingerState",
+                      "ExperimentScope"
+                  ],
+        "serializedReferences":  [
+                                     "Assets\\Scenes\\TestArmScene.unity"
+                                 ]
+    },
+    {
+        "path":  "Assets\\Scripts\\Experiments\\Hand3D\\Hand3DGestureAction.cs",
+        "guid":  "b3335d2949fb383438e7fcc789ea6e04",
+        "types":  [
+                      "Hand3DActionModes",
+                      "Hand3DActionInput",
+                      "Hand3DGestureAction",
+                      "Run",
+                      "Hand3DActionContext"
+                  ],
+        "serializedReferences":  [
+
+                                 ]
+    },
+    {
+        "path":  "Assets\\Scripts\\Experiments\\Hand3D\\Hand3DInputController.cs",
+        "guid":  "1ea10e741f17a0f4ebc29fb13cd1e968",
+        "types":  [
+                      "Hand3DInputController"
+                  ],
+        "serializedReferences":  [
+                                     "Assets\\Scenes\\TestArmScene.unity"
+                                 ]
+    },
+    {
+        "path":  "Assets\\Scripts\\Experiments\\Hand3D\\Hand3DInteractionCoordinator.cs",
+        "guid":  "e6e20280d6d370343a74fc876ee89f33",
+        "types":  [
+                      "IHand3DInteractionSession",
+                      "Hand3DInteractionState",
+                      "Hand3DInteractionCoordinator"
+                  ],
+        "serializedReferences":  [
+                                     "Assets\\Scenes\\TestArmScene.unity"
+                                 ]
+    },
+    {
+        "path":  "Assets\\Scripts\\Experiments\\Hand3D\\Hand3DInteractionPose.cs",
+        "guid":  "0a17b2d5be9eb1c4c84dac21f2c1cb77",
+        "types":  [
+                      "Hand3DInteractionPose",
+                      "FingerPosition",
+                      "AdditionalBone"
+                  ],
+        "serializedReferences":  [
+                                     "Assets\\Scenes\\TestArmScene.unity"
+                                 ]
+    },
+    {
+        "path":  "Assets\\Scripts\\Experiments\\Hand3D\\Hand3DModeController.cs",
+        "guid":  "ed0340f55406cce41a5401c5f0ab1c64",
+        "types":  [
+                      "Hand3DMode",
+                      "ArmConfiguration",
+                      "ArmFrame",
+                      "Hand3DModeController"
+                  ],
+        "serializedReferences":  [
+                                     "Assets\\Scenes\\TestArmScene.unity"
+                                 ]
+    },
+    {
+        "path":  "Assets\\Scripts\\Experiments\\Hand3D\\Hand3DPointClickAction.cs",
+        "guid":  "20b464157c5f10f47824ae9edfaae4a6",
+        "types":  [
+                      "Hand3DPointClickAction",
+                      "Pulse"
+                  ],
+        "serializedReferences":  [
+
+                                 ]
+    },
+    {
+        "path":  "Assets\\Scripts\\Experiments\\Hand3D\\Hand3DPoseActions.cs",
+        "guid":  "790be40628a532c438a34c6d33622100",
+        "types":  [
+                      "Hand3DPoseActions",
+                      "Binding",
+                      "VisualContribution",
+                      "Active"
+                  ],
+        "serializedReferences":  [
+                                     "Assets\\Scenes\\TestArmScene.unity"
+                                 ]
+    },
+    {
+        "path":  "Assets\\Scripts\\Experiments\\Hand3D\\Hand3DPoseComposition.cs",
+        "guid":  "7bf77df2c7a05724e9fad74b2ba45006",
+        "types":  [
+                      "Hand3DPoseComposition",
+                      "Frame"
+                  ],
+        "serializedReferences":  [
+
+                                 ]
+    },
+    {
+        "path":  "Assets\\Scripts\\Experiments\\Hand3D\\Hand3DPoseProfile.cs",
+        "guid":  "c0615624c264aa444b8f07f762a394e3",
+        "types":  [
+                      "Hand3DPoseProfile",
+                      "Channels",
+                      "Context",
+                      "Space",
+                      "Operation",
+                      "Easing",
+                      "Transition",
+                      "JointValue",
+                      "Hand3DPoseProfileSet",
+                      "Role",
+                      "JointReference"
+                  ],
+        "serializedReferences":  [
+
+                                 ]
+    },
+    {
+        "path":  "Assets\\Scripts\\Experiments\\Hand3D\\Hand3DPoseRecognizer.cs",
+        "guid":  "90348acd60cfbd84d94e43865d881511",
+        "types":  [
+                      "PoseAction",
+                      "LocalBonePose",
+                      "HandPose",
+                      "Hand3DPoseRecognizer"
+                  ],
+        "serializedReferences":  [
+                                     "Assets\\Scenes\\TestArmScene.unity"
+                                 ]
+    },
+    {
+        "path":  "Assets\\Scripts\\Experiments\\Hand3D\\Hand3DProfileAction.cs",
+        "guid":  "a348cd60ec796904497fb5ef8e648948",
+        "types":  [
+                      "Hand3DProfileAction",
+                      "Pulse"
+                  ],
+        "serializedReferences":  [
+
+                                 ]
+    },
+    {
+        "path":  "Assets\\Scripts\\Experiments\\Hand3D\\Hand3DRig.cs",
+        "guid":  "03752c9c6f651cc41ba8279c5233f373",
+        "types":  [
+                      "Hand3DRig",
+                      "PoseSystem",
+                      "Joint",
+                      "FingerBinding",
+                      "DrivenBone"
+                  ],
+        "serializedReferences":  [
+                                     "Assets\\Scenes\\TestArmScene.unity"
+                                 ]
+    },
+    {
+        "path":  "Assets\\Scripts\\Experiments\\Hand3D\\Hand3DRuntimePoses.cs",
+        "guid":  "2b6dc9fcb26895b46bc635f6c9da8c62",
+        "types":  [
+                      "Hand3DRuntimePoses",
+                      "Gesture"
+                  ],
+        "serializedReferences":  [
+                                     "Assets\\Experiments\\Hand3D\\RuntimePoses\\TestArmRuntimePoses.asset"
+                                 ]
+    },
+    {
+        "path":  "Assets\\Scripts\\Experiments\\Hand3D\\Hand3DScreenProjection.cs",
+        "guid":  "0632007828a4eb946b349457e492bd45",
+        "types":  [
+                      "Hand3DScreenProjection"
+                  ],
+        "serializedReferences":  [
+
+                                 ]
+    },
+    {
+        "path":  "Assets\\Scripts\\Experiments\\Hand3D\\Hand3DThumbOverlay.cs",
+        "guid":  "ddfd723285c04b1489d06d7586c4ce0d",
+        "types":  [
+                      "Hand3DThumbOverlay",
+                      "VisualizationMode"
+                  ],
+        "serializedReferences":  [
+                                     "Assets\\Scenes\\TestArmScene.unity"
+                                 ]
+    },
+    {
+        "path":  "Assets\\Editor\\Experiments\\Hand3D\\Hand3DDocumentEditors.cs",
+        "guid":  "a42859224896d3d43a4117525a47a51b",
+        "types":  [
+                      "Hand3DDocumentPreparation",
+                      "defaults",
+                      "Hand3DDocumentBindingEditor"
+                  ],
+        "serializedReferences":  [
+
+                                 ]
+    },
+    {
+        "path":  "Assets\\Editor\\Experiments\\Hand3D\\Hand3DDocumentVisualEditor.cs",
+        "guid":  "c32544c810a591543931acd2164d99c3",
+        "types":  [
+                      "Hand3DDocumentVisualPreparation",
+                      "Hand3DThumbOverlayEditor",
+                      "Hand3DDocumentDisplayEditor"
+                  ],
+        "serializedReferences":  [
+
+                                 ]
+    },
+    {
+        "path":  "Assets\\Editor\\Experiments\\Hand3D\\Hand3DDoorEditors.cs",
+        "guid":  "0001a7271c33ea2408fb2f4f0399589f",
+        "types":  [
+                      "Hand3DInteractionPoseEditor",
+                      "Hand3DDoorInteractorEditor"
+                  ],
+        "serializedReferences":  [
+
+                                 ]
+    },
+    {
+        "path":  "Assets\\Editor\\Experiments\\Hand3D\\Hand3DEditors.cs",
+        "guid":  "0750e81ac9dcc9e499baddba9cba7e56",
+        "types":  [
+                      "Hand3DEditing",
+                      "Hand3DRigEditor",
+                      "Hand3DPoseRecognizerEditor"
+                  ],
+        "serializedReferences":  [
+
+                                 ]
+    },
+    {
+        "path":  "Assets\\Editor\\Experiments\\Hand3D\\Hand3DModeEditors.cs",
+        "guid":  "f65b72cf8eaa52a4a99567a312886108",
+        "types":  [
+                      "Hand3DModeEditing",
+                      "Hand3DArmMovementEditor",
+                      "Hand3DModeControllerEditor"
+                  ],
+        "serializedReferences":  [
+
+                                 ]
+    },
+    {
+        "path":  "Assets\\Editor\\Experiments\\Hand3D\\Hand3DPoseConversion.cs",
+        "guid":  "71952c90d44c121469f020f36fa320df",
+        "types":  [
+                      "Hand3DPoseConversion",
+                      "Reference",
+                      "SourceArchive",
+                      "Result"
+                  ],
+        "serializedReferences":  [
+
+                                 ]
+    },
+    {
+        "path":  "Assets\\Editor\\Experiments\\Hand3D\\Hand3DPoseEditor.cs",
+        "guid":  "afc487f8c29d50f46aacab394a55219c",
+        "types":  [
+                      "Hand3DPoseEditor",
+                      "ContextView"
+                  ],
+        "serializedReferences":  [
+
+                                 ]
+    },
+    {
+        "path":  "Assets\\Editor\\Experiments\\Hand3D\\Hand3DPoseLibrary.cs",
+        "guid":  "a93fe38a4679e254ba648b3090fdf137",
+        "types":  [
+                      "Hand3DPoseLibrary"
+                  ],
+        "serializedReferences":  [
+                                     "Assets\\Editor\\Experiments\\Hand3D\\PoseProfiles\\HandPoses.asset"
+                                 ]
+    },
+    {
+        "path":  "Assets\\Editor\\Experiments\\Hand3D\\Hand3DPosePreview.cs",
+        "guid":  "b6f432bfbb1d78d46af69767e25ef36c",
+        "types":  [
+                      "Hand3DPosePreview",
+                      "SelectionMask"
+                  ],
+        "serializedReferences":  [
+
+                                 ]
+    },
+    {
+        "path":  "Assets\\Editor\\Experiments\\Hand3D\\Hand3DRuntimePoseExport.cs",
+        "guid":  "d6469da9e1216214999a3500842e56ef",
+        "types":  [
+                      "Hand3DRuntimePoseExport",
+                      "Hand3DRuntimePosesEditor"
+                  ],
+        "serializedReferences":  [
+
+                                 ]
+    },
+    {
+        "path":  "Assets\\Editor\\Experiments\\Hand3D\\Hand3DSceneDoorsEditor.cs",
+        "guid":  "697850e9730d9a6419a18407afc65bbe",
+        "types":  [
+                      "Hand3DSceneDoorsEditor"
+                  ],
+        "serializedReferences":  [
+
+                                 ]
+    }
+]

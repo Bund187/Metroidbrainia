@@ -1,146 +1,92 @@
-﻿# Prueba independiente de mano 3D
+﻿# Brazo 3D experimental — guía actual
 
-Uso exclusivo en `TestArmScene`. No requiere cambios en `Prototype`, assets WRAD, cámaras, materiales ni RenderTextures. Los ajustes de movimiento se guardan únicamente en esta escena.
+Ámbito exclusivo: TestArmScene, Unity 6000.6.3f1, URP y Unity Input System. Para desarrollar poses nuevas usar **Universal** en Hand3DRig. Legacy permanece como respaldo; no borrar sus capturas, bindings ni componentes. No hay que ejecutar Prepare ni importar de nuevo la escena para usar el sistema existente.
 
-## Montaje
+## Arquitectura y autoridad
 
-1. Abre `TestArmScene`. Deshabilita únicamente su instancia de `FirstPersonArmController`, que actualmente no tiene `ArmView`. No apliques ese cambio al prefab de PlayerCapsule.
-2. Selecciona la instancia de escena `armsFBX`, por encima de los huesos de la mano elegida. Usa `GameObject > Metroidbrainia > Test Hand 3D > Add Experimental Controllers`. Esta operación explícita, con Undo, añade y conecta los componentes experimentales locales; no aplica nada al asset importado.
-3. En `Hand3DInputController`, asigna el `PlayerInput` y `StarterAssetsInputs` de PlayerCapsule en esta escena. Mouse Sensitivity = 1 y Gamepad Sensitivity = 1 son los valores iniciales; ambos se ajustan en este componente.
-4. En `Hand3DArmMovement`, asigna la cámara que renderiza `RT_PixelArm` (en el archivo actual se llama `ArmCamera`), los tres huesos de la cadena Upper Arm > Forearm > Hand y opcionalmente un Elbow Hint. WRAD contiene `shoulder.r`, `forearm.r` y `wrist.r`: verifica esa jerarquía y usa el mismo lado en todo el montaje. Los huesos `.l` son la alternativa izquierda.
-5. Añade Hand3DModeController mediante el botón del Inspector de Hand3DArmMovement. Conserva la cadena de huesos; no hace falta reparentarla ni añadir pivotes. Sigue la configuración de modos descrita abajo. La cámara y la RenderTexture no se modifican.
-6. En `Hand3DRig`, asigna opcionalmente el Animator de esta instancia si escribe sus huesos. El rig lo suspende durante la prueba y restaura su estado al deshabilitarse.
+| Elemento | Responsabilidad |
+|---|---|
+| Hand3DInputController | Traduce entrada a dedos, modo, movimiento y solicitudes de acción; comunica movimiento/fin al coordinador. No conoce puertas ni documentos concretos. |
+| Hand3DFingerState | Única combinación lógica de cinco bits; Finger/ FlexedFingers describen los cinco dedos y 32 combinaciones. |
+| Hand3DPoseRecognizer | Reconoce por combinación; nombre y OnAction original son datos compartidos. No ejecuta acciones ni escribe huesos. |
+| Hand3DPoseActions | Asocia combinaciones con acciones reutilizables; Begin/Tick/End, prioridades, eventos y cancelaciones. |
+| Hand3DModeController | Exploration/HandEdit, transición e inspección. Recibe la referencia Universal; conserva capturas de modos para Legacy. |
+| Hand3DRuntimePoses / Hand3DPoseProfile | Datos de poses y asignaciones accesibles en player. No referencian clases/objetos de Editor. |
+| Hand3DPoseComposition | Compone referencia de modo, extremos, gesto, clic/acciones, interacción y objetivo IK en buffers. Normaliza antes de TRS. |
+| Hand3DRig | Selecciona backend; en Universal hace el único commit final de huesos y gestiona rechazo/fallback. Legacy conserva su ruta alternativa. |
+| Hand3DArmMovement | Entrada espacial, retorno y solver de dos segmentos; calcula sobre el buffer en Universal. No sustituir referencia por pose transformada del frame anterior. |
+| Hand3DInteractionCoordinator | Propiedad exclusiva local y adquisición/liberación; cancela acciones y delega movimiento restringido al propietario. |
+| Hand3DInteractionPose | Petición, pesos y offset de muñeca compartidos; sus arrays de capturas visuales son respaldo Legacy. |
+| Hand3DContactDetection / Hand3DScreenProjection | Proyección, barrido, alcance y obstáculos comunes, sin política única de selección. |
+| Hand3DDoorInteractor / Binding | Selección y mantenimiento del pomo, movimiento consumido y adaptación al motor de puerta existente. |
+| Hand3DDocumentInteractor / Binding | Contacto inicial, sujeción libre, ocultación/devolución del objeto y adaptación de sus datos. No depende del detector de puertas. |
+| Hand3DDocumentDisplay / ThumbOverlay | Papel/texto de resolución completa entre brazo pixelado y pulgar; misma textura, máscara de geometría animada y tres modos diagnósticos. |
 
-## Capturar dedos
+Orden principal: Input (-50), movimiento (100), Rig (200), coordinador (215), puertas (220), documentos (225), display (240). La adquisición posterior al rig conserva la posible latencia visual de un ciclo, documentada desde fases anteriores. No hay dos commits Universal compitiendo ni un manager global.
 
-En `Hand3DRig > Fingers` hay cinco entradas. En cada una asigna tantos Joints como necesites. Para la mano derecha, por ejemplo, `finger_index1.r`, `finger_index2.r`, `finger_index3.r` corresponden al índice; existen cadenas equivalentes thumb, middle, ring y pinky.
+Flujo: entrada → estado/reconocimiento → solicitud de acción o movimiento → composición/IK → commit → contacto/adquisición → presentación. Una interacción cambia su capa visual; no modifica la combinación lógica de dedos. El evento de compatibilidad OnAction solo lo despacha PoseActions.
 
-1. Pon manualmente los huesos del dedo en posición extendida, mediante sus Transform en Scene/Inspector.
-2. Pulsa **Capture Extended** para ese dedo.
-3. Flexiona manualmente sus huesos y pulsa **Capture Flexed**.
-4. Usa **Preview Extended / Preview Flexed** para comprobar ambas capturas.
-5. Repite con los cinco dedos y termina con **Preview All Extended**. Guarda la escena de prueba.
+## Bibliotecas y trabajo habitual
 
-No se asume ningún eje. Las capturas son rotaciones locales absolutas de cada articulación. Todas las articulaciones deben tener ambas capturas antes de Play. Transition Duration = 0.2 segundos. No añadas el mismo hueso a dos dedos.
+- Edición: Assets/Editor/Experiments/Hand3D/PoseProfiles/HandPoses.asset.
+- Runtime: Assets/Experiments/Hand3D/RuntimePoses/TestArmRuntimePoses.asset, asignado en Hand3DRig.
+- Ventana: Tools → Metroidbrainia → Hand 3D → Pose Editor.
 
-## Poses y ajustes especiales
+1. Fuera de Play, seleccionar PlayerCapsule/Capsule/armsFBX de TestArmScene en la ventana y asignar la biblioteca de edición. El selector de backend está en el rig: usar Universal para comprobar perfiles nuevos. La herramienta no cambia el backend ni guarda la escena automáticamente.
+2. Elegir contexto Exploration, HandEdit, Interaction o Action. Crear un perfil con ID único (o dejar que se genere); duplicar crea otro ID. Cambiar Display name no cambia identidad. Nunca reutilizar un ID para otra pose por accidente.
+3. Seleccionar una referencia/base apropiada: Mode.exploration o Mode.handEdit. Las capas relativas de muñeca requieren la base de muñeca relativa a cámara; usar Companion layers para previsualizar fragmentos complementarios. Una base/compañero de preview no es una dependencia publicada implícitamente.
+4. Preview Pose aplica el perfil sobre una copia descartable; Begin Manual Pose permite posar esa copia desde la referencia. No editar los huesos originales para capturar Universal.
+5. Elegir FullBody, ArmOnly, WristOnly, FingersOnly o Custom; Rotation, Position o ambos. HandEdit de un gesto debe afectar solo dedos. La referencia base HandEdit sí puede contener cuerpo. Position no permite estirar segmentos IK; el permiso explícito no elimina la validación geométrica.
+6. Capture Pose modifica solo el perfil seleccionado; Restore/Cancel cierra la copia. Ajustar pesos, canales, contexto y transiciones en Selected profile data. Guardar con Save Library. Las capturas Legacy y la escena no se reescriben.
+7. En Publish selected Universal profiles, asignar el runtime existente. Marcar explícitamente los IDs a añadir/actualizar. La selección inicial está vacía; Select current profile only es una elección explícita del usuario.
+8. Validate and review selected publication valida rig, referencias, canales, máscaras, datos, asignaciones y bases relativas. Muestra ADD, UPDATE o UNCHANGED por ID. Confirm selective publication vuelve a validar y abre la confirmación con el destino y la lista exacta; Cancel no modifica el asset.
+9. Publish selected profiles aplica y guarda solo esos perfiles, manteniendo IDs, los demás perfiles y las asignaciones actuales. Undo/Redo recupera datos completos del runtime; después usar Save runtime asset (including Undo/Redo) en su Inspector para persistir la reversión o el redo.
+10. Los IDs nuevos permanecen inactivos hasta asignarlos explícitamente: Exploration/HandEdit para referencias, Gestures para capas de gesto, Grab Door/Grab Document para las interacciones, o profileId en una acción Profile Pulse. Editar estas asignaciones en el Inspector del runtime y pulsar Validate runtime assignments. Guardar el asset; entrar en Play con Universal y comprobar resultado. No hay sincronización automática mientras se juega.
 
-`Hand3DPoseRecognizer` incluye:
+La publicación **no** copia todo HandPoses.asset, no elimina perfiles y no sustituye asignaciones. OK_Test_Capture, Exploration_FullBody_Test y Partial_Capture_Test solo se publican si se seleccionan expresamente; un nombre de prueba no es una prohibición, tampoco una selección automática. Los perfiles nuevos vacíos/sin influencia se rechazan. Los fragmentos vacíos migrados que ya son placeholders funcionales pueden conservarse.
 
-- OK: Thumb + Index flexionados, Action = None.
-- Point: Thumb + Middle + Ring + Little flexionados, Action = PointClick.
+Initial migration / new runtime asset (advanced) conserva la exportación inicial de 13 perfiles funcionales a un archivo nuevo. No es el procedimiento habitual para actualizar TestArmRuntimePoses.asset y nunca sobrescribe un archivo existente.
 
-Las otras 30 combinaciones no tienen reconocimiento especial. Para otra pose, añade una entrada con nombre, máscara y acción. EventOnly ejecuta su UnityEvent On Action, sin modificar el controlador de entrada ni el reconocedor.
+## Gesto nuevo y acciones
 
-Para corregir visualmente OK:
+1. En Hand3DPoseRecognizer añadir nombre y combinación única (0–31): pulgar=1, índice=2, corazón=4, anular=8, meñique=16. OK=3; Point=29. Los campos Visual Overrides y orientación capturada del reconocedor pertenecen a Legacy.
+2. Crear/capturar/publicar sus capas Universal. En el runtime añadir una entrada Gestures con la misma combinación y sus IDs Exploration y HandEdit, en orden de composición. Incluir explícitamente los fragmentos complementarios necesarios. Para HandEdit de gesto, solo dedos.
+3. En Hand3DPoseActions.Bindings añadir esa combinación y una o varias definiciones de acción. Un binding vacío significa deliberadamente ninguna acción; si no hay binding se utiliza el adaptador del enum Action antiguo.
+4. Create → Metroidbrainia → Hand 3D → Actions permite crear Point Click, Configured Event o Profile Pulse según sus entradas existentes. PointClick conserva pulso/duración/amplitud; Configured Event es instantáneo y no conserva Run ni reloj. Profile Pulse exige Universal y un profileId publicado con contexto Action o del modo vigente; no admite el adaptador especial ExplorationWristOffset.
+5. Prioridad alta se compone después; a igual prioridad se respeta el orden configurado. El evento de binding se invoca una sola vez por solicitud, incluso con varias acciones; OnAction original se conserva según invokeOriginalGestureEvent. No añadir otro emisor paralelo de esos eventos.
+6. Gestos/modos/backend y adquisición pueden cancelar acciones. Ocupación/restauración bloquea solicitudes nuevas. Requires Arm Control y acciones World añaden sus permisos; World en HandEdit requiere opt-in explícito. No hay mecánicas ambientales nuevas en esta fase.
 
-1. En el Inspector del reconocedor, pulsa **Preview Base Finger Combination** para OK.
-2. Las articulaciones configuradas en el rig se detectan automáticamente al capturar si difieren de la combinación base (más de 0.05 grados). Para otros huesos, añádelos explícitamente a `Visual Overrides`.
-3. Ajusta esos huesos manualmente hasta aproximar las puntas.
-4. Pulsa **Capture Visual Overrides**. Comprueba el número de entradas y el mensaje `[Hand3D Capture]`. Una captura vacía genera una advertencia. Las entradas existentes se vuelven a capturar, por lo que puedes seguir editándolas.
-5. Guarda la escena, vuelve a abrirla y usa **Preview Base Finger Combination** seguido de **Preview Captured Visual Overrides** para comprobar que las rotaciones persisten. El rig interpolará hacia ellas al reconocer OK y volverá a los estados individuales actuales al abandonarla, incluso si cambias de combinación durante una transición.
+## Interactuables nuevos
 
-Para diagnosticar Play, activa `Log Pose Changes` en el reconocedor y `Log Visual Transitions` en el rig. `[Hand3D Recognition]` muestra la máscara lógica y la pose; `[Hand3D Application]` muestra la pose aplicada, el número de overrides y la duración. OK requiere exactamente Thumb + Index: si otro dedo sigue flexionado, no coincide. Los logs solo aparecen al cambiar estados, no en cada fotograma. El rig realiza la escritura final de los dedos en LateUpdate, incluyendo la capa de clic; el estado y el reconocedor no escriben Transform. Se rechazan huesos duplicados y articulaciones compartidas con el movimiento del brazo.
+Para interacción automática por contacto, crear un adaptador local del objeto y un owner que implemente IHand3DInteractionSession. Reutilizar Hand3DContactDetection con cámara/punto de mano/displays/capas propios; mantener su Sweep y política de candidatos por adaptador. Aplicar descartes baratos antes de HasObstacle; conservar exclusiones y sincronización por ciclo. Solicitar CanAcquire/TryAcquire al coordinador antes de poseer la mano. Un tercer tipo no requiere añadir su clase a Input.
 
-Regresión manual: entra en OK con E/R desde extendidos; pulsa F para salir y F otra vez para volver desde otra combinación; alterna R durante la interpolación. Comprueba entrada y salida suaves, sin residuos. Después extiende todo y activa Point con E/F/T/G: verifica su clic con LMB o LT y el movimiento habitual del brazo. Repite la captura y reconocimiento con una pose nueva para comprobar que no depende del nombre OK.
+El owner libera mediante coordinator.Release/CancelSession; su ReleaseInteraction restaura el objeto una sola vez. ProcessMovement devuelve si consume la entrada. Las puertas restringen movimiento; documentos no. El coordinador cancela acciones al adquirir y conserva Restoring hasta que la pose se desvanece; no mantener otra bandera independiente de propiedad. Gestionar desactivación/destrucción y callbacks reentrantes.
 
-Point admite la misma configuración opcional. No incluyas Upper Arm/Forearm en los overrides: los controla el movimiento. Si ajustas la muñeca, deja su posición de reposo correcta antes de Play. Ninguna previsualización cambia los estados lógicos.
+Puertas conservan prioridad sobre documentos por su orden de actualización, 1,5 m / 100 px, contacto/seguimiento y bloqueo/apertura del motor existente. Documentos usan 0,9 m / 55 px al adquirir, movimiento libre mientras se sostienen y devolución. Radios son píxeles de referencia a 1080p. No añadir un chequeo continuo de alcance inicial al documento.
 
-## Modos y configuración visual
+Una acción de gesto dirigida a un objeto es otro caso: una subclase de Hand3DGestureAction valida contacto, alcance, obstáculos y objetivo en CanBegin usando el detector común; no obtiene un objetivo ficticio de Input. Si necesita exclusividad, solicita el coordinador y respeta liberación/cancelación. No existe un selector ambiental genérico implementado ni hay que introducirlo para un evento instantáneo.
 
-En la instancia `armsFBX` de TestArmScene, pulsa **Add Mode Controller (preserve finger data)** en `Hand3DArmMovement`. El botón añade `Hand3DModeController` con Undo y captura la exploración actual. También puedes reutilizar el menú **Add Experimental Controllers**, que conserva componentes y datos existentes. Si falta el componente al iniciar Play se crea uno temporal, pero avisa de las capturas pendientes: para conservar configuraciones, añádelo fuera de Play y guarda la escena.
+## Diagnóstico
 
-`Exploration` es el modo inicial. `RB` o cualquiera de las teclas Shift alternan con `HandEdit` una sola vez por pulsación. El Inspector muestra el modo actual durante Play. Transition Duration controla la duración del cambio; alternar a mitad de transición empieza desde la postura mostrada.
+- Rig: Effective pose backend y UniversalError. Un rechazo restaura y vuelve a Legacy. No ocultar el error recapturando ni sobrescribiendo perfiles originales.
+- Runtime: Validate runtime assignments identifica IDs/roles/contextos ausentes. Publicación falla antes de modificar el destino. Un perfil nuevo sin asignación no activa un gesto.
+- Pose Editor: elegir base y companions correctos; revisar stored/influence channels, captured, enabled, weight y espacios. Perfil parcial no equivale a una referencia de modo completa.
+- Movimiento: LastUniversalRequestedTarget, LastUniversalFeasibleTarget, LastUniversalReachError y LastUniversalTargetLimited distinguen límite geométrico de fallo. No sustituir solver ni mover escalas para alcanzar destinos imposibles.
+- Contacto: Debug Contact y Log Interactions permiten revisar alcance, separación/barrido, candidato, blocker y estado del pomo. Hay nueve bindings de puerta y tres de documento; se conserva descubrimiento de puertas compatibles.
+- Pulgar: Thumb Overlay, Thumb Mask y Full Arm; revisar textura compartida y orden brazo/papel/pulgar. Sample Source Pixels es diagnóstico síncrono explícito, incluso en Full Arm; no demuestra oclusión final del Canvas. El bucle normal Full Arm omite BakeMesh; la máscara animada no.
+- Quaternions: NormalizeRotation en la frontera de UpdateWorld valida/normaliza entradas antes de TRS y la cadena mundial. Un dato irrecuperable informa hueso, origen, fase y asset; no eliminar esa comprobación para silenciar avisos.
+- Rendimiento: fase 7 conserva tiempos sintéticos y contadores, no una mejora de FPS de Game. El contador GC del arnés falla el control positivo; usar Unity Profiler para GC Alloc real.
 
-### Capturar las referencias visuales
+## Qué Legacy sigue necesitando
 
-1. Fuera de Play y con dedos neutros, coloca la instancia y sus articulaciones para reproducir la imagen 1: brazo desde abajo a la derecha, mano hacia centro-izquierda y palma hacia la izquierda. Pulsa **Capture Exploration**. Se guardan posición/rotación del modelo respecto a ArmCamera, rotaciones locales de hombro/antebrazo y orientación de muñeca respecto a cámara. No se capturan dedos ni se asumen valores cero.
-2. Coloca el brazo para la imagen 2: antebrazo elevado, palma hacia la cámara y mano en una posición frontal estable. Pulsa **Capture HandEdit / Right Limit**. Esta postura es el extremo derecho, ángulo cero, no el centro del recorrido. No cambies escalas ni longitudes para lograrla.
-3. Pulsa **Preview HandEdit / Right Limit**, gira solo el antebrazo sobre el eje longitudinal que une codo y muñeca hasta mostrar el dorso (imagen 3) y pulsa **Capture Left Inspection Limit**. La captura calcula el ángulo y el sentido usando el eje real del hueso; avisa si detecta flexión lateral en lugar de un giro longitudinal. Usa ambas previsualizaciones para comprobar los extremos. El valor inicial de -180 grados es orientativo hasta calibrarlo con este paso.
-4. Pulsa **Preview Exploration**, comprueba los dedos y guarda TestArmScene. Estas herramientas respetan Undo y marcan la escena como modificada; no cambian el FBX ni aplican overrides al asset importado.
+La evaluación Universal usa los perfiles runtime, no los valores de Extended/Flexed, overrides, modos o agarres capturados en componentes. **La inicialización aún valida sus bindings, flags y referencias** para preparar el respaldo. Por ello no es seguro borrar esas estructuras aunque sus valores no alteren la evaluación Universal. Se conserva también el adaptador Action del reconocedor y parámetros PointClick antiguos mientras no existan asociaciones explícitas.
 
-Los campos de ambas configuraciones son editables en el Inspector. Las posiciones se expresan en el espacio de ArmCamera y las rotaciones de huesos en sus espacios locales reales. Por eso permanecen relativas a pantalla al caminar o girar. El seguimiento de cámara no se suaviza; solo se suaviza el movimiento voluntario y las transiciones.
+Inspection limits/speed/smoothing/sign, cadena/cámara, estado lógico, pesos/offset de interacción, entrada y eventos son configuración compartida, no basura Legacy. El enlace de compatibilidad existente al controlador 2D en puertas no crece ni se modifica; no utilizarlo como patrón para interactuables nuevos.
 
-### Orientaciones especiales de OK y Point
+Una retirada futura necesita autorización, inicialización Universal independiente, política de fallo sin fallback, migración/reversión de datos y pruebas del cambio de backend. Esta fase no realiza esa retirada. Los botones Legacy se conservan con advertencias claras; usarlos modifica la escena y requiere guardar, a diferencia de Pose Editor.
 
-Estas capturas son independientes de **Capture Visual Overrides** y no reemplazan su contenido:
+## Validación y referencias
 
-1. Pulsa **Preview Exploration** en el controlador de modos.
-2. Previsualiza la combinación y los overrides ya guardados de OK en el reconocedor.
-3. Gira únicamente la muñeca/mano para que la O mire al jugador, como en la imagen 4.
-4. En la entrada OK pulsa **Capture Exploration Wrist (separate from finger overrides)**. Esto activa Use Exploration Wrist y guarda un offset respecto a la muñeca neutra de Exploration.
-5. Repite desde Preview Exploration para Point: previsualiza sus dedos, alinea la mano con el antebrazo y orienta el dorso/índice como en la imagen 5. Captura en la entrada Point.
-6. Usa **Preview Exploration Wrist**, ajusta Wrist Transition Duration / Wrist Transition Easing y guarda. Para desactivar una orientación, desmarca Use Exploration Wrist. Las poses nuevas admiten los mismos campos y herramientas.
+Protocolo visual de cierre, inventario por script y evidencias: Tools/Hand3DPhase8/MANUAL.md, INVENTORY.md y REPORT.md. El protocolo se limita a lo realmente disponible en TestArmScene; no exige pausa/localización ni trasladar sistemas desde Prototype. La guía no declara revisión visual realizada.
 
-No se incluyen rotaciones universales para OK/Point ni se cambian sus capturas anteriores: calibra las nuevas orientaciones sobre el modelo de tu escena. Captura siempre Exploration antes de las orientaciones de poses; si cambias después la orientación neutra, revisa esos offsets.
-
-En HandEdit las orientaciones adicionales de Exploration se desvanecen hacia identidad. Los overrides de dedos siguen funcionando. Al salir se recupera automáticamente el offset de la pose actual. Si una pose deja de reconocerse, vuelve suavemente a identidad, usando la duración anterior. El clic de Point sigue componiéndose sobre el índice.
-
-## Controles
-
-| Función | Gamepad | Teclado / ratón |
-|---|---|---|
-| Alternar Exploration / HandEdit | RB | Shift |
-| Pulgar | R3 | E |
-| Índice | D-Pad Up | R |
-| Corazón | D-Pad Right | T |
-| Anular | D-Pad Down | F |
-| Meñique | D-Pad Left | G |
-| Movimiento en Exploration | R2 + Right Stick | RMB + Mouse Delta |
-| Giro longitudinal en HandEdit | Left Stick horizontal | A / D |
-| Acción en ambos modos | L2 | LMB |
-
-Mantener RB/Shift no repite cambios. No hay giro vertical W/S. R2/RMB no mueve el brazo en HandEdit. Tras un cambio con R2/RMB mantenido debes soltarlo antes de iniciar un nuevo movimiento libre. Los dedos y acciones no requieren modo de movimiento. RMB no ejecuta acciones. Soltar R2/RMB en Exploration inicia el retorno suave, sin cambiar la combinación de dedos.
-
-Shift queda reservado al cambio de modo: se elimina su binding de Sprint solo en la copia privada de acciones del experimento (también se conserva la exclusión de L2/Sprint). No se modifican los assets de Input System compartidos.
-
-## Responsabilidad de cada transformación
-
-| Transform / capa | Responsable | Función |
-|---|---|---|
-| Instancia armsFBX | Hand3DArmMovement | Sigue a ArmCamera con el offset capturado; transición entre configuraciones |
-| Upper Arm y Forearm | Hand3DArmMovement | Postura de modo, IK de pantalla y giro longitudinal alrededor de codo-muñeca |
-| Wrist / Hand | Hand3DRig | Una única escritura final: orientación del modo, offset de pose y override visual de muñeca si existe |
-| Huesos de dedos | Hand3DRig | Extended/Flexed, Visual Overrides y clic de Point |
-| Hand3DModeController | Sin escrituras de Transform en runtime | Estado, configuraciones capturadas, transición y límites de inspección |
-
-El movimiento se ejecuta después de Starter Assets/Cinemachine (orden 100); el rig compone después la muñeca/dedos (orden 200). Los giros no se acumulan sobre el resultado anterior. La inspección usa el eje real entre antebrazo y muñeca; por eso la muñeca permanece en el mismo punto al girar. No se reparenta ni escala el modelo.
-
-## Bloqueo del jugador
-
-El experimento mantiene su mapa de entrada independiente y una copia privada de PlayerInput.actions. En HandEdit deshabilita Look, Move, Jump y Sprint de esa copia, limpia StarterAssetsInputs y suspende temporalmente el FirstPersonController de la instancia para evitar movimiento residual y gravedad durante la inspección. Guarda y restaura su estado enabled anterior. No desactiva PlayerInput ni las acciones de mano.
-
-En Exploration, fuera del movimiento de brazo, restaura los controles anteriores. Durante R2/RMB bloquea las mismas acciones compartidas para que ratón/sticks no muevan simultáneamente cámara o jugador. El bloqueo se conserva al pasar de movimiento a edición y se libera al salir. Perder foco o pausar no reinicia dedos; los tiempos de transición no avanzan con deltaTime cero. No se modifican scripts de Starter Assets.
-
-## Parámetros útiles
-
-- **Exploration / HandEdit**: configuraciones completas capturables, sin coordenadas universales.
-- **Transition Duration**: cambio entre modos.
-- **Minimum Inspection Angle**: extremo izquierdo; **Maximum Inspection Angle** permanece en cero porque el inicio es el extremo derecho. **Inspection Axis Sign** lo calcula la captura del límite.
-- **Inspection Speed / Smoothing**: grados por segundo y suavizado del giro longitudinal.
-- **Movement Speed**: 900 unidades de referencia/s por defecto para el stick.
-- **Movement Smoothing**: 0.08 s por defecto; cero es inmediato.
-- **Reference Resolution**: 1920 × 1080, independiente de RT_PixelArm.
-- **Horizontal / Vertical Screen Limits**: límites normalizados de la muñeca (0.06–0.94 por defecto); reserva margen para los dedos.
-- **Return Smooth Time**: 0.18 s por defecto; menor es más rápido.
-- **Mouse / Gamepad Sensitivity**: en Hand3DInputController. El stick se integra con deltaTime; Mouse Delta ya es desplazamiento.
-- **Use Exploration Wrist / Exploration Wrist Euler / Wrist Transition Duration / Easing**: por pose, independientes de las capturas de dedos.
-
-La IK tiene longitudes fijas: puede no alcanzar todas las esquinas de pantalla. Ajusta límites y postura inicial al alcance real; no hay estiramiento artificial. La orientación exacta de las cinco imágenes requiere calibración con las herramientas anteriores.
-
-## Pruebas en Unity
-
-1. Camina y gira en Exploration: el brazo conserva su posición relativa a la cámara sin vibrar. Prueba R2/RMB, diagonales, límites y retorno suave.
-2. Entra en HandEdit con el brazo extendido y con dedos flexionados. La cámara y el personaje deben quedar inmóviles; no debe saltar ni correr. Mantén RB/Shift para comprobar que solo alterna una vez.
-3. Comprueba palma en el extremo derecho inicial; A/Left Stick izquierdo muestran lateral y dorso sin mover la muñeca. D vuelve al límite inicial y no lo sobrepasa. W/S no orientan la mano y R2/RMB no la desplaza.
-4. Alterna los cinco dedos y prueba OK/Point en ambos modos. Los overrides del círculo y el clic con L2/LMB deben conservarse durante giros y transiciones.
-5. Sal de HandEdit con OK activo: la configuración Exploration y la orientación especial de OK deben reaparecer suavemente, sin reiniciar dedos. Repite con Point y una combinación desconocida.
-6. Cambia de pose durante movimiento/transición y ejecuta clics mientras gira la muñeca. Alterna RB/Shift rápidamente: sin saltos ni deriva.
-7. Cambia de modo con R2/RMB mantenido: no debe activar movimiento libre al salir hasta soltar y volver a pulsar. Comprueba retorno al soltar en Exploration.
-8. Pausa/reanuda durante transición, pierde/recupera foco y comprueba restauración de controles al deshabilitar el experimento. No debe avanzar la transición durante la pausa.
-9. Guarda, vuelve a abrir y verifica configuraciones, extremos, orientaciones de pose y capturas anteriores. Comprueba renderizado pixelado y verifica aparte Prototype, sin editarlo.
-
-## Puertas con mano 3D
-
-Configuración, calibración física, captura de Grab y pruebas: [DOOR_INTERACTION.md](DOOR_INTERACTION.md).
-
+Histórico: Tools/Hand3DPhase0, Hand3DPhase05 y Hand3DPhase1–7, más Hand3DQuaternionFix. Los documentos DOOR_INTERACTION.md, GENERAL_DOORS_GRAB.md, DOOR_ACQUISITION_VALIDATION.md y DOCUMENT_INTERACTION.md conservan detalles de integración; las instrucciones antiguas de captura no sustituyen el flujo Universal descrito aquí.

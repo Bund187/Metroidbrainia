@@ -1,0 +1,26 @@
+[
+    {
+        "path":  "Assets/Editor/Experiments/Hand3D/Hand3DRuntimePoseExport.cs",
+        "sha256":  "46A8494B8F562715EDBF1AD2332F20769BD19FC22DD79C36E823F23B63E73092"
+    },
+    {
+        "path":  "Assets/Editor/Experiments/Hand3D/Hand3DPoseEditor.cs",
+        "sha256":  "A795567EEFAD575F6EE050208007E467A0EAB733FC82731C0D89F3D6EAD85036"
+    },
+    {
+        "path":  "Assets/Editor/Experiments/Hand3D/Hand3DEditors.cs",
+        "sha256":  "AA5765D0A8B19D4DBEC14E298A9F922916E81412BF6F0BC36C3A8848BF025399"
+    },
+    {
+        "path":  "Assets/Editor/Experiments/Hand3D/Hand3DModeEditors.cs",
+        "sha256":  "10FE450EDC573DB22CEF0D465D2D1EAB94ABD09E2767BF9F5DEE8D4DBF24CDCC"
+    },
+    {
+        "path":  "Assets/Editor/Experiments/Hand3D/Hand3DDoorEditors.cs",
+        "sha256":  "2CD799CD737B97AB1E0DAECD564081DA7A1142C22400092629B8F986C3FC14D4"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/README.md",
+        "sha256":  "947C652C52DD51D1220A64108560A6A46F83A6EF5723BAB81AD4F6D428C7641B"
+    }
+]

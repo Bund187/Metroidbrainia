@@ -1,0 +1,27 @@
+{
+    "runId": "371bc0cac49b4b96a64532544e6fb53a",
+    "scope": "Isolated Unity Editor; source assets/scene preserved. Publication commits only disposable copies. Legacy structural startup dependency is explicitly retained; no visual approval.",
+    "assertions": 11931,
+    "cases": [
+        {
+            "name": "selective_publication_review_undo_save_reload",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "rejection_atomicity_and_dependencies",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "universal_values_independent_from_legacy_captures",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "legacy_capture_flags_still_required_at_startup",
+            "status": "PASS",
+            "detail": ""
+        }
+    ]
+}

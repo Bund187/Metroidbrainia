@@ -17,6 +17,7 @@ namespace Metroidbrainia.Hand3DExperiment.Editor
             if (!Hand3DEditing.CanEdit(pose)) return;
             var rig = pose.GetComponent<Hand3DRig>();
             if (rig == null) return;
+            EditorGUILayout.HelpBox("Universal: edit/publish GrabDoor and GrabDocument profiles with Pose Editor. Capture/preview buttons here maintain the Legacy backup only. This component's interaction weight, request state and wrist offset are still shared runtime behavior.", MessageType.Info);
             handHold = GUILayout.Toolbar(handHold ? 1 : 0, new[] { "Grab", "HandHold" }) == 1;
             if (handHold && pose.UseHoldPositions && GUILayout.Button("Capture HandHold Finger Position Base")) CapturePositionBase(pose, rig);
             if (handHold && pose.UseHoldPositions && GUILayout.Button("Preview HandHold Finger Position Base"))

@@ -1,0 +1,48 @@
+﻿{
+    "runId":  "33de532165ff48489fd0f5a66c0bf49a",
+    "testedSourcesMatch":  true,
+    "unchangedFiles":  2008,
+    "changedFiles":  [
+                         "Assets/Editor/Experiments/Hand3D/Hand3DDoorEditors.cs",
+                         "Assets/Editor/Experiments/Hand3D/Hand3DEditors.cs",
+                         "Assets/Editor/Experiments/Hand3D/Hand3DModeEditors.cs",
+                         "Assets/Editor/Experiments/Hand3D/Hand3DPoseEditor.cs",
+                         "Assets/Editor/Experiments/Hand3D/Hand3DRuntimePoseExport.cs",
+                         "Assets/Scripts/Experiments/Hand3D/README.md"
+                     ],
+    "runtimeScriptsUnchanged":  24,
+    "protectedAssets":  [
+                            {
+                                "path":  "Assets/Editor/Experiments/Hand3D/PoseProfiles/HandPoses.asset",
+                                "sha256":  "CF38548C36CB58869ED0F1DE98864E60098411F5D69CA800EAE5CD61012F87EF"
+                            },
+                            {
+                                "path":  "Assets/Experiments/Hand3D/RuntimePoses/TestArmRuntimePoses.asset",
+                                "sha256":  "B1121CC22E785191C021E447EEB7B86DA85837380495FDE03ED3FA0BAFF7B48E"
+                            },
+                            {
+                                "path":  "Assets/Scenes/Prototype.unity",
+                                "sha256":  "ED18AB1286FEA727940959DB53624BE1F55753F7E926D3DB09102E3F226496AB"
+                            },
+                            {
+                                "path":  "Assets/Scenes/TestArmScene.unity",
+                                "sha256":  "0B6794F49A515EF2AEA35A5E0F02EFF4FA3C96EEF14033D48E14BD109E3FD90B"
+                            },
+                            {
+                                "path":  "Assets/Scripts/Interaction/DocumentHandInteractable.cs",
+                                "sha256":  "319BEB7638BE85D74B244CDA8D5C70C45E11C981B86242CFF2423A8187D1E6B1"
+                            },
+                            {
+                                "path":  "Assets/Scripts/Interaction/DoorHandInteractable.cs",
+                                "sha256":  "52C4FDB41ED192A9FCBBBBE3E56EF1C1AA51416F9993374AC061F5633F387577"
+                            },
+                            {
+                                "path":  "Assets/Scripts/Player/ArmView.cs",
+                                "sha256":  "198F4DD332A43F81077924D2CEC4ABBE1D64C16180AA7CACBB5A5A1C3BEB3BFE"
+                            },
+                            {
+                                "path":  "Assets/Scripts/Player/FirstPersonArmController.cs",
+                                "sha256":  "5B9D43374B78E6CBCAF867035540872F9BA2D9DA0EF3A0FF58C5D3A1355C7FDC"
+                            }
+                        ]
+}

@@ -1,0 +1,27 @@
+﻿[
+    {
+        "script":  "Hand3DRuntimePoseExport",
+        "beforeLines":  55,
+        "afterLines":  167
+    },
+    {
+        "script":  "Hand3DPoseEditor",
+        "beforeLines":  183,
+        "afterLines":  213
+    },
+    {
+        "script":  "Hand3DEditors",
+        "beforeLines":  271,
+        "afterLines":  271
+    },
+    {
+        "script":  "Hand3DModeEditors",
+        "beforeLines":  148,
+        "afterLines":  148
+    },
+    {
+        "script":  "Hand3DDoorEditors",
+        "beforeLines":  256,
+        "afterLines":  257
+    }
+]

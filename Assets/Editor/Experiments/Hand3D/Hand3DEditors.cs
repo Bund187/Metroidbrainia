@@ -113,7 +113,7 @@ namespace Metroidbrainia.Hand3DExperiment.Editor
                 EditorGUILayout.HelpBox("Capture/preview is available only on scene instances in TestArmScene, outside Play Mode.", MessageType.Info);
                 return;
             }
-            EditorGUILayout.HelpBox("Assign each finger's joints. Pose them in the Scene/Transform Inspector, then capture Extended and Flexed. These buttons record scene overrides, never the FBX asset.", MessageType.Info);
+            EditorGUILayout.HelpBox("Universal: use Tools > Metroidbrainia > Hand 3D > Pose Editor, then publish selected profiles to the runtime asset. Finger bindings and the existing Legacy backup must remain configured. The capture/preview buttons below edit Legacy scene captures only; they do not update Universal profiles.", MessageType.Info);
             serializedObject.Update();
             SerializedProperty fingers = serializedObject.FindProperty("fingers");
             for (int i = 0; i < fingers.arraySize; i++)
@@ -168,7 +168,7 @@ namespace Metroidbrainia.Hand3DExperiment.Editor
                 EditorGUILayout.LabelField("Recognized pose", recognizer.CurrentPose != null ? recognizer.CurrentPose.Name : "None");
             if (!Hand3DEditing.CanEdit(recognizer)) return;
             var rig = recognizer.GetComponent<Hand3DRig>();
-            EditorGUILayout.HelpBox("Preview the base combination, adjust the bones, then capture. Changed finger joints are added automatically; other bones must be assigned explicitly in Visual Overrides. Save the scene after capture.", MessageType.Info);
+            EditorGUILayout.HelpBox("Gesture names, finger combinations and original OnAction events are shared. Visual Overrides and wrist capture/preview below are Legacy authoring only. Edit/publish Universal visual profiles in Pose Editor; configure gesture actions in Hand3DPoseActions.", MessageType.Info);
             serializedObject.Update();
             SerializedProperty poses = serializedObject.FindProperty("poses");
             for (int i = 0; i < poses.arraySize; i++)
