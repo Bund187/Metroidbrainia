@@ -28813,6 +28813,7 @@ MonoBehaviour:
   poseRecognizer: {fileID: 1857483773}
   pointClickDuration: 0.18
   pointClickAmplitude: 0.18
+  bindings: []
 --- !u!114 &1857483773
 MonoBehaviour:
   m_ObjectHideFlags: 0

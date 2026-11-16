@@ -1,0 +1,284 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using UnityEngine;
+using P = Metroidbrainia.Hand3DExperiment.Hand3DPoseProfile;
+using S = Metroidbrainia.Hand3DExperiment.Hand3DPoseProfileSet;
+
+namespace Metroidbrainia.Hand3DExperiment
+{
+    // Per-rig data, not a component. It computes buffers; only Hand3DRig commits them to the skeleton.
+    public sealed class Hand3DPoseComposition
+    {
+        public sealed class Frame
+        {
+            private readonly Hand3DPoseComposition owner;
+            public readonly Vector3[] positions;
+            public readonly Quaternion[] rotations;
+            public readonly Vector3[] worldPositions;
+            public readonly Quaternion[] worldRotations;
+            private readonly Matrix4x4[] matrices;
+            internal readonly string[] rotationSources;
+            internal string wristSource="camera-relative wrist composition";
+            public Quaternion wristCamera;
+            public Vector3 rootCameraPosition;
+            public Quaternion rootCameraRotation;
+            internal Frame(Hand3DPoseComposition owner)
+            {
+                this.owner=owner;int n=owner.bones.Length;positions=new Vector3[n];rotations=new Quaternion[n];worldPositions=new Vector3[n];worldRotations=new Quaternion[n];matrices=new Matrix4x4[n];rotationSources=new string[n];Reset();
+            }
+            public void Reset()
+            {
+                for(int i=0;i<rotationSources.Length;i++)rotationSources[i]="authored rig/reference neutral";
+                wristSource="initial camera-relative wrist";
+                Array.Copy(owner.restPositions,positions,positions.Length);Array.Copy(owner.restRotations,rotations,rotations.Length);wristCamera=owner.initialWristCamera;UpdateWorld();RememberRoot();
+                for(int i=0;i<positions.Length;i++)if(!owner.roles[i].HasValue){positions[i]=owner.bones[i].localPosition;rotations[i]=owner.bones[i].localRotation;}UpdateWorld();RememberRoot();
+            }
+            public void Copy(Frame source)
+            {Array.Copy(source.positions,positions,positions.Length);Array.Copy(source.rotations,rotations,rotations.Length);Array.Copy(source.rotationSources,rotationSources,rotationSources.Length);wristSource=source.wristSource;wristCamera=source.wristCamera;rootCameraPosition=source.rootCameraPosition;rootCameraRotation=source.rootCameraRotation;UpdateWorld();}
+            public void UpdateWorld([CallerMemberName] string phase=null)
+            {
+                var parent=owner.bones[0].parent;var parentMatrix=parent!=null?parent.localToWorldMatrix:Matrix4x4.identity;var parentRotation=parent!=null?parent.rotation:Quaternion.identity;
+                parentRotation=owner.NormalizeRotation(parentRotation,0,phase,"external parent Transform");
+                var cameraRotation=owner.NormalizeRotation(owner.camera.rotation,owner.hand,phase,"arm camera Transform");
+                wristCamera=owner.NormalizeRotation(wristCamera,owner.hand,phase,wristSource);
+                for(int i=0;i<positions.Length;i++)
+                {
+                    int p=owner.parents[i];var matrix=p<0?parentMatrix:matrices[p];var rotation=p<0?parentRotation:worldRotations[p];
+                    if(i==owner.hand)rotations[i]=Quaternion.Inverse(rotation)*cameraRotation*wristCamera;
+                    // Quaternion products/inverses do not enforce unit length. Keep both the TRS
+                    // input and the hierarchy used by IK unit-length at this single boundary.
+                    rotations[i]=owner.NormalizeRotation(rotations[i],i,phase,i==owner.hand?wristSource:rotationSources[i]);
+                    matrices[i]=matrix*Matrix4x4.TRS(positions[i],rotations[i],owner.scales[i]);worldPositions[i]=matrices[i].GetColumn(3);worldRotations[i]=owner.NormalizeRotation(rotation*rotations[i],i,phase,"parent world * local rotation");
+                }
+            }
+            public void RememberRoot(){rootCameraPosition=owner.camera.InverseTransformPoint(worldPositions[0]);rootCameraRotation=Quaternion.Inverse(owner.camera.rotation)*worldRotations[0];}
+            public void SetRoot(Vector3 cameraPosition,Quaternion cameraRotation)
+            {
+                var parent=owner.bones[0].parent;var world=owner.camera.TransformPoint(cameraPosition);var rotation=owner.camera.rotation*cameraRotation;
+                positions[0]=parent!=null?parent.InverseTransformPoint(world):world;rotations[0]=parent!=null?Quaternion.Inverse(parent.rotation)*rotation:rotation;UpdateWorld();RememberRoot();
+            }
+            public void SetWorldRotation(int index,Quaternion rotation,[CallerMemberName] string phase=null)
+            {
+                rotationSources[index]=phase;
+                if(index==owner.hand){wristSource=phase;wristCamera=Quaternion.Inverse(owner.camera.rotation)*rotation;}
+                else rotations[index]=Quaternion.Inverse(owner.parents[index]<0?(owner.bones[0].parent!=null?owner.bones[0].parent.rotation:Quaternion.identity):worldRotations[owner.parents[index]])*rotation;
+                UpdateWorld(phase);if(index==0)RememberRoot();
+            }
+            public void SetWorldPosition(int index,Vector3 position)
+            {
+                positions[index]=owner.parents[index]<0?(owner.bones[0].parent!=null?owner.bones[0].parent.InverseTransformPoint(position):position):matrices[owner.parents[index]].inverse.MultiplyPoint3x4(position);
+                UpdateWorld();if(index==0)RememberRoot();
+            }
+            public void BlendFrom(Frame from,bool[] positionMask,bool[] rotationMask,float weight)
+            {
+                Vector3 rootP=positionMask[0]?Vector3.Lerp(from.rootCameraPosition,rootCameraPosition,weight):rootCameraPosition;
+                Quaternion rootR=rotationMask[0]?Quaternion.Slerp(from.rootCameraRotation,rootCameraRotation,weight):rootCameraRotation;
+                for(int i=1;i<positions.Length;i++)
+                {
+                    if(positionMask[i])positions[i]=Vector3.Lerp(from.positions[i],positions[i],weight);
+                    if(rotationMask[i] && i!=owner.hand)rotations[i]=Quaternion.Slerp(from.rotations[i],rotations[i],weight);
+                }
+                if(rotationMask[owner.hand])wristCamera=Quaternion.Slerp(from.wristCamera,wristCamera,weight);
+                SetRoot(rootP,rootR);
+            }
+            public int Index(Transform bone)=>owner.indices[bone];
+            public void Commit()
+            {
+                UpdateWorld();for(int i=0;i<positions.Length;i++)if(owner.roles[i].HasValue){owner.bones[i].localPosition=positions[i];owner.bones[i].localRotation=rotations[i];}
+            }
+        }
+        private readonly Hand3DRuntimePoses asset;
+        private readonly Hand3DArmMovement movement;
+        private readonly Hand3DModeController modes;
+        private readonly Transform camera;
+        private readonly Transform[] bones;
+        private readonly Dictionary<Transform,int> indices=new Dictionary<Transform,int>();
+        private readonly Dictionary<string,int> paths=new Dictionary<string,int>();
+        private readonly Dictionary<string,P> profiles;
+        private readonly Dictionary<FlexedFingers,Hand3DRuntimePoses.Gesture> gestures;
+        private readonly int[] parents;
+        private readonly Vector3[] restPositions,scales;
+        private readonly Quaternion[] restRotations;
+        private readonly S.Role?[] roles;
+        private readonly int[] fingers;
+        private readonly P.JointValue[] extended,flexed;
+        private readonly int hand,upper,forearm;
+        private readonly Quaternion initialWristCamera,restWrist;
+        private readonly Frame rawMode,mode,target,visual,gestureFrom,lastVisual,interactionTarget,result,modeFrom,lastReference;
+        private readonly bool[] gesturePositions,gestureRotations,previousPositions,previousRotations,blendPositions,blendRotations,interactionPositions,interactionRotations;
+        private int lastMask=int.MinValue;
+        private bool lastEditing,first=true;
+        private float gestureElapsed;
+        private Quaternion wristOffset=Quaternion.identity,wristStart=Quaternion.identity,wristTarget=Quaternion.identity;
+        private Hand3DRuntimePoses.Gesture lastWristGesture;
+        private bool lastWristEditing;
+        private float wristElapsed,wristDuration=.2f;
+        private AnimationCurve wristCurve;
+        private Quaternion modeWrist;
+        public Vector3 ReferenceElbow { get; private set; }
+        public Quaternion FinalWrist { get; private set; }
+        public bool OwnsBone(Transform bone)=>indices.TryGetValue(bone,out int index) && roles[index].HasValue;
+
+        private Quaternion NormalizeRotation(Quaternion value,int index,string phase,string origin)
+        {
+            double norm=RotationNorm(value,index,phase,origin);
+            // Double precision also avoids overflow/underflow while measuring finite float inputs.
+            double inverse=1.0/Math.Sqrt(norm);
+            return new Quaternion((float)(value.x*inverse),(float)(value.y*inverse),(float)(value.z*inverse),(float)(value.w*inverse));
+        }
+        private double RotationNorm(Quaternion value,int index,string phase,string origin)
+        {
+            double norm=(double)value.x*value.x+(double)value.y*value.y+(double)value.z*value.z+(double)value.w*value.w;
+            if(double.IsNaN(norm) || double.IsInfinity(norm) || norm<1e-12)
+                throw new InvalidOperationException("Invalid rotation at joint '"+bones[index].name+"' ("+AnimationPath(bones[index])+"), phase '"+phase+"', source '"+origin+"', runtime asset '"+asset.name+"': quaternion="+value+", squared magnitude="+norm+". Cannot normalize.");
+            return norm;
+        }
+        private string AnimationPath(Transform bone)
+        {
+            string path=bone.name;while(bone!=bones[0] && bone.parent!=null){bone=bone.parent;path=bone.name+"/"+path;}return path;
+        }
+
+        public Hand3DPoseComposition(Hand3DRig rig,Hand3DArmMovement movement,Hand3DRuntimePoses asset,Vector3[] authoredPositions,Quaternion[] authoredRotations)
+        {
+            this.asset=asset;this.movement=movement;modes=movement.Modes;camera=movement.ArmCamera.transform;
+            string[] errors=asset.ValidateConfiguration();if(errors.Length>0)throw new InvalidOperationException(string.Join("\n",errors));
+            bones=rig.GetComponentsInChildren<Transform>(true);int n=bones.Length;parents=new int[n];scales=new Vector3[n];restPositions=new Vector3[n];restRotations=new Quaternion[n];roles=new S.Role?[n];fingers=new int[n];extended=new P.JointValue[n];flexed=new P.JointValue[n];
+            for(int i=0;i<n;i++){indices.Add(bones[i],i);parents[i]=i==0?-1:indices[bones[i].parent];scales[i]=bones[i].localScale;restPositions[i]=authoredPositions[i];restRotations[i]=authoredRotations[i];}
+            foreach(var reference in asset.Data.skeleton)
+            {
+                var bone=reference.path=="."?rig.transform:rig.transform.Find(reference.path);if(bone==null || !indices.TryGetValue(bone,out int i))throw new InvalidOperationException("Missing runtime joint: "+reference.path);
+                paths.Add(reference.path,i);roles[i]=reference.role;fingers[i]=reference.finger;
+            }
+            hand=indices[movement.Hand];upper=indices[movement.UpperArm];forearm=indices[movement.Forearm];restWrist=authoredRotations[hand];initialWristCamera=Quaternion.Inverse(camera.rotation)*movement.Hand.rotation;
+            if(!paths.TryGetValue(asset.Data.wristPath,out int configuredHand) || configuredHand!=hand)throw new InvalidOperationException("Runtime wrist binding disagrees with the movement chain.");
+            profiles=asset.Data.profiles.ToDictionary(p=>p.id);gestures=asset.Gestures.ToDictionary(g=>g.combination);
+            // Reject unusable source data before Slerp/Inverse can hide or propagate it.
+            // Validation does not rewrite the serialized capture or normalize the asset.
+            foreach(var profile in profiles.Values)foreach(var entry in profile.joints)
+                if(entry.enabled && entry.captured && entry.weight>0 && (entry.influenceChannels&P.Channels.Rotation)!=0 && paths.TryGetValue(entry.jointPath,out int index))
+                {
+                    NormalizeRotation(entry.rotation,index,"profile validation",profile.id+" / "+entry.sourceProperty);
+                    if(entry.neutralCaptured)NormalizeRotation(entry.neutralRotation,index,"neutral validation",profile.id+" / "+entry.sourceProperty);
+                }
+            foreach(var profile in asset.GrabDoor.Concat(asset.GrabDocument).Distinct().Select(id=>profiles[id]))foreach(var entry in profile.joints)
+                if(entry.neutralCaptured && entry.neutralJointPath==entry.jointPath && paths.TryGetValue(entry.jointPath,out int i) && roles[i]==S.Role.Twist)restRotations[i]=entry.neutralRotation;
+            foreach(var entry in profiles[asset.Extended].joints)if(paths.TryGetValue(entry.jointPath,out int i))extended[i]=entry;
+            foreach(var entry in profiles[asset.Flexed].joints)if(paths.TryGetValue(entry.jointPath,out int i))flexed[i]=entry;
+            foreach(var pose in rig.GetComponent<Hand3DPoseRecognizer>().Poses)if(pose!=null && !gestures.ContainsKey(pose.Combination))throw new InvalidOperationException("Missing runtime gesture assignment for combination "+pose.Combination);
+            rawMode=new Frame(this);mode=new Frame(this);target=new Frame(this);visual=new Frame(this);gestureFrom=new Frame(this);lastVisual=new Frame(this);interactionTarget=new Frame(this);result=new Frame(this);modeFrom=new Frame(this);lastReference=new Frame(this);
+            gesturePositions=new bool[n];gestureRotations=new bool[n];previousPositions=new bool[n];previousRotations=new bool[n];blendPositions=new bool[n];blendRotations=new bool[n];interactionPositions=new bool[n];interactionRotations=new bool[n];
+            lastEditing=modes.IsEditing;modes.SetUniversalTiming(true,profiles[asset.Exploration].transition.duration,profiles[asset.HandEdit].transition.duration);
+        }
+        private void Apply(Frame frame,P profile,bool[] positionMask=null,bool[] rotationMask=null)
+        {
+            foreach(var entry in profile.joints)
+            {
+                if(!entry.enabled || !entry.captured || entry.weight<=0f || entry.influenceChannels==0 || entry.space==P.Space.ExplorationWristOffset)continue;
+                int i=paths[entry.jointPath];float w=entry.weight;
+                frame.rotationSources[i]=profile.id;
+                if((entry.influenceChannels&P.Channels.Position)!=0)
+                {
+                    if(positionMask!=null)positionMask[i]=true;
+                    if(entry.space==P.Space.CameraRelative)frame.SetWorldPosition(i,Vector3.Lerp(frame.worldPositions[i],camera.TransformPoint(entry.position),w));
+                    else {frame.positions[i]=Vector3.Lerp(frame.positions[i],entry.operation==P.Operation.Offset?restPositions[i]+entry.position:entry.position,w);frame.UpdateWorld();if(i==0)frame.RememberRoot();}
+                }
+                if((entry.influenceChannels&P.Channels.Rotation)!=0)
+                {
+                    RotationNorm(entry.rotation,i,"profile interpolation",profile.id);
+                    if(entry.operation==P.Operation.RestLocalNeutralDelta)RotationNorm(entry.neutralRotation,i,"neutral interpolation",profile.id);
+                    if(rotationMask!=null)rotationMask[i]=true;
+                    if(entry.operation==P.Operation.RestLocalNeutralDelta)frame.SetWorldRotation(i,Quaternion.Slerp(frame.worldRotations[i],camera.rotation*modeWrist*Quaternion.Inverse(entry.neutralRotation)*entry.rotation,w),profile.id);
+                    else if(entry.space==P.Space.CameraRelative)frame.SetWorldRotation(i,Quaternion.Slerp(frame.worldRotations[i],camera.rotation*entry.rotation,w),profile.id);
+                    else if(i==hand)frame.SetWorldRotation(i,Quaternion.Slerp(frame.worldRotations[i],frame.worldRotations[parents[i]]*(entry.operation==P.Operation.Offset?restRotations[i]*entry.rotation:entry.rotation),w),profile.id);
+                    else {frame.rotations[i]=Quaternion.Slerp(frame.rotations[i],entry.operation==P.Operation.Offset?restRotations[i]*entry.rotation:entry.rotation,w);frame.UpdateWorld();if(i==0)frame.RememberRoot();}
+                }
+            }
+        }
+        private void Endpoints(Frame frame,int mask,bool allFlexed,bool[] rotations)
+        {
+            for(int i=0;i<bones.Length;i++)if(roles[i]==S.Role.Finger)
+            {
+                var value=allFlexed || (mask&(1<<fingers[i]))!=0?flexed[i]:extended[i];
+                if(value==null)throw new InvalidOperationException("Missing finger endpoint.");
+                frame.rotationSources[i]=allFlexed || (mask&(1<<fingers[i]))!=0?asset.Flexed:asset.Extended;
+                RotationNorm(value.rotation,i,"finger interpolation",frame.rotationSources[i]);
+                frame.rotations[i]=Quaternion.Slerp(frame.rotations[i],value.rotation,value.weight);rotations[i]=true;
+            }
+            frame.UpdateWorld();
+        }
+        private void Offset(float dt,Hand3DRuntimePoses.Gesture gesture,bool editing)
+        {
+            P timing=null;P.JointValue entry=null;
+            if(gesture!=null)foreach(string id in gesture.exploration)
+            {var p=profiles[id];foreach(var j in p.joints)if(j.space==P.Space.ExplorationWristOffset){timing=p;entry=j;}}
+            if(entry!=null && entry.enabled && entry.captured)RotationNorm(entry.rotation,hand,"wrist offset interpolation",timing.id);
+            var wanted=!editing && entry!=null && entry.enabled && entry.captured?Quaternion.Slerp(Quaternion.identity,entry.rotation,entry.weight):Quaternion.identity;
+            if(gesture!=lastWristGesture || editing!=lastWristEditing || Quaternion.Angle(wanted,wristTarget)>.01f)
+            {
+                if(timing!=null){wristDuration=timing.transition.duration;wristCurve=timing.transition.curve;}
+                lastWristGesture=gesture;lastWristEditing=editing;wristStart=wristOffset;wristTarget=wanted;wristElapsed=0f;
+            }
+            wristElapsed+=dt;float t=wristDuration>0?Mathf.Clamp01(wristElapsed/wristDuration):1f;
+            float weight=t>=1f?1f:wristCurve!=null?Mathf.Clamp01(wristCurve.Evaluate(t)):Mathf.SmoothStep(0,1,t);wristOffset=Quaternion.Slerp(wristStart,wristTarget,weight);
+        }
+        public Frame Evaluate(float dt,Hand3DFingerState state,Hand3DPoseRecognizer recognizer,Hand3DPoseActions actions,Hand3DInteractionPose interaction)
+        {
+            bool editing=modes.IsEditing;var baseProfile=profiles[editing?asset.HandEdit:asset.Exploration];
+            rawMode.Reset();Apply(rawMode,baseProfile);
+            Vector3 neutral=rawMode.worldPositions[hand];
+            var targetFrame=new ArmFrame{position=rawMode.rootCameraPosition,rotation=rawMode.rootCameraRotation,upper=rawMode.rotations[upper],forearm=rawMode.rotations[forearm],hand=rawMode.wristCamera};
+            var evaluated=modes.EvaluateReference(dt,movement.ReferenceLongitudinalAxis,Quaternion.Inverse(camera.rotation)*rawMode.worldRotations[forearm],targetFrame);
+            if(editing!=lastEditing)modeFrom.Copy(lastReference);
+            mode.Copy(rawMode);
+            if(modes.IsTransitioning && !first)
+            {
+                // Mode core already has its captured/displayed ArmFrame interpolation; only extra joints use this blend.
+                for(int i=1;i<bones.Length;i++)if(i!=upper && i!=forearm && i!=hand && roles[i]!=S.Role.Finger)
+                {mode.positions[i]=Vector3.Lerp(modeFrom.positions[i],mode.positions[i],modes.TransitionWeight);mode.rotations[i]=Quaternion.Slerp(modeFrom.rotations[i],mode.rotations[i],modes.TransitionWeight);}
+            }
+            mode.rotations[upper]=evaluated.upper;mode.rotations[forearm]=evaluated.forearm;mode.wristCamera=evaluated.hand;mode.SetRoot(evaluated.position,evaluated.rotation);modeWrist=evaluated.hand;
+            movement.SetUniversalReferenceOrientation(modeWrist);
+            target.Copy(mode);Array.Clear(gesturePositions,0,bones.Length);Array.Clear(gestureRotations,0,bones.Length);
+            int mask=(int)state.Current;var recognized=recognizer.Recognize(state.Current);var binding=recognized!=null?gestures[state.Current]:null;
+            Endpoints(target,mask,false,gestureRotations);
+            var ids=binding!=null?(editing?binding.handEdit:binding.exploration):Array.Empty<string>();
+            foreach(string id in ids)Apply(target,profiles[id],gesturePositions,gestureRotations);
+            bool changed=mask!=lastMask || editing!=lastEditing;
+            float duration=ids.Length>0?profiles[ids[0]].transition.duration:profiles[asset.Extended].transition.duration;
+            if(first){gestureFrom.Copy(target);gestureElapsed=duration;}
+            else if(changed){gestureFrom.Copy(lastVisual);gestureElapsed=0f;}
+            if(changed || first)for(int i=0;i<bones.Length;i++){blendPositions[i]=gesturePositions[i]||previousPositions[i];blendRotations[i]=gestureRotations[i]||previousRotations[i];}
+            if(editing)for(int i=0;i<bones.Length;i++)if(roles[i]!=S.Role.Finger){blendPositions[i]=false;blendRotations[i]=false;}
+            gestureElapsed+=dt;float t=duration>0f?Mathf.SmoothStep(0f,1f,Mathf.Clamp01(gestureElapsed/duration)):1f;
+            visual.Copy(target);visual.BlendFrom(gestureFrom,blendPositions,blendRotations,t);
+            float click=actions!=null?actions.PointClickWeight:0f;
+            for(int i=0;i<bones.Length;i++)if(roles[i]==S.Role.Finger && fingers[i]==(int)Finger.Index)visual.rotations[i]=Quaternion.Slerp(visual.rotations[i],flexed[i].rotation,click);
+            visual.UpdateWorld();lastVisual.Copy(visual);Offset(dt,binding,editing);
+            bool document=interaction!=null && interaction.UsesHandHoldProfile;var interactionIds=document?asset.GrabDocument:asset.GrabDoor;
+            float interactionDuration=profiles[interactionIds[0]].transition.duration;
+            if(interaction!=null && !interaction.IsGrabbing)interactionDuration=profiles[interactionIds[0]].transition.releaseDuration;
+            if(interaction!=null)interaction.Tick(dt,interactionDuration);
+            float grab=interaction!=null && interaction.isActiveAndEnabled?interaction.Weight:0f;
+            interactionTarget.Copy(visual);Array.Clear(interactionPositions,0,bones.Length);Array.Clear(interactionRotations,0,bones.Length);
+            if(grab>0f)
+            {
+                if(interactionIds.Any(id=>profiles[id].fallbackToFlexedFingers))Endpoints(interactionTarget,mask,true,interactionRotations);
+                foreach(string id in interactionIds)Apply(interactionTarget,profiles[id],interactionPositions,interactionRotations);
+            }
+            result.Copy(interactionTarget);result.BlendFrom(visual,interactionPositions,interactionRotations,grab);
+            Quaternion v=restWrist*Quaternion.Inverse(modeWrist)*visual.wristCamera;
+            Quaternion g=restWrist*Quaternion.Inverse(modeWrist)*interactionTarget.wristCamera;
+            result.wristCamera=modeWrist*Quaternion.Slerp(wristOffset,Quaternion.identity,grab)*Quaternion.Inverse(restWrist)*Quaternion.Slerp(v,g,grab)
+                *(interaction!=null && interaction.isActiveAndEnabled?interaction.WristOffset:Quaternion.identity);
+            result.UpdateWorld();lastReference.Copy(result);
+            ReferenceElbow=result.worldPositions[forearm];FinalWrist=camera.rotation*result.wristCamera;
+            if(movement.AdvanceUniversalTarget(dt,modes.IsEditing || modes.IsTransitioning?neutral:result.worldPositions[hand],result,out var goal))
+                movement.SolveUniversal(result,goal,ReferenceElbow);
+            if(t>=1f){Array.Copy(gesturePositions,blendPositions,bones.Length);Array.Copy(gestureRotations,blendRotations,bones.Length);}
+            Array.Copy(gesturePositions,previousPositions,bones.Length);Array.Copy(gestureRotations,previousRotations,bones.Length);lastMask=mask;lastEditing=editing;first=false;
+            return result;
+        }
+    }
+}

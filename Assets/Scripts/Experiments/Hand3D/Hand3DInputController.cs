@@ -202,7 +202,7 @@ namespace Metroidbrainia.Hand3DExperiment
             }
             // Deliberately independent of ArmMode. R3 remains a separate button from right-stick axes.
             if (action.WasPressedThisFrame())
-                poseActions.TryExecute();
+                poseActions.TryExecute(action.activeControl?.device is Mouse?Hand3DActionInput.Mouse:action.activeControl?.device is Gamepad?Hand3DActionInput.Gamepad:Hand3DActionInput.Unspecified);
         }
 
         private void BeginArmMode()
@@ -269,17 +269,18 @@ namespace Metroidbrainia.Hand3DExperiment
         private void OnApplicationFocus(bool focused)
         {
             hasFocus = focused;
-            if (!focused) { EndArmMode(); waitForRelease = true; }
+            if (!focused) { poseActions?.CancelAction(); EndArmMode(); waitForRelease = true; }
         }
 
         private void OnApplicationPause(bool paused)
         {
             applicationPaused = paused;
-            if (paused) { EndArmMode(); waitForRelease = true; }
+            if (paused) { poseActions?.CancelAction(); EndArmMode(); waitForRelease = true; }
         }
 
         private void OnDisable()
         {
+            poseActions?.CancelAction();
             EndArmMode();
             SetGameplayBlocked(false);
             SuspendCharacter(false);

@@ -1,0 +1,57 @@
+{
+    "runId": "e27d7167437942b3934ec2a2f09a511f",
+    "scope": "Isolated Unity numeric/state tests; no final Game visual approval.",
+    "assertions": 451,
+    "cases": [
+        {
+            "name": "32_combinations_False",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "point_curve_modes_restore_False",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "instant_multiple_events_reentrancy_False",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "cancellation_lifecycle_False",
+            "status": "FAIL",
+            "detail": "System.Exception: Cancellation left output\r\n  at Metroidbrainia.Phase6Validation.Check (System.Boolean value, System.String message) [0x00016] in C:\\Users\\Bund187\\AppData\\Local\\Temp\\MetroidbrainiaPhase0-20261109\\Assets\\Editor\\Phase1Validation\\Phase6Validation.cs:25 \r\n  at Metroidbrainia.Phase6Validation+<>c__DisplayClass19_0.<Cancellation>b__1 () [0x00000] in C:\\Users\\Bund187\\AppData\\Local\\Temp\\MetroidbrainiaPhase0-20261109\\Assets\\Editor\\Phase1Validation\\Phase6Validation.cs:93 \r\n  at Metroidbrainia.Phase6Validation.Cancellation (System.Boolean universal) [0x0014f] in C:\\Users\\Bund187\\AppData\\Local\\Temp\\MetroidbrainiaPhase0-20261109\\Assets\\Editor\\Phase1Validation\\Phase6Validation.cs:99 \r\n  at Metroidbrainia.Phase6Validation+<>c__DisplayClass15_0.<Run>b__4 () [0x00000] in C:\\Users\\Bund187\\AppData\\Local\\Temp\\MetroidbrainiaPhase0-20261109\\Assets\\Editor\\Phase1Validation\\Phase6Validation.cs:41 \r\n  at Metroidbrainia.Phase6Validation.Case (System.String name, System.Action test) [0x00000] in C:\\Users\\Bund187\\AppData\\Local\\Temp\\MetroidbrainiaPhase0-20261109\\Assets\\Editor\\Phase1Validation\\Phase6Validation.cs:28 "
+        },
+        {
+            "name": "32_combinations_True",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "point_curve_modes_restore_True",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "instant_multiple_events_reentrancy_True",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "cancellation_lifecycle_True",
+            "status": "FAIL",
+            "detail": "System.Exception: Cancellation left output\r\n  at Metroidbrainia.Phase6Validation.Check (System.Boolean value, System.String message) [0x00016] in C:\\Users\\Bund187\\AppData\\Local\\Temp\\MetroidbrainiaPhase0-20261109\\Assets\\Editor\\Phase1Validation\\Phase6Validation.cs:25 \r\n  at Metroidbrainia.Phase6Validation+<>c__DisplayClass19_0.<Cancellation>b__1 () [0x00000] in C:\\Users\\Bund187\\AppData\\Local\\Temp\\MetroidbrainiaPhase0-20261109\\Assets\\Editor\\Phase1Validation\\Phase6Validation.cs:93 \r\n  at Metroidbrainia.Phase6Validation.Cancellation (System.Boolean universal) [0x0014f] in C:\\Users\\Bund187\\AppData\\Local\\Temp\\MetroidbrainiaPhase0-20261109\\Assets\\Editor\\Phase1Validation\\Phase6Validation.cs:99 \r\n  at Metroidbrainia.Phase6Validation+<>c__DisplayClass15_0.<Run>b__4 () [0x00000] in C:\\Users\\Bund187\\AppData\\Local\\Temp\\MetroidbrainiaPhase0-20261109\\Assets\\Editor\\Phase1Validation\\Phase6Validation.cs:41 \r\n  at Metroidbrainia.Phase6Validation.Case (System.String name, System.Action test) [0x00000] in C:\\Users\\Bund187\\AppData\\Local\\Temp\\MetroidbrainiaPhase0-20261109\\Assets\\Editor\\Phase1Validation\\Phase6Validation.cs:28 "
+        },
+        {
+            "name": "profile_channels_priority_ik_restore",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "environment_mode_and_arm_gate",
+            "status": "PASS",
+            "detail": ""
+        }
+    ]
+}

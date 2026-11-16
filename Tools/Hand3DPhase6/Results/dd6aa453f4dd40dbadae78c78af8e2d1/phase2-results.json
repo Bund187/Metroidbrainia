@@ -1,0 +1,197 @@
+{
+    "runId": "dd6aa453f4dd40dbadae78c78af8e2d1",
+    "scope": "Session lifecycle Editor stepping. No physical device or final Game visual validation.",
+    "assertions": 668,
+    "cases": [
+        {
+            "name": "door_release",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "door_repeat",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "door_focus",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "door_application_pause",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "door_time_pause",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "door_mode",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "door_r2",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "door_object_disable",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "door_object_destroy",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "door_adapter_disable",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "door_adapter_destroy",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "door_input_disable",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "door_coordinator_disable",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "door_movement_disable",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "door_pose_disable",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "door_rig_disable",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "door_action",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "door_gesture_change",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "door_reentrant_cancel",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "document_release",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "document_repeat",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "document_focus",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "document_application_pause",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "document_time_pause",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "document_mode",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "document_r2",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "document_object_disable",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "document_object_destroy",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "document_adapter_disable",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "document_adapter_destroy",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "document_input_disable",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "document_coordinator_disable",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "document_movement_disable",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "document_pose_disable",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "document_rig_disable",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "document_action",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "document_gesture_change",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        },
+        {
+            "name": "document_reentrant_cancel",
+            "status": "PASS",
+            "detail": "Isolated Editor fixture; real session/adapters, synthetic effective input and contact."
+        }
+    ]
+}

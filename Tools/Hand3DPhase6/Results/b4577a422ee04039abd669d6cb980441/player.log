@@ -1,0 +1,61 @@
+Mono path[0] = 'C:/Users/Bund187/AppData/Local/Temp/MetroidbrainiaPhase0-20261109/Phase5Player/HandValidation_Data/Managed'
+Mono config path = 'C:/Users/Bund187/AppData/Local/Temp/MetroidbrainiaPhase0-20261109/Phase5Player/MonoBleedingEdge/etc'
+CodeReloadManager initialized
+Found 1 interfaces on host : 0) 192.168.0.21
+Player connection [46944]  Target information:
+
+Player connection [46944]  * "[IP] 192.168.0.21 [Port] 55000 [Flags] 2 [Guid] 9496274 [EditorId] 3878173255 [Version] 1048832 [Id] WindowsPlayer(2,DESKTOP-T5V2U9N) [Debug] 0 [PackageName] WindowsPlayer [ProjectName] Metroidbrainia" 
+
+Player connection [46944] Started UDP target info broadcast (1) on [225.0.0.222:54997].
+
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Initialize engine version: 6000.6.3f1 (45d8eee7de74)
+[EntityIdStore] init: VM path (explicit commit), pageSize=4096, blockCount=1048576, entitiesPerBlock=256, slots reserved=4294967296 bytes
+[Subsystems] Discovering subsystems at path C:/Users/Bund187/AppData/Local/Temp/MetroidbrainiaPhase0-20261109/Phase5Player/HandValidation_Data/UnitySubsystems
+Forcing GfxDevice: Null
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+Begin MonoManager ReloadAssembly
+- Finished resetting the current domain, in  0.009 seconds
+[Physics::Module] Selected backend (deferred post-plugins).
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Microsoft Media Foundation video decoding to texture disabled: graphics device is Null, only Direct3D 11 and Direct3D 12 (only on desktop) are supported for hardware-accelerated video decoding.
+UnloadTime: 5.764900 ms
+Assign the gameplay camera for the world-space text billboard.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
+UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:66)
+UnityEngine.Debug:LogWarning (object,UnityEngine.Object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:226)
+Metroidbrainia.WorldSpaceTextBillboard:OnEnable () (at C:/Users/Bund187/AppData/Local/Temp/MetroidbrainiaPhase0-20261109/Assets/Scripts/UI/WorldSpaceTextBillboard.cs:31)
+
+(Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 226)
+
+Assign a URP/Unlit material with a Base Map to the curved screen.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at C:/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
+UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object) (at C:/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:66)
+UnityEngine.Debug:LogWarning (object,UnityEngine.Object) (at C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:226)
+Metroidbrainia.AnimatedSpriteScreen:LateUpdate () (at C:/Users/Bund187/AppData/Local/Temp/MetroidbrainiaPhase0-20261109/Assets/Scripts/Effects/AnimatedSpriteScreen.cs:93)
+
+(Filename: C:/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 226)
+
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input Polling Thread exited.
+Input System module state changed to: Shutdown.
+CodeReloadManager destroyed
+PlayerConnection::Cleanup##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1794341232657,"processId":33920,"allocatedMemory":52219,"memoryLabels":[{"Default":3832},{"NewDelete":104},{"Thread":80},{"Manager":15892},{"Shader":2696},{"GfxDevice":72},{"Animation":200},{"Serialization":19784},{"String":1577},{"PoolAlloc":288},{"ScriptManager":5696},{"CodeReload":440},{"CloudService":288},{"WebRequest":4622},{"VR":1928},{"Subsystems":96},{"CoreBusinessMetrics":128}]}

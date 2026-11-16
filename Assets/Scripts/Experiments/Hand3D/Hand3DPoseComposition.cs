@@ -171,12 +171,12 @@ namespace Metroidbrainia.Hand3DExperiment
             gesturePositions=new bool[n];gestureRotations=new bool[n];previousPositions=new bool[n];previousRotations=new bool[n];blendPositions=new bool[n];blendRotations=new bool[n];interactionPositions=new bool[n];interactionRotations=new bool[n];
             lastEditing=modes.IsEditing;modes.SetUniversalTiming(true,profiles[asset.Exploration].transition.duration,profiles[asset.HandEdit].transition.duration);
         }
-        private void Apply(Frame frame,P profile,bool[] positionMask=null,bool[] rotationMask=null)
+        private void Apply(Frame frame,P profile,bool[] positionMask=null,bool[] rotationMask=null,float layerWeight=1f)
         {
             foreach(var entry in profile.joints)
             {
                 if(!entry.enabled || !entry.captured || entry.weight<=0f || entry.influenceChannels==0 || entry.space==P.Space.ExplorationWristOffset)continue;
-                int i=paths[entry.jointPath];float w=entry.weight;
+                int i=paths[entry.jointPath];float w=entry.weight*layerWeight;
                 frame.rotationSources[i]=profile.id;
                 if((entry.influenceChannels&P.Channels.Position)!=0)
                 {
@@ -253,8 +253,11 @@ namespace Metroidbrainia.Hand3DExperiment
             if(editing)for(int i=0;i<bones.Length;i++)if(roles[i]!=S.Role.Finger){blendPositions[i]=false;blendRotations[i]=false;}
             gestureElapsed+=dt;float t=duration>0f?Mathf.SmoothStep(0f,1f,Mathf.Clamp01(gestureElapsed/duration)):1f;
             visual.Copy(target);visual.BlendFrom(gestureFrom,blendPositions,blendRotations,t);
-            float click=actions!=null?actions.PointClickWeight:0f;
-            for(int i=0;i<bones.Length;i++)if(roles[i]==S.Role.Finger && fingers[i]==(int)Finger.Index)visual.rotations[i]=Quaternion.Slerp(visual.rotations[i],flexed[i].rotation,click);
+            if(actions==null || actions.VisualContributions.Count==0)
+            {
+                float click=actions!=null?actions.PointClickWeight:0f;
+                for(int i=0;i<bones.Length;i++)if(roles[i]==S.Role.Finger && fingers[i]==(int)Finger.Index)visual.rotations[i]=Quaternion.Slerp(visual.rotations[i],flexed[i].rotation,click);
+            }
             visual.UpdateWorld();lastVisual.Copy(visual);Offset(dt,binding,editing);
             bool document=interaction!=null && interaction.UsesHandHoldProfile;var interactionIds=document?asset.GrabDocument:asset.GrabDoor;
             float interactionDuration=profiles[interactionIds[0]].transition.duration;
@@ -272,7 +275,17 @@ namespace Metroidbrainia.Hand3DExperiment
             Quaternion g=restWrist*Quaternion.Inverse(modeWrist)*interactionTarget.wristCamera;
             result.wristCamera=modeWrist*Quaternion.Slerp(wristOffset,Quaternion.identity,grab)*Quaternion.Inverse(restWrist)*Quaternion.Slerp(v,g,grab)
                 *(interaction!=null && interaction.isActiveAndEnabled?interaction.WristOffset:Quaternion.identity);
-            result.UpdateWorld();lastReference.Copy(result);
+            result.UpdateWorld();
+            // Actions see the resolved gesture wrist (including migrated special offsets).
+            // Interaction acquisition cancels them; attenuation also protects residual Grab blending.
+            if(actions!=null)foreach(var action in actions.VisualContributions)
+            {
+                for(int i=0;i<bones.Length;i++)if(roles[i]==S.Role.Finger && fingers[i]==(int)Finger.Index)
+                    result.rotations[i]=Quaternion.Slerp(result.rotations[i],flexed[i].rotation,action.indexFlexWeight*(1f-grab));
+                result.UpdateWorld();
+                if(action.weight>0f && !string.IsNullOrEmpty(action.profileId))Apply(result,profiles[action.profileId],layerWeight:action.weight*(1f-grab));
+            }
+            lastReference.Copy(result);
             ReferenceElbow=result.worldPositions[forearm];FinalWrist=camera.rotation*result.wristCamera;
             if(movement.AdvanceUniversalTarget(dt,modes.IsEditing || modes.IsTransitioning?neutral:result.worldPositions[hand],result,out var goal))
                 movement.SolveUniversal(result,goal,ReferenceElbow);

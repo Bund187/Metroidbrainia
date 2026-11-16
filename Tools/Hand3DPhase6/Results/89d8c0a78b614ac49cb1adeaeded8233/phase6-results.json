@@ -1,0 +1,57 @@
+{
+    "runId": "89d8c0a78b614ac49cb1adeaeded8233",
+    "scope": "Isolated Unity numeric/state tests; no final Game visual approval.",
+    "assertions": 461,
+    "cases": [
+        {
+            "name": "32_combinations_False",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "point_curve_modes_restore_False",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "instant_multiple_events_reentrancy_False",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "cancellation_lifecycle_False",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "32_combinations_True",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "point_curve_modes_restore_True",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "instant_multiple_events_reentrancy_True",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "cancellation_lifecycle_True",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "profile_channels_priority_ik_restore",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "environment_mode_and_arm_gate",
+            "status": "PASS",
+            "detail": ""
+        }
+    ]
+}
