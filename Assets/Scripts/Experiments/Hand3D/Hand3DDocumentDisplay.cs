@@ -84,7 +84,6 @@ namespace Metroidbrainia.Hand3DExperiment
                 thumbOverlay.gameObject.SetActive(true);
                 thumbOverlay.transform.SetAsLastSibling();
                 thumbOverlay.transform.SetSiblingIndex(visualRoot.GetSiblingIndex() + 1);
-                thumbOverlay.RefreshMask();
             }
             else Debug.LogWarning("[Hand3D Documents] Prepare Document Visuals to configure the thumb stencil. Paper is drawn above the base hand.", this);
             SourceFrame(out fromGrip, out fromScale, out fromRotation);

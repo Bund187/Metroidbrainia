@@ -1,0 +1,12 @@
+﻿{
+    "fullRegressionRun":  "67b395df091448b9b0b0356e543ea24d",
+    "finalProfileRun":  "a399d7bf67c241a583507f21a7bb9cdb",
+    "testedSourcesMatch":  true,
+    "unchangedFiles":  2011,
+    "changedFiles":  [
+                         "Assets/Scripts/Experiments/Hand3D/Hand3DDocumentDisplay.cs",
+                         "Assets/Scripts/Experiments/Hand3D/Hand3DPoseComposition.cs",
+                         "Assets/Scripts/Experiments/Hand3D/Hand3DThumbOverlay.cs"
+                     ],
+    "quaternionValidationUnchanged":  true
+}

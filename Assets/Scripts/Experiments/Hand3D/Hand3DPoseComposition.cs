@@ -173,6 +173,7 @@ namespace Metroidbrainia.Hand3DExperiment
         }
         private void Apply(Frame frame,P profile,bool[] positionMask=null,bool[] rotationMask=null,float layerWeight=1f)
         {
+            bool worldPending=false;
             foreach(var entry in profile.joints)
             {
                 if(!entry.enabled || !entry.captured || entry.weight<=0f || entry.influenceChannels==0 || entry.space==P.Space.ExplorationWristOffset)continue;
@@ -181,20 +182,44 @@ namespace Metroidbrainia.Hand3DExperiment
                 if((entry.influenceChannels&P.Channels.Position)!=0)
                 {
                     if(positionMask!=null)positionMask[i]=true;
-                    if(entry.space==P.Space.CameraRelative)frame.SetWorldPosition(i,Vector3.Lerp(frame.worldPositions[i],camera.TransformPoint(entry.position),w));
-                    else {frame.positions[i]=Vector3.Lerp(frame.positions[i],entry.operation==P.Operation.Offset?restPositions[i]+entry.position:entry.position,w);frame.UpdateWorld();if(i==0)frame.RememberRoot();}
+                    if(entry.space==P.Space.CameraRelative)
+                    {
+                        FlushWorld(frame,ref worldPending);
+                        frame.SetWorldPosition(i,Vector3.Lerp(frame.worldPositions[i],camera.TransformPoint(entry.position),w));
+                    }
+                    else
+                    {
+                        frame.positions[i]=Vector3.Lerp(frame.positions[i],entry.operation==P.Operation.Offset?restPositions[i]+entry.position:entry.position,w);
+                        worldPending=true;
+                        if(i==0){FlushWorld(frame,ref worldPending);frame.RememberRoot();}
+                    }
                 }
                 if((entry.influenceChannels&P.Channels.Rotation)!=0)
                 {
                     RotationNorm(entry.rotation,i,"profile interpolation",profile.id);
                     if(entry.operation==P.Operation.RestLocalNeutralDelta)RotationNorm(entry.neutralRotation,i,"neutral interpolation",profile.id);
                     if(rotationMask!=null)rotationMask[i]=true;
+                    // Local writes do not consume hierarchy data. Flush before any world-space
+                    // operation (including wrist composition), and once at the profile boundary.
+                    if(entry.operation==P.Operation.RestLocalNeutralDelta || entry.space==P.Space.CameraRelative || i==hand)
+                        FlushWorld(frame,ref worldPending);
                     if(entry.operation==P.Operation.RestLocalNeutralDelta)frame.SetWorldRotation(i,Quaternion.Slerp(frame.worldRotations[i],camera.rotation*modeWrist*Quaternion.Inverse(entry.neutralRotation)*entry.rotation,w),profile.id);
                     else if(entry.space==P.Space.CameraRelative)frame.SetWorldRotation(i,Quaternion.Slerp(frame.worldRotations[i],camera.rotation*entry.rotation,w),profile.id);
                     else if(i==hand)frame.SetWorldRotation(i,Quaternion.Slerp(frame.worldRotations[i],frame.worldRotations[parents[i]]*(entry.operation==P.Operation.Offset?restRotations[i]*entry.rotation:entry.rotation),w),profile.id);
-                    else {frame.rotations[i]=Quaternion.Slerp(frame.rotations[i],entry.operation==P.Operation.Offset?restRotations[i]*entry.rotation:entry.rotation,w);frame.UpdateWorld();if(i==0)frame.RememberRoot();}
+                    else
+                    {
+                        frame.rotations[i]=Quaternion.Slerp(frame.rotations[i],entry.operation==P.Operation.Offset?restRotations[i]*entry.rotation:entry.rotation,w);
+                        worldPending=true;
+                        if(i==0){FlushWorld(frame,ref worldPending);frame.RememberRoot();}
+                    }
                 }
             }
+            FlushWorld(frame,ref worldPending);
+        }
+        private static void FlushWorld(Frame frame,ref bool pending)
+        {
+            if(!pending)return;
+            frame.UpdateWorld();pending=false;
         }
         private void Endpoints(Frame frame,int mask,bool allFlexed,bool[] rotations)
         {

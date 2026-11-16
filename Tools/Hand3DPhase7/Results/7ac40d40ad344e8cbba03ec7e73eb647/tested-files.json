@@ -1,0 +1,50 @@
+[
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DThumbOverlay.cs",
+        "sha256":  "6C4FCC18F5D8635E20B53A3B28B9F1C0389AA2FDE4F78F0A6B3264A018D1DC92"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DDocumentDisplay.cs",
+        "sha256":  "46185D28F4552353CC67D01123FDCD11F0F19E79755BDD83024FE96B6DB97F80"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DPoseComposition.cs",
+        "sha256":  "57D2F2554CB7625E0E785481988F78471947B645B7B43860126CB7B90D729CA7"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DGestureAction.cs",
+        "sha256":  "888DF257F1677A655E446E34464A38EA18488699DD00E32384FF800A3F5FEDB5"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DPointClickAction.cs",
+        "sha256":  "60B06924B953485A8CED603BC6E698E4E76D31E7D0783D3BE4EA683DAA7EF4D7"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DEventAction.cs",
+        "sha256":  "FF02DFC8AF3E2331553CC53F1665C992191E73A06C7F39E4E01BB71ECD14CFF8"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DProfileAction.cs",
+        "sha256":  "6E5A58E6F2C2D65A92B5BCE1573585038684CE385025C3F73949D9E12500873E"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DGestureAction.cs.meta",
+        "sha256":  "C4FC6B35FD7B4145F6F977B90A2AF23771FC16E654F21983B895EA54FC204214"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DPointClickAction.cs.meta",
+        "sha256":  "F86BE497130F15C4DBBB04E02E4344D807C3F7C4D54BB29C1CC03FE687FDBFF5"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DEventAction.cs.meta",
+        "sha256":  "91D8AA7D2A790152AB0EEFD8A3281F23D72AF7EDEE1A2357A23CB78A2FAA2A2F"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DProfileAction.cs.meta",
+        "sha256":  "3587D263A2D3A2F5004C91EC9DC254320A3898BB83390A7C0A0B4A723FC57BCF"
+    },
+    {
+        "path":  "Assets/Scenes/TestArmScene.unity",
+        "sha256":  "0B6794F49A515EF2AEA35A5E0F02EFF4FA3C96EEF14033D48E14BD109E3FD90B"
+    }
+]

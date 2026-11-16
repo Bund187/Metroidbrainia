@@ -1,0 +1,686 @@
+{
+    "runId": "67b395df091448b9b0b0356e543ea24d",
+    "scope": "Synthetic Edit Mode CPU/thread managed allocation per invocation; 40 warmups, 5 batches. Not Game frames, GPU, Player or Unity Profiler capture. rapid_fingers includes reflective input driver. GrabDoor measures visual pose/contact IK, not door physics/opening. Initialization excluded.",
+    "assertions": 3470,
+    "meshVertices": 872,
+    "thumbVertices": 51,
+    "triangles": 66,
+    "pickupBakes": [
+        1,
+        1
+    ],
+    "measurements": [
+        {
+            "operation": "Legacy/rest_movement_actions_rig",
+            "iterations": 100,
+            "microseconds": [
+                9.107000000000001,
+                8.515,
+                8.403,
+                8.363000000000001,
+                8.340000000000002
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "bakeCalls": 0.0,
+            "projections": 0.0,
+            "worldUpdates": 0.0
+        },
+        {
+            "operation": "Legacy/component_rig_rest",
+            "iterations": 100,
+            "microseconds": [
+                6.331999999999999,
+                6.346,
+                6.384000000000001,
+                6.394000000000001,
+                6.5729999999999995
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "bakeCalls": 0.0,
+            "projections": 0.0,
+            "worldUpdates": 0.0
+        },
+        {
+            "operation": "Legacy/component_movement_rest",
+            "iterations": 100,
+            "microseconds": [
+                2.033,
+                2.0420000000000003,
+                2.066,
+                2.073,
+                2.079
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "bakeCalls": 0.0,
+            "projections": 0.0,
+            "worldUpdates": 0.0
+        },
+        {
+            "operation": "Legacy/component_actions_idle",
+            "iterations": 100,
+            "microseconds": [
+                0.022000000000000002,
+                0.021,
+                0.02,
+                0.02,
+                0.02
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "bakeCalls": 0.0,
+            "projections": 0.0,
+            "worldUpdates": 0.0
+        },
+        {
+            "operation": "Legacy/continuous_motion",
+            "iterations": 100,
+            "microseconds": [
+                10.972999999999999,
+                10.854000000000001,
+                10.855000000000002,
+                14.360000000000003,
+                12.765999999999998
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "bakeCalls": 0.0,
+            "projections": 0.0,
+            "worldUpdates": 0.0
+        },
+        {
+            "operation": "Legacy/rapid_fingers",
+            "iterations": 100,
+            "microseconds": [
+                14.159,
+                14.079,
+                14.17,
+                14.059000000000001,
+                14.114
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "bakeCalls": 0.0,
+            "projections": 0.0,
+            "worldUpdates": 0.0
+        },
+        {
+            "operation": "Legacy/return_then_rest",
+            "iterations": 100,
+            "microseconds": [
+                8.648000000000001,
+                8.190000000000001,
+                8.206999999999999,
+                8.236,
+                8.225
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "bakeCalls": 0.0,
+            "projections": 0.0,
+            "worldUpdates": 0.0
+        },
+        {
+            "operation": "Legacy/HandEdit",
+            "iterations": 100,
+            "microseconds": [
+                8.411,
+                8.283999999999999,
+                8.292,
+                8.278,
+                8.257
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "bakeCalls": 0.0,
+            "projections": 0.0,
+            "worldUpdates": 0.0
+        },
+        {
+            "operation": "Legacy/OK",
+            "iterations": 100,
+            "microseconds": [
+                8.244,
+                8.253,
+                8.269,
+                8.222000000000001,
+                8.212
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "bakeCalls": 0.0,
+            "projections": 0.0,
+            "worldUpdates": 0.0
+        },
+        {
+            "operation": "Legacy/PointClick_cycles",
+            "iterations": 100,
+            "microseconds": [
+                9.195,
+                9.309000000000001,
+                9.137,
+                9.162,
+                9.182
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "bakeCalls": 0.0,
+            "projections": 0.0,
+            "worldUpdates": 0.0
+        },
+        {
+            "operation": "Legacy/GrabDoor_pose_contact_IK",
+            "iterations": 100,
+            "microseconds": [
+                10.370000000000003,
+                10.585,
+                10.396,
+                10.437000000000001,
+                10.415
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "bakeCalls": 0.0,
+            "projections": 0.0,
+            "worldUpdates": 0.0
+        },
+        {
+            "operation": "Legacy/mask_ThumbOverlay",
+            "iterations": 100,
+            "microseconds": [
+                42.998000000000005,
+                42.57000000000001,
+                43.11,
+                46.47200000000001,
+                42.358000000000004
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "bakeCalls": 1.0,
+            "projections": 51.0,
+            "worldUpdates": 0.0
+        },
+        {
+            "operation": "Legacy/mask_ThumbMask",
+            "iterations": 100,
+            "microseconds": [
+                42.566,
+                42.938,
+                42.70000000000001,
+                42.643,
+                42.99
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "bakeCalls": 1.0,
+            "projections": 51.0,
+            "worldUpdates": 0.0
+        },
+        {
+            "operation": "Legacy/mask_FullArm",
+            "iterations": 100,
+            "microseconds": [
+                1.0210000000000001,
+                1.01,
+                1.013,
+                1.037,
+                1.0190000000000001
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "bakeCalls": 0.0,
+            "projections": 0.0,
+            "worldUpdates": 0.0
+        },
+        {
+            "operation": "Legacy/held_document_display_with_mask",
+            "iterations": 100,
+            "microseconds": [
+                57.49400000000001,
+                56.635,
+                56.714000000000006,
+                56.211999999999996,
+                62.621
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "bakeCalls": 1.0,
+            "projections": 51.0,
+            "worldUpdates": 0.0
+        },
+        {
+            "operation": "Legacy/empty_cancel",
+            "iterations": 1000,
+            "microseconds": [
+                0.0092,
+                0.0083,
+                0.0081,
+                0.0082,
+                0.0085
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "bakeCalls": 0.0,
+            "projections": 0.0,
+            "worldUpdates": 0.0
+        },
+        {
+            "operation": "Universal/rest_movement_actions_rig",
+            "iterations": 100,
+            "microseconds": [
+                388.61400000000003,
+                407.67500000000007,
+                397.25700000000006,
+                405.39200000000005,
+                411.05800000000005
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "bakeCalls": 0.0,
+            "projections": 0.0,
+            "worldUpdates": 20.0
+        },
+        {
+            "operation": "Universal/component_rig_rest",
+            "iterations": 100,
+            "microseconds": [
+                408.43700000000007,
+                403.36800000000005,
+                457.63300000000004,
+                426.82200000000006,
+                402.415
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "bakeCalls": 0.0,
+            "projections": 0.0,
+            "worldUpdates": 20.0
+        },
+        {
+            "operation": "Universal/component_movement_rest",
+            "iterations": 100,
+            "microseconds": [
+                0.024000000000000004,
+                0.016,
+                0.016,
+                0.017,
+                0.017
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "bakeCalls": 0.0,
+            "projections": 0.0,
+            "worldUpdates": 0.0
+        },
+        {
+            "operation": "Universal/component_actions_idle",
+            "iterations": 100,
+            "microseconds": [
+                0.019,
+                0.019,
+                0.019,
+                0.019,
+                0.019
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "bakeCalls": 0.0,
+            "projections": 0.0,
+            "worldUpdates": 0.0
+        },
+        {
+            "operation": "Universal/continuous_motion",
+            "iterations": 100,
+            "microseconds": [
+                432.41900000000004,
+                429.307,
+                430.06300000000005,
+                434.63700000000006,
+                426.994
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "bakeCalls": 0.0,
+            "projections": 0.0,
+            "worldUpdates": 22.0
+        },
+        {
+            "operation": "Universal/rapid_fingers",
+            "iterations": 100,
+            "microseconds": [
+                453.37700000000007,
+                456.95700000000005,
+                455.982,
+                486.19300000000004,
+                460.06100000000004
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "bakeCalls": 0.0,
+            "projections": 0.0,
+            "worldUpdates": 23.03
+        },
+        {
+            "operation": "Universal/return_then_rest",
+            "iterations": 100,
+            "microseconds": [
+                400.55100000000004,
+                392.023,
+                394.584,
+                401.00200000000007,
+                388.978
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "bakeCalls": 0.0,
+            "projections": 0.0,
+            "worldUpdates": 20.088
+        },
+        {
+            "operation": "Universal/HandEdit",
+            "iterations": 100,
+            "microseconds": [
+                390.835,
+                401.71100000000007,
+                389.74800000000005,
+                389.289,
+                389.6
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "bakeCalls": 0.0,
+            "projections": 0.0,
+            "worldUpdates": 20.0
+        },
+        {
+            "operation": "Universal/OK",
+            "iterations": 100,
+            "microseconds": [
+                411.6540000000001,
+                408.384,
+                423.07800000000003,
+                427.13300000000004,
+                423.756
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "bakeCalls": 0.0,
+            "projections": 0.0,
+            "worldUpdates": 21.0
+        },
+        {
+            "operation": "Universal/PointClick_cycles",
+            "iterations": 100,
+            "microseconds": [
+                412.775,
+                420.245,
+                410.54100000000005,
+                408.49000000000007,
+                408.545
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "bakeCalls": 0.0,
+            "projections": 0.0,
+            "worldUpdates": 20.908
+        },
+        {
+            "operation": "Universal/GrabDoor_pose_contact_IK",
+            "iterations": 100,
+            "microseconds": [
+                564.9119999999999,
+                518.668,
+                515.129,
+                513.7410000000001,
+                511.778
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "bakeCalls": 0.0,
+            "projections": 0.0,
+            "worldUpdates": 26.0
+        },
+        {
+            "operation": "Universal/mask_ThumbOverlay",
+            "iterations": 100,
+            "microseconds": [
+                41.563,
+                46.885,
+                42.18500000000001,
+                42.284000000000006,
+                42.357000000000006
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "bakeCalls": 1.0,
+            "projections": 51.0,
+            "worldUpdates": 0.0
+        },
+        {
+            "operation": "Universal/mask_ThumbMask",
+            "iterations": 100,
+            "microseconds": [
+                42.248999999999995,
+                42.321000000000005,
+                42.446999999999996,
+                42.598,
+                42.39500000000001
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "bakeCalls": 1.0,
+            "projections": 51.0,
+            "worldUpdates": 0.0
+        },
+        {
+            "operation": "Universal/mask_FullArm",
+            "iterations": 100,
+            "microseconds": [
+                1.005,
+                1.006,
+                1.015,
+                1.0090000000000001,
+                1.0110000000000001
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "bakeCalls": 0.0,
+            "projections": 0.0,
+            "worldUpdates": 0.0
+        },
+        {
+            "operation": "Universal/held_document_display_with_mask",
+            "iterations": 100,
+            "microseconds": [
+                568.707,
+                524.79,
+                526.188,
+                528.676,
+                527.136
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "bakeCalls": 1.0,
+            "projections": 51.0,
+            "worldUpdates": 24.0
+        },
+        {
+            "operation": "Universal/empty_cancel",
+            "iterations": 1000,
+            "microseconds": [
+                0.0085,
+                0.0083,
+                0.0082,
+                0.0082,
+                0.0082
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "bakeCalls": 0.0,
+            "projections": 0.0,
+            "worldUpdates": 0.0
+        }
+    ]
+}

@@ -1,0 +1,370 @@
+{
+    "runId": "86d5bb6bd03643359f6c8548fdbd7152",
+    "scope": "Synthetic Edit Mode CPU/thread managed allocation per invocation; 40 warmups, 5 batches. Not Game frames, GPU, Player or Unity Profiler capture. rapid_fingers includes reflective input driver. Initialization excluded.",
+    "assertions": 3400,
+    "meshVertices": 872,
+    "thumbVertices": 51,
+    "triangles": 66,
+    "measurements": [
+        {
+            "operation": "Legacy/rest_movement_actions_rig",
+            "iterations": 100,
+            "microseconds": [
+                8.799,
+                8.315,
+                8.234,
+                8.389000000000001,
+                8.238000000000001
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "operation": "Legacy/continuous_motion",
+            "iterations": 100,
+            "microseconds": [
+                10.215000000000002,
+                10.195,
+                10.224,
+                10.251000000000001,
+                10.543
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "operation": "Legacy/rapid_fingers",
+            "iterations": 100,
+            "microseconds": [
+                14.53,
+                14.444,
+                14.411000000000001,
+                14.717,
+                14.422
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "operation": "Legacy/return_then_rest",
+            "iterations": 100,
+            "microseconds": [
+                8.711000000000002,
+                8.226,
+                8.214,
+                8.243,
+                8.238000000000001
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "operation": "Legacy/HandEdit",
+            "iterations": 100,
+            "microseconds": [
+                8.382,
+                8.386000000000001,
+                8.355,
+                8.344,
+                8.412
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "operation": "Legacy/mask_ThumbOverlay",
+            "iterations": 100,
+            "microseconds": [
+                410.537,
+                410.94800000000004,
+                416.3,
+                427.39300000000003,
+                418.684
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "operation": "Legacy/mask_ThumbMask",
+            "iterations": 100,
+            "microseconds": [
+                411.65600000000006,
+                405.53200000000004,
+                412.04400000000004,
+                409.134,
+                405.959
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "operation": "Legacy/mask_FullArm",
+            "iterations": 100,
+            "microseconds": [
+                403.05100000000004,
+                408.06000000000006,
+                405.44900000000007,
+                405.961,
+                413.21200000000005
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "operation": "Legacy/held_document_display_with_mask",
+            "iterations": 100,
+            "microseconds": [
+                422.535,
+                422.40100000000007,
+                422.302,
+                421.941,
+                424.584
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "operation": "Legacy/empty_cancel",
+            "iterations": 1000,
+            "microseconds": [
+                0.008700000000000001,
+                0.0081,
+                0.0081,
+                0.0082,
+                0.0081
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "operation": "Universal/rest_movement_actions_rig",
+            "iterations": 100,
+            "microseconds": [
+                404.658,
+                399.509,
+                402.71100000000007,
+                410.95200000000006,
+                408.889
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "operation": "Universal/continuous_motion",
+            "iterations": 100,
+            "microseconds": [
+                450.17500000000007,
+                454.31600000000003,
+                458.038,
+                450.37300000000005,
+                439.9800000000001
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "operation": "Universal/rapid_fingers",
+            "iterations": 100,
+            "microseconds": [
+                448.42400000000004,
+                463.45200000000006,
+                460.12199999999996,
+                455.45300000000003,
+                454.49000000000007
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "operation": "Universal/return_then_rest",
+            "iterations": 100,
+            "microseconds": [
+                390.094,
+                382.779,
+                394.923,
+                382.667,
+                383.528
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "operation": "Universal/HandEdit",
+            "iterations": 100,
+            "microseconds": [
+                388.38300000000004,
+                382.301,
+                383.288,
+                384.85,
+                408.51300000000003
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "operation": "Universal/mask_ThumbOverlay",
+            "iterations": 100,
+            "microseconds": [
+                411.76,
+                413.725,
+                412.353,
+                413.434,
+                414.54799999999994
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "operation": "Universal/mask_ThumbMask",
+            "iterations": 100,
+            "microseconds": [
+                413.182,
+                421.64,
+                432.17699999999996,
+                460.87200000000007,
+                437.5850000000001
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "operation": "Universal/mask_FullArm",
+            "iterations": 100,
+            "microseconds": [
+                418.719,
+                415.57500000000005,
+                419.39300000000003,
+                429.94,
+                408.945
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "operation": "Universal/held_document_display_with_mask",
+            "iterations": 100,
+            "microseconds": [
+                859.661,
+                832.84,
+                834.247,
+                835.1530000000001,
+                835.8550000000001
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "operation": "Universal/empty_cancel",
+            "iterations": 1000,
+            "microseconds": [
+                0.008400000000000001,
+                0.0082,
+                0.0082,
+                0.0081,
+                0.0082
+            ],
+            "bytes": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    ]
+}

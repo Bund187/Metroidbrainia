@@ -1,0 +1,458 @@
+{
+    "runId": "7ac40d40ad344e8cbba03ec7e73eb647",
+    "unity": "6000.6.3f1",
+    "scope": "Current and original detectors in isolated Editor scenes. Simulated effective input/targets. No physical-device or final Game visual validation.",
+    "assertions": 254,
+    "cases": [
+        {
+            "name": "door_without_documents",
+            "status": "PASS",
+            "detail": "Same outcome as original detectors.",
+            "before": {
+                "outcome": "True",
+                "raycasts": 1,
+                "handProjections": 3
+            },
+            "after": {
+                "outcome": "True",
+                "raycasts": 1,
+                "handProjections": 1
+            }
+        },
+        {
+            "name": "door_slow",
+            "status": "PASS",
+            "detail": "Same outcome as original detectors.",
+            "before": {
+                "outcome": "True",
+                "raycasts": 2,
+                "handProjections": 6
+            },
+            "after": {
+                "outcome": "True",
+                "raycasts": 1,
+                "handProjections": 2
+            }
+        },
+        {
+            "name": "door_sweep",
+            "status": "PASS",
+            "detail": "Same outcome as original detectors.",
+            "before": {
+                "outcome": "True",
+                "raycasts": 2,
+                "handProjections": 6
+            },
+            "after": {
+                "outcome": "True",
+                "raycasts": 1,
+                "handProjections": 2
+            }
+        },
+        {
+            "name": "door_far",
+            "status": "PASS",
+            "detail": "Same outcome as original detectors.",
+            "before": {
+                "outcome": "False",
+                "raycasts": 1,
+                "handProjections": 3
+            },
+            "after": {
+                "outcome": "False",
+                "raycasts": 0,
+                "handProjections": 1
+            }
+        },
+        {
+            "name": "door_wall",
+            "status": "PASS",
+            "detail": "Same outcome as original detectors.",
+            "before": {
+                "outcome": "False",
+                "raycasts": 1,
+                "handProjections": 3
+            },
+            "after": {
+                "outcome": "False",
+                "raycasts": 1,
+                "handProjections": 1
+            }
+        },
+        {
+            "name": "door_own_frame",
+            "status": "PASS",
+            "detail": "Same outcome as original detectors.",
+            "before": {
+                "outcome": "True",
+                "raycasts": 1,
+                "handProjections": 3
+            },
+            "after": {
+                "outcome": "True",
+                "raycasts": 1,
+                "handProjections": 1
+            }
+        },
+        {
+            "name": "door_outside_zone",
+            "status": "PASS",
+            "detail": "Same outcome as original detectors.",
+            "before": {
+                "outcome": "False",
+                "raycasts": 1,
+                "handProjections": 3
+            },
+            "after": {
+                "outcome": "False",
+                "raycasts": 0,
+                "handProjections": 1
+            }
+        },
+        {
+            "name": "door_no_knob",
+            "status": "PASS",
+            "detail": "Same outcome as original detectors.",
+            "before": {
+                "outcome": "False",
+                "raycasts": 1,
+                "handProjections": 3
+            },
+            "after": {
+                "outcome": "False",
+                "raycasts": 0,
+                "handProjections": 1
+            }
+        },
+        {
+            "name": "door_edge",
+            "status": "PASS",
+            "detail": "Same outcome as original detectors.",
+            "before": {
+                "outcome": "True",
+                "raycasts": 1,
+                "handProjections": 3
+            },
+            "after": {
+                "outcome": "True",
+                "raycasts": 1,
+                "handProjections": 1
+            }
+        },
+        {
+            "name": "door_clipped",
+            "status": "PASS",
+            "detail": "Same outcome as original detectors.",
+            "before": {
+                "outcome": "False",
+                "raycasts": 1,
+                "handProjections": 3
+            },
+            "after": {
+                "outcome": "False",
+                "raycasts": 0,
+                "handProjections": 1
+            }
+        },
+        {
+            "name": "door_multiple",
+            "status": "PASS",
+            "detail": "Same outcome as original detectors.",
+            "before": {
+                "outcome": "near",
+                "raycasts": 2,
+                "handProjections": 4
+            },
+            "after": {
+                "outcome": "near",
+                "raycasts": 2,
+                "handProjections": 1
+            }
+        },
+        {
+            "name": "door_fallback",
+            "status": "PASS",
+            "detail": "Same outcome as original detectors.",
+            "before": {
+                "outcome": "fallback",
+                "raycasts": 3,
+                "handProjections": 6
+            },
+            "after": {
+                "outcome": "fallback",
+                "raycasts": 3,
+                "handProjections": 1
+            }
+        },
+        {
+            "name": "door_latched",
+            "status": "PASS",
+            "detail": "Same outcome as original detectors.",
+            "before": {
+                "outcome": "True",
+                "raycasts": 2,
+                "handProjections": 5
+            },
+            "after": {
+                "outcome": "True",
+                "raycasts": 2,
+                "handProjections": 2
+            }
+        },
+        {
+            "name": "door_cancel",
+            "status": "PASS",
+            "detail": "Same outcome as original detectors.",
+            "before": {
+                "outcome": "False",
+                "raycasts": 2,
+                "handProjections": 5
+            },
+            "after": {
+                "outcome": "False",
+                "raycasts": 1,
+                "handProjections": 2
+            }
+        },
+        {
+            "name": "door_locked",
+            "status": "PASS",
+            "detail": "Same outcome as original detectors.",
+            "before": {
+                "outcome": "True",
+                "raycasts": 3,
+                "handProjections": 8
+            },
+            "after": {
+                "outcome": "True",
+                "raycasts": 3,
+                "handProjections": 4
+            }
+        },
+        {
+            "name": "door_dynamic",
+            "status": "PASS",
+            "detail": "Same outcome as original detectors.",
+            "before": {
+                "outcome": "True",
+                "raycasts": 1,
+                "handProjections": 3
+            },
+            "after": {
+                "outcome": "True",
+                "raycasts": 1,
+                "handProjections": 1
+            }
+        },
+        {
+            "name": "priority",
+            "status": "PASS",
+            "detail": "Same outcome as original detectors.",
+            "before": {
+                "outcome": "True/False",
+                "raycasts": 1,
+                "handProjections": 4
+            },
+            "after": {
+                "outcome": "True/False",
+                "raycasts": 1,
+                "handProjections": 1
+            }
+        },
+        {
+            "name": "document",
+            "status": "PASS",
+            "detail": "Same outcome as original detectors.",
+            "before": {
+                "outcome": "True",
+                "raycasts": 1,
+                "handProjections": 1
+            },
+            "after": {
+                "outcome": "True",
+                "raycasts": 1,
+                "handProjections": 1
+            }
+        },
+        {
+            "name": "document_slow",
+            "status": "PASS",
+            "detail": "Same outcome as original detectors.",
+            "before": {
+                "outcome": "True",
+                "raycasts": 2,
+                "handProjections": 2
+            },
+            "after": {
+                "outcome": "True",
+                "raycasts": 1,
+                "handProjections": 2
+            }
+        },
+        {
+            "name": "document_sweep",
+            "status": "PASS",
+            "detail": "Same outcome as original detectors.",
+            "before": {
+                "outcome": "True",
+                "raycasts": 2,
+                "handProjections": 2
+            },
+            "after": {
+                "outcome": "True",
+                "raycasts": 1,
+                "handProjections": 2
+            }
+        },
+        {
+            "name": "document_far",
+            "status": "PASS",
+            "detail": "Same outcome as original detectors.",
+            "before": {
+                "outcome": "False",
+                "raycasts": 1,
+                "handProjections": 1
+            },
+            "after": {
+                "outcome": "False",
+                "raycasts": 0,
+                "handProjections": 1
+            }
+        },
+        {
+            "name": "document_wall",
+            "status": "PASS",
+            "detail": "Same outcome as original detectors.",
+            "before": {
+                "outcome": "False",
+                "raycasts": 1,
+                "handProjections": 1
+            },
+            "after": {
+                "outcome": "False",
+                "raycasts": 1,
+                "handProjections": 1
+            }
+        },
+        {
+            "name": "document_edge",
+            "status": "PASS",
+            "detail": "Same outcome as original detectors.",
+            "before": {
+                "outcome": "True",
+                "raycasts": 1,
+                "handProjections": 1
+            },
+            "after": {
+                "outcome": "True",
+                "raycasts": 1,
+                "handProjections": 1
+            }
+        },
+        {
+            "name": "document_clipped",
+            "status": "PASS",
+            "detail": "Same outcome as original detectors.",
+            "before": {
+                "outcome": "False",
+                "raycasts": 1,
+                "handProjections": 1
+            },
+            "after": {
+                "outcome": "False",
+                "raycasts": 0,
+                "handProjections": 1
+            }
+        },
+        {
+            "name": "document_multiple",
+            "status": "PASS",
+            "detail": "Same outcome as original detectors.",
+            "before": {
+                "outcome": "near",
+                "raycasts": 2,
+                "handProjections": 1
+            },
+            "after": {
+                "outcome": "near",
+                "raycasts": 2,
+                "handProjections": 1
+            }
+        },
+        {
+            "name": "document_latched_release",
+            "status": "PASS",
+            "detail": "Same outcome as original detectors.",
+            "before": {
+                "outcome": "False",
+                "raycasts": 1,
+                "handProjections": 1
+            },
+            "after": {
+                "outcome": "False",
+                "raycasts": 1,
+                "handProjections": 1
+            }
+        },
+        {
+            "name": "document_pause",
+            "status": "PASS",
+            "detail": "Same outcome as original detectors.",
+            "before": {
+                "outcome": "False",
+                "raycasts": 1,
+                "handProjections": 1
+            },
+            "after": {
+                "outcome": "False",
+                "raycasts": 1,
+                "handProjections": 1
+            }
+        },
+        {
+            "name": "document_door_disabled",
+            "status": "PASS",
+            "detail": "Intentional independence fix; old detector rejects, new detector acquires.",
+            "before": {
+                "outcome": "False",
+                "raycasts": 0,
+                "handProjections": 0
+            },
+            "after": {
+                "outcome": "True",
+                "raycasts": 1,
+                "handProjections": 1
+            }
+        },
+        {
+            "name": "document_door_removed",
+            "status": "PASS",
+            "detail": "Intentional independence fix; old detector rejects, new detector acquires.",
+            "before": {
+                "outcome": "False",
+                "raycasts": 0,
+                "handProjections": 0
+            },
+            "after": {
+                "outcome": "True",
+                "raycasts": 1,
+                "handProjections": 1
+            }
+        },
+        {
+            "name": "projection_resolutions_sweep",
+            "status": "PASS",
+            "detail": "720/1080/1440 reference-pixel math and sweep history sizes; camera projection at actual Editor display size. No Game resolution switch.",
+            "before": {
+                "outcome": "",
+                "raycasts": 0,
+                "handProjections": 0
+            },
+            "after": {
+                "outcome": "",
+                "raycasts": 0,
+                "handProjections": 0
+            }
+        }
+    ]
+}

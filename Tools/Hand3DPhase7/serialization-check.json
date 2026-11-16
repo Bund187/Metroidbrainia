@@ -1,0 +1,17 @@
+﻿[
+    {
+        "file":  "Hand3DThumbOverlay",
+        "serializedDeclarations":  7,
+        "status":  "IDENTICAL"
+    },
+    {
+        "file":  "Hand3DDocumentDisplay",
+        "serializedDeclarations":  14,
+        "status":  "IDENTICAL"
+    },
+    {
+        "file":  "Hand3DPoseComposition",
+        "serializedDeclarations":  0,
+        "status":  "IDENTICAL"
+    }
+]

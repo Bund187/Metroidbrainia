@@ -1,0 +1,1930 @@
+﻿[
+    {
+        "path":  "Tools\\Hand3DPhase0\\FINGER_CAPTURES.md",
+        "sha256":  "20962991ADDC33B3B8B46E11D608FFC4F8D79F3F295EE7E1417266642F8F0BB4"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase0\\FULL_POSE_IK_PROPOSAL.md",
+        "sha256":  "CC878F1A1EA285F915C7C64BD23EC02B18E015D96254854FBD71C05C59B3D786"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase0\\INVENTORY.md",
+        "sha256":  "87891406C890807D678FCB829EBBB93239797BCC1E26BB2C70FF7C39A96AE11A"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase0\\Phase0Validation.cs",
+        "sha256":  "F3A5CBCC008B197C97D83A973E84484183D65903A03ADA11AB8C094A952906AE"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase0\\README.md",
+        "sha256":  "C93901A877F0EA812E364FCDF173FCD2D4F80FB334E32A8619D0913CB23A2128"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase0\\Reference.ps1",
+        "sha256":  "33D5FD7BCC43CAE718031A88BE152A95CB9D6E2EB459BDE227F4B351A5DCE5B4"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase0\\REGRESSION_MATRIX.md",
+        "sha256":  "B970669E95A2A007FACBE30CE497354C9C0B61656384BD2642A16338E14A89AE"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase0\\Run.ps1",
+        "sha256":  "9CBCF0780A3A554246DE91DE33A804E482BB3AFBF02F12DDC1A91DF6A12F7C4D"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase0\\Reference\\files.json",
+        "sha256":  "D4EBA5B3599B8FF213D4E3EAABA610030E9B1E06327A7D8565E3E23ABD28959B"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase0\\Reference\\phase0-combinations.json",
+        "sha256":  "4D7A82243EDE51AC542E8735F2523752153A21B709611AEA06AB363D1ABF3F22"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase0\\Reference\\phase0-ik-chain.txt",
+        "sha256":  "11F8D472C61713B9CF479062D3C36F489D37999B9F0A49E27FA3FFE91A9044BC"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase0\\Reference\\phase0-inventory.json",
+        "sha256":  "C9F105C8457275B24360BC938003A8ACF5B6BEE211F50A83B6C216C5F2FAA07F"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase0\\Reference\\TestArmScene.unity.txt",
+        "sha256":  "E833D177AB203D17213F2155FD50A9E3C9BFA981D63E3491A99854EA6D155490"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase0\\Results\\attempt-1.json",
+        "sha256":  "139FD8A6074DA6E063FC0AA86D28081627C9AD94DB7D9DD2CCD4D5112CDA7B4F"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase0\\Results\\attempt-2.json",
+        "sha256":  "FF4CECBC233AB078884C749624DA781A6D3784181C8B25966281008C52E651DA"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase0\\Results\\attempt-3.json",
+        "sha256":  "5E6DCB5D17C77836A67F553CCCF1B6E71D0D07A4B9AD6B0F15ACE5ABC6844C10"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase0\\Results\\attempt-4.json",
+        "sha256":  "AC9DC0B94D64CB57B8C664EB14A42A1CD4C6675F4FE76F80589E0381FDFCC22B"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase0\\Results\\final.json",
+        "sha256":  "75117C45543D278968716A0682B59F30B7F815A323569D3C815E3F24BAE6D4E8"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase0\\Results\\final.log",
+        "sha256":  "5D87585EFF902C90EC7F86CFD9D35D8C388B7E95D51AE2F67C1AD1AFF3A32C08"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase0\\Results\\README.md",
+        "sha256":  "1C972003FB0C5D74E275E3851E9DACBB6055F24D82C8B79CA11726647A895D1E"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\FullPoseIkProbe.cs",
+        "sha256":  "085AEB72460B871AB4E86A7402EF727BD9655FFB6A50242CFD28B84C4B915990"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\README.md",
+        "sha256":  "7844BB20B6289DA68416BF9B5A18FE93F4A89E8B3DD6B28BB6E94E0E6D87808F"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\REPORT.md",
+        "sha256":  "BD32DD5AF16BB426DD406E7AEA650D4EFE006B74AB73A9D66FDBBDC9AF706526"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Run.ps1",
+        "sha256":  "ADDA9A0E031A8E6D2CDBB3F54FD41B637596FB6640CBB5C01BE0A75C2049067F"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\20a41a0927f24cc382629ec8d63e782a\\baseline.json",
+        "sha256":  "586BD4CD0833AB9382E614F137D4FD4F321B4B15ABBEA7E706C48A0FE969D0AA"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\20a41a0927f24cc382629ec8d63e782a\\captures.json",
+        "sha256":  "56F23103B7B71845FD698FCEB3515569534754D84FE0EB2C9F3CCC4841D0E018"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\20a41a0927f24cc382629ec8d63e782a\\GrabDocument-isolated-URP.png",
+        "sha256":  "868246F8F6851084C47E001109D7F83906CA00A39D293F2402D266C1D2656373"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\20a41a0927f24cc382629ec8d63e782a\\GrabDoor-isolated-URP.png",
+        "sha256":  "868246F8F6851084C47E001109D7F83906CA00A39D293F2402D266C1D2656373"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\20a41a0927f24cc382629ec8d63e782a\\integrity.txt",
+        "sha256":  "DCCA8B194034FBB46F9484F17966026F970CCD2FC574584DDBBDF0DF8BACEE8C"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\20a41a0927f24cc382629ec8d63e782a\\measurements.json",
+        "sha256":  "B1E53FAAC1E47AD61903C7D26ADAE51E40D91160BD83CDBF051FDB0D9EC5379D"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\20a41a0927f24cc382629ec8d63e782a\\OK-isolated-URP.png",
+        "sha256":  "868246F8F6851084C47E001109D7F83906CA00A39D293F2402D266C1D2656373"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\20a41a0927f24cc382629ec8d63e782a\\phase05-baseline.log",
+        "sha256":  "AE5E262F2ADF74921A12AE581353D412FD67038BFAE9A4CCD0D4D47B173A315D"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\20a41a0927f24cc382629ec8d63e782a\\phase05.log",
+        "sha256":  "E802AAA2D341CDF87286EDDA7A65B0119FABAC8C2CA85EAE577BE86AB996B6B4"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\20a41a0927f24cc382629ec8d63e782a\\Point-isolated-URP.png",
+        "sha256":  "868246F8F6851084C47E001109D7F83906CA00A39D293F2402D266C1D2656373"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\20a41a0927f24cc382629ec8d63e782a\\report.json",
+        "sha256":  "57FB057C39E62BBF0EA2D306009BA1A7397DB3BCF2151EAFF3596E90B0DECB6C"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\da3b6bcabe874749b5d799f2573f9cfb\\baseline.json",
+        "sha256":  "36F6D4E2BA9A812243713C19FAB636F59CCCAAF2E4E819E00B82DBA3D873346C"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\da3b6bcabe874749b5d799f2573f9cfb\\captures.json",
+        "sha256":  "56F23103B7B71845FD698FCEB3515569534754D84FE0EB2C9F3CCC4841D0E018"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\da3b6bcabe874749b5d799f2573f9cfb\\integrity.txt",
+        "sha256":  "DCCA8B194034FBB46F9484F17966026F970CCD2FC574584DDBBDF0DF8BACEE8C"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\da3b6bcabe874749b5d799f2573f9cfb\\measurements.json",
+        "sha256":  "4F47BEFF809AE15CF6A49F50394F277C35098CD587699F57DACCD7290EE1B2AD"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\da3b6bcabe874749b5d799f2573f9cfb\\OK-0-baked-URP.png",
+        "sha256":  "6915885E6EAE122203E3A301EA4A098E95DE149898BABDD89018447DEEB74D1B"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\da3b6bcabe874749b5d799f2573f9cfb\\phase05-baseline.log",
+        "sha256":  "D711CDB50802ADEDACBD5378C49CBA9C9424A8F3626CC851E409863092FAAD74"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\da3b6bcabe874749b5d799f2573f9cfb\\phase05.log",
+        "sha256":  "625B4F8ADE6916306F4F0C75F85038C557D4599AD29B859E07A980766B261697"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\da3b6bcabe874749b5d799f2573f9cfb\\report.json",
+        "sha256":  "0379BBEC6701849FBE7BDE28A09D8FFADE8B51CB7E02D4824277FDD9D0E3B4BF"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\ee47dbe4f20d4d7a9c41b7c194f3289d\\baseline.json",
+        "sha256":  "84946E737F00BA359049C7905D63F8804FE78BEE0DDB00D0F008AB700AA83859"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\ee47dbe4f20d4d7a9c41b7c194f3289d\\captures.json",
+        "sha256":  "56F23103B7B71845FD698FCEB3515569534754D84FE0EB2C9F3CCC4841D0E018"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\ee47dbe4f20d4d7a9c41b7c194f3289d\\GrabDocument-0-baked-URP.png",
+        "sha256":  "29163122C0847C47D14870DD7BF3BC8E0B9C48A3387BC448A88DB9B90E4DBBF8"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\ee47dbe4f20d4d7a9c41b7c194f3289d\\GrabDocument-1-baked-URP.png",
+        "sha256":  "85899D2FD3760F640D1C9139F555EA44F7A5166C50529C4AB4392F1CE043D1A5"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\ee47dbe4f20d4d7a9c41b7c194f3289d\\GrabDocument-2-baked-URP.png",
+        "sha256":  "B310AF9F018943664FCC6C04F3D276F3B2637C1D57FA7BCA6F0C882F2862F83D"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\ee47dbe4f20d4d7a9c41b7c194f3289d\\GrabDoor-0-baked-URP.png",
+        "sha256":  "F0B98E48E2F7DFBECC650213C5FD4C99B7970139A7168C97F6B0EBA2C143B42E"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\ee47dbe4f20d4d7a9c41b7c194f3289d\\GrabDoor-1-baked-URP.png",
+        "sha256":  "8C5D2E1F2B35F110BAFCC0FC72C5BB08D478ECD5203E5AD65FEC1AFE3F2C727A"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\ee47dbe4f20d4d7a9c41b7c194f3289d\\GrabDoor-2-baked-URP.png",
+        "sha256":  "EFD87C0EB49FC91A95E2F24537315ABB8EC383C63EA1A9FA2974B9DF49E15970"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\ee47dbe4f20d4d7a9c41b7c194f3289d\\integrity.txt",
+        "sha256":  "DCCA8B194034FBB46F9484F17966026F970CCD2FC574584DDBBDF0DF8BACEE8C"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\ee47dbe4f20d4d7a9c41b7c194f3289d\\measurements.json",
+        "sha256":  "9B387B8B18A54BBDCBD84C7F0ED8E5107D8D3D25B0CEE04E74E8A91AEB65DCF5"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\ee47dbe4f20d4d7a9c41b7c194f3289d\\OK-0-baked-URP.png",
+        "sha256":  "9C025CB595BC3FD05A3DAAAF26412CD853798E498F889A8ABA646A8DCC697DDF"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\ee47dbe4f20d4d7a9c41b7c194f3289d\\OK-1-baked-URP.png",
+        "sha256":  "D04408480C6CD3D58C9F8744AA68E03A17D7631B1B0EC6932281EECADEB72511"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\ee47dbe4f20d4d7a9c41b7c194f3289d\\OK-2-baked-URP.png",
+        "sha256":  "72B01E520827ABDC69C2B024CDD1873ECA13B90D9B73DAE3434B6BF73AD0A523"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\ee47dbe4f20d4d7a9c41b7c194f3289d\\phase05-baseline.log",
+        "sha256":  "3AD3125FD17BED0DD3D1D39A2096C41AB7DD48EB53C6E0A29372CB04A2D73BBB"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\ee47dbe4f20d4d7a9c41b7c194f3289d\\phase05.log",
+        "sha256":  "8639F39CA7EA4152CC4BDD7A37E34967F1C894CEEDBD57A0AB578060107FD2B0"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\ee47dbe4f20d4d7a9c41b7c194f3289d\\Point-0-baked-URP.png",
+        "sha256":  "D9731349B863E7418F30034F1A6EB33B3A2D7F29C2725746B0027ED1D5F4E432"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\ee47dbe4f20d4d7a9c41b7c194f3289d\\Point-1-baked-URP.png",
+        "sha256":  "5E4BAD64FDEF533EF7D861950CC09A20989389C868E6A0436F28D84988CEEF1E"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\ee47dbe4f20d4d7a9c41b7c194f3289d\\Point-2-baked-URP.png",
+        "sha256":  "BAA889DF2E4BA7CFABE514E791B77A7288EF26BF295303FDE98DC339A2C1B187"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase05\\Results\\ee47dbe4f20d4d7a9c41b7c194f3289d\\report.json",
+        "sha256":  "22F7EA922CBE9B53FB75C5AD9BDBDAA2055FEA6D8A50A8FF4F5CB8A111DEA855"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Phase1Validation.cs",
+        "sha256":  "CE534CE17E951641CB988817F6E12EB6CC250EF86C97F1ABF4AF6B641A7BFD3D"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\README.md",
+        "sha256":  "ABC9EF7931814D6CC448F0DACDDC4B742E6B2E8251455981F7C4F50A389D8CF6"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\REPORT.md",
+        "sha256":  "0E1184729009EA5D15A1F45741EC8261DF6F2826B579205FE58203D792899947"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Run.ps1",
+        "sha256":  "CA8FF2F632323873DF2DD226A2C8B14B4E8FD2C2C8670C0FAD333E4BBEC29779"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\SnapshotCounters.cs",
+        "sha256":  "7A555E030A31D2B715D03E7AFA4FC0BB1A7AB091463D2097BC6466539273A676"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Before\\Hand3DDocumentDisplay.cs.txt",
+        "sha256":  "BB8AA05CAC05EC4B9304F172781039969833254ABFCC23348FD7E8B60C80E20C"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Before\\Hand3DDocumentEditors.cs.txt",
+        "sha256":  "8AC835BB322956905C8992EFA7A1F0F12D1A5F3CC86115828153FB4BA8BFD3C3"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Before\\Hand3DDocumentInteractor.cs.txt",
+        "sha256":  "0767836EE5DC18CDA6C48152A0A58B986684F52959C45FD4882EC75F18D1A15F"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Before\\Hand3DDoorInteractor.cs.txt",
+        "sha256":  "2AFC23FEA2E307297440DE3122BEDD6709C7259BA98C1BC3C3098AF59581326B"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Results\\08df0f02873846cc9aa0d717ef9edbec\\integrity.txt",
+        "sha256":  "2F46C68FECF7552D7EE256A974F039B6E479DA70A050EEFE61AD9B58709F311A"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Results\\08df0f02873846cc9aa0d717ef9edbec\\phase1-migration.log",
+        "sha256":  "FB0E08F47C2D7E80B27FF32926F4E5E89D718989CBEE2E20EA775BF789487164"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Results\\6f845d7ace934ed79efc776be8c3208a\\integrity.txt",
+        "sha256":  "2F46C68FECF7552D7EE256A974F039B6E479DA70A050EEFE61AD9B58709F311A"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Results\\6f845d7ace934ed79efc776be8c3208a\\phase1-migration.log",
+        "sha256":  "D962B44818BAD541CA1983ACDF99C4BC49969E1DD8F17B372B9E576EEE8F59CC"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Results\\a32036ce58884aabb87fdaf4901f1695\\baseline.json",
+        "sha256":  "78441D0A5693FA69BBE8B420B0C7E4C45D325D10B62D0DA560090A295F2B1BB7"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Results\\a32036ce58884aabb87fdaf4901f1695\\integrity.txt",
+        "sha256":  "2F46C68FECF7552D7EE256A974F039B6E479DA70A050EEFE61AD9B58709F311A"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Results\\a32036ce58884aabb87fdaf4901f1695\\phase1-migration.log",
+        "sha256":  "86A9BF9D5C2953C6FAADFA1F7B010D71526EC5BAC9056B2C4E65F454755733BE"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Results\\a32036ce58884aabb87fdaf4901f1695\\phase1-regressions.log",
+        "sha256":  "B73A59007B28D5ED271FF5672F1FB3C2B6C63DB599C2E19FF95D1237F209520A"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Results\\a32036ce58884aabb87fdaf4901f1695\\phase1-tests.log",
+        "sha256":  "CEBB22A800AFD50DADB4F715A7A5ECBE88310A594DEB53B067BE3E8B8672ACD7"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Results\\a32036ce58884aabb87fdaf4901f1695\\report.json",
+        "sha256":  "0A15E3DDF8A90E8B8978DFA64E14DBC8188BB75B0F4F6576B889035BCCF865BA"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Results\\a32036ce58884aabb87fdaf4901f1695\\tested-files.json",
+        "sha256":  "B202759D9D488834155294BD29BA29F6DF42E09E29B095A8C463A858B865A295"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Results\\cae022ee615d49f7ba7d4df27912f9d7\\baseline.json",
+        "sha256":  "88490F813B77F7F3520184D78CB17F0AEAF3C8FF3B6E307FFB9A7C85219917A4"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Results\\cae022ee615d49f7ba7d4df27912f9d7\\integrity.txt",
+        "sha256":  "2F46C68FECF7552D7EE256A974F039B6E479DA70A050EEFE61AD9B58709F311A"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Results\\cae022ee615d49f7ba7d4df27912f9d7\\phase1-migration.log",
+        "sha256":  "AA41FB3CEA4B884534FC46CE574D5E0AACA9CAB5B1673A250014466462D0956C"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Results\\cae022ee615d49f7ba7d4df27912f9d7\\phase1-regressions.log",
+        "sha256":  "15830B8C3F06FAE1E7DDAC00A20FCA5B55E0145846B69DBB65428969E6F579B6"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Results\\cae022ee615d49f7ba7d4df27912f9d7\\phase1-tests.log",
+        "sha256":  "814F9AAC86F880440AEA8A1E97749380908136E612693BB65BC22544B287141E"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Results\\cae022ee615d49f7ba7d4df27912f9d7\\report.json",
+        "sha256":  "F9F38164BC52785FC1F6A7BFCF9A0DB5103CB21DDE868357DB5B89EAA8CE7AE2"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Results\\d0011c7b661d40f9a5c184ce337a19f0\\baseline.json",
+        "sha256":  "E48BAA8BA47FF47430A58621E5D85C3F328D08AF7EA2F2CBA110A7DEFB17EE62"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Results\\d0011c7b661d40f9a5c184ce337a19f0\\integrity.txt",
+        "sha256":  "2F46C68FECF7552D7EE256A974F039B6E479DA70A050EEFE61AD9B58709F311A"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Results\\d0011c7b661d40f9a5c184ce337a19f0\\phase1-migration.log",
+        "sha256":  "8C2C51200ACE92F2E0ED405B8A28D24750C989F9A372901B939CD873EEC5A138"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Results\\d0011c7b661d40f9a5c184ce337a19f0\\phase1-regressions.log",
+        "sha256":  "1252D38140E3D76773BA960FE3775020E631068CA396407361A190A364C5A336"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Results\\d0011c7b661d40f9a5c184ce337a19f0\\phase1-tests.log",
+        "sha256":  "F329CA39A276ECE7259212FEACCD43F96C761E5C95E2A02C8C119B8208144A7B"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Results\\e03a9d0a2ad2453da195f2e809d2645e\\baseline.json",
+        "sha256":  "0B10DD53C6B56ECE3D7116AEB0C9C32FF77D280BB774CAE02DEB1B5E83A188C4"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Results\\e03a9d0a2ad2453da195f2e809d2645e\\integrity.txt",
+        "sha256":  "2F46C68FECF7552D7EE256A974F039B6E479DA70A050EEFE61AD9B58709F311A"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Results\\e03a9d0a2ad2453da195f2e809d2645e\\phase1-migration.log",
+        "sha256":  "D8E846135E5EABEA1FDCAD850AF4E7618823CA2E8117C60B2B7AAB00E8D2B1E2"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Results\\e03a9d0a2ad2453da195f2e809d2645e\\phase1-regressions.log",
+        "sha256":  "4FADB105E4316C7F2A0D061D73A877F84D8E33F8FFC0F1DD213885B40A4504EA"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Results\\e03a9d0a2ad2453da195f2e809d2645e\\phase1-tests.log",
+        "sha256":  "07DE2F334D7CF68723B9D09E166699F1FCD24930D9AFD5B64392C50E92A769E9"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase1\\Results\\e03a9d0a2ad2453da195f2e809d2645e\\report.json",
+        "sha256":  "20D6D984E139F5E9BB23CAFCF7900FD54A64A4FB3F3D07592BC2E745B812F8BE"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\before-files.json",
+        "sha256":  "4060205D7BB3AE38A1126D9DD8CA81B014043228B4D478ADDADCAE31D07607D8"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\Phase2Validation.cs",
+        "sha256":  "45FAB1A34960E098D2F28544788C88CFA5EE5D7B94BE0E49E61E0C049E1F7B12"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\README.md",
+        "sha256":  "333E692C76D98BFE6E46F76122B8DFD02F8C6EA9EAC6C309E1B8DB032452B058"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\REPORT.md",
+        "sha256":  "DE4BD447E5420803D49635F21FBD7682D1FD007DA381AC871EBDE7200F878FC7"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\Run.ps1",
+        "sha256":  "8A9C26EF74D12E780AB10CB95FE4D323ED04C84F347002166CC6BDABBC2461B9"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\Before\\Hand3DDocumentInteractor.cs.txt",
+        "sha256":  "F8628C44B17FA0D98FF5936423D57D87389C99D55E97A7210E968F2F7C324851"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\Before\\Hand3DDoorInteractor.cs.txt",
+        "sha256":  "348A117EEDB8B60532786AE7492E50C6CE9666B733FB457E9DAEE218A480F958"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\Before\\Hand3DInputController.cs.txt",
+        "sha256":  "E3D8FCB207F352183606D8BF2A783A04C6A7F28BC1E337A63A602C32FC5AAA2A"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\Before\\Hand3DInteractionCoordinator.cs.txt",
+        "sha256":  "C51E07FBB002CD1DCBAD1D920C12F2B39A23745BEF7A709BB88B3B02EE971033"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\Before\\Hand3DPoseActions.cs.txt",
+        "sha256":  "406770CCC4368E4CD58450608FCECC8A65F663B7A0B53A287AB3F6453FBD0FA1"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\Results\\6881531ced0842b68e8ba08ddfbe806a\\integrity.txt",
+        "sha256":  "51ED230CE8764B93F7B850EECBBAB0E0EA6A5D8AD90C761E570F81EA780E453F"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\Results\\6881531ced0842b68e8ba08ddfbe806a\\phase0-results.json",
+        "sha256":  "D6B0DAD72B04FA6EE127ECB067F1A62FB63EB7DE9C4134334902FE036ABF9F4C"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\Results\\6881531ced0842b68e8ba08ddfbe806a\\phase1-results.json",
+        "sha256":  "2BD39A7608D9A207287A7D424BDE6496A6B87700212754FE642FF85890FA3C84"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\Results\\6881531ced0842b68e8ba08ddfbe806a\\phase2-baseline.log",
+        "sha256":  "67CF0D5ECF3F0696AFA3B1A4CE6BC9649C72A4055E885B40707C69D1F0EAB46A"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\Results\\6881531ced0842b68e8ba08ddfbe806a\\phase2-detection.log",
+        "sha256":  "7D46550C6B9FBB19AB538098470A6CEB060AAD5AAE41ABBDB72B130C29CF83B0"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\Results\\6881531ced0842b68e8ba08ddfbe806a\\phase2-results.json",
+        "sha256":  "4A1387325D70456872664831CF94F12738E53B3D0E602F266099BF7D40AE0592"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\Results\\6881531ced0842b68e8ba08ddfbe806a\\phase2-sessions.log",
+        "sha256":  "0A00F0D750E03064CA2453DA6A8C6AEC372FA00C1C39A817B84D8C5E663FABFC"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\Results\\6881531ced0842b68e8ba08ddfbe806a\\tested-files.json",
+        "sha256":  "A59DECE64E714CE709FC8E683319F87B96494F765FD892178CE726BC861C9AED"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\Results\\caa223110051451c9e56683157b89fcd\\integrity.txt",
+        "sha256":  "51ED230CE8764B93F7B850EECBBAB0E0EA6A5D8AD90C761E570F81EA780E453F"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\Results\\caa223110051451c9e56683157b89fcd\\phase0-results.json",
+        "sha256":  "9AB10E2C294B726AC677EA22569AF8EF04537738B87D0CBD0CF76417C2C7EA91"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\Results\\caa223110051451c9e56683157b89fcd\\phase1-results.json",
+        "sha256":  "BFA3BD92D1D32FF9474E07B95B4037F785802A2B8FABED47156F7504BC519865"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\Results\\caa223110051451c9e56683157b89fcd\\phase2-baseline.log",
+        "sha256":  "2A5D2375E2B8996D2DF6C8C8F89EFA3229CF33C1C7C12406409B2C6DF94CC0E4"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\Results\\caa223110051451c9e56683157b89fcd\\phase2-detection.log",
+        "sha256":  "B25AB6A830393F7D975305D75A1DE482B6BBEF81205A2D7A79F963E78594DD5F"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\Results\\caa223110051451c9e56683157b89fcd\\phase2-results.json",
+        "sha256":  "DC767488563A2E491DE9B726D2C7ED23601E231FB62DBFB7B2E1920834E3398C"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\Results\\caa223110051451c9e56683157b89fcd\\phase2-sessions.log",
+        "sha256":  "4BDF400461E56430625DF5DBD8FD52C230AD18FF7CEEB237A252433EA2BDAEA8"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\Results\\caa223110051451c9e56683157b89fcd\\tested-files.json",
+        "sha256":  "02ECBC46D3227AEC575B09A08AF1E9FB907CB2D6C7E7ED8A5F083026E7D68474"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\Results\\fa7c37fe3866452a9eafc6c914b6cfeb\\integrity.txt",
+        "sha256":  "51ED230CE8764B93F7B850EECBBAB0E0EA6A5D8AD90C761E570F81EA780E453F"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\Results\\fa7c37fe3866452a9eafc6c914b6cfeb\\phase0-results.json",
+        "sha256":  "7198D330504D5649BB4D0D420AC8A28563DCD9947482BC0C5D930CD452825E56"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\Results\\fa7c37fe3866452a9eafc6c914b6cfeb\\phase1-results.json",
+        "sha256":  "32A4A84104DDC6E19998563375C71477C21B56094B6CB55C033E871EA03DFC6A"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\Results\\fa7c37fe3866452a9eafc6c914b6cfeb\\phase2-baseline.log",
+        "sha256":  "33B26ECA39F9AEF8B47777B3916F75E54E2EB43D04822BB712D556696BE37249"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\Results\\fa7c37fe3866452a9eafc6c914b6cfeb\\phase2-detection.log",
+        "sha256":  "74B435D5A9308A1E0C1BC9E36EB5705DA7AD52CFA5C7E2E2E02BCD8C03B920FA"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\Results\\fa7c37fe3866452a9eafc6c914b6cfeb\\phase2-results.json",
+        "sha256":  "17F07BD172D2E0DCD45EC202F2D12AA209FB410D8FBE96567A488F0BCEECF477"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\Results\\fa7c37fe3866452a9eafc6c914b6cfeb\\phase2-sessions.log",
+        "sha256":  "50F45388D962C12316DC6507BA8EA8B2C38B6854FD4EAC942320DA6E0BF93EFD"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase2\\Results\\fa7c37fe3866452a9eafc6c914b6cfeb\\tested-files.json",
+        "sha256":  "A59DECE64E714CE709FC8E683319F87B96494F765FD892178CE726BC861C9AED"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\before-files.json",
+        "sha256":  "5C42A4226BDDE34D66C80DD0D944C3C7D008570F1C230EC5F0F290222199E9B4"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\MIGRATION_MAP.md",
+        "sha256":  "FA45A31C750A5E880FD58B512B2AF0BE4F6BB880D26263E3B9EBD457F78354DD"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Phase3Validation.cs",
+        "sha256":  "D34CB9D1E4CECFBEE5A7BFC97D29CAC904922C424B1DF744325AA455B44C299D"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\README.md",
+        "sha256":  "040F4B8EB179314DD139243B9CE837BFE13833D8B4720349837FAB2B1372F285"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\REPORT.md",
+        "sha256":  "98748F26482E1933D4E04B64A40F481B73B1C49BB5FD3C05714D14E989223A91"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Run.ps1",
+        "sha256":  "07A9DE718C18DE43EFC8B9D035F7CBD51571F6CFFC13DDED1F28D5156ACD4FB3"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\004030f8aaa14d3c891ff9c58dde111c\\integrity.txt",
+        "sha256":  "D5183E728ADE2D39708B66A6BAA58F2B4A9679BCA4C0EEE1C9567DF8D8DF59A0"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\004030f8aaa14d3c891ff9c58dde111c\\phase0-results.json",
+        "sha256":  "D6B0DAD72B04FA6EE127ECB067F1A62FB63EB7DE9C4134334902FE036ABF9F4C"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\004030f8aaa14d3c891ff9c58dde111c\\phase3-baseline.log",
+        "sha256":  "394A6251AE909F0A376D7874FFA7DF23D4AA115D1617A3B51AA55E0B64DFFFF4"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\004030f8aaa14d3c891ff9c58dde111c\\tested-files.json",
+        "sha256":  "C4B77CAA6F5FDF2E8182B4B33D09F360324E682FF8B630A370B46133B4D21204"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\601e5e423335416abb2b533bf7ab703e\\integrity.txt",
+        "sha256":  "D5183E728ADE2D39708B66A6BAA58F2B4A9679BCA4C0EEE1C9567DF8D8DF59A0"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\601e5e423335416abb2b533bf7ab703e\\phase0-results.json",
+        "sha256":  "D6B0DAD72B04FA6EE127ECB067F1A62FB63EB7DE9C4134334902FE036ABF9F4C"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\601e5e423335416abb2b533bf7ab703e\\phase3-baseline.log",
+        "sha256":  "61BC518CF73E1F68EA7F6CD3E4279A6471B730213B61B82DB4B94598E0856692"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\601e5e423335416abb2b533bf7ab703e\\tested-files.json",
+        "sha256":  "3360B33F3236E54DC99BA9B8F2BB2E525503C4EAD3907D08F75A4D1430B675D2"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\691828105b3442dca24f219a65b4201e\\integrity.txt",
+        "sha256":  "D5183E728ADE2D39708B66A6BAA58F2B4A9679BCA4C0EEE1C9567DF8D8DF59A0"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\691828105b3442dca24f219a65b4201e\\phase0-results.json",
+        "sha256":  "2C358A16F042181FC9660F103C79DF7E10749B9188602B8AC82A9C164869A407"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\691828105b3442dca24f219a65b4201e\\phase1-results.json",
+        "sha256":  "8CA6BDD99177924D5FF6859D49F36D3AE42ADCF4C5A449A8AF56154BBF7E2CA4"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\691828105b3442dca24f219a65b4201e\\phase2-results.json",
+        "sha256":  "331AE438D6B6CCED51A3B28D3C79EE908FE7B45308819A9305BB68DC0EA0F8A8"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\691828105b3442dca24f219a65b4201e\\phase3-baseline.log",
+        "sha256":  "1F1FC93E772D9E536906015B10B5F2BFB63D923CEC992E573FD3B9C11D676811"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\691828105b3442dca24f219a65b4201e\\phase3-detection.log",
+        "sha256":  "2EDA20C5D106B86EA5CB23CC8BC78026C1FD6B7B32847FD14A6B892855AF4043"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\691828105b3442dca24f219a65b4201e\\phase3-migration.log",
+        "sha256":  "39E889278494E1095C60A58EA11AFE39ACA2D2EEA6D0585C2CE5F3ADBFC6DF1A"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\691828105b3442dca24f219a65b4201e\\phase3-profile-export.json",
+        "sha256":  "30B7799B9B8004393A72DD087EC915E1C76FED5920DBCAE57BA959C38FBE177F"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\691828105b3442dca24f219a65b4201e\\phase3-results.json",
+        "sha256":  "9969D53D0E0AB843AC76AD944657D876A3D47B24E9AB1592309CCBF52570A00A"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\691828105b3442dca24f219a65b4201e\\phase3-sessions.log",
+        "sha256":  "40C4C153B92414E4519EB7E78CB2F2AAA2CDF27F27F1F2F88A1E4E1A0C482B3C"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\691828105b3442dca24f219a65b4201e\\tested-files.json",
+        "sha256":  "5BA80E179C20214595DC70C191EA8372B10E72DA6536D2B60F3ACB3E5AF3571D"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\8fc500d748314c83aada6862f31bb3d9\\integrity.txt",
+        "sha256":  "D5183E728ADE2D39708B66A6BAA58F2B4A9679BCA4C0EEE1C9567DF8D8DF59A0"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\8fc500d748314c83aada6862f31bb3d9\\phase0-results.json",
+        "sha256":  "ECE64F5C352B5C04E90B64E73EC6842A562ABD3A9B567E759FDCF3003A813AFD"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\8fc500d748314c83aada6862f31bb3d9\\phase1-results.json",
+        "sha256":  "4A6931AECA7CB041B092A0970CE6F4C28864F4CBDB408473374092818CEBF383"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\8fc500d748314c83aada6862f31bb3d9\\phase2-results.json",
+        "sha256":  "1C024712DEAF83B121845DBED2E49901146A9E5485545DE08BD8A7D13BF62D0D"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\8fc500d748314c83aada6862f31bb3d9\\phase3-baseline.log",
+        "sha256":  "DCE392BFF96CB60ED3E953D79B46F5DC7FA30A395101739F365EEE5D29430445"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\8fc500d748314c83aada6862f31bb3d9\\phase3-detection.log",
+        "sha256":  "170220E8FD1D28684BE3DE636255052E95F99D319E3147478C8BB2E7405247F7"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\8fc500d748314c83aada6862f31bb3d9\\phase3-migration.log",
+        "sha256":  "8B943C0318F39E2F71898C31ECB8AAA1B26344B8B48B79FDBBA587D35403DEAB"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\8fc500d748314c83aada6862f31bb3d9\\phase3-profile-export.json",
+        "sha256":  "30B7799B9B8004393A72DD087EC915E1C76FED5920DBCAE57BA959C38FBE177F"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\8fc500d748314c83aada6862f31bb3d9\\phase3-results.json",
+        "sha256":  "47044B14423EE68B35BEE322E91B484AF335C99C3F71A3E97F0B3E6E368D7047"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\8fc500d748314c83aada6862f31bb3d9\\phase3-sessions.log",
+        "sha256":  "6694612196798C453007DEEDF1401B69CF452F855027EE4A716403A483E17C2F"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\8fc500d748314c83aada6862f31bb3d9\\tested-files.json",
+        "sha256":  "5BA80E179C20214595DC70C191EA8372B10E72DA6536D2B60F3ACB3E5AF3571D"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\cb21eb1622484539914cb6c7214f6137\\integrity.txt",
+        "sha256":  "D5183E728ADE2D39708B66A6BAA58F2B4A9679BCA4C0EEE1C9567DF8D8DF59A0"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\cb21eb1622484539914cb6c7214f6137\\phase0-results.json",
+        "sha256":  "FF35401AD23CFF4084515656EE1AEC01FB0B0A53111E862B4D6D424E793057C5"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\cb21eb1622484539914cb6c7214f6137\\phase1-results.json",
+        "sha256":  "5A056F92C8260F3C35FE5B1C2C9FD316B3BAA5C785ADCFCDA4A4862915F67B67"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\cb21eb1622484539914cb6c7214f6137\\phase2-results.json",
+        "sha256":  "44065D005AC76839E955C4F160499E6B72109747894B60DD74F7359F3C1F7009"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\cb21eb1622484539914cb6c7214f6137\\phase3-baseline.log",
+        "sha256":  "F86EDC89C23E4B035975F049CE4018336F2AF8C9822EB374C2F0F50D724CEEE2"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\cb21eb1622484539914cb6c7214f6137\\phase3-detection.log",
+        "sha256":  "1EBF1EDFCA618F3ABE2D09EA7A49F655E5B782465A9B8228A092AE8B5C7662B2"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\cb21eb1622484539914cb6c7214f6137\\phase3-migration.log",
+        "sha256":  "F61593322402AF58D43C56FEBC7EC558F88F0EEFBFC32B20693A6A50A5264120"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\cb21eb1622484539914cb6c7214f6137\\phase3-profile-export.json",
+        "sha256":  "30B7799B9B8004393A72DD087EC915E1C76FED5920DBCAE57BA959C38FBE177F"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\cb21eb1622484539914cb6c7214f6137\\phase3-results.json",
+        "sha256":  "1E4E985348A4C10BC3B4B36B2EFF6EB396BBA57DA5A7E4825FA608C1C7D10A9B"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\cb21eb1622484539914cb6c7214f6137\\phase3-sessions.log",
+        "sha256":  "68ACF3A8EC74774AF281835AE30D087579120008E44BEF4AB9827219FC9C00D8"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase3\\Results\\cb21eb1622484539914cb6c7214f6137\\tested-files.json",
+        "sha256":  "5BA80E179C20214595DC70C191EA8372B10E72DA6536D2B60F3ACB3E5AF3571D"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\before-files.json",
+        "sha256":  "A55BC469764889CF061E93905E8BAC4DA539E865E28F1F922FBBC2B66396EB87"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Hand3DPoseProfile.before.cs.txt",
+        "sha256":  "DB7DE8937FD94FFE0844EBEB7EC7CC0F2F95B48EE3D179553039A924C95CA24C"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Phase4Validation.cs",
+        "sha256":  "9DF62FC852999445B71A4E27F594865674CF077279489E575E9CE6D0D2F73B9E"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\README.md",
+        "sha256":  "84B30AD5EA4CF28E3D8512C7FBA71349B99411615BEC9A44AF1DB4DBAF141CB7"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\REPORT.md",
+        "sha256":  "78C60E9B36CE233180FF37BD6CF978D864A7FEBD4B9D83966DAC5FB4EB7C7FBE"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Run.ps1",
+        "sha256":  "E95CE99670070BA037E0E32B6F773E75F52EAA74F34732CBB24E89D61898FAB5"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\0537a47242ca4b75a27cbf5da60c87f3\\integrity.txt",
+        "sha256":  "1F8B05499893D2CBAB7DE9CC990A7FDCA87AA60FDCC077496888F351FDDDDB07"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\0537a47242ca4b75a27cbf5da60c87f3\\phase3-profile-export.json",
+        "sha256":  "CEB29304D230E3531DE990ACDB645C89827454B18BFD4D949AEBD9E4DBB6860A"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\0537a47242ca4b75a27cbf5da60c87f3\\phase4-editor.log",
+        "sha256":  "F8ADF0222D4282A920EEDB0B45665992FA571F11EE71A71DACE3C26FB10813A8"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\0537a47242ca4b75a27cbf5da60c87f3\\phase4-results.json",
+        "sha256":  "CA46B1B50121150F08A1834CA9BB92D568E1F528833F722B9199896350412F99"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\0537a47242ca4b75a27cbf5da60c87f3\\tested-files.json",
+        "sha256":  "2D68DEE0F90FE06E2CAE1015B259BF5071D272CC78066FC73EC2FCAC11DC9ED8"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\1f270ba11b854b94922c1673f9dcf562\\integrity.txt",
+        "sha256":  "1F8B05499893D2CBAB7DE9CC990A7FDCA87AA60FDCC077496888F351FDDDDB07"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\1f270ba11b854b94922c1673f9dcf562\\phase0-results.json",
+        "sha256":  "86F3B83EA212AD90BE270CF1F34490D69C0D53E284A5AD8E60CEA7537284D026"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\1f270ba11b854b94922c1673f9dcf562\\phase1-results.json",
+        "sha256":  "48100890A756DADE5C1C1F48E0A7B841563DA309B56E8DEAA3A764A557288A69"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\1f270ba11b854b94922c1673f9dcf562\\phase2-results.json",
+        "sha256":  "3D4D675CA8E39A2D9D071DBEE99540533F59D4443FC9C4CA3800B9EE9DCCE1D6"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\1f270ba11b854b94922c1673f9dcf562\\phase3-baseline.log",
+        "sha256":  "78ED4D5AA8F29FB012BE948E5DB69AC095A931162DEFF8D9F7251D972B98E3F4"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\1f270ba11b854b94922c1673f9dcf562\\phase3-detection.log",
+        "sha256":  "F9A857985B9BE06474319416F95625F172D17B7E8CEB5A9194D87F3484D99466"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\1f270ba11b854b94922c1673f9dcf562\\phase3-migration.log",
+        "sha256":  "8E462507B7864D37EB746F3C374D7DE9B9E5DAE66546653101683B4713E4BD2A"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\1f270ba11b854b94922c1673f9dcf562\\phase3-results.json",
+        "sha256":  "0A4E172E0A04945950ED1379664DCB04EF91EAFF3695CDE227B1872E9B788723"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\1f270ba11b854b94922c1673f9dcf562\\phase3-sessions.log",
+        "sha256":  "3BBAD98F31AA9BDC3A2389E4BBC1B1B48CEE3B6D910834B1DE6489F47A6590E5"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\1f270ba11b854b94922c1673f9dcf562\\phase4-editor.log",
+        "sha256":  "43A1E9ECAA4DD6D30BE624D897207BD8A97AB79AE0E9C0B3C916C2DA8D24BD44"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\1f270ba11b854b94922c1673f9dcf562\\phase4-results.json",
+        "sha256":  "C32DFCDA6971932F5837276CA1F3510B923D9F17656D4D0B5B81AD9B5A509D4C"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\1f270ba11b854b94922c1673f9dcf562\\tested-files.json",
+        "sha256":  "653549816B53C00274DECB9EA0ADED3C96B17D32AC5C0A836E099432DA0A32CB"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\62958bb7b1534c9d8d9912e091af8530\\integrity.txt",
+        "sha256":  "1F8B05499893D2CBAB7DE9CC990A7FDCA87AA60FDCC077496888F351FDDDDB07"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\62958bb7b1534c9d8d9912e091af8530\\phase3-profile-export.json",
+        "sha256":  "CEB29304D230E3531DE990ACDB645C89827454B18BFD4D949AEBD9E4DBB6860A"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\62958bb7b1534c9d8d9912e091af8530\\phase4-editor.log",
+        "sha256":  "9F8AB9DF7F53133C885E752D6D252568084B099CBD7B9E3A3FF61A140B019AA2"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\62958bb7b1534c9d8d9912e091af8530\\phase4-results.json",
+        "sha256":  "1EF2C41D905146C0F6EDCFEEB32324E6778C435328BA99B84706B7143E3E0BCB"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\62958bb7b1534c9d8d9912e091af8530\\tested-files.json",
+        "sha256":  "C68C4164D6CFC20BED4ED97E1BC990C534BA8591843868D624B17C560649D59D"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\70a6b0a3ca6a488f85fdb1525fbecb9c\\integrity.txt",
+        "sha256":  "1F8B05499893D2CBAB7DE9CC990A7FDCA87AA60FDCC077496888F351FDDDDB07"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\70a6b0a3ca6a488f85fdb1525fbecb9c\\phase0-results.json",
+        "sha256":  "4448F12FEB1B83D29F0277F279ACE5F8159553B0D2694C583DDFAEDD2B2C37A6"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\70a6b0a3ca6a488f85fdb1525fbecb9c\\phase1-results.json",
+        "sha256":  "48E23E81F92A32B02E6EF8DD85586E20B00B5C07112F95EC60C065541BDB01C4"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\70a6b0a3ca6a488f85fdb1525fbecb9c\\phase2-results.json",
+        "sha256":  "A8E7ECD0C0CDB77E381ECC417E4E53C22B6D7CE4AA47FB0E19E8B874FA93DA33"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\70a6b0a3ca6a488f85fdb1525fbecb9c\\phase3-baseline.log",
+        "sha256":  "591F475A7B34EE2474EB5D7400C12424E32360C71666D7FB0FC19CA1C7CBD677"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\70a6b0a3ca6a488f85fdb1525fbecb9c\\phase3-detection.log",
+        "sha256":  "7E64E20BB1DE78C53415ABE49BC5253B06DE086170406EC6400FB9628DADC9BA"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\70a6b0a3ca6a488f85fdb1525fbecb9c\\phase3-migration.log",
+        "sha256":  "ADC923060DE5728B6C90F56BC44EEE464E9B39BA80E777AC7743F22262E57BB5"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\70a6b0a3ca6a488f85fdb1525fbecb9c\\phase3-profile-export.json",
+        "sha256":  "CEB29304D230E3531DE990ACDB645C89827454B18BFD4D949AEBD9E4DBB6860A"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\70a6b0a3ca6a488f85fdb1525fbecb9c\\phase3-results.json",
+        "sha256":  "9113042E5A05E41B68FE5B367BC3F6DEC97AD4CFF6D0FBA0F8455499D3FF12F9"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\70a6b0a3ca6a488f85fdb1525fbecb9c\\phase3-sessions.log",
+        "sha256":  "019135972BB475DB008A84565C46BF71C6E6ACA17239E8DB91842524B5D76217"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\70a6b0a3ca6a488f85fdb1525fbecb9c\\phase4-editor.log",
+        "sha256":  "1F725DA5647349078CA81D36F89C6FD362093A4EACF64D62286C8ABE03DFC375"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\70a6b0a3ca6a488f85fdb1525fbecb9c\\phase4-results.json",
+        "sha256":  "D5E6910874DFF86955983F4616ECA101334604E9B2B3AECC118CCDCE82038D72"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\70a6b0a3ca6a488f85fdb1525fbecb9c\\tested-files.json",
+        "sha256":  "81D8B79E75F5F0B02E03A5C7DCE16A7B11BB5821CD5B5C6A16468C09715D9356"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\91e7c689eacb4cf68a2d3ff52b18de74\\integrity.txt",
+        "sha256":  "1F8B05499893D2CBAB7DE9CC990A7FDCA87AA60FDCC077496888F351FDDDDB07"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\91e7c689eacb4cf68a2d3ff52b18de74\\phase3-profile-export.json",
+        "sha256":  "CEB29304D230E3531DE990ACDB645C89827454B18BFD4D949AEBD9E4DBB6860A"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\91e7c689eacb4cf68a2d3ff52b18de74\\phase4-editor.log",
+        "sha256":  "62455D5FF889FDBA620563D0F7D3A5ADBA9641413C928B331CC12868B244906F"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\91e7c689eacb4cf68a2d3ff52b18de74\\phase4-results.json",
+        "sha256":  "0CCA8DCFC4439FC91746187E3F9B918CAFBE2ACDB0A4B9BA50ECDEC65E5188C2"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\91e7c689eacb4cf68a2d3ff52b18de74\\tested-files.json",
+        "sha256":  "B2152BFBBB900B82766818740B311E4BFB11411D46F171742A933AE9B09197C9"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\b4c2d386f47b45d6a033c781824812d4\\integrity.txt",
+        "sha256":  "1F8B05499893D2CBAB7DE9CC990A7FDCA87AA60FDCC077496888F351FDDDDB07"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\b4c2d386f47b45d6a033c781824812d4\\phase0-results.json",
+        "sha256":  "312CAE8A4ADBFFB050A22D095590E864BE4BF5C895347BB804837044455D119C"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\b4c2d386f47b45d6a033c781824812d4\\phase1-results.json",
+        "sha256":  "D13B38B099D48C7EEC4BB104692F915AE9233A2A968D6765D491D81B8FC5DCF8"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\b4c2d386f47b45d6a033c781824812d4\\phase2-results.json",
+        "sha256":  "A7002930EBB971CE79A7F94C5BD5817B9060D52F96564622FDF4DE4AA5905BB6"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\b4c2d386f47b45d6a033c781824812d4\\phase3-baseline.log",
+        "sha256":  "B7AF69C136DEE1A7F2D1783189E3AADCF83DEF4A036197A221C7C254BA2ED2FE"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\b4c2d386f47b45d6a033c781824812d4\\phase3-detection.log",
+        "sha256":  "A692403A963B803380BD86F1A5CE0D845E5E5D7922A5E295A52CBF673C994500"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\b4c2d386f47b45d6a033c781824812d4\\phase3-migration.log",
+        "sha256":  "AA25AFA8107A7B38E5D6F8E75759730100C4EC62371B5DF284BD81F4C1C8A436"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\b4c2d386f47b45d6a033c781824812d4\\phase3-profile-export.json",
+        "sha256":  "CEB29304D230E3531DE990ACDB645C89827454B18BFD4D949AEBD9E4DBB6860A"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\b4c2d386f47b45d6a033c781824812d4\\phase3-results.json",
+        "sha256":  "47148E81F0383B8FC72AE4F86A5B2FF268C7EA1B0686F16A23CBC4879E5ED130"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\b4c2d386f47b45d6a033c781824812d4\\phase3-sessions.log",
+        "sha256":  "07E461998B61D2AE588146F751B8332F2B526FB9D81D4A3D5E768C9DFFABECE0"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\b4c2d386f47b45d6a033c781824812d4\\phase4-editor.log",
+        "sha256":  "ECD870F8690060A0A84F7490E11CFA31979672E3ADC73A9DF9F19542476B2E30"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\b4c2d386f47b45d6a033c781824812d4\\phase4-results.json",
+        "sha256":  "68A8496344C3126DC18CCDFC1396EF160B3E60E08BED9DF771442687234AD92D"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\b4c2d386f47b45d6a033c781824812d4\\tested-files.json",
+        "sha256":  "B2152BFBBB900B82766818740B311E4BFB11411D46F171742A933AE9B09197C9"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\bda5cc19182b409e87c822d9d7e02940\\integrity.txt",
+        "sha256":  "1F8B05499893D2CBAB7DE9CC990A7FDCA87AA60FDCC077496888F351FDDDDB07"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\bda5cc19182b409e87c822d9d7e02940\\phase0-results.json",
+        "sha256":  "ADE8F027A54D69B2D11EF26E9C825928756BDF22EDB34EC9043D853BA8D81111"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\bda5cc19182b409e87c822d9d7e02940\\phase1-results.json",
+        "sha256":  "E470F4CF193228BAB7FEFBEC648DE68477E330F484D70749F31F82A2DAAC60E0"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\bda5cc19182b409e87c822d9d7e02940\\phase2-results.json",
+        "sha256":  "9CE9E68037669E0AF95C34F30979AB3F511DE59011A329BECCBDF59772C017BF"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\bda5cc19182b409e87c822d9d7e02940\\phase3-baseline.log",
+        "sha256":  "BECDEB263CE95BB39AB8C7FE9B5452DC1B8F3C6977F38E0E6D986853911D1D6C"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\bda5cc19182b409e87c822d9d7e02940\\phase3-detection.log",
+        "sha256":  "BD1C0EBADFFA6A6539E9C01F8843421F65BD20B71B60FB23AF48E21B3B165199"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\bda5cc19182b409e87c822d9d7e02940\\phase3-migration.log",
+        "sha256":  "736F8563D93FB4F8814E0472B7FA4A7E5D2C10C69E5C88489B3F3B17002FC4CD"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\bda5cc19182b409e87c822d9d7e02940\\phase3-profile-export.json",
+        "sha256":  "CEB29304D230E3531DE990ACDB645C89827454B18BFD4D949AEBD9E4DBB6860A"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\bda5cc19182b409e87c822d9d7e02940\\phase3-results.json",
+        "sha256":  "CE5BE90900592D6AE1CAD2AB69652A36A045BDFCF38E722B0217DD19DE8E678F"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\bda5cc19182b409e87c822d9d7e02940\\phase3-sessions.log",
+        "sha256":  "569BF8CDEA8142412AC886851C24BA082E86601E05A80F006F1CE201F4DD29F3"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\bda5cc19182b409e87c822d9d7e02940\\phase4-editor.log",
+        "sha256":  "395C22FE4761C61F75088711E4A42EB02AC3EAB0EAA2588732D3A8F66315EEAC"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\bda5cc19182b409e87c822d9d7e02940\\phase4-results.json",
+        "sha256":  "CC1FF0EB52A931C81E62B7A3D39FC7D32D58BF37E9851849DDB40599C1195023"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\bda5cc19182b409e87c822d9d7e02940\\tested-files.json",
+        "sha256":  "C68C4164D6CFC20BED4ED97E1BC990C534BA8591843868D624B17C560649D59D"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\fd65a02122d94129b17c71c931543314\\integrity.txt",
+        "sha256":  "1F8B05499893D2CBAB7DE9CC990A7FDCA87AA60FDCC077496888F351FDDDDB07"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\fd65a02122d94129b17c71c931543314\\phase0-results.json",
+        "sha256":  "E1C4D1C19E00888E6456B3A81F17022A9A7631B01F9B442682D0D028C7532938"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\fd65a02122d94129b17c71c931543314\\phase1-results.json",
+        "sha256":  "F72DA35EFF763E7ED4084E8CC375DDA6FDCEA63EC1DC67607AA40C6372C883D2"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\fd65a02122d94129b17c71c931543314\\phase2-results.json",
+        "sha256":  "5BB01FCB03168B15DEC29FA8F6EB036BA2594C4D6090A8F0C90EF0D431AD902B"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\fd65a02122d94129b17c71c931543314\\phase3-baseline.log",
+        "sha256":  "012C1C18ACD26BCD1997A54A413F365B18334B5FE41808FCD21677210F1ACDAC"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\fd65a02122d94129b17c71c931543314\\phase3-detection.log",
+        "sha256":  "F48E34F1B43FDD96D591790AFDFE40D015DF2D9A39F33D826A40FA385A5EB9AF"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\fd65a02122d94129b17c71c931543314\\phase3-migration.log",
+        "sha256":  "3E63285A286D5DED8FE2A1BF7CE218AD6E87D3320F3D31FB907CB4533CAAD82D"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\fd65a02122d94129b17c71c931543314\\phase3-profile-export.json",
+        "sha256":  "CEB29304D230E3531DE990ACDB645C89827454B18BFD4D949AEBD9E4DBB6860A"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\fd65a02122d94129b17c71c931543314\\phase3-results.json",
+        "sha256":  "C96E4BF778E4A4016AC4FE85959EA1A0E7C38A6FB9BA7BFDC583240AA0C0E492"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\fd65a02122d94129b17c71c931543314\\phase3-sessions.log",
+        "sha256":  "D19DB480F8FFD5876ABE360F30712DA816D525A0669DB563360C36173EE2DE37"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\fd65a02122d94129b17c71c931543314\\phase4-editor.log",
+        "sha256":  "B23C203059A565740852539BCDAC1C9664D9127830FD740DC34CF82F22363194"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\fd65a02122d94129b17c71c931543314\\phase4-results.json",
+        "sha256":  "981C3E2200E9F9941AF7AFB7A3A9AB99F21845CBB1E65FAE727F508BA2D9E35C"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase4\\Results\\fd65a02122d94129b17c71c931543314\\tested-files.json",
+        "sha256":  "23CE07E27D1FA1D44131FBC3A9A71BCF1A42E450B43CD8F3A53FF8D401382A2E"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\before-files.json",
+        "sha256":  "CEDA637A31A934BB5BA52AED99BDCB57F605FE2A063428DE74B895C67A3BF61A"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Phase5PlayerProbe.cs",
+        "sha256":  "2E4B0AAB153665FFEDEF5EA76840DCB776629136B4009FA356B265E55F146214"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Phase5Validation.cs",
+        "sha256":  "1915A04C47CD8522A914D60FC3A3CCF2C3B2626FDF6D79C6B4DE92FFB3536FBA"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\README.md",
+        "sha256":  "C6DEF5D54CB35D65357684567D2B0CFCD14869B700AAB6095BE1AAE468D9851B"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\REPORT.md",
+        "sha256":  "946FEB376CE107598A20D151830BF88F51C02DEDE86225E4C22DDF8EEE43CD0F"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Run.ps1",
+        "sha256":  "A4424BA9E44F85799F3351B8A52505633F37783663A98A1EB666B0B8A2D57846"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Before\\Hand3DArmMovement.cs.txt",
+        "sha256":  "A82BF14020A30B647EFB9F08CAAE30BF3AEE091314906CD2FA89153E018846A7"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Before\\Hand3DInteractionPose.cs.txt",
+        "sha256":  "B0A4C33A123139AA5D072348E4DE22DDA0EE7CCBCB7AE86C645EA5066254A82E"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Before\\Hand3DModeController.cs.txt",
+        "sha256":  "57944A96BFE20695E79FC4C23D0D2BE3AF34FE26BDFDBA9EB31D985633D35011"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Before\\Hand3DRig.cs.txt",
+        "sha256":  "C05ED91CF22D81661C041E9034F697908EDBA6FBB9799D58206B61499E49A6C7"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Before\\TestArmScene.unity.txt",
+        "sha256":  "B5BD5AE7D986EEF563A9EF72CEC3EE6316EFE22F713B887E7D0E3D992185ECBF"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\45b53544c66d4587b45809a0795cd627\\integrity.txt",
+        "sha256":  "DC65455F27187F167D7CD758D852E632A11405D11C1640C451D59190002B90E8"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\45b53544c66d4587b45809a0795cd627\\phase0-results.json",
+        "sha256":  "364A5F272402FBB380ACE93361C6168AC10CD7731290B61CE4C085FBADA7AC13"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\45b53544c66d4587b45809a0795cd627\\phase1-results.json",
+        "sha256":  "0219396593520FC1F0F0EE1238DA75C3D61DC7A0915941BE19895CB545B7128D"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\45b53544c66d4587b45809a0795cd627\\phase2-results.json",
+        "sha256":  "A7F00C9E0D89F3A1415C45DC67746F57EC0767C0C2ED4E091A18612DD4E47B18"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\45b53544c66d4587b45809a0795cd627\\phase3-baseline.log",
+        "sha256":  "7BA50F21BE3532EC4DEDBA0575A7C4C184B3AB83D774608849FA5D2FAAB35D2E"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\45b53544c66d4587b45809a0795cd627\\phase3-detection.log",
+        "sha256":  "C737735EC8D652F388FE618B4A6DA1317B542FF66B2FFF92F157B408F6D69A59"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\45b53544c66d4587b45809a0795cd627\\phase3-migration.log",
+        "sha256":  "21DF0463770B72A5CF8524653F228E042DEF9949542B996571342EF7592A560C"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\45b53544c66d4587b45809a0795cd627\\phase3-results.json",
+        "sha256":  "9C5C3F38FD8ACFA656E0E7BE52DD5851E42D64695BF293781FB60CA8B92FFD5C"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\45b53544c66d4587b45809a0795cd627\\phase3-sessions.log",
+        "sha256":  "2D03E3EB9BFD262DDF1B556E76E31D18B7F3503FC79528BE70D034333B479ADB"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\45b53544c66d4587b45809a0795cd627\\phase4-editor.log",
+        "sha256":  "41DA98AE8D7166D0FC6D09DB85D693F1A760BD46C6F2002569F5A80C27CF8659"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\45b53544c66d4587b45809a0795cd627\\phase4-results.json",
+        "sha256":  "645E74F926AE7EAB7C9FAEF6759B5E4A2C5F77326E800FD1432D38E3AE25EAA8"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\45b53544c66d4587b45809a0795cd627\\phase5-build.log",
+        "sha256":  "E5F27C14421436B04CFD4AAACB99B31B77591BEB62EFFD3CE2DF0BFE5257016E"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\45b53544c66d4587b45809a0795cd627\\phase5-build.txt",
+        "sha256":  "6D8E47771AB8C7BE24C2B9BD8C6A3F84AAA3FBA344213C8427BFB60A3D3B06E0"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\45b53544c66d4587b45809a0795cd627\\phase5-import.txt",
+        "sha256":  "7883A360F41993A2CEC86AACBAFE8D4C1D7D34B2BEEA9759E227920FC7D307F6"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\45b53544c66d4587b45809a0795cd627\\phase5-prepare.log",
+        "sha256":  "A6BEE7A23B5FB6A4CD6EC880D510D3805DDB889AB5D895F533BB86171BF1532D"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\45b53544c66d4587b45809a0795cd627\\phase5-results.json",
+        "sha256":  "D5494FBCBA6126E1458B58CFD1FCA441AC965B8FA9BEF3449712EC264B12AC2D"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\45b53544c66d4587b45809a0795cd627\\phase5-universal.log",
+        "sha256":  "23085DDD8D5FA9E6598402471EC8A913FADD7B36D193F55063C50C96551B6172"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\45b53544c66d4587b45809a0795cd627\\player-result.txt",
+        "sha256":  "8905319C9BC53B2A5D58A53186ABF25912E83D69FA8E15319C708924D0CCE7A6"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\45b53544c66d4587b45809a0795cd627\\player.log",
+        "sha256":  "9F8299D0287021E41D5B07179ABBCB270B6696601A3B9849CB250E3B871B754F"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\45b53544c66d4587b45809a0795cd627\\tested-files.json",
+        "sha256":  "2FFD920AF802D089989BE8AA30A337154669DAA99B092277FAB1BA3799EB3773"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\47ac10197c964fb2bebc2b62498ed279\\integrity.txt",
+        "sha256":  "DC65455F27187F167D7CD758D852E632A11405D11C1640C451D59190002B90E8"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\47ac10197c964fb2bebc2b62498ed279\\phase0-results.json",
+        "sha256":  "4077D84D07B40B37660FF929A22177EEEA2591B4878A6848019D1B93C6FBB972"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\47ac10197c964fb2bebc2b62498ed279\\phase1-results.json",
+        "sha256":  "1CA2DB50816AFAC52B5E8BE2D941C07C5866477930B04DAD963B447EE22BF395"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\47ac10197c964fb2bebc2b62498ed279\\phase2-results.json",
+        "sha256":  "A848B42E150240E58AC85D0A35B42795E8E016B1B5F95E6B6D6F333D6C5486D9"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\47ac10197c964fb2bebc2b62498ed279\\phase3-baseline.log",
+        "sha256":  "0F515F48A5F52CC4FD6B540CE7A798C59DB9670B815EBD695A8DCDB0EBAA0A08"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\47ac10197c964fb2bebc2b62498ed279\\phase3-detection.log",
+        "sha256":  "A0D7B1B42E8F330A84A8A511309B02A89CD28839BDDA656571FBE6724AC32C6B"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\47ac10197c964fb2bebc2b62498ed279\\phase3-migration.log",
+        "sha256":  "BBA90814A045969B5DA6F7E3A3D1A52FD7561797A19D00B6FA119A648128253F"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\47ac10197c964fb2bebc2b62498ed279\\phase3-results.json",
+        "sha256":  "79FC4FA997D5FE2E14FFF274AC9B0B174DCBDA01A08AC5A42698BE1D2ABA2094"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\47ac10197c964fb2bebc2b62498ed279\\phase3-sessions.log",
+        "sha256":  "1826890FC4D72C1DBA2810D7BC6E29C5EBE3AF96DE55E27862BDB3A1CB8A052B"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\47ac10197c964fb2bebc2b62498ed279\\phase4-editor.log",
+        "sha256":  "ADBBF34DA9BB0C8DE3E56755CB8F1CCC5EC85F8CC038AFE2262E8D7A6BB30B5A"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\47ac10197c964fb2bebc2b62498ed279\\phase4-results.json",
+        "sha256":  "0F196E9D7A95EFF4278898FB475965E4FFF5CCC61163868769F810A230547329"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\47ac10197c964fb2bebc2b62498ed279\\phase5-prepare.log",
+        "sha256":  "0CC3DD4552634A76E8D496C97AD03E21BA1CFA9F78175D5B060D231FB3D240DB"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\47ac10197c964fb2bebc2b62498ed279\\phase5-results.json",
+        "sha256":  "60B43AFA9F0D829B3D3F61699B990A9FDB645E198A9ADD0DBF8B5A6F5961FB47"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\47ac10197c964fb2bebc2b62498ed279\\phase5-universal.log",
+        "sha256":  "34EE5C620EC1A04AF8CA7E114B80342BB29AA4203059B59B4345C80ACD11E4BC"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\47ac10197c964fb2bebc2b62498ed279\\quaternion-audit.log",
+        "sha256":  "5ED1701858494FB61B1DB2951FCA82D2D4D7F6C6DFB2558944BDFFFC06743D8E"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\47ac10197c964fb2bebc2b62498ed279\\quaternion-results.json",
+        "sha256":  "5FF8180C78CEEA0B2ED5C19609C834509A4DE3013102B8AC909202E60ACEBEA1"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\47ac10197c964fb2bebc2b62498ed279\\tested-files.json",
+        "sha256":  "A613F052DB148C5B106F74D7F06C9E45837C51E118D3F05F621757C452EC8358"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\64f5c71dc1cf496783e27a52405935ce\\integrity.txt",
+        "sha256":  "DC65455F27187F167D7CD758D852E632A11405D11C1640C451D59190002B90E8"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\64f5c71dc1cf496783e27a52405935ce\\phase0-results.json",
+        "sha256":  "EEA0A800B74862117C5A229E0B59C5FFB96F11992CB8B69CEB960C1C091DADD4"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\64f5c71dc1cf496783e27a52405935ce\\phase1-results.json",
+        "sha256":  "9C54C2CB408BF8FC43837394A8003AA819D37B681B10369C54D425A02BCBBB82"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\64f5c71dc1cf496783e27a52405935ce\\phase2-results.json",
+        "sha256":  "F09EF74063FB9AF99429BD094142425719A234D593FD303635D8592BD23D17DC"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\64f5c71dc1cf496783e27a52405935ce\\phase3-baseline.log",
+        "sha256":  "61EBEE8F39E576D91AB5866A12EB2D54F61EB05303A25CA784F3235573A7A01A"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\64f5c71dc1cf496783e27a52405935ce\\phase3-detection.log",
+        "sha256":  "BDA50C7344D9C41ADD5A8B34BB1C305214EB6797DB393995781DEA0AE20E9AC4"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\64f5c71dc1cf496783e27a52405935ce\\phase3-migration.log",
+        "sha256":  "062FE2FD86FB5007D31530463E2B247F7C1F6B03D638408AB61E7F25C946F27F"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\64f5c71dc1cf496783e27a52405935ce\\phase3-results.json",
+        "sha256":  "366A59787BCF81789755AF85A578E3839F6CE574F056170F042B3F0ACDA3014D"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\64f5c71dc1cf496783e27a52405935ce\\phase3-sessions.log",
+        "sha256":  "E692F793CEF7A9F4D6135243726E1A18DA88F51DA154A500CEA8DBC46DA98D3B"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\64f5c71dc1cf496783e27a52405935ce\\phase4-editor.log",
+        "sha256":  "F6FFD8610A425AABEC2FDB26C2044C0B0EC9280C0586817CC3B60243A5DBBEB4"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\64f5c71dc1cf496783e27a52405935ce\\phase4-results.json",
+        "sha256":  "A47ABF4488B621321B3122132D476F3EEFCF19ED81ABCF0B2154C0984959144A"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\64f5c71dc1cf496783e27a52405935ce\\phase5-build.log",
+        "sha256":  "21F24937DDD5B663E92EC8078318E77B66B6C71ADC376C4A5AEF9B3A82C23170"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\64f5c71dc1cf496783e27a52405935ce\\phase5-build.txt",
+        "sha256":  "263547D3B6D787F9AC389D860991330B824AAE92946732EFADA069C4A2A9520C"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\64f5c71dc1cf496783e27a52405935ce\\phase5-import.txt",
+        "sha256":  "7883A360F41993A2CEC86AACBAFE8D4C1D7D34B2BEEA9759E227920FC7D307F6"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\64f5c71dc1cf496783e27a52405935ce\\phase5-prepare.log",
+        "sha256":  "B8B21AD824A6F8E7307BF0C5F7E0D4BD6D96B70DC1DABB3ECE2C8A035D95BC57"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\64f5c71dc1cf496783e27a52405935ce\\phase5-results.json",
+        "sha256":  "31C51D828F204A5F1BB850ECC34195E401B5D562307E28C7D29B6F9D998BE534"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\64f5c71dc1cf496783e27a52405935ce\\phase5-universal.log",
+        "sha256":  "8AB3459F402AE2CCEEED45640A7B7B13601F59B4ECE24E2816C65D451233EF9A"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\64f5c71dc1cf496783e27a52405935ce\\player-result.txt",
+        "sha256":  "8905319C9BC53B2A5D58A53186ABF25912E83D69FA8E15319C708924D0CCE7A6"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\64f5c71dc1cf496783e27a52405935ce\\player.log",
+        "sha256":  "4DCB409B8BF0DBF85719455BB60D60AFEA3465887E5B8B3A978D44C33D314823"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\64f5c71dc1cf496783e27a52405935ce\\quaternion-audit.log",
+        "sha256":  "15D024C76FD57D5C5D2BAA7AF18020E3C524E711D1FDD161AD124C8B14B4F212"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\64f5c71dc1cf496783e27a52405935ce\\quaternion-results.json",
+        "sha256":  "29F9072BF5273D8FCA54F716545561B5D54C80B19C19FBB8046634DF49D42520"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\64f5c71dc1cf496783e27a52405935ce\\tested-files.json",
+        "sha256":  "5A3762C17294EDDA1D89CA7AF86405D4741DDAE228CC994396173E9E26D5644E"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\758f691b607548a993876c0a45cf2137\\integrity.txt",
+        "sha256":  "DC65455F27187F167D7CD758D852E632A11405D11C1640C451D59190002B90E8"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\758f691b607548a993876c0a45cf2137\\phase5-prepare.log",
+        "sha256":  "4CCB593BE585ABB6BEF45FA8BEBFC7279F96B8E2760F8093E6390B8532C40655"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\758f691b607548a993876c0a45cf2137\\quaternion-audit.log",
+        "sha256":  "46E14C7D69275268AEF5D63F4E139956D1A709EB0D9C8477746EB1C4AAF4BF3B"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\758f691b607548a993876c0a45cf2137\\quaternion-results.json",
+        "sha256":  "C2676EE8F31FFA82A875D23732EA8CCA699F88A18E3E083BFA2D2D0EF584FAB4"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\758f691b607548a993876c0a45cf2137\\tested-files.json",
+        "sha256":  "A613F052DB148C5B106F74D7F06C9E45837C51E118D3F05F621757C452EC8358"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\9ff7cad6c07244b4b1257c99c2f74730\\integrity.txt",
+        "sha256":  "DC65455F27187F167D7CD758D852E632A11405D11C1640C451D59190002B90E8"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\9ff7cad6c07244b4b1257c99c2f74730\\phase5-import.txt",
+        "sha256":  "7883A360F41993A2CEC86AACBAFE8D4C1D7D34B2BEEA9759E227920FC7D307F6"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\9ff7cad6c07244b4b1257c99c2f74730\\phase5-prepare.log",
+        "sha256":  "77C103A6CDD544A3799742DB928D10C1E5C9E76471625F4F4237DA4B32D069AF"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\9ff7cad6c07244b4b1257c99c2f74730\\quaternion-audit.log",
+        "sha256":  "726C415A37201278F20ADDFEFF57414C68BEA01175B7C8A62C44A7120A1CD934"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\9ff7cad6c07244b4b1257c99c2f74730\\quaternion-results.json",
+        "sha256":  "052C3C46F37133454291D82FDDCF9E1B165702DF44364D0E046A19A0B916970F"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\9ff7cad6c07244b4b1257c99c2f74730\\tested-files.json",
+        "sha256":  "A613F052DB148C5B106F74D7F06C9E45837C51E118D3F05F621757C452EC8358"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\a5c822f61bd04078810395135a829cb7\\integrity.txt",
+        "sha256":  "DC65455F27187F167D7CD758D852E632A11405D11C1640C451D59190002B90E8"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\a5c822f61bd04078810395135a829cb7\\phase0-results.json",
+        "sha256":  "19C47FB47C92AB4D687AB12A9339A0DD8953195A9AD2FF52C6FE8D79C30B0D08"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\a5c822f61bd04078810395135a829cb7\\phase1-results.json",
+        "sha256":  "3285DB8B1753E8A2099AF3B6CA5292F905F136654C570876EA39B58F355886CD"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\a5c822f61bd04078810395135a829cb7\\phase2-results.json",
+        "sha256":  "8C773421116AFD53354CB4E76A6132C67CEC5791CCDC8675EEA692BFEB9BD1CD"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\a5c822f61bd04078810395135a829cb7\\phase3-baseline.log",
+        "sha256":  "9099BB92D27504159934A5F2F0F31F2B10AB5E1568B083B8CC94562A31752E1F"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\a5c822f61bd04078810395135a829cb7\\phase3-detection.log",
+        "sha256":  "45AB8DD91AD7C90F05FA3975D0FAF6E1F616BB05E3054A2469C5AAAB30ED2C5E"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\a5c822f61bd04078810395135a829cb7\\phase3-migration.log",
+        "sha256":  "2EA9D56666B72C9B3AC9F0F3228319B01DA66EFA13881B0A4E5D5059BDF85269"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\a5c822f61bd04078810395135a829cb7\\phase3-results.json",
+        "sha256":  "BB87350E07B698C851B97081B8909482B5C84CF2BCC89FA72EE947B0E864FB5A"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\a5c822f61bd04078810395135a829cb7\\phase3-sessions.log",
+        "sha256":  "07022AB9616F75C695F123AC2B74ED23FC1CD77FE344F7EC8944E00DBCB646BD"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\a5c822f61bd04078810395135a829cb7\\phase4-editor.log",
+        "sha256":  "D7B536A5E776E1051DDFF2A787D4063E0FB4601295AAB67A7672CBE008FA80B8"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\a5c822f61bd04078810395135a829cb7\\phase4-results.json",
+        "sha256":  "F94E3BFA787E1FCFEBBEF0F0401634077A5672FE5FE8894428D82DBFF6DA6ECB"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\a5c822f61bd04078810395135a829cb7\\phase5-build.log",
+        "sha256":  "D32F269DB3677C42A3E649C30947B16296922FE136AE9681BF49E915A218683B"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\a5c822f61bd04078810395135a829cb7\\phase5-build.txt",
+        "sha256":  "136056E95D65D620917C35CB7F3BF7AAEDD8AE7C2FE1DCAC98D407A473F489FC"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\a5c822f61bd04078810395135a829cb7\\phase5-import.txt",
+        "sha256":  "7883A360F41993A2CEC86AACBAFE8D4C1D7D34B2BEEA9759E227920FC7D307F6"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\a5c822f61bd04078810395135a829cb7\\phase5-prepare.log",
+        "sha256":  "F692A5A12C4A059306A3E6D371E257D38BDC4146B8B1834645FE9166B84FB16C"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\a5c822f61bd04078810395135a829cb7\\phase5-results.json",
+        "sha256":  "EF2B1EC81CE9547852EDDFB14DE27B6EE446C264C55C22D0C4727BC496400EA3"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\a5c822f61bd04078810395135a829cb7\\phase5-universal.log",
+        "sha256":  "6A25D7DBB09F629E1F05E26E166CED5FFBCEA5E67D627BC051D35CE79595AF15"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\a5c822f61bd04078810395135a829cb7\\player-result.txt",
+        "sha256":  "8905319C9BC53B2A5D58A53186ABF25912E83D69FA8E15319C708924D0CCE7A6"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\a5c822f61bd04078810395135a829cb7\\player.log",
+        "sha256":  "FFD9BFC4076632DE2C3F9899587D8C6968C635E2CE9ED956FAA0C9FED4E6996E"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\a5c822f61bd04078810395135a829cb7\\tested-files.json",
+        "sha256":  "537447D4568DB497025341A6F2FF599C51F53F8C91322F4867FA96882FD85E3B"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\b2e61fd6cd9c439f8378ed0b72baea31\\integrity.txt",
+        "sha256":  "DC65455F27187F167D7CD758D852E632A11405D11C1640C451D59190002B90E8"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\b2e61fd6cd9c439f8378ed0b72baea31\\phase5-prepare.log",
+        "sha256":  "57F43E37AAE4166EFE4B81BA176AA899280A3AFB0CA149C7BB93DDA76A880272"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\b2e61fd6cd9c439f8378ed0b72baea31\\phase5-results.json",
+        "sha256":  "8FB7FAFF1C66B270CFAD92BE7CABD11BAD27420B85E10EBC14227EEEF2A456E8"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\b2e61fd6cd9c439f8378ed0b72baea31\\phase5-universal.log",
+        "sha256":  "CCD239E751A1B7B785226DB286051234B9F5EECB5C3F0A03BC776DE586E07DE1"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\b2e61fd6cd9c439f8378ed0b72baea31\\tested-files.json",
+        "sha256":  "375A50C83678354AF79A93C1A365C61806F653052BB16921F30F2F6DFF075D7E"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\b42b0a9814074fa8a3426bdaa5f3c130\\integrity.txt",
+        "sha256":  "DC65455F27187F167D7CD758D852E632A11405D11C1640C451D59190002B90E8"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\b42b0a9814074fa8a3426bdaa5f3c130\\phase5-import.txt",
+        "sha256":  "7883A360F41993A2CEC86AACBAFE8D4C1D7D34B2BEEA9759E227920FC7D307F6"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\b42b0a9814074fa8a3426bdaa5f3c130\\phase5-prepare.log",
+        "sha256":  "A5B0EC5E6C1D412E0E90AED2DB5A5A40B435F35DDDA02E3D68E1E492770B8F91"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\b42b0a9814074fa8a3426bdaa5f3c130\\phase5-results.json",
+        "sha256":  "20F114C86298D40D9EE5F59889F4DF06488AFBF69696222048E4228777799CC2"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\b42b0a9814074fa8a3426bdaa5f3c130\\phase5-universal.log",
+        "sha256":  "54D533FE577A84C9B10A70AA39A485B52C6376092DAD2A89A41D14FAF09EDB61"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\b42b0a9814074fa8a3426bdaa5f3c130\\tested-files.json",
+        "sha256":  "89013EDF0831629FDAF0A2D789F608BD987A4720D4FB7039F67393AFE8893111"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\bb1ff2d38c914ae79b57b72a91a11869\\integrity.txt",
+        "sha256":  "DC65455F27187F167D7CD758D852E632A11405D11C1640C451D59190002B90E8"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\bb1ff2d38c914ae79b57b72a91a11869\\phase5-prepare.log",
+        "sha256":  "C3D4BC06CE9D47945357B525DC9BD6D75CF047DD17B98B8163144AC4FF425CE8"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\bb1ff2d38c914ae79b57b72a91a11869\\quaternion-audit.log",
+        "sha256":  "DD9E5DE1247A2C4D9D56EF44812A06CEC98D669FF20643BF1501B80D62D01A04"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\bb1ff2d38c914ae79b57b72a91a11869\\quaternion-results.json",
+        "sha256":  "D2CAE40E9B72408C3654EFD925B2D2B5D9EA43EB2C892CA7EF9175CC2EA18E9C"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\bb1ff2d38c914ae79b57b72a91a11869\\tested-files.json",
+        "sha256":  "1956FEB84A362D3FCCEE327A95FDA59271E27E6E7B638ACB326F86FF0F0983DC"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\c7ba5424ca494ca68fad2ccf87a84c87\\integrity.txt",
+        "sha256":  "DC65455F27187F167D7CD758D852E632A11405D11C1640C451D59190002B90E8"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\c7ba5424ca494ca68fad2ccf87a84c87\\phase0-results.json",
+        "sha256":  "8E7B52D379327C8B3F80A90F27F44AA1E7A1784125F08FD9D0C1595EDF79A5C6"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\c7ba5424ca494ca68fad2ccf87a84c87\\phase1-results.json",
+        "sha256":  "0EBB60FF3685A6128E57E34FDB678C4E82E6A7A8E294184A317364A09ED5DF62"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\c7ba5424ca494ca68fad2ccf87a84c87\\phase2-results.json",
+        "sha256":  "970AD69ACA0364EC1ABF128EB85FEE23235685AD3DE052884EB03660BEFB1C26"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\c7ba5424ca494ca68fad2ccf87a84c87\\phase3-baseline.log",
+        "sha256":  "68239D1064435D8D9563BD7DA2A245E8A8BE9F5095948D213D691E5E63D8FD41"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\c7ba5424ca494ca68fad2ccf87a84c87\\phase3-detection.log",
+        "sha256":  "E513EE923F8A2A5F0851622D373D412216D56F3A0DB0A2FB4D406F8832093B07"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\c7ba5424ca494ca68fad2ccf87a84c87\\phase3-migration.log",
+        "sha256":  "DEE9CD3DD5C453AA0115488591C324E1A63489C39AA9DE98C034515B5ABC7734"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\c7ba5424ca494ca68fad2ccf87a84c87\\phase3-results.json",
+        "sha256":  "C40E15B664F277D19CB1F477BB01939B3AB844862DD8CF3FE7943F739D31C3CA"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\c7ba5424ca494ca68fad2ccf87a84c87\\phase3-sessions.log",
+        "sha256":  "612815E6F671DDE59A2AE3AEA9567730371FE74E85F9FA662F0D7AD5B7745BC9"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\c7ba5424ca494ca68fad2ccf87a84c87\\phase4-editor.log",
+        "sha256":  "B9E6878D634F11C5CD4181D595042F026B2C9A3BA2991AE9AC79A1B3289DB236"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\c7ba5424ca494ca68fad2ccf87a84c87\\phase4-results.json",
+        "sha256":  "8D73F180A33E9261EE76DF19E149FB4B7FCC4E6866DC94C5DEA40848A92CFF3C"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\c7ba5424ca494ca68fad2ccf87a84c87\\phase5-prepare.log",
+        "sha256":  "7B0425058F06332D25B0DEFD23D55356E3DFB3AFCDBBA4F5542C04CEDE0F63A9"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\c7ba5424ca494ca68fad2ccf87a84c87\\phase5-results.json",
+        "sha256":  "7B69DA076253F0FE4C7D718670C07EB660015775B47A7CF45AE559D2ED377FA1"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\c7ba5424ca494ca68fad2ccf87a84c87\\phase5-universal.log",
+        "sha256":  "B5FEF7942E02C2C06B215FB31A0ED4F3E36D65E953D651F5A104A85DF131038F"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\c7ba5424ca494ca68fad2ccf87a84c87\\quaternion-audit.log",
+        "sha256":  "6C887639BFDE6DEF83D8CEB2E5C1D74D46BBD404567F7C8BBA1156DF3ED22D02"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\c7ba5424ca494ca68fad2ccf87a84c87\\quaternion-results.json",
+        "sha256":  "D4C1ACB56F892A4FC814DB5394001EBCE9AC924D633BF26AC00E4B940E66C4E2"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase5\\Results\\c7ba5424ca494ca68fad2ccf87a84c87\\tested-files.json",
+        "sha256":  "5A3762C17294EDDA1D89CA7AF86405D4741DDAE228CC994396173E9E26D5644E"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\before-files.json",
+        "sha256":  "7B827EBB47662F211EA874979A25D3EF179D0C48DA0B78EA21A7457A5D2E7A77"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Phase6PlayerProbe.cs",
+        "sha256":  "B0FFA15B0062342F16715D92D36F7E296BF482F056D06A521969AD86A6E2AF24"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Phase6Validation.cs",
+        "sha256":  "BC01F2CEF4D5BACA5466C369F05E0854376829156EAC7ACB4C060E757B380F50"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\README.md",
+        "sha256":  "27751DF86A358EC704CA305FF0F94EFF447CE0925CD54C22CC6DF495D5DF2FD7"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\REPORT.md",
+        "sha256":  "B4898C859EEAF246E3AAF4E99FB81D54B1DB7A7488C3A43E622791942F038806"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Run.ps1",
+        "sha256":  "92838FDF749674B278BFDC3BC4E720E58A1E0351843B04E1367F4104F64FE28A"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Before\\Hand3DInputController.cs.txt",
+        "sha256":  "BB1D6378A30C6F27427969B4CCCBD873530627378098979E0EFC459DE904C1AB"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Before\\Hand3DPoseActions.cs.txt",
+        "sha256":  "A3C116F64C05FB58AC8397921D0D14751468A898CE7E6B5016A1C1DD791194AA"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Before\\Hand3DPoseComposition.cs.txt",
+        "sha256":  "0C20B44D99E52BFADC96F699A7E6789FABD8A44767EBE7B57FADAEDAA8ECB615"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\30481b992fb34487b2542bb1e8435dd9\\integrity.txt",
+        "sha256":  "DC65455F27187F167D7CD758D852E632A11405D11C1640C451D59190002B90E8"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\30481b992fb34487b2542bb1e8435dd9\\phase5-import.txt",
+        "sha256":  "7883A360F41993A2CEC86AACBAFE8D4C1D7D34B2BEEA9759E227920FC7D307F6"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\30481b992fb34487b2542bb1e8435dd9\\phase5-prepare.log",
+        "sha256":  "E1E67415841B314776E086EF44130A03167F8972787DA8B2C568D563D474D1CC"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\30481b992fb34487b2542bb1e8435dd9\\phase6-actions.log",
+        "sha256":  "295B45EDF4050C4813D813F4F81E3B53259A12AA85A1886985509B47E6B107D7"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\30481b992fb34487b2542bb1e8435dd9\\phase6-results.json",
+        "sha256":  "F14623EAC42C52B80EB98DFFAD534CDE00BF94C5EA58302C2F1AFAB9FDD5C433"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\30481b992fb34487b2542bb1e8435dd9\\tested-files.json",
+        "sha256":  "10B84440EB2E7E42D41A17CC728FBEAC65B2764C2B3E012DFFE695AAE202EDB0"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\89d8c0a78b614ac49cb1adeaeded8233\\integrity.txt",
+        "sha256":  "DC65455F27187F167D7CD758D852E632A11405D11C1640C451D59190002B90E8"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\89d8c0a78b614ac49cb1adeaeded8233\\phase5-import.txt",
+        "sha256":  "7883A360F41993A2CEC86AACBAFE8D4C1D7D34B2BEEA9759E227920FC7D307F6"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\89d8c0a78b614ac49cb1adeaeded8233\\phase5-prepare.log",
+        "sha256":  "949C36BDA38593B7CEBC7DD359BBB16AF3D98B9ECD205B4DBF8000F7CE5DDC4A"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\89d8c0a78b614ac49cb1adeaeded8233\\phase5-results.json",
+        "sha256":  "1C6BE34BDB5F937059856D4C026EF606AB4BD5A7AB21E15BD3CD5C3604BCC85B"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\89d8c0a78b614ac49cb1adeaeded8233\\phase5-universal.log",
+        "sha256":  "A52C91FA4C13161B48F6129AF8A493E7079E634212445B515D36A053A3253AE8"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\89d8c0a78b614ac49cb1adeaeded8233\\phase6-actions.log",
+        "sha256":  "D40FBAFA9CA1CB79F072F92CDA05EC083CE4970A8400CF3FC58ACF4749C8862C"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\89d8c0a78b614ac49cb1adeaeded8233\\phase6-results.json",
+        "sha256":  "B26A917CF1AC1276DFAFF546F271C86024FEBC5923A1E7873F838EC952A94D36"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\89d8c0a78b614ac49cb1adeaeded8233\\tested-files.json",
+        "sha256":  "10B84440EB2E7E42D41A17CC728FBEAC65B2764C2B3E012DFFE695AAE202EDB0"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\b4577a422ee04039abd669d6cb980441\\integrity.txt",
+        "sha256":  "DC65455F27187F167D7CD758D852E632A11405D11C1640C451D59190002B90E8"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\b4577a422ee04039abd669d6cb980441\\phase0-results.json",
+        "sha256":  "7595587F90E91E78B4B8D12C1D354411B35CB60803B0CAC32905052AD77D57D2"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\b4577a422ee04039abd669d6cb980441\\phase1-results.json",
+        "sha256":  "88845F5B1718BA1B1F957F3C9D76371DFD10032EAFC63489BBFEBFBC065DF380"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\b4577a422ee04039abd669d6cb980441\\phase2-results.json",
+        "sha256":  "50570D549000575CD39F3C937D8D7F8898D106B92B652560E15DA65287431C0B"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\b4577a422ee04039abd669d6cb980441\\phase3-baseline.log",
+        "sha256":  "021DEBB2F9CF117BF68CDF4587F6B4F1A5127E49B48722807B4825382F0679E1"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\b4577a422ee04039abd669d6cb980441\\phase3-detection.log",
+        "sha256":  "105C73B2BF8A408999FEC5A79B1E2D226AC17A2BB47C1C04813005CE0F2AB31A"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\b4577a422ee04039abd669d6cb980441\\phase3-migration.log",
+        "sha256":  "572D77DC0A3E904531D4DF3CB8F9A67D46B6EBCFA255F1118390D27988AA759B"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\b4577a422ee04039abd669d6cb980441\\phase3-results.json",
+        "sha256":  "580C94E6BF7E609249C6C22DF386AC25F3ADFE9E215775972A028C9FC2641BD6"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\b4577a422ee04039abd669d6cb980441\\phase3-sessions.log",
+        "sha256":  "AC28A3C1FC7F73CDF62BEA09489F71F0911A2F03141F3F51BB53B1BCB3B190B1"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\b4577a422ee04039abd669d6cb980441\\phase4-editor.log",
+        "sha256":  "B57F4D37394B9C9719F55CF2D1C4702819D677AC81284A7C3BDF619F361B85CA"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\b4577a422ee04039abd669d6cb980441\\phase4-results.json",
+        "sha256":  "6A6456A64F086EFE7D3A19F4F374B276747EACC03B3F29B46FB09CBC69D1ED92"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\b4577a422ee04039abd669d6cb980441\\phase5-build.log",
+        "sha256":  "E3F18F4C34C6914F78DC1F5B0982E7D36C6BA6E57F905DEBD95F331C9B67C027"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\b4577a422ee04039abd669d6cb980441\\phase5-build.txt",
+        "sha256":  "6ED81A8EA067B8816FCF465B65862C103D42CDBF9E252F56C3D7D26B37BC0475"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\b4577a422ee04039abd669d6cb980441\\phase5-import.txt",
+        "sha256":  "7883A360F41993A2CEC86AACBAFE8D4C1D7D34B2BEEA9759E227920FC7D307F6"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\b4577a422ee04039abd669d6cb980441\\phase5-prepare.log",
+        "sha256":  "A8B4FCE2C8407557CF2DA196F02E0314F472B086EA67F56EDB8BE7CF77A97CAF"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\b4577a422ee04039abd669d6cb980441\\phase5-results.json",
+        "sha256":  "7216D8DB67A4A073436FD5D7FA2F6E71A7D3757FCDE7C902C6DC0FDA57730312"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\b4577a422ee04039abd669d6cb980441\\phase5-universal.log",
+        "sha256":  "6E33B58425357058FAA999EC4E4BEE01CF024376E6554BCB4155FD2A484C2F2D"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\b4577a422ee04039abd669d6cb980441\\phase6-actions.log",
+        "sha256":  "83151865ADE36E2980CD72B8640531D27061C90252C3C047BBC26AA2BDE3DB11"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\b4577a422ee04039abd669d6cb980441\\phase6-results.json",
+        "sha256":  "B04CDFF968EE7F5DABD2AC4BA59A0C4B24FFB54295678C4179B6BC40205B85AB"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\b4577a422ee04039abd669d6cb980441\\player-result.txt",
+        "sha256":  "54185862EE82DBE90D46072EBD43DAB1C42215FA9A369CBFA94577173B1F66B0"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\b4577a422ee04039abd669d6cb980441\\player.log",
+        "sha256":  "B165D106D06EAE64DF8EE7BF5BC0A28975C03F752CFB0B17DEC526209CF1F766"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\b4577a422ee04039abd669d6cb980441\\quaternion-audit.log",
+        "sha256":  "D690791DB41FCAEDECBCEA2A62701B996341B5A87FE8FB64DAF0348459A37219"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\b4577a422ee04039abd669d6cb980441\\quaternion-results.json",
+        "sha256":  "1838144D7BFD60263FF406382537965DFCF2256DAD146569A29023F49AB9590E"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\b4577a422ee04039abd669d6cb980441\\tested-files.json",
+        "sha256":  "DBE0091C51661F32E242F2DBA1F94A9318CCD686BB44448E0372A728CDC57408"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\dd6aa453f4dd40dbadae78c78af8e2d1\\integrity.txt",
+        "sha256":  "DC65455F27187F167D7CD758D852E632A11405D11C1640C451D59190002B90E8"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\dd6aa453f4dd40dbadae78c78af8e2d1\\phase0-results.json",
+        "sha256":  "080088A3B940919D19322D71C1BA888B3D3BECA6E599B65F8DFD090DCFA4B261"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\dd6aa453f4dd40dbadae78c78af8e2d1\\phase1-results.json",
+        "sha256":  "F7FF4E4302FEBF46F3A8C5004F692A27693D06FC93F72F5266ECCFE4F24613C7"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\dd6aa453f4dd40dbadae78c78af8e2d1\\phase2-results.json",
+        "sha256":  "23BC6A4274B8374D15BCEB55F55AE4D491EFDA9203C26F971F41E483C95CDCE3"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\dd6aa453f4dd40dbadae78c78af8e2d1\\phase3-baseline.log",
+        "sha256":  "063B77F73551CA2912A04A3422E1A468597A7BE5FEF1B84EC95461171D451310"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\dd6aa453f4dd40dbadae78c78af8e2d1\\phase3-detection.log",
+        "sha256":  "CFEEA271B50A914C53B406E9C06B548E106F0702FF9A2118D98F3080BDFA2A09"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\dd6aa453f4dd40dbadae78c78af8e2d1\\phase3-migration.log",
+        "sha256":  "181DED266594BDD2DDA24BC0FD11827D190BD3D17FBBCA47AD8EE1D88EA18892"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\dd6aa453f4dd40dbadae78c78af8e2d1\\phase3-results.json",
+        "sha256":  "EDDB500D627E9C995D60497A71F9C4F324FFBAC4568811A028C193026D831377"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\dd6aa453f4dd40dbadae78c78af8e2d1\\phase3-sessions.log",
+        "sha256":  "8CF1742626D71302407AAEC314FE87CFE296D534C0F2111FC6D9F6E04D3683C6"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\dd6aa453f4dd40dbadae78c78af8e2d1\\phase4-editor.log",
+        "sha256":  "8324FE3098C7BB90D1BABD5E95DA0C7C5AD3066F5A8228BD78C9DAAD957A4167"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\dd6aa453f4dd40dbadae78c78af8e2d1\\phase4-results.json",
+        "sha256":  "397BC532D22F3022E4A8F9CA253BC4959C98440375D49E677826F810556A4ABF"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\dd6aa453f4dd40dbadae78c78af8e2d1\\phase5-build.log",
+        "sha256":  "2579110F058983B62381CD43D4C949B326641EE67580D99285028F9A6E173299"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\dd6aa453f4dd40dbadae78c78af8e2d1\\phase5-build.txt",
+        "sha256":  "016704C0BB788C1DCE89973CE3C10741FF400A93AE9FE79C8304156A7E666380"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\dd6aa453f4dd40dbadae78c78af8e2d1\\phase5-import.txt",
+        "sha256":  "7883A360F41993A2CEC86AACBAFE8D4C1D7D34B2BEEA9759E227920FC7D307F6"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\dd6aa453f4dd40dbadae78c78af8e2d1\\phase5-prepare.log",
+        "sha256":  "EFA1BDA3E1B3EB6F521BB7F4B79F05EEDBE0F886E21B76353220CEA2C9B0586C"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\dd6aa453f4dd40dbadae78c78af8e2d1\\phase5-results.json",
+        "sha256":  "EBF549C66F369D4FA899253E1013D5FA74BDE3369CF0C42FC096B0E479FC5B37"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\dd6aa453f4dd40dbadae78c78af8e2d1\\phase5-universal.log",
+        "sha256":  "B69DBA138F92FCB1B682732CA55103742D9538ED3A3F49D6638EAD146EE084EA"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\dd6aa453f4dd40dbadae78c78af8e2d1\\phase6-actions.log",
+        "sha256":  "A3C82FCFE48B0AEFF2CC3B717CDE31A5D4962D200BF65D1E3D718FEB8130E0CB"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\dd6aa453f4dd40dbadae78c78af8e2d1\\phase6-results.json",
+        "sha256":  "85B333D42BFAFD787D66B53502C922EFC7C1D2F4576DBF7F1A45D035AFDCACB7"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\dd6aa453f4dd40dbadae78c78af8e2d1\\player-result.txt",
+        "sha256":  "54185862EE82DBE90D46072EBD43DAB1C42215FA9A369CBFA94577173B1F66B0"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\dd6aa453f4dd40dbadae78c78af8e2d1\\player.log",
+        "sha256":  "412C351C9F8382D2FE48EA7AC573D4C51C2AAE0C4BD2896C8B07BA3982F30848"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\dd6aa453f4dd40dbadae78c78af8e2d1\\quaternion-audit.log",
+        "sha256":  "8E045C48BE993DA71A2D00DFCD7C316CE4D6FAFF391F3FF08B70F625BAA448AB"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\dd6aa453f4dd40dbadae78c78af8e2d1\\quaternion-results.json",
+        "sha256":  "3EFA1D3C5DD2BA7D97E8AD7384FEAD8E2D97837AD0ADEAF7072679740A26F079"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\dd6aa453f4dd40dbadae78c78af8e2d1\\tested-files.json",
+        "sha256":  "B5D7B00070D734DD0DBA021A438B528580E2FAB4158328BB768289BE1BA06861"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\e27d7167437942b3934ec2a2f09a511f\\integrity.txt",
+        "sha256":  "DC65455F27187F167D7CD758D852E632A11405D11C1640C451D59190002B90E8"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\e27d7167437942b3934ec2a2f09a511f\\phase5-prepare.log",
+        "sha256":  "8D38BE18DC6F0BE069854E9A616C9FD5E4CB0244E766CFE5B182F78C8F86B01C"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\e27d7167437942b3934ec2a2f09a511f\\phase5-results.json",
+        "sha256":  "EF59CF3FC990A039174D4EBB84153C2891B6DD25892DA80C6B6074AD3B2353B1"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\e27d7167437942b3934ec2a2f09a511f\\phase5-universal.log",
+        "sha256":  "58E5BD5AF658CC858A6E6B53C9B8F06E8CD27DDAC85B940D9D83A0CF893983B9"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\e27d7167437942b3934ec2a2f09a511f\\phase6-actions.log",
+        "sha256":  "FF513CEF0AFCB1457DB7E7B6DA6600EDFE91E22CCAEBE1913B8F7B1FDCEFEF40"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\e27d7167437942b3934ec2a2f09a511f\\phase6-results.json",
+        "sha256":  "25F9625BBEAFC749FA398BFAED34D8F9DD1A698B00FB95560A1FB64C9971455F"
+    },
+    {
+        "path":  "Tools\\Hand3DPhase6\\Results\\e27d7167437942b3934ec2a2f09a511f\\tested-files.json",
+        "sha256":  "97502EF7D219AC988B48D2E2EA4B2D0FE09365B569784A67F67582BEEDD58971"
+    },
+    {
+        "path":  "Tools\\Hand3DQuaternionFix\\before-files.json",
+        "sha256":  "4B1C9A88F3210528A1B771F4A7754CD553BA32B613F8CB9B982FC1FA02BCD6D8"
+    },
+    {
+        "path":  "Tools\\Hand3DQuaternionFix\\QuaternionValidation.cs",
+        "sha256":  "246A07CD2EC88FFFB20722FDE979A0B76C993722F294A313C3AA284EEE8D6D28"
+    },
+    {
+        "path":  "Tools\\Hand3DQuaternionFix\\README.md",
+        "sha256":  "356D33BEF6C6645074BB677BD169CEB095EF07B0BBE4DC79DF6A1A3B9CBB92BF"
+    },
+    {
+        "path":  "Tools\\Hand3DQuaternionFix\\Before\\Hand3DPoseComposition.cs.txt",
+        "sha256":  "2BF28CA155B521624155B8A53523C11112F8EBD7E5A2E0B37A29D6EAC3078EEA"
+    },
+    {
+        "path":  "Tools\\Hand3DQuaternionFix\\Before\\TestArmScene.unity.txt",
+        "sha256":  "5CA8F2B79C52C06B372EA95A582307B676EC99345912E943B5D9F2BF472B00DC"
+    }
+]

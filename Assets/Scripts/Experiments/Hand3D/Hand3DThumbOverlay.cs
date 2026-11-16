@@ -20,6 +20,7 @@ namespace Metroidbrainia.Hand3DExperiment
         private Mesh baked;
         private readonly List<Vector3> vertices = new List<Vector3>();
         private readonly List<Vector3> projected = new List<Vector3>();
+        private readonly HashSet<int> projectedIndices = new HashSet<int>();
         public int GeneratedVertexCount { get; private set; }
         public int GeneratedTriangleCount => GeneratedVertexCount / 3;
         public string PixelDiagnostic { get; private set; } = "Not sampled. Use Sample Source Pixels during HandHold.";
@@ -32,7 +33,9 @@ namespace Metroidbrainia.Hand3DExperiment
         public bool IsConfigured => thumbRenderer != null && armCamera != null && armDisplay != null
             && thumbImage != null && thumbTriangles.Length > 0;
 
-        public void RefreshMask()
+        public void RefreshMask() => RefreshMask(false);
+
+        private void RefreshMask(bool sampleThumb)
         {
             if (!isActiveAndEnabled) return;
             SynchronizeImageLayout();
@@ -40,7 +43,7 @@ namespace Metroidbrainia.Hand3DExperiment
             projected.Clear();
             GeneratedVertexCount = 0;
             SetVerticesDirty();
-            if (!IsConfigured) return;
+            if (!IsConfigured || visualization == VisualizationMode.FullArm && !sampleThumb) return;
             if (baked == null) baked = new Mesh { name = "Temporary posed thumb mask", hideFlags = HideFlags.DontSave };
             // On this scaled rig, false leaves scale in the snapshot and TransformPoint applies it again.
             // true produces the renderer-local snapshot needed by the local-to-world projection below.
@@ -49,13 +52,19 @@ namespace Metroidbrainia.Hand3DExperiment
             Rect sourceRect = armDisplay.rectTransform.rect;
             Rect uvRect = armDisplay.uvRect;
             if (Mathf.Abs(uvRect.width) < 0.00001f || Mathf.Abs(uvRect.height) < 0.00001f) return;
-            foreach (Vector3 vertex in vertices)
+            // Keep mesh indices for the stencil and pixel diagnostic, but only project vertices
+            // referenced by thumb triangles. Rebuild the set each refresh so edited indices stay valid.
+            for (int i = 0; i < vertices.Count; i++) projected.Add(Vector3.zero);
+            projectedIndices.Clear();
+            foreach (int index in thumbTriangles)
             {
+                if (index < 0 || index >= vertices.Count || !projectedIndices.Add(index)) continue;
+                Vector3 vertex = vertices[index];
                 Vector3 viewport = armCamera.WorldToViewportPoint(thumbRenderer.transform.TransformPoint(vertex));
                 Vector2 uv = new Vector2((viewport.x - uvRect.x) / uvRect.width, (viewport.y - uvRect.y) / uvRect.height);
                 Vector3 local = rectTransform.InverseTransformPoint(armDisplay.rectTransform.TransformPoint(sourceRect.min + Vector2.Scale(uv, sourceRect.size)));
                 local.z = viewport.z;
-                projected.Add(local);
+                projected[index] = local;
             }
         }
 
@@ -113,7 +122,8 @@ namespace Metroidbrainia.Hand3DExperiment
         {
             if (!isActiveAndEnabled || !IsConfigured || !HasTexture)
             { PixelDiagnostic = "Overlay inactive, missing configuration or missing texture."; return; }
-            RefreshMask();
+            // Full Arm skips animation-loop mask work, but explicit pixel sampling still needs it.
+            RefreshMask(true);
             Canvas.ForceUpdateCanvases();
             var source = armDisplay.texture;
             if (source.width <= 0 || source.height <= 0 || armDisplay.rectTransform.rect.width <= 0f

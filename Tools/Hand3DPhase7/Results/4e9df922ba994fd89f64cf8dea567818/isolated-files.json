@@ -1,0 +1,14 @@
+[
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DThumbOverlay.cs",
+        "sha256":  "426824F4F54A62086C893E6F76021E71542EDC9E3F95B6ABD0BDDC996D4801F4"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DDocumentDisplay.cs",
+        "sha256":  "46010A4198F5BB5BF3E64C4B983920D2243954A4CF1CDA6C725A13F616E3A02E"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DPoseComposition.cs",
+        "sha256":  "AAA9B5B3374AEC4DBF63157BD34D9C0CBE3069323463F4ACC1010ACC956F70D6"
+    }
+]
