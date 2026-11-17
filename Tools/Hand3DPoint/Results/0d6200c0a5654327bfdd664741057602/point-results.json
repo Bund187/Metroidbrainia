@@ -1,0 +1,212 @@
+{
+    "runId": "0d6200c0a5654327bfdd664741057602",
+    "scope": "Isolated Unity numeric/state tests; not Game visual approval.",
+    "assertions": 331,
+    "cases": [
+        {
+            "name": "configured_scene_and_original_puzzle",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "bell_False_Mouse",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "switch_False_Mouse",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "bell_False_Gamepad",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "switch_False_Gamepad",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "no_target_False",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "reach_False",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "wall_False",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "trigger_False",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "several_False",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "tie_False",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "rapid_tip_False",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "handedit_False",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "no_control_False",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "door_False",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "document_False",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "cancel_False",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "disable_False",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "gesture_after_False",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "32_masks_False",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "bell_puzzle_False",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "bell_True_Mouse",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "switch_True_Mouse",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "bell_True_Gamepad",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "switch_True_Gamepad",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "no_target_True",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "reach_True",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "wall_True",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "trigger_True",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "several_True",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "tie_True",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "rapid_tip_True",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "handedit_True",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "no_control_True",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "door_True",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "document_True",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "cancel_True",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "disable_True",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "gesture_after_True",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "32_masks_True",
+            "status": "PASS",
+            "detail": ""
+        },
+        {
+            "name": "bell_puzzle_True",
+            "status": "PASS",
+            "detail": ""
+        }
+    ]
+}

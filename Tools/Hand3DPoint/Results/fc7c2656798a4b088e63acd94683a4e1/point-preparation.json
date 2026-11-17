@@ -1,0 +1,19 @@
+{
+    "runId": "fc7c2656798a4b088e63acd94683a4e1",
+    "fingertip": "PlayerCapsule/Capsule/armsFBX/arms/root/shoulder.r/bicep.r/forearm.r/wrist.r/finger_index1.r/finger_index2.r/finger_index3.r",
+    "bellSequence": "BellHinge 1 -> BellHinge 2 -> BellHinge 3 -> BellHinge 4",
+    "door": "Mansion/Floor 1/Entrance/Wall_Door_ClosedDoor/DoorHinge",
+    "offset": {
+        "x": -0.0007163479458540678,
+        "y": 0.0019294917583465576,
+        "z": 0.000419403804698959
+    },
+    "bindings": 5,
+    "originalComponents": [
+        "BellInteractable",
+        "BellInteractable",
+        "BellInteractable",
+        "BellInteractable",
+        "LightSwitchInteractable"
+    ]
+}

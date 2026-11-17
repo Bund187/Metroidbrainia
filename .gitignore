@@ -125,3 +125,6 @@ x86/
 
 # Built Visual Studio Code Extensions
 *.vsix
+
+# Disposable validation output; canonical historical Results remain visible.
+/Tools/Hand3DLocalResults/

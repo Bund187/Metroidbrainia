@@ -1,0 +1,619 @@
+VBCSCompilerPreWarmer: watching VBCSCompiler (PID 44568)
+VBCSCompilerPreWarmer: pre-warm launched (dotnet PID 34008)
+VBCSCompiler prewarm took 21.18 ms
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.6/staging' branch; Version is '6000.6.3f1 (45d8eee7de74) revision 4577518'; Using compiler version '194234433'; Build Type 'Release'
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Bund187" at "2026-11-16T12:09:45.2743506Z"
+OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'es' Physical Memory: 15613 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-11-16T12:09:45Z
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 52676, path: "D:/Programas/UnityHub/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.3+d7ffd15
+  Session Id:              df3ad920518846868093fb43a5a0689f
+  Correlation Id:          cf5378452fc56cdc8cb586f08ed52061
+  External correlation Id: 6741002117688644329
+  Machine Id:              fNKQIaIwRho+k53X39hJZVgeX8A=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-Bund187" (connect: 0.00s, validation: 0.00s, handshake: 0.02s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Bund187-notifications" at "2026-11-16T12:09:45.3003136Z"
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-8V63-KRHM-ENRG-D3YG-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 2703812-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.00
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-8V63-KRHM-ENRG-D3YG-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 2703812-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Module] Licensing Background thread has ended after 0.03s
+
+COMMAND LINE ARGUMENTS:
+D:\Programas\UnityHub\Editor\6000.6.3f1\Editor\Unity.exe
+-batchmode
+-projectPath
+C:\Users\Bund187\AppData\Local\Temp\MetroidbrainiaPhase0-20261109
+-executeMethod
+Metroidbrainia.PointValidation.Prepare
+-phase0RunId
+fc7c2656798a4b088e63acd94683a4e1
+-phase1RunId
+fc7c2656798a4b088e63acd94683a4e1
+-phase2RunId
+fc7c2656798a4b088e63acd94683a4e1
+-phase3RunId
+fc7c2656798a4b088e63acd94683a4e1
+-phase4RunId
+fc7c2656798a4b088e63acd94683a4e1
+-phase5RunId
+fc7c2656798a4b088e63acd94683a4e1
+-logFile
+C:\Users\Bund187\AppData\Local\Temp\MetroidbrainiaPhase0-20261109\point-prepare.log
+Successfully changed project path to: C:\Users\Bund187\AppData\Local\Temp\MetroidbrainiaPhase0-20261109
+C:/Users/Bund187/AppData/Local/Temp/MetroidbrainiaPhase0-20261109
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-remapper-allocator-initial-capacity=32768"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-main-allocator-mimalloc-enabled=1"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+Logging is directed to a specific file, skipping project log.
+Player connection [17596]  Target information:
+
+Player connection [17596]  * "[IP] 192.168.0.21 [Port] 55505 [Flags] 2 [Guid] 874567148 [EditorId] 874567148 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-T5V2U9N) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [17596] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [17596] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Package Manager] Connected to IPC stream "Upm-21612" after 0.2 seconds.
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-8V63-KRHM-ENRG-D3YG-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 2703812-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Library Redirect Path: Library/
+Launching Unity Data Store - D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Tools/Unity.DataStore.exe 
+Unity Data Store artifact dir = Library/DataStore, working dir = C:/Users/Bund187/AppData/Local/Temp/MetroidbrainiaPhase0-20261109Unity Data Store running and initialised
+[Physics::Module] Selected backend (deferred post-plugins).
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Initialize engine version: 6000.6.3f1 (45d8eee7de74)
+[EntityIdStore] init: VM path (explicit commit), pageSize=4096, blockCount=1048576, entitiesPerBlock=256, slots reserved=4294967296 bytes
+[Subsystems] Discovering subsystems at path D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Bund187/AppData/Local/Temp/MetroidbrainiaPhase0-20261109/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3070 Laptop GPU (ID=0x249d)
+    Vendor:   NVIDIA
+    VRAM:     8020 MB
+    Driver:   32.0.15.6607
+Initialize mono
+Mono path[0] = 'D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed'
+Mono path[1] = 'D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/BCLExtensions/runtime/netstandard2.1'
+Mono path[2] = 'D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56612
+CodeReloadManager initialized
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Register platform support module: D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-8V63-KRHM-ENRG-D3YG-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 2703812-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Register platform support module: D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-8V63-KRHM-ENRG-D3YG-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 2703812-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Register platform support module: D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Registered in 0.006079 seconds.
+Native extension for Android target not found
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Package Manager log level set to [2]
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:False
+Scripting: successfully reloaded assembly
+- Finished resetting the current domain, in  0.693 seconds
+Domain Reload Profiling: 1303ms
+	BeginReloadAssembly (175ms)
+		CreateAndSetChildDomain (14ms)
+	RebuildCommonClasses (5ms)
+	RebuildNativeTypeToScriptingClass (17ms)
+	initialDomainReloadingComplete (73ms)
+	LoadAllAssembliesAndSetupDomain (339ms)
+		LoadAssemblies (162ms)
+		TypeCache.Refresh (229ms)
+			TypeCache.ScanAssembly (215ms)
+		AnalyzeDomain (1ms)
+	FinalizeReload (694ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (10ms)
+			BeforeProcessingInitializeOnLoad (109ms)
+			ProcessInitializeOnLoadAttributes (135ms)
+			ProcessInitializeOnLoadMethodAttributes (222ms)
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-8V63-KRHM-ENRG-D3YG-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 2703812-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Application.AssetDatabase Initial Refresh Start
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 77 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.analytics@3.8.2 (location: C:\Users\Bund187\AppData\Local\Temp\MetroidbrainiaPhase0-20261109\Library\PackageCache\com.unity.analytics@c9d14a6bdec6)
+    com.unity.purchasing@4.15.0 (location: C:\Users\Bund187\AppData\Local\Temp\MetroidbrainiaPhase0-20261109\Library\PackageCache\com.unity.purchasing@ffbc76639aab)
+    com.unity.xr.legacyinputhelpers@3.0.1 (location: C:\Users\Bund187\AppData\Local\Temp\MetroidbrainiaPhase0-20261109\Library\PackageCache\com.unity.xr.legacyinputhelpers@3f62d634f63b)
+    com.unity.services.core@1.18.0 (location: C:\Users\Bund187\AppData\Local\Temp\MetroidbrainiaPhase0-20261109\Library\PackageCache\com.unity.services.core@3464cb68d709)
+    com.unity.services.analytics@6.3.0 (location: C:\Users\Bund187\AppData\Local\Temp\MetroidbrainiaPhase0-20261109\Library\PackageCache\com.unity.services.analytics@cde4e6cf92f9)
+  Built-in packages:
+    com.unity.2d.tilemap@1.0.0 (location: C:\Users\Bund187\AppData\Local\Temp\MetroidbrainiaPhase0-20261109\Library\PackageCache\com.unity.2d.tilemap@4a51245c030d)
+    com.unity.multiplayer.center@2.0.1 (location: C:\Users\Bund187\AppData\Local\Temp\MetroidbrainiaPhase0-20261109\Library\PackageCache\com.unity.multiplayer.center@549886182930)
+  Local packages:
+    com.unity.2d.sprite@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.2d.sprite@26bcb5e737a2 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.2d.sprite@26bcb5e737a2)
+    com.unity.addressables@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.addressables@42676f2a154e (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.addressables@42676f2a154e)
+    com.unity.ai.navigation@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.ai.navigation@134dd6a3b97b (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.ai.navigation@134dd6a3b97b)
+    com.unity.burst@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.burst@626e66ab421b (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.burst@626e66ab421b)
+    com.unity.cinemachine@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.cinemachine@f53aa49b3acc (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.cinemachine@f53aa49b3acc)
+    com.unity.cloud.gltfast@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.cloud.gltfast@11ddc2436f97 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.cloud.gltfast@11ddc2436f97)
+    com.unity.collab-proxy@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.collab-proxy@4628d2ba6ea4 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.collab-proxy@4628d2ba6ea4)
+    com.unity.collections@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.collections@10fff0607388 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.collections@10fff0607388)
+    com.unity.ext.nunit@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.ext.nunit@0198eae3b53e (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.ext.nunit@0198eae3b53e)
+    com.unity.graph-authoring@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.graph-authoring@cfd2588851ee (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.graph-authoring@cfd2588851ee)
+    com.unity.ide.rider@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.ide.rider@1f60b3138684 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.ide.rider@1f60b3138684)
+    com.unity.ide.visualstudio@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.ide.visualstudio@a99d56dec63f (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.ide.visualstudio@a99d56dec63f)
+    com.unity.inputsystem@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.inputsystem@7a4e1a2a8194 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.inputsystem@7a4e1a2a8194)
+    com.unity.localization@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.localization@ef5a0677859d (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.localization@ef5a0677859d)
+    com.unity.mathematics@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.mathematics@8306a64d0cd6 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.mathematics@8306a64d0cd6)
+    com.unity.nuget.mono-cecil@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.nuget.mono-cecil@ecb9724e46ff (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.nuget.mono-cecil@ecb9724e46ff)
+    com.unity.nuget.newtonsoft-json@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.nuget.newtonsoft-json@4dfd81071c64 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.nuget.newtonsoft-json@4dfd81071c64)
+    com.unity.probuilder@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.probuilder@48aa4279218a (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.probuilder@48aa4279218a)
+    com.unity.profiling.core@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.profiling.core@8a49f7027d06 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.profiling.core@8a49f7027d06)
+    com.unity.render-pipelines.core@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.render-pipelines.core@02d75770e4b3 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.render-pipelines.core@02d75770e4b3)
+    com.unity.render-pipelines.universal@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.render-pipelines.universal@327d93d1cbc8 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.render-pipelines.universal@327d93d1cbc8)
+    com.unity.render-pipelines.universal-config@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.render-pipelines.universal-config@561422b74439 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.render-pipelines.universal-config@561422b74439)
+    com.unity.scriptablebuildpipeline@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.scriptablebuildpipeline@61526b33bf2c (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.scriptablebuildpipeline@61526b33bf2c)
+    com.unity.searcher@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.searcher@a463122f2c00 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.searcher@a463122f2c00)
+    com.unity.settings-manager@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.settings-manager@0b8638c5ce86 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.settings-manager@0b8638c5ce86)
+    com.unity.shadergraph@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.shadergraph@1dd0fd24b57e (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.shadergraph@1dd0fd24b57e)
+    com.unity.splines@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.splines@edbe9aefec91 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.splines@edbe9aefec91)
+    com.unity.test-framework@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.test-framework@80f691d4262b (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.test-framework@80f691d4262b)
+    com.unity.test-framework.performance@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.test-framework.performance@b6023decb532 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.test-framework.performance@b6023decb532)
+    com.unity.timeline@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.timeline@c56d56b0070b (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.timeline@c56d56b0070b)
+    com.unity.ugui@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.ugui@0727b404f3a0 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.ugui@0727b404f3a0)
+    com.unity.visualscripting@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.visualscripting@4edfcc09512f (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.visualscripting@4edfcc09512f)
+    com.unity.modules.accessibility@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.accessibility (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.accessibility)
+    com.unity.modules.adaptiveperformance@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.adaptiveperformance (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.adaptiveperformance)
+    com.unity.modules.ai@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.ai (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.ai)
+    com.unity.modules.androidjni@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.androidjni (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.androidjni)
+    com.unity.modules.animation@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.animation (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.animation)
+    com.unity.modules.assetbundle@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.assetbundle (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.assetbundle)
+    com.unity.modules.audio@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.audio (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.audio)
+    com.unity.modules.cloth@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.cloth (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.cloth)
+    com.unity.modules.director@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.director (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.director)
+    com.unity.modules.hierarchycore@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.hierarchycore (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.hierarchycore)
+    com.unity.modules.imageconversion@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.imageconversion (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.imageconversion)
+    com.unity.modules.imgui@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.imgui (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.jsonserialize (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.particlesystem (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.particlesystem)
+    com.unity.modules.physics@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.physics (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.physics)
+    com.unity.modules.physics2d@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.physics2d (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.physics2d)
+    com.unity.modules.physicscore2d@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.physicscore2d (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.physicscore2d)
+    com.unity.modules.screencapture@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.screencapture (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.screencapture)
+    com.unity.modules.subsystems@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.subsystems (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.subsystems)
+    com.unity.modules.terrain@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.terrain (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.terrainphysics (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.terrainphysics)
+    com.unity.modules.tetgen@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.tetgen (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.tetgen)
+    com.unity.modules.tilemap@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.tilemap (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.tilemap)
+    com.unity.modules.timelinefoundation@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.timelinefoundation (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.timelinefoundation)
+    com.unity.modules.ui@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.ui (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.ui)
+    com.unity.modules.uielements@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.uielements (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.uielements)
+    com.unity.modules.umbra@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.umbra (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.umbra)
+    com.unity.modules.unityanalytics@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unityanalytics (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unityanalytics)
+    com.unity.modules.unitywebrequest@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unitywebrequest (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unitywebrequestaudio (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unitywebrequesttexture (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unitywebrequestwww (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vectorgraphics@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.vectorgraphics (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.vectorgraphics)
+    com.unity.modules.vehicles@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.vehicles (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.vehicles)
+    com.unity.modules.video@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.video (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.video)
+    com.unity.modules.wind@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.wind (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.wind)
+    com.unity.modules.xr@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.xr (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.xr)
+[Package Manager] com.unity.analytics is deprecated: This package is deprecated and won't be compatible with future Unity versions. It will only receive critical updates, with no new features or bug fixes. Migrate to Unity Analytics: https://docs.unity.com/en-us/analytics
+[Package Manager] com.unity.purchasing@4.15.0 is deprecated: Unity IAP 4 is unsupported as of June 8, 2026. IAP 5 is the supported version going forward.
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.02 seconds
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+[ScriptCompilation] Requested script compilation because: AssetDatabase observed changes in script compilation related files
+Starting: D:\Programas\UnityHub\Editor\6000.6.3f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/Bund187/AppData/Local/Temp/MetroidbrainiaPhase0-20261109
+DisplayProgressbar: Compiling Scripts
+ExitCode: 0 Duration: 3s886ms
+[1358/1802  0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+[1794/1802  1s] Csc Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.dll (+2 others)
+Assets\Scripts\Experiments\Hand3D\Hand3DScreenProjection.cs(12,75): warning CS0618: 'FindObjectsSortMode' is obsolete: 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\Scripts\Experiments\Hand3D\Hand3DScreenProjection.cs(12,40): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)' is obsolete: 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\Phase1Snapshots\Phase5PlayerProbe.cs(19,50): warning CS0618: 'FindObjectsSortMode' is obsolete: 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\Phase1Snapshots\Phase5PlayerProbe.cs(19,21): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)' is obsolete: 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\Scripts\Experiments\Hand3D\Hand3DDocumentDisplay.cs(29,57): warning CS0414: The field 'Hand3DDocumentDisplay.visualScale' is assigned but its value is never used
+
+Assets\Phase1Snapshots\BeforeDoorInteractor.cs(36,57): warning CS0414: The field 'BeforeDoorInteractor.contactTolerancePixels' is assigned but its value is never used
+
+Assets\Scripts\Experiments\Hand3D\Hand3DDoorInteractor.cs(36,57): warning CS0414: The field 'Hand3DDoorInteractor.contactTolerancePixels' is assigned but its value is never used
+
+Assets\Phase1Snapshots\BeforeDoorInteractor.cs(37,57): warning CS0414: The field 'BeforeDoorInteractor.maximumContactSeparationPixels' is assigned but its value is never used
+
+Assets\Scripts\Experiments\Hand3D\Hand3DDoorInteractor.cs(37,57): warning CS0414: The field 'Hand3DDoorInteractor.maximumContactSeparationPixels' is assigned but its value is never used
+[1798/1802  0s] Csc Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll (+2 others)
+Assets\Editor\Phase1Validation\Phase5Validation.cs(38,56): warning CS0618: 'FindObjectsSortMode' is obsolete: 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\Editor\Phase1Validation\Phase5Validation.cs(38,20): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)' is obsolete: 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\Editor\Phase1Validation\Phase7Validation.cs(103,109): warning CS0618: 'FindObjectsSortMode' is obsolete: 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\Editor\Phase1Validation\Phase7Validation.cs(103,35): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)' is obsolete: 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\Editor\Phase1Validation\Phase7Validation.cs(164,83): warning CS0618: 'FindObjectsSortMode' is obsolete: 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\Editor\Phase1Validation\Phase7Validation.cs(164,35): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)' is obsolete: 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\Editor\Experiments\Hand3D\Hand3DDoorEditors.cs(224,75): warning CS0618: 'FindObjectsSortMode' is obsolete: 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\Editor\Experiments\Hand3D\Hand3DDoorEditors.cs(224,42): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)' is obsolete: 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+[1799/1802  0s] ILPostProcess Library/Bee/artifacts/1900b0aE.dag/post-processed/Assembly-CSharp-Editor.dll (+pdb)
+Processing assembly Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll, with 147 defines and 429 references
+
+processors: Unity.Jobs.CodeGen.JobsILPostProcessor, zzzUnity.Burst.CodeGen.BurstILPostProcessor
+
+1 processor(s) skipped this assembly
+
+running Unity.Jobs.CodeGen.JobsILPostProcessor
+[1800/1802  0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.pdb
+[1801/1802  0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+*** Tundra build success (3.85 seconds), 6 items updated, 1802 evaluated
+Assets\Scripts\Experiments\Hand3D\Hand3DScreenProjection.cs(12,75): warning CS0618: 'FindObjectsSortMode' is obsolete: 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\Scripts\Experiments\Hand3D\Hand3DScreenProjection.cs(12,40): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)' is obsolete: 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\Phase1Snapshots\Phase5PlayerProbe.cs(19,50): warning CS0618: 'FindObjectsSortMode' is obsolete: 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\Phase1Snapshots\Phase5PlayerProbe.cs(19,21): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)' is obsolete: 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\Scripts\Experiments\Hand3D\Hand3DDocumentDisplay.cs(29,57): warning CS0414: The field 'Hand3DDocumentDisplay.visualScale' is assigned but its value is never used
+Assets\Phase1Snapshots\BeforeDoorInteractor.cs(36,57): warning CS0414: The field 'BeforeDoorInteractor.contactTolerancePixels' is assigned but its value is never used
+Assets\Scripts\Experiments\Hand3D\Hand3DDoorInteractor.cs(36,57): warning CS0414: The field 'Hand3DDoorInteractor.contactTolerancePixels' is assigned but its value is never used
+Assets\Phase1Snapshots\BeforeDoorInteractor.cs(37,57): warning CS0414: The field 'BeforeDoorInteractor.maximumContactSeparationPixels' is assigned but its value is never used
+Assets\Scripts\Experiments\Hand3D\Hand3DDoorInteractor.cs(37,57): warning CS0414: The field 'Hand3DDoorInteractor.maximumContactSeparationPixels' is assigned but its value is never used
+Assets\Editor\Phase1Validation\Phase5Validation.cs(38,56): warning CS0618: 'FindObjectsSortMode' is obsolete: 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\Editor\Phase1Validation\Phase5Validation.cs(38,20): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)' is obsolete: 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\Editor\Phase1Validation\Phase7Validation.cs(103,109): warning CS0618: 'FindObjectsSortMode' is obsolete: 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\Editor\Phase1Validation\Phase7Validation.cs(103,35): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)' is obsolete: 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\Editor\Phase1Validation\Phase7Validation.cs(164,83): warning CS0618: 'FindObjectsSortMode' is obsolete: 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\Editor\Phase1Validation\Phase7Validation.cs(164,35): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)' is obsolete: 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\Editor\Experiments\Hand3D\Hand3DDoorEditors.cs(224,75): warning CS0618: 'FindObjectsSortMode' is obsolete: 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\Editor\Experiments\Hand3D\Hand3DDoorEditors.cs(224,42): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)' is obsolete: 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Total cache size 268309718
+Total cache size after purge 268309718, took 00:00:00.4143865
+AssetDatabase: script compilation time: 5.259713s
+Begin MonoManager ReloadAssembly
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+Refreshing native plugins compatible for Editor in 98.22 ms, found 4 plugins.
+Native extension for Android target not found
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-Metroidbrainia
+ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
+Scripting: successfully reloaded assembly
+- Finished resetting the current domain, in  1.853 seconds
+Domain Reload Profiling: 6208ms
+	BeginReloadAssembly (336ms)
+		DisableScriptedObjects (82ms)
+		CreateAndSetChildDomain (48ms)
+	RebuildCommonClasses (9ms)
+	RebuildNativeTypeToScriptingClass (16ms)
+	initialDomainReloadingComplete (82ms)
+	LoadAllAssembliesAndSetupDomain (3910ms)
+		LoadAssemblies (3492ms)
+		TypeCache.Refresh (254ms)
+			TypeCache.ScanAssembly (234ms)
+		AnalyzeDomain (114ms)
+			BuildScriptInfoCaches (102ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (1854ms)
+		SetupLoadedEditorAssemblies (0ms)
+			LogAssemblyErrors (3ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			BeforeProcessingInitializeOnLoad (118ms)
+			ProcessInitializeOnLoadAttributes (557ms)
+			ProcessInitializeOnLoadMethodAttributes (569ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (3ms)
+		AwakeInstancesAfterBackupRestoration (28ms)
+Starting new worker id: 0 with log in C:/Users/Bund187/AppData/Local/Temp/MetroidbrainiaPhase0-20261109/Logs/AssetImportWorkerHW0.log
+Importing 'GUID: 833b0479e7faa324cb8080f5599aad2d - Path: Assets/Scenes/TestArmScene.unity' with importer (DefaultImporter)
+Imported 'GUID: 833b0479e7faa324cb8080f5599aad2d' -> (Import Result ID: '8859e890b8a6ff463cbeb89becb5a717') in 0.009 seconds [static dependencies only]. Details - ImportResultOutputID=03c609134f195eb01826671aace8ce2b DependenciesID=902ede5cb7995f3755a9f2553c2dc615 StaticDependenciesID=c25f0594d77cd000e9e8781a9ff9e687 
+Importing 'GUID: 113feec1643b5cc42b15a2fa398257cb - Path: Assets/Fonts/Calittra SDF.asset' with importer (NativeFormatImporter)
+Imported 'GUID: 113feec1643b5cc42b15a2fa398257cb' -> (Import Result ID: '495687a72626385db293c413e84713df') in 0.034 seconds [static dependencies only]. Details - ImportResultOutputID=8db725b64d82bd11cb520f74d75f9ab3 DependenciesID=8f3a39a6a19f93d9e15fb8d204c5f3fc StaticDependenciesID=d28004a02bfd69e5a19a6f8bd54ccc15 
+Importing 'GUID: 51c18a2391d221c4a839e6e42b0683c0 - Path: Assets/Fonts/Creativo Italic SDF.asset' with importer (NativeFormatImporter)
+Imported 'GUID: 51c18a2391d221c4a839e6e42b0683c0' -> (Import Result ID: 'bfd24aa2b00922701d39a0fca6619e9c') in 0.006 seconds [static dependencies only]. Details - ImportResultOutputID=007257e7dfa31b15dda3b1e7b2b89ab0 DependenciesID=bd155ca6603737ae648bd85764c615b8 StaticDependenciesID=4bcdabd1f73cbbab8c783032ec46341c 
+Importing 'GUID: 82b6f1cd6761d894887e0ea0cc3c26aa - Path: Assets/Experiments/Hand3D/RuntimePoses/TestArmRuntimePoses_Test.asset' with importer (NativeFormatImporter)
+Imported 'GUID: 82b6f1cd6761d894887e0ea0cc3c26aa' -> (Import Result ID: '08a8551506e4edd85bdda8132683be6b') in 0.015 seconds [static dependencies only]. Details - ImportResultOutputID=06ececaa33bbdbf0737785df05b2a2ee DependenciesID=b3e01bbf0d9580c5c54830459d13f0d3 StaticDependenciesID=4d1a32b95c68cdeaf9e0735ee0980d34 
+Importing 'GUID: 18dc0cd2c080841dea60987a38ce93fa - Path: Assets/Settings/UniversalRenderPipelineGlobalSettings.asset' with importer (NativeFormatImporter)
+Imported 'GUID: 18dc0cd2c080841dea60987a38ce93fa' -> (Import Result ID: 'c84af68db1c13e8a5d09738d471ce4e4') in 0.003 seconds [static dependencies only]. Details - ImportResultOutputID=ac92a3253360087966dd104547753906 DependenciesID=8b0f946a22e04e5053f8ba81852d9a96 StaticDependenciesID=c88a0fd0ff6b1f24024063400b971410 
+Importing 'GUID: 19bc593f922160242b42720f8b6ecae5 - Path: Assets/Fonts/Creativo Regular SDF.asset' with importer (NativeFormatImporter)
+Imported 'GUID: 19bc593f922160242b42720f8b6ecae5' -> (Import Result ID: '89d7d120c8e97e291a7fb9f548556832') in 0.029 seconds [static dependencies only]. Details - ImportResultOutputID=319634440af1c73ac7b35d8c20a48a3f DependenciesID=c3cd5d6cffb2c9799d3273071e90953f StaticDependenciesID=6eb7f34cdb4054702d7b690663ea22db 
+Importing 'GUID: 4b83569d67af61e458304325a23e5dfd - Path: Assets/Settings/PC_RPAsset.asset' with importer (NativeFormatImporter)
+Imported 'GUID: 4b83569d67af61e458304325a23e5dfd' -> (Import Result ID: '0c4efd67482a56ccbec4366a75dd4d81') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=eae66dc0e7a749d738136f6c7279b2f0 DependenciesID=c5834edc3924c292b976a9c1bb61a41a StaticDependenciesID=00408dcac6767c3d936c6c80913cf5c9 
+Importing 'GUID: 0f31343d3db6721419ca7279b1181110 - Path: Assets/AddressableAssetsData/AddressableAssetSettings.asset' with importer (NativeFormatImporter)
+Imported 'GUID: 0f31343d3db6721419ca7279b1181110' -> (Import Result ID: 'd041aaed168efe799c405d67ac8ca610') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=af6632718cddd6c8a24435dfb0299d3c DependenciesID=7a6289ffaefe87961f2d69130d7777ab StaticDependenciesID=e2a0a02d2f90922f360799ad569a1d40 
+Refreshing native plugins compatible for Editor in 4.31 ms, found 4 plugins.
+
+Asset Pipeline Refresh (id=c780f84043001c244aa855ffd3cbb500): Total: 13.609 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	(Values over 0.05ms)
+	Summary:
+		Imports: total=8 (actual=8, local cache=0, cache server=0)
+		Asset DB Process Time: managed=2 ms, native=3051 ms
+		Asset DB Callback time: managed=692 ms, native=40 ms
+		Scripting: domain reloads=1, domain reload time=4444 ms, compile time=5262 ms, other=116 ms
+		Project Asset Count: scripts=2280, non-scripts=4486
+		Asset File Changes: new=0, changed=1, moved=0, deleted=1
+		Scan Filter Count: 0
+	InvokePackagesCallback: 65.716ms
+	ApplyChangesToAssetFolders: 3.435ms
+	Scan: 178.345ms
+	Collect global state as custom dependencies: 23.918ms
+	OnSourceAssetsModified: 1.240ms
+	CategorizeScriptCompilationAssets: 61.115ms
+	ProcessAssetsWithTransientArtifactChanges: 136.511ms
+	CategorizeAssets: 95.605ms
+	CompileScripts: 5261.969ms
+	ImportOutOfDateAssets: 2093.367ms (1964.707ms without children)
+		ImportManagerImport: 110.599ms (6.672ms without children)
+			UpdateCategorizedAssets: 0.137ms
+		ReloadNativeAssets: 0.095ms
+		UnloadImportedAssets: 1.371ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 1.416ms
+		ImportSchedulerStart: 15.166ms
+	PostProcessAllAssets: 692.194ms
+		XRBuildSystem.XRAssetImported 1.320ms
+		PostProcessCallbackCreateDeferredMaterials 0.084ms
+		MonoPostProcessAllAssets: 689.489ms
+			SyncVS.PostprocessSyncProject 414.663ms
+			AssetPostprocessor.OnPostprocessAllAssets 174.845ms
+			StyleCatalogPostProcessor.OnPostprocessAllAssets 32.262ms
+			UniversalRenderPipelineGlobalSettingsPostprocessor.OnPostprocessAllAssets 15.289ms
+			AddressablesAssetPostProcessor.OnPostprocessAllAssets 7.151ms
+			BuilderAssetPostprocessor.OnPostprocessAllAssets 6.188ms
+			SpriteSlicePostprocessor.OnPostprocessAllAssets 2.736ms
+			ShaderGraphAssetPostProcessor.OnPostprocessAllAssets 2.373ms
+			AssetChangedListener.OnPostprocessAllAssets 1.922ms
+			LocalizationAssetPostProcessor.OnPostprocessAllAssets 1.841ms
+			SpeedTree9Postprocessor.OnPostprocessAllAssets 1.769ms
+			RetainedModeAssetPostprocessor.OnPostprocessAllAssets 1.295ms
+			EditModeScopePostprocessor.OnPostprocessAllAssets 0.970ms
+			MaterialPostprocessor.OnPostprocessAllAssets 0.807ms
+			RenderPipelineGlobalSettingsPostprocessor.OnPostprocessAllAssets 0.751ms
+			SpriteEditorTexturePostprocessor.OnPostprocessAllAssets 0.729ms
+			TextAssetPostProcessor.OnPostprocessAllAssets 0.639ms
+			ArtifactBrowserPostProcessor.OnPostprocessAllAssets 0.613ms
+			CinemachineSettings.OnPostprocessAllAssets 0.597ms
+			ShaderReflectionAssetPostProcessor.OnPostprocessAllAssets 0.594ms
+			AssetProcessor.OnPostprocessAllAssets 0.475ms
+			UVCSAssetPostprocessor.OnPostprocessAllAssets 0.404ms
+			PostProcessor.OnPostprocessAllAssets 0.374ms
+			ReferencedClipsPostProcessor.OnPostprocessAllAssets 0.361ms
+			AssetEvents.OnPostprocessAllAssets 0.327ms
+			InputActionAssetPostprocessor.OnPostprocessAllAssets 0.324ms
+			AudioMixerPostprocessor.OnPostprocessAllAssets 0.319ms
+			AssetPathToTypes.OnPostprocessAllAssets 0.310ms
+			InputActionJsonNameModifierAssetProcessor.OnPostprocessAllAssets 0.304ms
+			TMPro_TexturePostProcessor.OnPostprocessAllAssets 0.250ms
+			DomainReloadProcessor.OnPostprocessAllAssets 0.233ms
+			ConfigAssetsTracker.OnPostprocessAllAssets 0.207ms
+			TerrainToolbarOverlayPostProcessor.OnPostprocessAllAssets 0.202ms
+			AssetDatabaseCallbacks.OnPostprocessAllAssets 0.182ms
+			PipelineAssetProcessor.OnPostprocessAllAssets 0.167ms
+			ThemePostprocessor.OnPostprocessAllAssets 0.163ms
+			SamplePostprocessor.OnPostprocessAllAssets 0.149ms
+			SpeedTreePostProcessor.OnPostprocessAllAssets 0.146ms
+			ProjectSettingsPostprocessor.OnPostprocessAllAssets 0.146ms
+			WindowAssetPostprocessingWatcher.OnPostprocessAllAssets 0.135ms
+			ScenarioDriftAssetsTracker.OnPostprocessAllAssets 0.125ms
+			AssetReloadNotifier.OnPostprocessAllAssets 0.124ms
+			AudioContainerPostProcessor.OnPostprocessAllAssets 0.081ms
+	PostAssetChangesProfiler: 8.716ms
+	UnloadStreamsBegin: 1.613ms
+	PersistCurrentRevisions: 0.326ms
+	GenerateScriptTypeHashes: 3.762ms
+	GenerateScriptTypeSerializationHashes: 6.922ms
+	Untracked: 4949.314ms
+
+Application.AssetDatabase Initial Refresh End
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Scanning for USB devices : 5.442ms
+Initializing Unity extensions:
+Worker ready: AssetImportWorkerHW0 0
+Unloading 116 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 10047 unused Assets / (16.7 MB). Loaded Objects now: 10943.
+Memory consumption went from 504.5 MB to 487.7 MB.
+Total: 22.381500 ms (FindLiveObjects: 0.931700 ms CreateObjectMapping: 0.410900 ms MarkObjects: 15.229300 ms  DeleteObjects: 5.415000 ms)
+
+Opening scene 'Assets/Scenes/TestArmScene.unity'
+Unloading 25 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/TestArmScene.unity'
+	Deserialize:            128.270 ms
+	Integration:            221.585 ms
+	Integration of assets:  13.413 ms
+	Thread Wait Time:       -9.755 ms
+	Total Operation Time:   353.513 ms
+Unloading 21 unused Assets / (144.4 KB). Loaded Objects now: 13097.
+Memory consumption went from 502.8 MB to 502.7 MB.
+Total: 15.565700 ms (FindLiveObjects: 0.947400 ms CreateObjectMapping: 0.318700 ms MarkObjects: 13.894600 ms  DeleteObjects: 0.059600 ms)
+
+Importing 'GUID: 3e0d0bedce2665e419d1e039d95602e0 - Path: Assets/Experiments/Hand3D/Actions' with importer (DefaultImporter)
+Imported 'GUID: 3e0d0bedce2665e419d1e039d95602e0' -> (Import Result ID: 'de698f67bf9c9c8d13eaa9abba50c513') in 0.011 seconds [static dependencies only]. Details - ImportResultOutputID=1e2285ab49a6141d5cc69da7fa1e39a8 DependenciesID=b6b2ba300124cafe80c5759e1efe138c StaticDependenciesID=36670fe98155133b127c84eec22f29a6 
+Refreshing native plugins compatible for Editor in 3.93 ms, found 4 plugins.
+Asset Pipeline Refresh (id=87cd82370bddce545b0b6f3e7d08d3a6): Total: 0.133 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: 79c0c48d163c26540912453abda2f9d7 - Path: Assets/Experiments/Hand3D/Actions/TestArmPointClick.asset' with importer (NativeFormatImporter)
+Imported 'GUID: 79c0c48d163c26540912453abda2f9d7' -> (Import Result ID: '35997b64d486e5647a99b8e1bb63dac3') in 0.001 seconds [static dependencies only]. Details - ImportResultOutputID=3497af8dede878241a2d9670ff6cd40b DependenciesID=ea271020c5c915c7a44039b74da28088 StaticDependenciesID=fb1c128ee0cb5438433e32a71d55b1c4 
+Refreshing native plugins compatible for Editor in 4.02 ms, found 4 plugins.
+Asset Pipeline Refresh (id=b3d7aa13b2b54aa4db5f735a8b3190ac): Total: 0.053 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: 4729a6ed6e6f390439b35386bd76f33d - Path: Assets/Experiments/Hand3D/Actions/TestArmPointWorld.asset' with importer (NativeFormatImporter)
+Imported 'GUID: 4729a6ed6e6f390439b35386bd76f33d' -> (Import Result ID: 'b183563f5dd7aaec9d219acc7903ad4d') in 0.001 seconds [static dependencies only]. Details - ImportResultOutputID=47ad6086daeacaa2dabf37637659dad0 DependenciesID=5fbf356470311857b22fef87ae657f91 StaticDependenciesID=8e8da9bda5e2dcb4d5da077b4c472102 
+Refreshing native plugins compatible for Editor in 4.26 ms, found 4 plugins.
+Asset Pipeline Refresh (id=b7ffd4a99bd38724eae2226c4f65a544): Total: 0.057 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Hand3D Point] 5 collider bindings. Fingertip PlayerCapsule/Capsule/armsFBX/arms/root/shoulder.r/bicep.r/forearm.r/wrist.r/finger_index1.r/finger_index2.r/finger_index3.r + (0.00, 0.00, 0.00). Exact visual contact; gameplay targets unchanged.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object)
+UnityEngine.Debug:Log (object,UnityEngine.Object)
+Metroidbrainia.Hand3DExperiment.Editor.Hand3DPointPreparation:Prepare (Metroidbrainia.Hand3DExperiment.Hand3DRig) (at Assets/Editor/Experiments/Hand3D/Hand3DPointEditor.cs:92)
+Metroidbrainia.PointValidation:Prepare () (at Assets/Editor/Phase1Validation/PointValidation.cs:34)
+
+(Filename: Assets/Editor/Experiments/Hand3D/Hand3DPointEditor.cs Line: 92)
+
+Opening scene 'Assets/Scenes/Prototype.unity additively'
+Loaded scene 'Assets/Scenes/Prototype.unity'
+	Deserialize:            145.886 ms
+	Integration:            75.375 ms
+	Integration of assets:  11.435 ms
+	Thread Wait Time:       -10.477 ms
+	Total Operation Time:   222.219 ms
+Importing 'GUID: f0c31db08b86acd40b59b214f6ee5edb - Path: Assets/PointConfigured.unity' with importer (DefaultImporter)
+Imported 'GUID: f0c31db08b86acd40b59b214f6ee5edb' -> (Import Result ID: 'b48b4b11ec254bc532cb5753e0509b60') in 0.001 seconds [static dependencies only]. Details - ImportResultOutputID=aedf2b2f5030ed5d3cc4f0cd01aae7c9 DependenciesID=36e9863012ae12ba76edc6353f3480fe StaticDependenciesID=e6c1064714583a2295d46404ed5f5f6d 
+Refreshing native plugins compatible for Editor in 4.21 ms, found 4 plugins.
+Asset Pipeline Refresh (id=c571655d6ac118347b778874089cc1ac): Total: 0.057 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+MonoPathRemapper: Attempts to remap: 23124; Successful remaps: 2
+Serialized file version minimum: 22, current 23
+Clearing [Creativo Regular SDF] dynamic font asset data.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+TMPro.EditorEventCallbacks/<>c:<InitializeFontAssetResourceChangeCallBacks>b__0_0 () (at D:/Proyectos/Metroidbrainia/Library/PackageCache/com.unity.ugui@0727b404f3a0/Editor/TMP/TMP_EditorResourceManager.cs:36)
+UnityEditor.EditorApplication:Internal_EditorApplicationQuit ()
+Metroidbrainia.PointValidation:Prepare () (at Assets/Editor/Phase1Validation/PointValidation.cs:65)
+
+(Filename: D:/Proyectos/Metroidbrainia/Library/PackageCache/com.unity.ugui@0727b404f3a0/Editor/TMP/TMP_EditorResourceManager.cs Line: 36)
+
+Killing ADB server in 0,0691951 seconds.
+Importing 'GUID: 19bc593f922160242b42720f8b6ecae5 - Path: Assets/Fonts/Creativo Regular SDF.asset' with importer (NativeFormatImporter)
+Imported 'GUID: 19bc593f922160242b42720f8b6ecae5' -> (Import Result ID: '0b3501b6bc44e65706431f779033b4ba') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=319634440af1c73ac7b35d8c20a48a3f DependenciesID=cc3b60cc49a8d3d997694cd865fadc6e StaticDependenciesID=734081481eeac8296ae912d69131efb8 
+Refreshing native plugins compatible for Editor in 4.12 ms, found 4 plugins.
+Asset Pipeline Refresh (id=f79bd0502636f8440b07509869dc9ebe): Total: 0.050 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input Polling Thread exited.
+Input System module state changed to: Shutdown.
+[Licensing::IpcConnector] LicenseClient-Bund187-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-Bund187 channel disconnected successfully.
+Lingering sessions upon destruction of worker manager
+Unity Data Store service was successfully shut down
+UDS shutting down local client system
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+CodeReloadManager destroyed
+VBCSCompilerPreWarmer: requested VBCSCompiler shutdown
+Checking for leaked weakptr:
+  Found no leaked weakptrs.
+[Package Manager] Server process was shutdown
+##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1794831010471,"processId":21612,"allocatedMemory":19653818,"memoryLabels":[{"Default":220199},{"Permanent":15516},{"NewDelete":69815},{"Thread":4198024},{"Manager":35165},{"VertexData":8},{"Geometry":816},{"Texture":24},{"Shader":850574},{"Material":68},{"GfxDevice":55968},{"Animation":1696},{"FreeType":8},{"FontEngine":736},{"Physics":1970},{"Physics2D":16},{"Serialization":27328},{"Input":42840},{"JobScheduler":256},{"TextLib":336},{"Mono":48},{"MonoCode":4480},{"ScriptingNativeRuntime":1307568},{"BaseObject":49488},{"Resource":1252},{"Renderer":2376},{"Transform":4685},{"File":19269},{"WebCam":616},{"Culling":32},{"Terrain":11442},{"Wind":24},{"STL":40},{"String":481498},{"StaticString":3808},{"Utility":2674806},{"Curl":2676},{"PoolAlloc":2360},{"AI":80},{"TypeTree":25309},{"ScriptManager":12656},{"CodeReload":448},{"RuntimeInitializeOnLoadManager":64},{"Sprites":102},{"SpriteAtlas":120},{"GI":7816},{"Director":7552},{"CloudService":7296},{"WebRequest":4619},{"VR":49650},{"SceneManager":608},{"Video":64},{"LazyScriptCache":32},{"Camera":729},{"Secure":2377},{"SerializationCache":9256},{"APIUpdating":10320},{"Subsystems":336},{"VirtualTexturing":57888},{"StaticSafetyDebugInfo":278528},{"Analytics":768},{"Hierarchy":1188},{"UIElements":40},{"CoreStats":14456},{"Identifiers":7152},{"Gui":128},{"EditorUtility":135837},{"VersionControl":8},{"Undo":931},{"AssetDatabase":8874311},{"AssetImporter":40},{"EditorGi":328},{"UnityConnect":40441},{"Upm":1912},{"UpmDiagnostics":8},{"AssetCompliance":96},{"DrivenProperties":72},{"LocalIPC":264},{"ProfilerEditor":9746},{"CoreBusinessMetrics":3604},{"Windowing":456},{"Licensing":12759},{"AssetReference":32},{"IPCStream":32}]}

@@ -1,0 +1,10 @@
+[
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DContactDetection.cs",
+        "sha256":  "268DB1F1C0BE3AE7305F91AC5031B0F512D661684F16E67DEC60F80FEAE5E44B"
+    },
+    {
+        "path":  "Assets/Scenes/TestArmScene.unity",
+        "sha256":  "0B6794F49A515EF2AEA35A5E0F02EFF4FA3C96EEF14033D48E14BD109E3FD90B"
+    }
+]

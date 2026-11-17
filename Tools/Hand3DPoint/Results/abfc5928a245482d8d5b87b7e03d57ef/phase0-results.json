@@ -1,0 +1,51 @@
+{
+    "unity": "6000.6.3f1",
+    "scope": "Current unmodified runtime; isolated Editor stepping and synthetic interaction targets. No Game visual validation.",
+    "runId": "abfc5928a245482d8d5b87b7e03d57ef",
+    "generatedUtc": "2026-11-16T12:33:47.1836783Z",
+    "results": [
+        {
+            "id": "REF",
+            "status": "PASS",
+            "detail": "Executed in isolated Unity Editor.",
+            "assertions": 7
+        },
+        {
+            "id": "F32",
+            "status": "PASS",
+            "detail": "Executed in isolated Unity Editor.",
+            "assertions": 547
+        },
+        {
+            "id": "ACT",
+            "status": "PASS",
+            "detail": "Executed in isolated Unity Editor.",
+            "assertions": 8
+        },
+        {
+            "id": "INPUT",
+            "status": "PASS",
+            "detail": "Executed in isolated Unity Editor.",
+            "assertions": 10
+        },
+        {
+            "id": "MOV",
+            "status": "PASS",
+            "detail": "Executed in isolated Unity Editor.",
+            "assertions": 15
+        },
+        {
+            "id": "INT",
+            "status": "PASS",
+            "detail": "Executed in isolated Unity Editor.",
+            "assertions": 24
+        },
+        {
+            "id": "VISUAL",
+            "status": "PENDING",
+            "detail": "Real Game/URP, physical input, localization, auto-open/locked animation timing and final thumb pixels require the manual protocol.",
+            "assertions": 0
+        }
+    ],
+    "assertions": 611
+}

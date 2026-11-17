@@ -1,0 +1,66 @@
+﻿{
+    "runId":  "abfc5928a245482d8d5b87b7e03d57ef",
+    "testedSourcesMatch":  true,
+    "unchangedOriginalFiles":  2014,
+    "changedOriginalFiles":  [
+                                 "Assets/Scenes/TestArmScene.unity",
+                                 "Assets/Scripts/Experiments/Hand3D/Hand3DContactDetection.cs"
+                             ],
+    "newAssetFiles":  [
+                          "Assets/Editor/Experiments/Hand3D/Hand3DPointEditor.cs",
+                          "Assets/Editor/Experiments/Hand3D/Hand3DPointEditor.cs.meta",
+                          "Assets/Experiments/Hand3D/Actions.meta",
+                          "Assets/Experiments/Hand3D/Actions/TestArmPointClick.asset",
+                          "Assets/Experiments/Hand3D/Actions/TestArmPointClick.asset.meta",
+                          "Assets/Experiments/Hand3D/Actions/TestArmPointWorld.asset",
+                          "Assets/Experiments/Hand3D/Actions/TestArmPointWorld.asset.meta",
+                          "Assets/Scripts/Experiments/Hand3D/Hand3DPointInteractor.cs",
+                          "Assets/Scripts/Experiments/Hand3D/Hand3DPointInteractor.cs.meta",
+                          "Assets/Scripts/Experiments/Hand3D/Hand3DPointWorldAction.cs",
+                          "Assets/Scripts/Experiments/Hand3D/Hand3DPointWorldAction.cs.meta"
+                      ],
+    "historicalFilesUnchanged":  706,
+    "protectedOriginals":  [
+                               {
+                                   "path":  "Assets/Editor/Experiments/Hand3D/PoseProfiles/HandPoses.asset",
+                                   "sha256":  "CF38548C36CB58869ED0F1DE98864E60098411F5D69CA800EAE5CD61012F87EF"
+                               },
+                               {
+                                   "path":  "Assets/Experiments/Hand3D/RuntimePoses/TestArmRuntimePoses.asset",
+                                   "sha256":  "B1121CC22E785191C021E447EEB7B86DA85837380495FDE03ED3FA0BAFF7B48E"
+                               },
+                               {
+                                   "path":  "Assets/Scenes/Prototype.unity",
+                                   "sha256":  "ED18AB1286FEA727940959DB53624BE1F55753F7E926D3DB09102E3F226496AB"
+                               },
+                               {
+                                   "path":  "Assets/Scripts/Interaction/BellInteractable.cs",
+                                   "sha256":  "1137D0F042E81437E8C928CE344B74CAB42301A491278255AE14502E4FB0C945"
+                               },
+                               {
+                                   "path":  "Assets/Scripts/Interaction/DocumentHandInteractable.cs",
+                                   "sha256":  "319BEB7638BE85D74B244CDA8D5C70C45E11C981B86242CFF2423A8187D1E6B1"
+                               },
+                               {
+                                   "path":  "Assets/Scripts/Interaction/DoorHandInteractable.cs",
+                                   "sha256":  "52C4FDB41ED192A9FCBBBBE3E56EF1C1AA51416F9993374AC061F5633F387577"
+                               },
+                               {
+                                   "path":  "Assets/Scripts/Interaction/LightSwitchInteractable.cs",
+                                   "sha256":  "71D52254AE15026F4443EF6DA5E71B9B0FC64F1307F00EE5A1D67CB861C51745"
+                               },
+                               {
+                                   "path":  "Assets/Scripts/Player/ArmView.cs",
+                                   "sha256":  "198F4DD332A43F81077924D2CEC4ABBE1D64C16180AA7CACBB5A5A1C3BEB3BFE"
+                               },
+                               {
+                                   "path":  "Assets/Scripts/Player/FirstPersonArmController.cs",
+                                   "sha256":  "5B9D43374B78E6CBCAF867035540872F9BA2D9DA0EF3A0FF58C5D3A1355C7FDC"
+                               },
+                               {
+                                   "path":  "Assets/Scripts/Puzzles/BellSequencePuzzle.cs",
+                                   "sha256":  "A1B65700533DA954F3B9A951F45CB70C70DA0FDE0E4A58338649871617E5D136"
+                               }
+                           ],
+    "sceneHash":  "245BDAD3B38F414F221178DFA3621FEDD22341A1A6B5BF6A713F7BB5D752E998"
+}

@@ -1,0 +1,21 @@
+﻿{
+    "prepared":  "D:\\Proyectos\\Metroidbrainia\\Tools\\Hand3DPoint\\Results\\fc7c2656798a4b088e63acd94683a4e1",
+    "changedBlocks":  [
+                          "627426739",
+                          "1857483772",
+                          "3587958",
+                          "9223372036854775807",
+                          "294112082",
+                          "1059087114",
+                          "1857483749"
+                      ],
+    "addedBlocks":  [
+                        "1857483781",
+                        "1491084275",
+                        "1491084274",
+                        "1491084273"
+                    ],
+    "bellChanges":  4,
+    "allOtherBlocksIdentical":  true,
+    "sha256":  "245BDAD3B38F414F221178DFA3621FEDD22341A1A6B5BF6A713F7BB5D752E998"
+}

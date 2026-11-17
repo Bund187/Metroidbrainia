@@ -17,6 +17,7 @@ namespace Metroidbrainia.Hand3DExperiment
         private Camera armCamera;
         private Transform owner, playerRoot;
         public Camera WorldCamera => worldCamera;
+        public Transform HandPoint { get => handGripPoint; set => handGripPoint = value; }
         public bool IsReady => worldCamera != null && armCamera != null && handGripPoint != null && owner != null
             && worldCamera.gameObject.scene == owner.gameObject.scene && handGripPoint.gameObject.scene == owner.gameObject.scene;
         public int HandProjections { get; private set; }
@@ -77,12 +78,16 @@ namespace Metroidbrainia.Hand3DExperiment
             public float Score => separation <= radius ? separation : radius + sweptDistance;
         }
 
-        public HandSample SampleHand()
+        public HandSample SampleHand() => ProjectHandPoint(handGripPoint != null ? handGripPoint.position : Vector3.zero);
+
+        public HandSample SampleHand(Vector3 localOffset) => ProjectHandPoint(handGripPoint != null ? handGripPoint.TransformPoint(localOffset) : Vector3.zero);
+
+        private HandSample ProjectHandPoint(Vector3 worldPoint)
         {
             HandProjections++;
             var hand = new HandSample();
             if (handGripPoint == null) { hand.reason = "Falta punto de contacto de mano"; return hand; }
-            hand.visible = Hand3DScreenProjection.TryWorldToScreen(armCamera, armDisplay, handGripPoint.position, out hand.point, out hand.reason);
+            hand.visible = Hand3DScreenProjection.TryWorldToScreen(armCamera, armDisplay, worldPoint, out hand.point, out hand.reason);
             hand.point += gripScreenOffset * ReferencePixels(1f, Screen.height);
             return hand;
         }
@@ -105,7 +110,21 @@ namespace Metroidbrainia.Hand3DExperiment
         }
 
         // Synchronization is local to a query cycle; there is no cross-frame physics cache.
+        // An explicit world action needs a genuine hit for the existing IHandActionInteractable API.
+        public bool TryHitTarget(Collider target, Vector2 screen, float maximumDistance, ref bool synchronized, out RaycastHit hit)
+        {
+            hit = default;
+            if (!IsReady || target == null || !target.enabled || !target.gameObject.activeInHierarchy
+                || (interactionLayers.value & (1 << target.gameObject.layer)) == 0) return false;
+            if (!Hand3DScreenProjection.TryScreenToWorld(worldCamera, worldDisplay, screen, worldCamera.nearClipPlane + 1f, out Vector3 aim, out _)) return false;
+            if (!synchronized) { Physics.SyncTransforms(); synchronized = true; }
+            return target.Raycast(new Ray(worldCamera.transform.position, (aim - worldCamera.transform.position).normalized), out hit, maximumDistance);
+        }
+
         public bool HasObstacle(Vector3 point, Transform targetRoot, ref bool synchronized, out Collider blocker)
+            => HasObstacle(point, targetRoot, ref synchronized, out blocker, QueryTriggerInteraction.Ignore);
+
+        public bool HasObstacle(Vector3 point, Transform targetRoot, ref bool synchronized, out Collider blocker, QueryTriggerInteraction triggers)
         {
             if (!synchronized) { Physics.SyncTransforms(); synchronized = true; }
             ObstacleQueries++;
@@ -113,7 +132,7 @@ namespace Metroidbrainia.Hand3DExperiment
             Vector3 offset = point - worldCamera.transform.position;
             float nearest = float.PositiveInfinity;
             foreach (var hit in Physics.RaycastAll(worldCamera.transform.position, offset.normalized,
-                Mathf.Max(0f, offset.magnitude - .001f), interactionLayers, QueryTriggerInteraction.Ignore))
+                Mathf.Max(0f, offset.magnitude - .001f), interactionLayers, triggers))
             {
                 Transform item = hit.collider.transform;
                 if (item.IsChildOf(owner) || playerRoot != null && item.IsChildOf(playerRoot)) continue;

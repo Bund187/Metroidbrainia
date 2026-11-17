@@ -209,3 +209,29 @@ them before choosing one.
 
 If a request is simple and unambiguous, do not add unnecessary architecture or
 planning before implementing it.
+
+## Proportionate Validation
+
+Choose validation according to the changed code, serialized data and actual
+dependencies. Honor explicitly requested checks.
+
+- Documentation-only changes normally do not require Unity.
+- Small changes: compile affected code and run related tests.
+- Medium changes: also test directly affected systems and compatibility.
+- Structural changes, important integrations and critical changes: run broad
+  regressions and integration checks; create a build when needed.
+- Do not run the complete historical suite by default.
+- Do not repeat passing checks unless relevant changes or new findings
+  invalidate their results.
+- After fixing a failure, repeat the affected test first before broader suites.
+- Group compatible Unity checks where supported. Preserve isolation when
+  separate processes are necessary.
+- Reuse existing tools. Avoid duplicate evidence folders and extensive
+  reports for trivial changes.
+- Keep generated diagnostics separate from test code, fixtures and reference
+  data. Distinguish automated results from pending visual checks.
+- Do not impose arbitrary test or time limits that conceal failures.
+
+For experimental Hand3D work, preserve isolation from Prototype, the original
+2D arm and shared components. Do not modify those systems to facilitate tests.
+Validate automated scene changes in isolated copies.

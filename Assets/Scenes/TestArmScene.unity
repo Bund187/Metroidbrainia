@@ -249,7 +249,7 @@ MonoBehaviour:
   swingDuration: 6
   audioSource: {fileID: 799850016}
   audioClip: {fileID: 0}
-  puzzle: {fileID: 0}
+  puzzle: {fileID: 1491084274}
 --- !u!1 &13049371
 GameObject:
   m_ObjectHideFlags: 0
@@ -3769,7 +3769,7 @@ MonoBehaviour:
   swingDuration: 6
   audioSource: {fileID: 219734211}
   audioClip: {fileID: 0}
-  puzzle: {fileID: 0}
+  puzzle: {fileID: 1491084274}
 --- !u!1 &310988819
 GameObject:
   m_ObjectHideFlags: 0
@@ -8204,7 +8204,7 @@ MonoBehaviour:
   swingDuration: 6
   audioSource: {fileID: 1111227169}
   audioClip: {fileID: 0}
-  puzzle: {fileID: 0}
+  puzzle: {fileID: 1491084274}
 --- !u!1 &639286208
 GameObject:
   m_ObjectHideFlags: 0
@@ -14677,7 +14677,7 @@ MonoBehaviour:
   swingDuration: 6
   audioSource: {fileID: 1423685270}
   audioClip: {fileID: 0}
-  puzzle: {fileID: 0}
+  puzzle: {fileID: 1491084274}
 --- !u!1 &1074929711
 GameObject:
   m_ObjectHideFlags: 0
@@ -28553,6 +28553,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 55e197b20808e9349a4188cb28d51665, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1857483778}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 55e197b20808e9349a4188cb28d51665, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1857483781}
   m_SourcePrefab: {fileID: 100100000, guid: 55e197b20808e9349a4188cb28d51665, type: 3}
 --- !u!4 &1857483750 stripped
 Transform:
@@ -28813,7 +28816,15 @@ MonoBehaviour:
   poseRecognizer: {fileID: 1857483773}
   pointClickDuration: 0.18
   pointClickAmplitude: 0.18
-  bindings: []
+  bindings:
+  - gesture: 29
+    actions:
+    - {fileID: 11400000, guid: 79c0c48d163c26540912453abda2f9d7, type: 2}
+    - {fileID: 11400000, guid: 4729a6ed6e6f390439b35386bd76f33d, type: 2}
+    onEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    invokeOriginalGestureEvent: 1
 --- !u!114 &1857483773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34044,6 +34055,110 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2130358353}
   m_Mesh: {fileID: 1348504508052690004, guid: db5c95fcb53165c4c947195a1167734d, type: 3}
+--- !u!1 &1491084273
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1491084275}
+  - component: {fileID: 1491084274}
+  m_Layer: 0
+  m_Name: Hand3DPointBellSequence
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1491084274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491084273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4e6748becc40374ebee2b4913d4ed57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Metroidbrainia.BellSequencePuzzle
+  requiredSequence:
+  - {fileID: 627426739}
+  - {fileID: 1059087114}
+  - {fileID: 294112082}
+  - {fileID: 3587958}
+  targetDoor: {fileID: 548650063}
+  onSolved:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!4 &1491084275
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491084273}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1857483781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1857483768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 771c7644d11af1c4cbded98e57368d72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Metroidbrainia.Hand3DExperiment.Hand3DPointInteractor
+  detection:
+    worldCamera: {fileID: 1668637022}
+    handGripPoint: {fileID: 1857483753}
+    armDisplay: {fileID: 1511958091}
+    worldDisplay: {fileID: 0}
+    gripScreenOffset: {x: 0, y: 0}
+    interactionLayers:
+      serializedVersion: 2
+      m_Bits: 51
+  pointFingertip: {fileID: 1857483753}
+  fingertipOffset: {x: -0.00071634795, y: 0.0019294918, z: 0.0004194038}
+  pointCombination: 29
+  maximumDistance: 2
+  targets:
+  - receiver: {fileID: 728630865}
+    collider: {fileID: 728630864}
+    interactionPoint: {fileID: 0}
+    maximumDistance: 1.8
+    tolerancePixels: 0
+  - receiver: {fileID: 627426739}
+    collider: {fileID: 1111227170}
+    interactionPoint: {fileID: 0}
+    maximumDistance: 1.8
+    tolerancePixels: 0
+  - receiver: {fileID: 1059087114}
+    collider: {fileID: 1423685271}
+    interactionPoint: {fileID: 0}
+    maximumDistance: 1.8
+    tolerancePixels: 0
+  - receiver: {fileID: 294112082}
+    collider: {fileID: 219734212}
+    interactionPoint: {fileID: 0}
+    maximumDistance: 1.8
+    tolerancePixels: 0
+  - receiver: {fileID: 3587958}
+    collider: {fileID: 799850017}
+    interactionPoint: {fileID: 0}
+    maximumDistance: 1.8
+    tolerancePixels: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -34056,3 +34171,4 @@ SceneRoots:
   - {fileID: 1769055712}
   - {fileID: 963304543}
   - {fileID: 1654448527}
+  - {fileID: 1491084275}

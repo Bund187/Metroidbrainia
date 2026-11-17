@@ -1,0 +1,58 @@
+[
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DContactDetection.cs",
+        "sha256":  "268DB1F1C0BE3AE7305F91AC5031B0F512D661684F16E67DEC60F80FEAE5E44B"
+    },
+    {
+        "path":  "Assets/Scenes/TestArmScene.unity",
+        "sha256":  "245BDAD3B38F414F221178DFA3621FEDD22341A1A6B5BF6A713F7BB5D752E998"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DPointInteractor.cs",
+        "sha256":  "EDF565B080764F5FF6FD9FF0B2D75E037FC008A3909456CE9FA940FE70755DE5"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DPointWorldAction.cs",
+        "sha256":  "95FACB911A45B2ECA19DA06B4EAC5443F3453F0CD3DB3D545D32E4017B62BD87"
+    },
+    {
+        "path":  "Assets/Editor/Experiments/Hand3D/Hand3DPointEditor.cs",
+        "sha256":  "7D534F4B63E6490CBB6D344FA4B9F032B6C8D36947D2E3FA675FC86B71101A57"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DPointInteractor.cs.meta",
+        "sha256":  "B9B12D5500F2DF6420BE369791F597FE3BF094C91C0D2038AEE5464BD4955482"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DPointWorldAction.cs.meta",
+        "sha256":  "93252CA391CAF0678A9BC842CFADCBD055BD36C89C14A75DE80AE7E0E9F278EB"
+    },
+    {
+        "path":  "Assets/Editor/Experiments/Hand3D/Hand3DPointEditor.cs.meta",
+        "sha256":  "8798782B88D8A7C89D1FE545B54027411F8422D56F8A4AA53FBE29234207F8F4"
+    },
+    {
+        "path":  "Assets/Experiments/Hand3D/Actions.meta",
+        "sha256":  "03DF9E3936B7390EB3A61E8B4E28EBE38675D9B19ED919837C8AC8A780C11505"
+    },
+    {
+        "path":  "Assets/Experiments/Hand3D/Actions/TestArmPointClick.asset",
+        "sha256":  "8F05110A9801332649E1B031BDB1A52D4CE1A484BF9D8B4E837A596460B83919"
+    },
+    {
+        "path":  "Assets/Experiments/Hand3D/Actions/TestArmPointClick.asset.meta",
+        "sha256":  "A4CC3F7337FEF5CF007564157EFD090C3943EE3B2D374671E2A5D584713038D4"
+    },
+    {
+        "path":  "Assets/Experiments/Hand3D/Actions/TestArmPointWorld.asset",
+        "sha256":  "A7783E8CCD9927B676E09D2B512757E4D1E0132C3D18C2EE5040FEBB74B4DF83"
+    },
+    {
+        "path":  "Assets/Experiments/Hand3D/Actions/TestArmPointWorld.asset.meta",
+        "sha256":  "C0DF3CDE2A473CE3E15C0F3306E35B3F1DCA8A7C1F6BF3F4F39B2B92DE757191"
+    },
+    {
+        "path":  "Assets/Scenes/TestArmScene.unity",
+        "sha256":  "245BDAD3B38F414F221178DFA3621FEDD22341A1A6B5BF6A713F7BB5D752E998"
+    }
+]

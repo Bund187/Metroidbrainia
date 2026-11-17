@@ -1,0 +1,7 @@
+Functional profiles: 13
+Excluded, not activated:
+pose.525e7493b6c94e269e7f14d333b172d2 / OK_Test_Capture
+pose.17603bf74143415dabfec95e24687ed3 / Exploration_FullBody_Test
+pose.0f806360bbd646c0931d7cda80f42402 / New pose
+pose.7feeb8a9413b48e1bc0a81f1e47b9f06 / Partial_Capture_Test
+pose.c909b68b9af44b91b43f457951b2ca9c / Partial_Capture_Test

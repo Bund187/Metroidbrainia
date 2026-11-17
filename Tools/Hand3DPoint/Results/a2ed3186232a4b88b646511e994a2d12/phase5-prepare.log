@@ -1,0 +1,1128 @@
+VBCSCompilerPreWarmer: watching VBCSCompiler (PID 29152)
+VBCSCompilerPreWarmer: pre-warm launched (dotnet PID 22500)
+VBCSCompiler prewarm took 23.51 ms
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.6/staging' branch; Version is '6000.6.3f1 (45d8eee7de74) revision 4577518'; Using compiler version '194234433'; Build Type 'Release'
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Bund187" at "2026-11-16T12:06:19.8332987Z"
+OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'es' Physical Memory: 15613 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-11-16T12:06:19Z
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 52676, path: "D:/Programas/UnityHub/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.3+d7ffd15
+  Session Id:              c70b92e4190040b19f57be19872f7b42
+  Correlation Id:          cf5378452fc56cdc8cb586f08ed52061
+  External correlation Id: 6845859078763911848
+  Machine Id:              fNKQIaIwRho+k53X39hJZVgeX8A=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-Bund187" (connect: 0.00s, validation: 0.00s, handshake: 0.02s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Bund187-notifications" at "2026-11-16T12:06:19.8566199Z"
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-8V63-KRHM-ENRG-D3YG-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 2703812-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.00
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-8V63-KRHM-ENRG-D3YG-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 2703812-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Module] Licensing Background thread has ended after 0.03s
+
+COMMAND LINE ARGUMENTS:
+D:\Programas\UnityHub\Editor\6000.6.3f1\Editor\Unity.exe
+-batchmode
+-projectPath
+C:\Users\Bund187\AppData\Local\Temp\MetroidbrainiaPhase0-20261109
+-executeMethod
+Metroidbrainia.Phase5Validation.Prepare
+-phase0RunId
+a2ed3186232a4b88b646511e994a2d12
+-phase1RunId
+a2ed3186232a4b88b646511e994a2d12
+-phase2RunId
+a2ed3186232a4b88b646511e994a2d12
+-phase3RunId
+a2ed3186232a4b88b646511e994a2d12
+-phase4RunId
+a2ed3186232a4b88b646511e994a2d12
+-phase5RunId
+a2ed3186232a4b88b646511e994a2d12
+-logFile
+C:\Users\Bund187\AppData\Local\Temp\MetroidbrainiaPhase0-20261109\phase5-prepare.log
+Successfully changed project path to: C:\Users\Bund187\AppData\Local\Temp\MetroidbrainiaPhase0-20261109
+C:/Users/Bund187/AppData/Local/Temp/MetroidbrainiaPhase0-20261109
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-remapper-allocator-initial-capacity=32768"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-main-allocator-mimalloc-enabled=1"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+Logging is directed to a specific file, skipping project log.
+Player connection [25152]  Target information:
+
+Player connection [25152]  * "[IP] 192.168.0.21 [Port] 55505 [Flags] 2 [Guid] 1433790943 [EditorId] 1433790943 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-T5V2U9N) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [25152] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [25152] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Package Manager] Connected to IPC stream "Upm-50588" after 0.2 seconds.
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-8V63-KRHM-ENRG-D3YG-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 2703812-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Library Redirect Path: Library/
+Launching Unity Data Store - D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Tools/Unity.DataStore.exe 
+Unity Data Store artifact dir = Library/DataStore, working dir = C:/Users/Bund187/AppData/Local/Temp/MetroidbrainiaPhase0-20261109Unity Data Store running and initialised
+[Physics::Module] Selected backend (deferred post-plugins).
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Initialize engine version: 6000.6.3f1 (45d8eee7de74)
+[EntityIdStore] init: VM path (explicit commit), pageSize=4096, blockCount=1048576, entitiesPerBlock=256, slots reserved=4294967296 bytes
+[Subsystems] Discovering subsystems at path D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Bund187/AppData/Local/Temp/MetroidbrainiaPhase0-20261109/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3070 Laptop GPU (ID=0x249d)
+    Vendor:   NVIDIA
+    VRAM:     8020 MB
+    Driver:   32.0.15.6607
+Initialize mono
+Mono path[0] = 'D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed'
+Mono path[1] = 'D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/BCLExtensions/runtime/netstandard2.1'
+Mono path[2] = 'D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56588
+CodeReloadManager initialized
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Register platform support module: D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-8V63-KRHM-ENRG-D3YG-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 2703812-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Register platform support module: D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-8V63-KRHM-ENRG-D3YG-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 2703812-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Register platform support module: D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Registered in 0.005727 seconds.
+Native extension for Android target not found
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Package Manager log level set to [2]
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:False
+Scripting: successfully reloaded assembly
+- Finished resetting the current domain, in  1.911 seconds
+Domain Reload Profiling: 2531ms
+	BeginReloadAssembly (158ms)
+		CreateAndSetChildDomain (11ms)
+	RebuildCommonClasses (5ms)
+	RebuildNativeTypeToScriptingClass (17ms)
+	initialDomainReloadingComplete (85ms)
+	LoadAllAssembliesAndSetupDomain (354ms)
+		LoadAssemblies (148ms)
+		TypeCache.Refresh (223ms)
+			TypeCache.ScanAssembly (209ms)
+		AnalyzeDomain (1ms)
+	FinalizeReload (1912ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (9ms)
+			BeforeProcessingInitializeOnLoad (220ms)
+			ProcessInitializeOnLoadAttributes (121ms)
+			ProcessInitializeOnLoadMethodAttributes (252ms)
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-8V63-KRHM-ENRG-D3YG-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+[Licensing::Module] License group:
+  Id: 2703812-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Application.AssetDatabase Initial Refresh Start
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 77 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.analytics@3.8.2 (location: C:\Users\Bund187\AppData\Local\Temp\MetroidbrainiaPhase0-20261109\Library\PackageCache\com.unity.analytics@c9d14a6bdec6)
+    com.unity.purchasing@4.15.0 (location: C:\Users\Bund187\AppData\Local\Temp\MetroidbrainiaPhase0-20261109\Library\PackageCache\com.unity.purchasing@ffbc76639aab)
+    com.unity.xr.legacyinputhelpers@3.0.1 (location: C:\Users\Bund187\AppData\Local\Temp\MetroidbrainiaPhase0-20261109\Library\PackageCache\com.unity.xr.legacyinputhelpers@3f62d634f63b)
+    com.unity.services.core@1.18.0 (location: C:\Users\Bund187\AppData\Local\Temp\MetroidbrainiaPhase0-20261109\Library\PackageCache\com.unity.services.core@3464cb68d709)
+    com.unity.services.analytics@6.3.0 (location: C:\Users\Bund187\AppData\Local\Temp\MetroidbrainiaPhase0-20261109\Library\PackageCache\com.unity.services.analytics@cde4e6cf92f9)
+  Built-in packages:
+    com.unity.2d.tilemap@1.0.0 (location: C:\Users\Bund187\AppData\Local\Temp\MetroidbrainiaPhase0-20261109\Library\PackageCache\com.unity.2d.tilemap@4a51245c030d)
+    com.unity.multiplayer.center@2.0.1 (location: C:\Users\Bund187\AppData\Local\Temp\MetroidbrainiaPhase0-20261109\Library\PackageCache\com.unity.multiplayer.center@549886182930)
+  Local packages:
+    com.unity.2d.sprite@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.2d.sprite@26bcb5e737a2 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.2d.sprite@26bcb5e737a2)
+    com.unity.addressables@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.addressables@42676f2a154e (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.addressables@42676f2a154e)
+    com.unity.ai.navigation@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.ai.navigation@134dd6a3b97b (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.ai.navigation@134dd6a3b97b)
+    com.unity.burst@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.burst@626e66ab421b (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.burst@626e66ab421b)
+    com.unity.cinemachine@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.cinemachine@f53aa49b3acc (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.cinemachine@f53aa49b3acc)
+    com.unity.cloud.gltfast@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.cloud.gltfast@11ddc2436f97 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.cloud.gltfast@11ddc2436f97)
+    com.unity.collab-proxy@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.collab-proxy@4628d2ba6ea4 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.collab-proxy@4628d2ba6ea4)
+    com.unity.collections@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.collections@10fff0607388 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.collections@10fff0607388)
+    com.unity.ext.nunit@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.ext.nunit@0198eae3b53e (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.ext.nunit@0198eae3b53e)
+    com.unity.graph-authoring@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.graph-authoring@cfd2588851ee (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.graph-authoring@cfd2588851ee)
+    com.unity.ide.rider@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.ide.rider@1f60b3138684 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.ide.rider@1f60b3138684)
+    com.unity.ide.visualstudio@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.ide.visualstudio@a99d56dec63f (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.ide.visualstudio@a99d56dec63f)
+    com.unity.inputsystem@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.inputsystem@7a4e1a2a8194 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.inputsystem@7a4e1a2a8194)
+    com.unity.localization@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.localization@ef5a0677859d (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.localization@ef5a0677859d)
+    com.unity.mathematics@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.mathematics@8306a64d0cd6 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.mathematics@8306a64d0cd6)
+    com.unity.nuget.mono-cecil@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.nuget.mono-cecil@ecb9724e46ff (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.nuget.mono-cecil@ecb9724e46ff)
+    com.unity.nuget.newtonsoft-json@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.nuget.newtonsoft-json@4dfd81071c64 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.nuget.newtonsoft-json@4dfd81071c64)
+    com.unity.probuilder@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.probuilder@48aa4279218a (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.probuilder@48aa4279218a)
+    com.unity.profiling.core@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.profiling.core@8a49f7027d06 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.profiling.core@8a49f7027d06)
+    com.unity.render-pipelines.core@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.render-pipelines.core@02d75770e4b3 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.render-pipelines.core@02d75770e4b3)
+    com.unity.render-pipelines.universal@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.render-pipelines.universal@327d93d1cbc8 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.render-pipelines.universal@327d93d1cbc8)
+    com.unity.render-pipelines.universal-config@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.render-pipelines.universal-config@561422b74439 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.render-pipelines.universal-config@561422b74439)
+    com.unity.scriptablebuildpipeline@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.scriptablebuildpipeline@61526b33bf2c (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.scriptablebuildpipeline@61526b33bf2c)
+    com.unity.searcher@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.searcher@a463122f2c00 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.searcher@a463122f2c00)
+    com.unity.settings-manager@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.settings-manager@0b8638c5ce86 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.settings-manager@0b8638c5ce86)
+    com.unity.shadergraph@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.shadergraph@1dd0fd24b57e (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.shadergraph@1dd0fd24b57e)
+    com.unity.splines@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.splines@edbe9aefec91 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.splines@edbe9aefec91)
+    com.unity.test-framework@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.test-framework@80f691d4262b (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.test-framework@80f691d4262b)
+    com.unity.test-framework.performance@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.test-framework.performance@b6023decb532 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.test-framework.performance@b6023decb532)
+    com.unity.timeline@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.timeline@c56d56b0070b (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.timeline@c56d56b0070b)
+    com.unity.ugui@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.ugui@0727b404f3a0 (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.ugui@0727b404f3a0)
+    com.unity.visualscripting@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.visualscripting@4edfcc09512f (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.visualscripting@4edfcc09512f)
+    com.unity.modules.accessibility@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.accessibility (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.accessibility)
+    com.unity.modules.adaptiveperformance@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.adaptiveperformance (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.adaptiveperformance)
+    com.unity.modules.ai@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.ai (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.ai)
+    com.unity.modules.androidjni@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.androidjni (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.androidjni)
+    com.unity.modules.animation@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.animation (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.animation)
+    com.unity.modules.assetbundle@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.assetbundle (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.assetbundle)
+    com.unity.modules.audio@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.audio (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.audio)
+    com.unity.modules.cloth@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.cloth (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.cloth)
+    com.unity.modules.director@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.director (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.director)
+    com.unity.modules.hierarchycore@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.hierarchycore (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.hierarchycore)
+    com.unity.modules.imageconversion@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.imageconversion (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.imageconversion)
+    com.unity.modules.imgui@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.imgui (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.jsonserialize (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.particlesystem (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.particlesystem)
+    com.unity.modules.physics@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.physics (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.physics)
+    com.unity.modules.physics2d@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.physics2d (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.physics2d)
+    com.unity.modules.physicscore2d@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.physicscore2d (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.physicscore2d)
+    com.unity.modules.screencapture@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.screencapture (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.screencapture)
+    com.unity.modules.subsystems@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.subsystems (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.subsystems)
+    com.unity.modules.terrain@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.terrain (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.terrainphysics (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.terrainphysics)
+    com.unity.modules.tetgen@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.tetgen (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.tetgen)
+    com.unity.modules.tilemap@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.tilemap (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.tilemap)
+    com.unity.modules.timelinefoundation@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.timelinefoundation (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.timelinefoundation)
+    com.unity.modules.ui@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.ui (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.ui)
+    com.unity.modules.uielements@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.uielements (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.uielements)
+    com.unity.modules.umbra@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.umbra (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.umbra)
+    com.unity.modules.unityanalytics@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unityanalytics (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unityanalytics)
+    com.unity.modules.unitywebrequest@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unitywebrequest (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unitywebrequestaudio (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unitywebrequesttexture (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unitywebrequestwww (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vectorgraphics@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.vectorgraphics (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.vectorgraphics)
+    com.unity.modules.vehicles@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.vehicles (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.vehicles)
+    com.unity.modules.video@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.video (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.video)
+    com.unity.modules.wind@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.wind (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.wind)
+    com.unity.modules.xr@file:D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.xr (location: D:\Proyectos\Metroidbrainia\Library\PackageCache\com.unity.modules.xr)
+[Package Manager] com.unity.analytics is deprecated: This package is deprecated and won't be compatible with future Unity versions. It will only receive critical updates, with no new features or bug fixes. Migrate to Unity Analytics: https://docs.unity.com/en-us/analytics
+[Package Manager] com.unity.purchasing@4.15.0 is deprecated: Unity IAP 4 is unsupported as of June 8, 2026. IAP 5 is the supported version going forward.
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.02 seconds
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+[ScriptCompilation] Requested script compilation because: AssetDatabase observed changes in script compilation related files
+Starting: D:\Programas\UnityHub\Editor\6000.6.3f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/Bund187/AppData/Local/Temp/MetroidbrainiaPhase0-20261109
+DisplayProgressbar: Compiling Scripts
+Starting: D:\Programas\UnityHub\Editor\6000.6.3f1\Editor\Data\DotNetSdk\dotnet.exe "D:\Programas\UnityHub\Editor\6000.6.3f1\Editor\Data\Tools\BuildPipeline\ScriptCompilationBuildProgram.exe" "Library/Bee/1900b0aE.dag.json" "Library/Bee/1900b0aE-inputdata.json" "Library\Bee\buildprogram0.traceevents"
+WorkingDir: C:/Users/Bund187/AppData/Local/Temp/MetroidbrainiaPhase0-20261109
+ExitCode: 4 Duration: 4s284ms
+[ 530/1802  0s] WriteResponseFile Library/Bee/artifacts/rsp/4747638433968585886.rsp
+Rebuilding DAG because FileSignature timestamp changed: Library/Bee/1900b0aE-inputdata.json
+[1358/1802  0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+[1359/1802  4s] Csc Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.dll (+2 others)
+Assets\Scripts\Experiments\Hand3D\Hand3DScreenProjection.cs(12,75): warning CS0618: 'FindObjectsSortMode' is obsolete: 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\Scripts\Experiments\Hand3D\Hand3DScreenProjection.cs(12,40): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)' is obsolete: 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\Phase1Snapshots\Phase5PlayerProbe.cs(19,50): warning CS0618: 'FindObjectsSortMode' is obsolete: 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\Phase1Snapshots\Phase5PlayerProbe.cs(19,21): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)' is obsolete: 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\Scripts\Experiments\Hand3D\Hand3DDocumentDisplay.cs(29,57): warning CS0414: The field 'Hand3DDocumentDisplay.visualScale' is assigned but its value is never used
+
+Assets\Phase1Snapshots\BeforeDoorInteractor.cs(36,57): warning CS0414: The field 'BeforeDoorInteractor.contactTolerancePixels' is assigned but its value is never used
+
+Assets\Scripts\Experiments\Hand3D\Hand3DDoorInteractor.cs(37,57): warning CS0414: The field 'Hand3DDoorInteractor.maximumContactSeparationPixels' is assigned but its value is never used
+
+Assets\Scripts\Experiments\Hand3D\Hand3DDoorInteractor.cs(36,57): warning CS0414: The field 'Hand3DDoorInteractor.contactTolerancePixels' is assigned but its value is never used
+
+Assets\Phase1Snapshots\BeforeDoorInteractor.cs(37,57): warning CS0414: The field 'BeforeDoorInteractor.maximumContactSeparationPixels' is assigned but its value is never used
+*** Tundra requires additional run (4.25 seconds), 3 items updated, 1357 evaluated
+ExitCode: 0 Duration: 4s260ms
+Starting: D:\Programas\UnityHub\Editor\6000.6.3f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --dagfilejson="Library\Bee\1900b0aE.dag.json" --profile="Library/Bee/backend2.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/Bund187/AppData/Local/Temp/MetroidbrainiaPhase0-20261109
+ExitCode: 3 Duration: 1s195ms
+Finished compiling graph: 1806 nodes, 40479 flattened edges (33881 ToBuild, 300 ToUse), maximum node priority 1924
+[ 931/1802  0s] WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.rsp
+[ 932/1802  0s] WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.rsp
+[1358/1802  0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+[1794/1802  0s] Csc Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.dll (+2 others)
+##### CommandLine
+"D:\Programas\UnityHub\Editor\6000.6.3f1\Editor\Data\DotNetSdk\dotnet.exe" exec "D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/DotNetSdk/sdk/8.0.318/Roslyn/bincore/csc.dll" /nostdlib /noconfig /shared "@Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.rsp" "@Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.rsp2"
+##### Contents of Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp.rsp
+-target:library
+-out:"Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.dll"
+-refout:"Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.ref.dll"
+-define:UNITY_6000_6_3
+-define:UNITY_6000_6
+-define:UNITY_6000
+-define:UNITY_5_3_OR_NEWER
+-define:UNITY_5_4_OR_NEWER
+-define:UNITY_5_5_OR_NEWER
+-define:UNITY_5_6_OR_NEWER
+-define:UNITY_2017_1_OR_NEWER
+-define:UNITY_2017_2_OR_NEWER
+-define:UNITY_2017_3_OR_NEWER
+-define:UNITY_2017_4_OR_NEWER
+-define:UNITY_2018_1_OR_NEWER
+-define:UNITY_2018_2_OR_NEWER
+-define:UNITY_2018_3_OR_NEWER
+-define:UNITY_2018_4_OR_NEWER
+-define:UNITY_2019_1_OR_NEWER
+-define:UNITY_2019_2_OR_NEWER
+-define:UNITY_2019_3_OR_NEWER
+-define:UNITY_2019_4_OR_NEWER
+-define:UNITY_2020_1_OR_NEWER
+-define:UNITY_2020_2_OR_NEWER
+-define:UNITY_2020_3_OR_NEWER
+-define:UNITY_2021_1_OR_NEWER
+-define:UNITY_2021_2_OR_NEWER
+-define:UNITY_2021_3_OR_NEWER
+-define:UNITY_2022_1_OR_NEWER
+-define:UNITY_2022_2_OR_NEWER
+-define:UNITY_2022_3_OR_NEWER
+-define:UNITY_2023_1_OR_NEWER
+-define:UNITY_2023_2_OR_NEWER
+-define:UNITY_2023_3_OR_NEWER
+-define:UNITY_6000_0_OR_NEWER
+-define:UNITY_6000_1_OR_NEWER
+-define:UNITY_6000_2_OR_NEWER
+-define:UNITY_6000_3_OR_NEWER
+-define:UNITY_6000_4_OR_NEWER
+-define:UNITY_6000_5_OR_NEWER
+-define:UNITY_6000_6_OR_NEWER
+-define:PLATFORM_ARCH_64
+-define:UNITY_64
+-define:UNITY_INCLUDE_TESTS
+-define:UNITY_ENABLE_CLOUD_SERVICES_ENGINE_DIAGNOSTICS_MANAGED
+-define:ENABLE_AR
+-define:ENABLE_AUDIO
+-define:ENABLE_AUDIO_SCRIPTABLE_PIPELINE
+-define:ENABLE_BURST
+-define:ENABLE_CACHING
+-define:ENABLE_CLOTH
+-define:ENABLE_EVENT_QUEUE
+-define:ENABLE_MICROPHONE
+-define:ENABLE_MULTIPLE_DISPLAYS
+-define:ENABLE_PHYSICS
+-define:ENABLE_TEXTURE_STREAMING
+-define:ENABLE_VIRTUALTEXTURING
+-define:ENABLE_LZMA
+-define:ENABLE_UNITYEVENTS
+-define:ENABLE_VR
+-define:ENABLE_WEBCAM
+-define:ENABLE_UNITYWEBREQUEST
+-define:ENABLE_WWW
+-define:ENABLE_CLOUD_SERVICES
+-define:ENABLE_CLOUD_SERVICES_ADS
+-define:ENABLE_CLOUD_SERVICES_USE_WEBREQUEST
+-define:ENABLE_UNITY_CONSENT
+-define:ENABLE_UNITY_CLOUD_IDENTIFIERS
+-define:ENABLE_CLOUD_SERVICES_CRASH_REPORTING
+-define:ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING
+-define:ENABLE_CLOUD_SERVICES_PURCHASING
+-define:ENABLE_CLOUD_SERVICES_ANALYTICS
+-define:ENABLE_CLOUD_SERVICES_BUILD
+-define:ENABLE_EDITOR_GAME_SERVICES
+-define:ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT
+-define:ENABLE_CLOUD_LICENSE
+-define:ENABLE_EDITOR_HUB_LICENSE
+-define:ENABLE_WEBSOCKET_CLIENT
+-define:ENABLE_GENERATE_NATIVE_PLUGINS_FOR_ASSEMBLIES_API
+-define:ENABLE_DIRECTOR_AUDIO
+-define:ENABLE_DIRECTOR_TEXTURE
+-define:ENABLE_MANAGED_JOBS
+-define:ENABLE_MANAGED_TRANSFORM_JOBS
+-define:ENABLE_MANAGED_ANIMATION_JOBS
+-define:ENABLE_MANAGED_AUDIO_JOBS
+-define:ENABLE_MANAGED_UNITYTLS
+-define:INCLUDE_DYNAMIC_GI
+-define:ENABLE_SCRIPTING_GC_WBARRIERS
+-define:PLATFORM_SUPPORTS_MONO
+-define:RENDER_SOFTWARE_CURSOR
+-define:ENABLE_MARSHALLING_TESTS
+-define:ENABLE_VIDEO
+-define:ENABLE_NAVIGATION_OFFMESHLINK_TO_NAVMESHLINK
+-define:ENABLE_ACCELERATOR_CLIENT_DEBUGGING
+-define:ENABLE_ACCESSIBILITY_SCREEN_READER
+-define:TEXTCORE_1_0_OR_NEWER
+-define:EDITOR_ONLY_NAVMESH_BUILDER_DEPRECATED
+-define:INCLUDE_UNIFIED_RAYTRACING_COMPUTE_BACKEND
+-define:INCLUDE_UNIFIED_RAYTRACING_HARDWARE_BACKEND
+-define:PLATFORM_STANDALONE_WIN
+-define:PLATFORM_STANDALONE
+-define:UNITY_STANDALONE_WIN
+-define:UNITY_STANDALONE
+-define:ENABLE_RUNTIME_GI
+-define:ENABLE_MOVIES
+-define:ENABLE_NETWORK
+-define:ENABLE_NVIDIA
+-define:ENABLE_AMD
+-define:ENABLE_CRUNCH_TEXTURE_COMPRESSION
+-define:ENABLE_CLOUD_SERVICES_ENGINE_DIAGNOSTICS
+-define:ENABLE_OUT_OF_PROCESS_CRASH_HANDLER
+-define:ENABLE_CLUSTER_SYNC
+-define:ENABLE_CLUSTERINPUT
+-define:PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP
+-define:GFXDEVICE_WAITFOREVENT_MESSAGEPUMP
+-define:PLATFORM_USES_EXPLICIT_MEMORY_MANAGER_INITIALIZER
+-define:PLATFORM_SUPPORTS_WAIT_FOR_PRESENTATION
+-define:PLATFORM_SUPPORTS_SPLIT_GRAPHICS_JOBS
+-define:UNITY_SUPPORTS_GRAPHICS_API_VALIDATION
+-define:PLATFORM_USES_VULKAN_OLD_SWAPCHAIN
+-define:USE_READ_ASYNC_MANAGED_API
+-define:ENABLE_MONO
+-define:NET_STANDARD_2_0
+-define:NET_STANDARD
+-define:NET_STANDARD_2_1
+-define:NETSTANDARD
+-define:NETSTANDARD2_1
+-define:ENABLE_PROFILER
+-define:UNITY_INCLUDE_INSTRUMENTATION
+-define:DEBUG
+-define:TRACE
+-define:UNITY_ASSERTIONS
+-define:UNITY_ENABLE_CHECKS
+-define:UNITY_EDITOR
+-define:UNITY_EDITOR_64
+-define:UNITY_EDITOR_WIN
+-define:ENABLE_UNITY_COLLECTIONS_CHECKS
+-define:ENABLE_BURST_AOT
+-define:UNITY_TEAM_LICENSE
+-define:ENABLE_CUSTOM_RENDER_TEXTURE
+-define:ENABLE_DIRECTOR
+-define:ENABLE_LOCALIZATION
+-define:ENABLE_SPRITES
+-define:ENABLE_TERRAIN
+-define:ENABLE_TILEMAP
+-define:ENABLE_TIMELINE
+-define:ENABLE_INPUT_SYSTEM
+-define:TEXTCORE_FONT_ENGINE_1_5_OR_NEWER
+-define:TEXTCORE_TEXT_ENGINE_1_5_OR_NEWER
+-define:TEXTCORE_FONT_ENGINE_1_6_OR_NEWER
+-define:CSHARP_7_OR_LATER
+-define:CSHARP_7_3_OR_NEWER
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/BCLExtensions/TargetingPacks/netstandard2.1/ref/Microsoft.Bcl.AsyncInterfaces.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/BCLExtensions/TargetingPacks/netstandard2.1/ref/Microsoft.Extensions.DependencyInjection.Abstractions.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/BCLExtensions/TargetingPacks/netstandard2.1/ref/Microsoft.Extensions.Logging.Abstractions.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/BCLExtensions/TargetingPacks/netstandard2.1/ref/System.Collections.Immutable.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/BCLExtensions/TargetingPacks/netstandard2.1/ref/System.Diagnostics.DiagnosticSource.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/BCLExtensions/TargetingPacks/netstandard2.1/ref/System.IO.Hashing.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/BCLExtensions/TargetingPacks/netstandard2.1/ref/System.Reflection.Metadata.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/BCLExtensions/TargetingPacks/netstandard2.1/ref/System.Runtime.CompilerServices.Unsafe.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/BCLExtensions/TargetingPacks/netstandard2.1/ref/System.Text.Encodings.Web.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/BCLExtensions/TargetingPacks/netstandard2.1/ref/System.Text.Json.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/Bootstrap/Unity.Scripting.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.AIModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.AccessibilityModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.AdaptivePerformanceModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.AnimationWindowModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.AssetComplianceModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.BuildAnalysisModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.BuildProfileModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.BurstModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.ClothModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.ContentLoadModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreBusinessMetricsModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.DiagnosticsModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.EditorToolbarModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.EmbreeModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.GIModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.GenericRemoteModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.GraphToolkitModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.GraphViewModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.GraphicsStateCollectionSerializerModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.GridAndSnapModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.GridModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.HierarchyModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.LightingModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.MathematicsModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.MediaModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.MultiplayerModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.Physics2DModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.PhysicsCore2DModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.PhysicsModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.PlayModeModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.PresetsUIModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.ProjectAuditorModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.PropertiesModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.QuickInstallModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.QuickSearchModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.SafeModeModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.SceneTemplateModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.SceneViewModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.ShaderBuildSettingsModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.ShaderCompilationModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.ShaderFoundryModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.ShaderPreprocessorModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.SketchUpModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.SpriteMaskModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.SpriteShapeModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.SubstanceModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.SyntaxTreeModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.TerrainModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.TextCoreFontEngineModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.TextCoreTextEngineModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.TextRenderingModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.TilemapModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.TimelineFoundationModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.TreeModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.U2DModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.UIAutomationModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.UIBuilderModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.UIElementsModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.UIElementsSamplesModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.UIToolkitAuthoringModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.UmbraModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.VFXModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.VectorGraphicsModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.VideoModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.XRModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.ARModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.AccessibilityModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.AdaptivePerformanceModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.AndroidJNIModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.AnimationModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.AssetBundleModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.AudioModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.BurstModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClothModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterInputModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.ContentLoadModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.CrashReportingModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.DSPGraphModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.DirectorModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.GIModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.GameCenterModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.GraphicsStateCollectionSerializerModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.GridModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.HierarchyCoreModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.HotReloadModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.IMGUIModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.IdentifiersModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.ImageConversionModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.InputForUIModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.InputLegacyModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.InputModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.InsightsModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.JSONSerializeModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.LocalizationModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.ManagedKernelModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.MarshallingModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.MathematicsModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.MultiplayerModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.ParticleSystemModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.PerformanceReportingModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.Physics2DModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.PhysicsBackendPhysXModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.PhysicsCore2DModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.PhysicsModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.PropertiesModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.RenderAs2DModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.ScreenCaptureModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.ScriptingModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.ShaderVariantAnalyticsModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteShapeModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.StreamingModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.SubstanceModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.SubsystemsModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.TLSModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainPhysicsModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.TetgenModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.TextCoreFontEngineModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.TextCoreTextEngineModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.TextRenderingModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.TilemapModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.TimelineFoundationModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.U2DRuntimeModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.UIElementsModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.UIModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.UmbraModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityAnalyticsCommonModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityAnalyticsModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityConnectModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityConsentModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityCurlModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAssetBundleModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAudioModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestTextureModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestWWWModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.VFXModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.VectorGraphicsModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.VehiclesModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.VideoModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.VirtualTexturingModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.WindModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/Extensions/2.0.0/System.Runtime.InteropServices.WindowsRuntime.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.ComponentModel.Composition.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Core.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Data.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Drawing.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.IO.Compression.FileSystem.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Net.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Numerics.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Runtime.Serialization.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.ServiceModel.Web.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Transactions.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Web.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Windows.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Xml.Linq.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Xml.Serialization.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Xml.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/mscorlib.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/Microsoft.Win32.Primitives.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.AppContext.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Buffers.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Collections.Concurrent.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Collections.NonGeneric.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Collections.Specialized.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Collections.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.ComponentModel.EventBasedAsync.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.ComponentModel.Primitives.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.ComponentModel.TypeConverter.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.ComponentModel.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Console.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Data.Common.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.Contracts.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.Debug.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.FileVersionInfo.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.Process.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.StackTrace.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.TextWriterTraceListener.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.Tools.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.TraceSource.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.Tracing.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Drawing.Primitives.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Dynamic.Runtime.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Globalization.Calendars.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Globalization.Extensions.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Globalization.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.Compression.ZipFile.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.Compression.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.FileSystem.DriveInfo.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.FileSystem.Primitives.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.FileSystem.Watcher.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.FileSystem.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.IsolatedStorage.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.MemoryMappedFiles.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.Pipes.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.UnmanagedMemoryStream.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Linq.Expressions.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Linq.Parallel.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Linq.Queryable.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Linq.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Memory.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.Http.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.NameResolution.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.NetworkInformation.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.Ping.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.Primitives.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.Requests.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.Security.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.Sockets.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.WebHeaderCollection.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.WebSockets.Client.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.WebSockets.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Numerics.Vectors.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.ObjectModel.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Reflection.DispatchProxy.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Reflection.Emit.ILGeneration.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Reflection.Emit.Lightweight.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Reflection.Emit.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Reflection.Extensions.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Reflection.Primitives.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Reflection.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Resources.Reader.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Resources.ResourceManager.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Resources.Writer.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.CompilerServices.VisualC.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.Extensions.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.Handles.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.InteropServices.RuntimeInformation.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.InteropServices.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.Numerics.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.Serialization.Formatters.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.Serialization.Json.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.Serialization.Primitives.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.Serialization.Xml.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Security.Claims.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Security.Cryptography.Algorithms.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Security.Cryptography.Csp.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Security.Cryptography.Encoding.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Security.Cryptography.Primitives.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Security.Cryptography.X509Certificates.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Security.Principal.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Security.SecureString.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Text.Encoding.Extensions.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Text.Encoding.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Text.RegularExpressions.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Threading.Overlapped.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Threading.Tasks.Extensions.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Threading.Tasks.Parallel.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Threading.Tasks.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Threading.Thread.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Threading.ThreadPool.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Threading.Timer.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Threading.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.ValueTuple.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Xml.ReaderWriter.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Xml.XDocument.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Xml.XPath.XDocument.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Xml.XPath.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Xml.XmlDocument.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Xml.XmlSerializer.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/NetStandard/ref/2.1.0/netstandard.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/PlaybackEngines/AndroidPlayer/Unity.Android.Gradle.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/PlaybackEngines/AndroidPlayer/Unity.Android.Types.dll"
+-r:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.iOS.Extensions.Xcode.dll"
+-r:"D:/Proyectos/Metroidbrainia/Library/PackageCache/com.unity.collections@10fff0607388/Unity.Collections.LowLevel.ILSupport/Unity.Collections.LowLevel.ILSupport.dll"
+-r:"D:/Proyectos/Metroidbrainia/Library/PackageCache/com.unity.ext.nunit@0198eae3b53e/net472/unity-custom/nunit.framework.dll"
+-r:"D:/Proyectos/Metroidbrainia/Library/PackageCache/com.unity.nuget.mono-cecil@ecb9724e46ff/Mono.Cecil.dll"
+-r:"D:/Proyectos/Metroidbrainia/Library/PackageCache/com.unity.nuget.newtonsoft-json@4dfd81071c64/Runtime/Newtonsoft.Json.dll"
+-r:"D:/Proyectos/Metroidbrainia/Library/PackageCache/com.unity.visualscripting@4edfcc09512f/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"Library/PackageCache/com.unity.analytics@c9d14a6bdec6/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll"
+-r:"Library/PackageCache/com.unity.analytics@c9d14a6bdec6/Unity.Analytics.Editor.dll"
+-r:"Library/PackageCache/com.unity.analytics@c9d14a6bdec6/Unity.Analytics.Tracker.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Analytics.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/glTFast.dots.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/glTFast.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/glTFast.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Purchasing.Common.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.2D.Sprite.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.2D.Tilemap.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Addressables.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Addressables.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.Editor.ConversionSystem.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.AI.Navigation.Updater.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Analytics.DataPrivacy.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.AutoGroupGenerator.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Burst.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Cinemachine.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Cinemachine.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Collections.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Collections.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Collections.Tests.CoreCLR.InternalJobNestedPrivate.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Collections.Tests.CoreCLR.PrivateJobNested.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Collections.Tests.CoreCLR.ProtectedJobNested.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Collections.Tests.CoreCLR.PublicJobPrivateGeneric.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.GraphAuthoring.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.InputSystem.ForUI.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.InputSystem.ForUI.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.InputSystem.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.InternalAPIEditorBridge.ShaderGraph.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.InternalAPIEngineBridge.004.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.InternalAPIEngineBridge.ObjectDispatcher.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.InternalAPIEngineBridge.RenderPipelines.Core.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.InternalAPIEngineBridge.RenderPipelines.Core.Runtime.Shared.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Localization.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Localization.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Mathematics.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Multiplayer.Center.Common.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Multiplayer.Center.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.PathTracing.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.PathTracing.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.PlasticSCM.Editor.Assistant.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.PlasticSCM.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.ProBuilder.AddOns.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.ProBuilder.AssetIdRemapUtility.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.ProBuilder.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.ProBuilder.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Profiling.Core.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Rendering.LightTransport.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.RenderPipeline.Universal.ShaderLibrary.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.RenderPipelines.Core.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.RenderPipelines.Core.Editor.Shared.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.RenderPipelines.Core.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.RenderPipelines.Core.Runtime.Shared.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.RenderPipelines.Core.ShaderLibrary.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.RenderPipelines.GPUDriven.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.RenderPipelines.Universal.2D.Editor.Overrides.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.RenderPipelines.Universal.2D.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.RenderPipelines.Universal.Config.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.RenderPipelines.Universal.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.RenderPipelines.Universal.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.RenderPipelines.Universal.Shaders.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.ResourceManager.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Rider.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.ScriptableBuildPipeline.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.ScriptableBuildPipeline.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Searcher.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Services.Analytics.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Services.Core.Analytics.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Services.Core.Components.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Services.Core.Environments.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Services.Core.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Settings.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.ShaderGraph.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Splines.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Splines.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.StarterAssets.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.StarterAssets.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.SurfaceCache.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.TextMeshPro.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.TextMeshPro.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Timeline.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Timeline.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.UnifiedRayTracing.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VisualScripting.Core.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VisualScripting.Core.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VisualScripting.Flow.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VisualScripting.Flow.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VisualScripting.SettingsProvider.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VisualScripting.Shared.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VisualScripting.State.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VisualScripting.State.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VisualStudio.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.Purchasing.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.SpatialTracking.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.Analytics.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.XR.LegacyInputHelpers.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.Purchasing.Codeless.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.Purchasing.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.Purchasing.SecurityCore.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.Purchasing.SecurityStub.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.Purchasing.Stores.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.SpatialTracking.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.XR.LegacyInputHelpers.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/URPWizard.ref.dll"
+-analyzer:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/BCLExtensions/TargetingPacks/netstandard2.1/analyzers/dotnet/roslyn4.0/cs/Microsoft.Extensions.Logging.Generators.dll"
+-analyzer:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/BCLExtensions/TargetingPacks/netstandard2.1/analyzers/dotnet/roslyn4.0/cs/System.Text.Json.SourceGeneration.dll"
+-analyzer:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Tools/BuildPipeline/Unity.Analyzers.Common/Unity.Analyzers.Common.dll"
+-analyzer:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Tools/BuildPipeline/Unity.Analyzers.LongLiving/Unity.Analyzers.LongLiving.dll"
+-analyzer:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Tools/BuildPipeline/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
+-analyzer:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Tools/BuildPipeline/Unity.SourceGenerators/Unity.SourceGenerators.dll"
+-analyzer:"D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/Tools/BuildPipeline/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll"
+"Assets/Phase1Snapshots/BeforeDocumentInteractor.cs"
+"Assets/Phase1Snapshots/BeforeDoorInteractor.cs"
+"Assets/Phase1Snapshots/BeforeInteractionCoordinator.cs"
+"Assets/Phase1Snapshots/Phase5PlayerProbe.cs"
+"Assets/Phase1Snapshots/SnapshotCounters.cs"
+"Assets/Scripts/Effects/AnimatedSpriteScreen.cs"
+"Assets/Scripts/Effects/CurvedScreenMesh.cs"
+"Assets/Scripts/Effects/FaultySwitchSparks.cs"
+"Assets/Scripts/Effects/TVBroadcastSequence.cs"
+"Assets/Scripts/Effects/TelevisionLightFlicker.cs"
+"Assets/Scripts/Experiments/Hand3D/Hand3DArmMovement.cs"
+"Assets/Scripts/Experiments/Hand3D/Hand3DContactDetection.cs"
+"Assets/Scripts/Experiments/Hand3D/Hand3DDocumentBinding.cs"
+"Assets/Scripts/Experiments/Hand3D/Hand3DDocumentDisplay.cs"
+"Assets/Scripts/Experiments/Hand3D/Hand3DDocumentInteractor.cs"
+"Assets/Scripts/Experiments/Hand3D/Hand3DDoorBinding.cs"
+"Assets/Scripts/Experiments/Hand3D/Hand3DDoorInteractor.cs"
+"Assets/Scripts/Experiments/Hand3D/Hand3DEventAction.cs"
+"Assets/Scripts/Experiments/Hand3D/Hand3DFingerState.cs"
+"Assets/Scripts/Experiments/Hand3D/Hand3DGestureAction.cs"
+"Assets/Scripts/Experiments/Hand3D/Hand3DInputController.cs"
+"Assets/Scripts/Experiments/Hand3D/Hand3DInteractionCoordinator.cs"
+"Assets/Scripts/Experiments/Hand3D/Hand3DInteractionPose.cs"
+"Assets/Scripts/Experiments/Hand3D/Hand3DModeController.cs"
+"Assets/Scripts/Experiments/Hand3D/Hand3DPointClickAction.cs"
+"Assets/Scripts/Experiments/Hand3D/Hand3DPointInteractor.cs"
+"Assets/Scripts/Experiments/Hand3D/Hand3DPointWorldAction.cs"
+"Assets/Scripts/Experiments/Hand3D/Hand3DPoseActions.cs"
+"Assets/Scripts/Experiments/Hand3D/Hand3DPoseComposition.cs"
+"Assets/Scripts/Experiments/Hand3D/Hand3DPoseProfile.cs"
+"Assets/Scripts/Experiments/Hand3D/Hand3DPoseRecognizer.cs"
+"Assets/Scripts/Experiments/Hand3D/Hand3DProfileAction.cs"
+"Assets/Scripts/Experiments/Hand3D/Hand3DRig.cs"
+"Assets/Scripts/Experiments/Hand3D/Hand3DRuntimePoses.cs"
+"Assets/Scripts/Experiments/Hand3D/Hand3DScreenProjection.cs"
+"Assets/Scripts/Experiments/Hand3D/Hand3DThumbOverlay.cs"
+"Assets/Scripts/Interaction/BellInteractable.cs"
+"Assets/Scripts/Interaction/DocumentHandInteractable.cs"
+"Assets/Scripts/Interaction/DoorHandInteractable.cs"
+"Assets/Scripts/Interaction/IHandActionInteractable.cs"
+"Assets/Scripts/Interaction/IHandInteractable.cs"
+"Assets/Scripts/Interaction/LightSwitchInteractable.cs"
+"Assets/Scripts/Map/MapDiscoveryDefinition.cs"
+"Assets/Scripts/Map/MapDiscoveryDiscoverAction.cs"
+"Assets/Scripts/Map/MapDiscoveryResolveAction.cs"
+"Assets/Scripts/Map/MapDiscoveryTrigger.cs"
+"Assets/Scripts/Map/MapDiscoveryType.cs"
+"Assets/Scripts/Map/MapEntryState.cs"
+"Assets/Scripts/Map/MapInitialDiscoverySeeder.cs"
+"Assets/Scripts/Map/MapJournalState.cs"
+"Assets/Scripts/Map/MapObservationDiscovery.cs"
+"Assets/Scripts/Map/MapRoomDefinition.cs"
+"Assets/Scripts/Map/MapRoomVariantAction.cs"
+"Assets/Scripts/Map/MapRoomVariantDefinition.cs"
+"Assets/Scripts/Map/UI/MapDiscoveriesPageController.cs"
+"Assets/Scripts/Map/UI/MapDiscoveryConnectionView.cs"
+"Assets/Scripts/Map/UI/MapDiscoveryNodeView.cs"
+"Assets/Scripts/Map/UI/MapRoomDiscoveryMarker.cs"
+"Assets/Scripts/Map/UI/MapRoomDiscoverySummaryItemView.cs"
+"Assets/Scripts/Map/UI/MapRoomView.cs"
+"Assets/Scripts/Map/UI/MapRoomsPageController.cs"
+"Assets/Scripts/Map/UI/MapUpdateNotificationPresenter.cs"
+"Assets/Scripts/Player/ArmLightingTint.cs"
+"Assets/Scripts/Player/ArmView.cs"
+"Assets/Scripts/Player/FirstPersonArmController.cs"
+"Assets/Scripts/Puzzles/BellSequencePuzzle.cs"
+"Assets/Scripts/Save/GameLaunchContext.cs"
+"Assets/Scripts/Save/SaveGameController.cs"
+"Assets/Scripts/Save/SaveGameData.cs"
+"Assets/Scripts/Save/SaveGameService.cs"
+"Assets/Scripts/UI/HeldDocumentDisplay.cs"
+"Assets/Scripts/UI/MapScreenController.cs"
+"Assets/Scripts/UI/PauseMenuController.cs"
+"Assets/Scripts/UI/TVSubtitleSequencePlayer.cs"
+"Assets/Scripts/UI/TitleScreenController.cs"
+"Assets/Scripts/UI/WorldSpaceTextBillboard.cs"
+"Assets/Scripts/World/PassThroughWall.cs"
+"Assets/TutorialInfo/Readme.cs"
+-langversion:9.0
+/deterministic
+/optimize+
+/debug:portable
+/nologo
+/RuntimeMetadataVersion:v4.0.30319
+/nowarn:0169
+/nowarn:0649
+/nowarn:0282
+/nowarn:1701
+/nowarn:1702
+/utf8output
+/preferreduilang:en-US
+/additionalfile:"Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.UnityAdditionalFile.txt"
+##### Custom Environment Variables
+DOTNET_HOST_PATH=D:\Programas\UnityHub\Editor\6000.6.3f1\Editor\Data\DotNetSdk\dotnet.exe
+DOTNET_MULTILEVEL_LOOKUP=0
+DOTNET_SYSTEM_GLOBALIZATION_USENLS=1
+##### ExitCode
+1
+##### Output
+Assets\Phase1Snapshots\Phase5PlayerProbe.cs(19,50): warning CS0618: 'FindObjectsSortMode' is obsolete: 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\Phase1Snapshots\Phase5PlayerProbe.cs(19,21): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)' is obsolete: 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\Scripts\Experiments\Hand3D\Hand3DScreenProjection.cs(12,75): warning CS0618: 'FindObjectsSortMode' is obsolete: 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\Scripts\Experiments\Hand3D\Hand3DScreenProjection.cs(12,40): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)' is obsolete: 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\Scripts\Experiments\Hand3D\Hand3DPointWorldAction.cs(11,35): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Rig' and no accessible extension method 'Rig' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+
+Assets\Scripts\Experiments\Hand3D\Hand3DPointWorldAction.cs(11,57): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Rig' and no accessible extension method 'Rig' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+
+Assets\Scripts\Experiments\Hand3D\Hand3DPointWorldAction.cs(16,35): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Rig' and no accessible extension method 'Rig' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+
+Assets\Scripts\Experiments\Hand3D\Hand3DPointWorldAction.cs(16,57): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Rig' and no accessible extension method 'Rig' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+
+Assets\Scripts\Experiments\Hand3D\Hand3DPointInteractor.cs(36,104): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Rig' and no accessible extension method 'Rig' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+
+Assets\Scripts\Experiments\Hand3D\Hand3DPointInteractor.cs(37,28): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Rig' and no accessible extension method 'Rig' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+
+Assets\Scripts\Experiments\Hand3D\Hand3DPointInteractor.cs(37,68): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Rig' and no accessible extension method 'Rig' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+
+Assets\Scripts\Experiments\Hand3D\Hand3DPointInteractor.cs(37,91): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Rig' and no accessible extension method 'Rig' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+
+Assets\Scripts\Experiments\Hand3D\Hand3DPointInteractor.cs(38,28): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Movement' and no accessible extension method 'Movement' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+
+Assets\Scripts\Experiments\Hand3D\Hand3DPointInteractor.cs(38,56): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Movement' and no accessible extension method 'Movement' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+
+Assets\Scripts\Experiments\Hand3D\Hand3DPointInteractor.cs(38,84): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Movement' and no accessible extension method 'Movement' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+
+Assets\Scripts\Experiments\Hand3D\Hand3DPointInteractor.cs(39,71): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Movement' and no accessible extension method 'Movement' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+
+Assets\Scripts\Experiments\Hand3D\Hand3DPointInteractor.cs(42,79): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Movement' and no accessible extension method 'Movement' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+
+Assets\Scripts\Experiments\Hand3D\Hand3DPointInteractor.cs(49,36): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Movement' and no accessible extension method 'Movement' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+
+Assets\Scripts\Experiments\Hand3D\Hand3DPointInteractor.cs(49,54): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Rig' and no accessible extension method 'Rig' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+
+Assets\Scripts\Experiments\Hand3D\Hand3DDoorInteractor.cs(36,57): warning CS0414: The field 'Hand3DDoorInteractor.contactTolerancePixels' is assigned but its value is never used
+
+Assets\Phase1Snapshots\BeforeDoorInteractor.cs(36,57): warning CS0414: The field 'BeforeDoorInteractor.contactTolerancePixels' is assigned but its value is never used
+
+Assets\Scripts\Experiments\Hand3D\Hand3DDoorInteractor.cs(37,57): warning CS0414: The field 'Hand3DDoorInteractor.maximumContactSeparationPixels' is assigned but its value is never used
+
+Assets\Scripts\Experiments\Hand3D\Hand3DDocumentDisplay.cs(29,57): warning CS0414: The field 'Hand3DDocumentDisplay.visualScale' is assigned but its value is never used
+
+Assets\Phase1Snapshots\BeforeDoorInteractor.cs(37,57): warning CS0414: The field 'BeforeDoorInteractor.maximumContactSeparationPixels' is assigned but its value is never used
+*** Tundra build failed (1.16 seconds), 4 items updated, 1802 evaluated
+## Script Compilation Error for: Csc Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.dll (+2 others)
+## CmdLine: "D:\Programas\UnityHub\Editor\6000.6.3f1\Editor\Data\DotNetSdk\dotnet.exe" exec "D:/Programas/UnityHub/Editor/6000.6.3f1/Editor/Data/DotNetSdk/sdk/8.0.318/Roslyn/bincore/csc.dll" /nostdlib /noconfig /shared "@Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.rsp" "@Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.rsp2"
+## Output:
+Assets\Phase1Snapshots\Phase5PlayerProbe.cs(19,50): warning CS0618: 'FindObjectsSortMode' is obsolete: 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\Phase1Snapshots\Phase5PlayerProbe.cs(19,21): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)' is obsolete: 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\Scripts\Experiments\Hand3D\Hand3DScreenProjection.cs(12,75): warning CS0618: 'FindObjectsSortMode' is obsolete: 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\Scripts\Experiments\Hand3D\Hand3DScreenProjection.cs(12,40): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)' is obsolete: 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\Scripts\Experiments\Hand3D\Hand3DPointWorldAction.cs(11,35): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Rig' and no accessible extension method 'Rig' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+Assets\Scripts\Experiments\Hand3D\Hand3DPointWorldAction.cs(11,57): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Rig' and no accessible extension method 'Rig' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+Assets\Scripts\Experiments\Hand3D\Hand3DPointWorldAction.cs(16,35): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Rig' and no accessible extension method 'Rig' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+Assets\Scripts\Experiments\Hand3D\Hand3DPointWorldAction.cs(16,57): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Rig' and no accessible extension method 'Rig' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+Assets\Scripts\Experiments\Hand3D\Hand3DPointInteractor.cs(36,104): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Rig' and no accessible extension method 'Rig' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+Assets\Scripts\Experiments\Hand3D\Hand3DPointInteractor.cs(37,28): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Rig' and no accessible extension method 'Rig' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+Assets\Scripts\Experiments\Hand3D\Hand3DPointInteractor.cs(37,68): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Rig' and no accessible extension method 'Rig' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+Assets\Scripts\Experiments\Hand3D\Hand3DPointInteractor.cs(37,91): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Rig' and no accessible extension method 'Rig' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+Assets\Scripts\Experiments\Hand3D\Hand3DPointInteractor.cs(38,28): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Movement' and no accessible extension method 'Movement' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+Assets\Scripts\Experiments\Hand3D\Hand3DPointInteractor.cs(38,56): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Movement' and no accessible extension method 'Movement' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+Assets\Scripts\Experiments\Hand3D\Hand3DPointInteractor.cs(38,84): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Movement' and no accessible extension method 'Movement' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+Assets\Scripts\Experiments\Hand3D\Hand3DPointInteractor.cs(39,71): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Movement' and no accessible extension method 'Movement' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+Assets\Scripts\Experiments\Hand3D\Hand3DPointInteractor.cs(42,79): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Movement' and no accessible extension method 'Movement' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+Assets\Scripts\Experiments\Hand3D\Hand3DPointInteractor.cs(49,36): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Movement' and no accessible extension method 'Movement' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+Assets\Scripts\Experiments\Hand3D\Hand3DPointInteractor.cs(49,54): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Rig' and no accessible extension method 'Rig' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+Assets\Scripts\Experiments\Hand3D\Hand3DDoorInteractor.cs(36,57): warning CS0414: The field 'Hand3DDoorInteractor.contactTolerancePixels' is assigned but its value is never used
+Assets\Phase1Snapshots\BeforeDoorInteractor.cs(36,57): warning CS0414: The field 'BeforeDoorInteractor.contactTolerancePixels' is assigned but its value is never used
+Assets\Scripts\Experiments\Hand3D\Hand3DDoorInteractor.cs(37,57): warning CS0414: The field 'Hand3DDoorInteractor.maximumContactSeparationPixels' is assigned but its value is never used
+Assets\Scripts\Experiments\Hand3D\Hand3DDocumentDisplay.cs(29,57): warning CS0414: The field 'Hand3DDocumentDisplay.visualScale' is assigned but its value is never used
+Assets\Phase1Snapshots\BeforeDoorInteractor.cs(37,57): warning CS0414: The field 'BeforeDoorInteractor.maximumContactSeparationPixels' is assigned but its value is never used
+
+Assets\Scripts\Experiments\Hand3D\Hand3DScreenProjection.cs(12,75): warning CS0618: 'FindObjectsSortMode' is obsolete: 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\Scripts\Experiments\Hand3D\Hand3DScreenProjection.cs(12,40): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)' is obsolete: 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\Phase1Snapshots\Phase5PlayerProbe.cs(19,50): warning CS0618: 'FindObjectsSortMode' is obsolete: 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\Phase1Snapshots\Phase5PlayerProbe.cs(19,21): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)' is obsolete: 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\Scripts\Experiments\Hand3D\Hand3DDocumentDisplay.cs(29,57): warning CS0414: The field 'Hand3DDocumentDisplay.visualScale' is assigned but its value is never used
+Assets\Phase1Snapshots\BeforeDoorInteractor.cs(36,57): warning CS0414: The field 'BeforeDoorInteractor.contactTolerancePixels' is assigned but its value is never used
+Assets\Scripts\Experiments\Hand3D\Hand3DDoorInteractor.cs(37,57): warning CS0414: The field 'Hand3DDoorInteractor.maximumContactSeparationPixels' is assigned but its value is never used
+Assets\Scripts\Experiments\Hand3D\Hand3DDoorInteractor.cs(36,57): warning CS0414: The field 'Hand3DDoorInteractor.contactTolerancePixels' is assigned but its value is never used
+Assets\Phase1Snapshots\BeforeDoorInteractor.cs(37,57): warning CS0414: The field 'BeforeDoorInteractor.maximumContactSeparationPixels' is assigned but its value is never used
+Assets\Phase1Snapshots\Phase5PlayerProbe.cs(19,50): warning CS0618: 'FindObjectsSortMode' is obsolete: 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\Phase1Snapshots\Phase5PlayerProbe.cs(19,21): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)' is obsolete: 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\Scripts\Experiments\Hand3D\Hand3DScreenProjection.cs(12,75): warning CS0618: 'FindObjectsSortMode' is obsolete: 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\Scripts\Experiments\Hand3D\Hand3DScreenProjection.cs(12,40): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)' is obsolete: 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\Scripts\Experiments\Hand3D\Hand3DPointWorldAction.cs(11,35): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Rig' and no accessible extension method 'Rig' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+Assets\Scripts\Experiments\Hand3D\Hand3DPointWorldAction.cs(11,57): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Rig' and no accessible extension method 'Rig' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+Assets\Scripts\Experiments\Hand3D\Hand3DPointWorldAction.cs(16,35): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Rig' and no accessible extension method 'Rig' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+Assets\Scripts\Experiments\Hand3D\Hand3DPointWorldAction.cs(16,57): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Rig' and no accessible extension method 'Rig' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+Assets\Scripts\Experiments\Hand3D\Hand3DPointInteractor.cs(36,104): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Rig' and no accessible extension method 'Rig' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+Assets\Scripts\Experiments\Hand3D\Hand3DPointInteractor.cs(37,28): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Rig' and no accessible extension method 'Rig' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+Assets\Scripts\Experiments\Hand3D\Hand3DPointInteractor.cs(37,68): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Rig' and no accessible extension method 'Rig' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+Assets\Scripts\Experiments\Hand3D\Hand3DPointInteractor.cs(37,91): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Rig' and no accessible extension method 'Rig' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+Assets\Scripts\Experiments\Hand3D\Hand3DPointInteractor.cs(38,28): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Movement' and no accessible extension method 'Movement' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+Assets\Scripts\Experiments\Hand3D\Hand3DPointInteractor.cs(38,56): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Movement' and no accessible extension method 'Movement' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+Assets\Scripts\Experiments\Hand3D\Hand3DPointInteractor.cs(38,84): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Movement' and no accessible extension method 'Movement' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+Assets\Scripts\Experiments\Hand3D\Hand3DPointInteractor.cs(39,71): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Movement' and no accessible extension method 'Movement' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+Assets\Scripts\Experiments\Hand3D\Hand3DPointInteractor.cs(42,79): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Movement' and no accessible extension method 'Movement' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+Assets\Scripts\Experiments\Hand3D\Hand3DPointInteractor.cs(49,36): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Movement' and no accessible extension method 'Movement' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+Assets\Scripts\Experiments\Hand3D\Hand3DPointInteractor.cs(49,54): error CS1061: 'Hand3DActionContext' does not contain a definition for 'Rig' and no accessible extension method 'Rig' accepting a first argument of type 'Hand3DActionContext' could be found (are you missing a using directive or an assembly reference?)
+Assets\Scripts\Experiments\Hand3D\Hand3DDoorInteractor.cs(36,57): warning CS0414: The field 'Hand3DDoorInteractor.contactTolerancePixels' is assigned but its value is never used
+Assets\Phase1Snapshots\BeforeDoorInteractor.cs(36,57): warning CS0414: The field 'BeforeDoorInteractor.contactTolerancePixels' is assigned but its value is never used
+Assets\Scripts\Experiments\Hand3D\Hand3DDoorInteractor.cs(37,57): warning CS0414: The field 'Hand3DDoorInteractor.maximumContactSeparationPixels' is assigned but its value is never used
+Assets\Scripts\Experiments\Hand3D\Hand3DDocumentDisplay.cs(29,57): warning CS0414: The field 'Hand3DDocumentDisplay.visualScale' is assigned but its value is never used
+Assets\Phase1Snapshots\BeforeDoorInteractor.cs(37,57): warning CS0414: The field 'BeforeDoorInteractor.maximumContactSeparationPixels' is assigned but its value is never used
+AssetDatabase: script compilation time: 13.200774s
+Scripts have compiler errors.
+[ExitDontLaunchBugReporter] Exiting without the bug reporter. Application will exit with return code 1

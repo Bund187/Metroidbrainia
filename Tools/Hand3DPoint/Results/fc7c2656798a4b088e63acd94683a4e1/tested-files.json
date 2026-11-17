@@ -1,0 +1,26 @@
+[
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DContactDetection.cs",
+        "sha256":  "268DB1F1C0BE3AE7305F91AC5031B0F512D661684F16E67DEC60F80FEAE5E44B"
+    },
+    {
+        "path":  "Assets/Scenes/TestArmScene.unity",
+        "sha256":  "0B6794F49A515EF2AEA35A5E0F02EFF4FA3C96EEF14033D48E14BD109E3FD90B"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DPointInteractor.cs",
+        "sha256":  "9599C5BC20DF46896529EA359982311CE2B72191785DE6CAFBF68563FE1DB008"
+    },
+    {
+        "path":  "Assets/Scripts/Experiments/Hand3D/Hand3DPointWorldAction.cs",
+        "sha256":  "95FACB911A45B2ECA19DA06B4EAC5443F3453F0CD3DB3D545D32E4017B62BD87"
+    },
+    {
+        "path":  "Assets/Editor/Experiments/Hand3D/Hand3DPointEditor.cs",
+        "sha256":  "7D534F4B63E6490CBB6D344FA4B9F032B6C8D36947D2E3FA675FC86B71101A57"
+    },
+    {
+        "path":  "Assets/Scenes/TestArmScene.unity",
+        "sha256":  "0B6794F49A515EF2AEA35A5E0F02EFF4FA3C96EEF14033D48E14BD109E3FD90B"
+    }
+]
