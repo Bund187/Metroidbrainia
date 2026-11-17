@@ -46,11 +46,15 @@ namespace Metroidbrainia.Hand3DExperiment
 
     internal static class ExperimentScope
     {
-        internal const string SceneName = "TestArmScene";
+        private const string TestScenePath = "Assets/Scenes/TestArmScene.unity";
+        private const string IntegrationScenePath = "Assets/Scenes/Prototype_3DIntegration.unity";
 
         internal static bool IsAllowed(Component component)
         {
-            return component != null && component.gameObject.scene.name == SceneName;
+            if (component == null) return false;
+            // Use the object's owning scene, independently of the active additive scene.
+            string scenePath = component.gameObject.scene.path;
+            return scenePath == TestScenePath || scenePath == IntegrationScenePath;
         }
     }
 }
