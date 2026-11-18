@@ -41,17 +41,29 @@ namespace Metroidbrainia.Hand3DExperiment
             && visualRoot != null && visualRoot.gameObject.activeInHierarchy;
         public bool IsReleasing => releasing;
 
+        internal string DiagnosticRejection { get; private set; }
+        private bool RejectDiagnostic(Hand3DDocumentBinding value, string message)
+        {
+            if (value != null && value.DebugPickup) DiagnosticRejection = message;
+            return false;
+        }
+
         public bool TryShow(Hand3DDocumentBinding value, Sprite sprite, LocalizedString text)
         {
             if (releasing) FinishRelease();
             if (!ExperimentScope.IsAllowed(this) || !isActiveAndEnabled || active != null || value == null || sprite == null
                 || movement == null || documentHoldPoint == null || visualRoot == null || paperGrip == null
-                || documentImage == null || documentText == null || !paperGrip.IsChildOf(visualRoot)) return false;
+                || documentImage == null || documentText == null || !paperGrip.IsChildOf(visualRoot))
+                return RejectDiagnostic(value, !ExperimentScope.IsAllowed(this) ? "scene excluded" : !isActiveAndEnabled ? "display disabled"
+                    : active != null ? "display already showing a document" : value == null || sprite == null ? "missing document/sprite"
+                    : movement == null || documentHoldPoint == null ? "missing movement/hold point"
+                    : visualRoot == null || paperGrip == null ? "missing visual root/grip"
+                    : documentImage == null || documentText == null ? "missing image/text" : "paper grip outside visual root");
             var canvas = visualRoot.GetComponentInParent<Canvas>();
-            if (canvas == null || canvas.rootCanvas.renderMode != RenderMode.ScreenSpaceOverlay) return false;
+            if (canvas == null || canvas.rootCanvas.renderMode != RenderMode.ScreenSpaceOverlay) return RejectDiagnostic(value,"missing Overlay canvas");
             if (armDisplay == null) armDisplay = Hand3DScreenProjection.FindDisplay(movement.ArmCamera);
-            if (armDisplay == null || visualRoot.parent != armDisplay.transform.parent) return false;
-            if (!Hand3DScreenProjection.TryWorldToScreen(movement.ArmCamera, armDisplay, documentHoldPoint.position, out _, out _)) return false;
+            if (armDisplay == null || visualRoot.parent != armDisplay.transform.parent) return RejectDiagnostic(value,"missing arm display or different UI parents");
+            if (!Hand3DScreenProjection.TryWorldToScreen(movement.ArmCamera, armDisplay, documentHoldPoint.position, out _, out string projectionReason)) return RejectDiagnostic(value,"hold point projection: "+projectionReason);
             if (!initialized)
             {
                 baseRotation = visualRoot.localRotation;

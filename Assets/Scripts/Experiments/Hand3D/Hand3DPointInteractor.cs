@@ -11,10 +11,10 @@ namespace Metroidbrainia.Hand3DExperiment
         {
             public MonoBehaviour receiver;
             public Collider collider;
-            [Tooltip("Optional aim/selection point; otherwise the collider bounds center is used.")]
+            [Tooltip("Legacy selection metadata. Automatic Point always uses the actual fingertip hit.")]
             public Transform interactionPoint;
             [Min(.01f)] public float maximumDistance = 1.8f;
-            [Tooltip("Extra tolerance at 1080p. Zero requires an actual hit through the visible fingertip.")]
+            [Tooltip("Legacy metadata, retained for serialization. Cannot expand the actual fingertip contact.")]
             [Min(0f)] public float tolerancePixels;
         }
         [SerializeField] private Hand3DContactDetection detection = new Hand3DContactDetection();
@@ -23,6 +23,7 @@ namespace Metroidbrainia.Hand3DExperiment
         [SerializeField] private Vector3 fingertipOffset;
         [SerializeField] private FlexedFingers pointCombination = (FlexedFingers)29;
         [SerializeField, Min(.01f)] private float maximumDistance = 2f;
+        [Tooltip("Optional per-receiver/collider reach overrides. Unlisted objects are discovered automatically.")]
         [SerializeField] private Target[] targets = Array.Empty<Target>();
         private Hand3DActionContext lastRequest;
         private Hand3DRig rig;
@@ -50,7 +51,7 @@ namespace Metroidbrainia.Hand3DExperiment
             if (!ReferenceEquals(lastRequest, context)) { LastTarget = null; LastAccepted = false; }
             return Select(context, out _, out _);
         }
-        private bool Select(Hand3DActionContext context, out Target selected, out RaycastHit selectedHit)
+        private bool Select(Hand3DActionContext context, out MonoBehaviour selected, out RaycastHit selectedHit)
         {
             selected = null; selectedHit = default;
             if (rig == null) rig = GetComponent<Hand3DRig>();
@@ -63,30 +64,27 @@ namespace Metroidbrainia.Hand3DExperiment
             detection.ResolveDisplays();
             var hand = detection.SampleHand(fingertipOffset);
             if (!hand.visible) { Diagnostic = hand.reason; return false; }
-            bool synchronized = false; float best = float.PositiveInfinity;
-            foreach (var target in targets)
+            bool synchronized = false;
+            if (!detection.TryHitWorld(hand.point, maximumDistance, ref synchronized, out var hit))
+            { Diagnostic = "No visible, reachable Point contact."; return false; }
+            var receiver = hit.collider.GetComponentInParent<IHandActionInteractable>() as MonoBehaviour;
+            if (receiver == null || !receiver.isActiveAndEnabled || receiver.gameObject.scene != gameObject.scene)
+            { Diagnostic = "First Point surface has no active receiver in this scene."; return false; }
+            float reach = maximumDistance;
+            if (targets != null) foreach (var target in targets)
             {
-                if (target == null || target.receiver == null || !target.receiver.isActiveAndEnabled || target.receiver.gameObject.scene != gameObject.scene
-                    || !(target.receiver is IHandActionInteractable) || target.collider == null
-                    || !ReferenceEquals(target.collider.GetComponentInParent<IHandActionInteractable>(), target.receiver)) continue;
-                float reach = Mathf.Min(maximumDistance, target.maximumDistance);
-                bool hitTarget = detection.TryHitTarget(target.collider, hand.point, reach, ref synchronized, out RaycastHit hit);
-                Vector3 aim = target.interactionPoint != null ? target.interactionPoint.position : target.collider.bounds.center;
-                bool projected = detection.TryWorldToScreen(aim, out Vector2 targetScreen, out _);
-                if (!hitTarget && target.tolerancePixels > 0f && projected
-                    && Vector2.Distance(targetScreen, hand.point) <= Hand3DContactDetection.ReferencePixels(target.tolerancePixels, Screen.height))
-                    hitTarget = detection.TryHitTarget(target.collider, targetScreen, reach, ref synchronized, out hit);
-                if (!hitTarget) continue;
-                var contact = detection.Evaluate(hand, default, hit.point, hit.point, Mathf.Max(.01f, target.tolerancePixels), false);
-                if (!contact.visible || !contact.WithinReach(reach) || !contact.WithinContact
-                    || detection.HasObstacle(hit.point, target.receiver.transform, ref synchronized, out _, QueryTriggerInteraction.Collide)) continue;
-                float score = projected ? Vector2.Distance(hand.point, targetScreen) : contact.separation;
-                // Serialized order is the stable tie-break, independent of object instance IDs.
-                if (selected != null && score >= best - .001f) continue;
-                best = score; selected = target; selectedHit = hit;
+                if (target == null || !ReferenceEquals(target.receiver, receiver) || target.collider != hit.collider) continue;
+                // Preserve the first serialized override; never execute the list as a second action route.
+                reach = Mathf.Min(reach, target.maximumDistance);
+                break;
             }
-            Diagnostic = selected != null ? "Point candidate: " + selected.receiver.name : "No visible, reachable Point contact.";
-            return selected != null;
+            var contact = detection.Evaluate(hand, default, hit.point, hit.point, .01f, false);
+            if (!contact.visible || !contact.WithinReach(reach) || !contact.WithinContact
+                || detection.HasObstacle(hit.point, receiver.transform, ref synchronized, out _, QueryTriggerInteraction.Collide))
+            { Diagnostic = "Point contact is blocked or outside its configured reach."; return false; }
+            selected = receiver; selectedHit = hit;
+            Diagnostic = "Point candidate: " + receiver.name;
+            return true;
         }
         public bool TryPerform(Hand3DActionContext context)
         {
@@ -94,9 +92,9 @@ namespace Metroidbrainia.Hand3DExperiment
             // Set before invoking gameplay: callbacks and duplicate action definitions cannot reenter this request.
             lastRequest = context; LastTarget = null; LastAccepted = false;
             if (!Select(context, out var target, out var hit)) return false;
-            LastTarget = target.receiver;
-            string targetName = target.receiver.name;
-            LastAccepted = ((IHandActionInteractable)target.receiver).TryPerformHandAction(ArmPose.Point, detection.WorldCamera, hit);
+            LastTarget = target;
+            string targetName = target.name;
+            LastAccepted = ((IHandActionInteractable)target).TryPerformHandAction(ArmPose.Point, detection.WorldCamera, hit);
             Diagnostic = LastAccepted ? "Point accepted: " + targetName : "Point rejected by original target: " + targetName;
             return LastAccepted;
         }

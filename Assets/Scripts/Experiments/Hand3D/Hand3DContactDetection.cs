@@ -20,9 +20,14 @@ namespace Metroidbrainia.Hand3DExperiment
         public Transform HandPoint { get => handGripPoint; set => handGripPoint = value; }
         public bool IsReady => worldCamera != null && armCamera != null && handGripPoint != null && owner != null
             && worldCamera.gameObject.scene == owner.gameObject.scene && handGripPoint.gameObject.scene == owner.gameObject.scene;
+        internal string ReadinessDiagnostic => worldCamera == null ? "missing world camera" : armCamera == null ? "missing bound arm camera"
+            : handGripPoint == null ? "missing hand point" : owner == null ? "missing bound owner"
+            : worldCamera.gameObject.scene != owner.gameObject.scene ? "world camera belongs to another scene"
+            : handGripPoint.gameObject.scene != owner.gameObject.scene ? "hand point belongs to another scene" : "ready";
         public int HandProjections { get; private set; }
         public int TargetProjections { get; private set; }
         public int ObstacleQueries { get; private set; }
+        internal float LastObstacleDistance { get; private set; }
         public void ResetCounters() { HandProjections = TargetProjections = ObstacleQueries = 0; }
 
         public void Bind(Hand3DArmMovement movement, Hand3DInputController input, Transform owner)
@@ -121,6 +126,44 @@ namespace Metroidbrainia.Hand3DExperiment
             return target.Raycast(new Ray(worldCamera.transform.position, (aim - worldCamera.transform.position).normalized), out hit, maximumDistance);
         }
 
+        // Query only on an explicit action. Keep the nearest world surface even if
+        // it has no interaction receiver: a wall must never reveal a target behind it.
+        public bool TryHitWorld(Vector2 screen, float maximumDistance, ref bool synchronized, out RaycastHit hit)
+        {
+            hit = default;
+            if (!IsReady || !Hand3DScreenProjection.TryScreenToWorld(worldCamera, worldDisplay, screen,
+                worldCamera.nearClipPlane + 1f, out Vector3 aim, out _)) return false;
+            if (!synchronized) { Physics.SyncTransforms(); synchronized = true; }
+            float nearest = float.PositiveInfinity;
+            foreach (var candidate in Physics.RaycastAll(worldCamera.transform.position,
+                (aim - worldCamera.transform.position).normalized, maximumDistance, interactionLayers, QueryTriggerInteraction.Collide))
+            {
+                Transform item = candidate.collider.transform;
+                if (item.IsChildOf(owner) || playerRoot != null && item.IsChildOf(playerRoot)) continue;
+                if (candidate.distance > nearest || candidate.distance == nearest && hit.collider != null
+                    && candidate.collider.GetEntityId().CompareTo(hit.collider.GetEntityId()) >= 0) continue;
+                nearest = candidate.distance;
+                hit = candidate;
+            }
+            return hit.collider != null;
+        }
+
+        // Local discovery only; callers must still apply visual contact, reach and occlusion.
+        public int OverlapNearCamera(float maximumDistance, ref Collider[] results, ref bool synchronized)
+        {
+            if (!IsReady) return 0;
+            if (results == null || results.Length == 0) results = new Collider[32];
+            if (!synchronized) { Physics.SyncTransforms(); synchronized = true; }
+            while (true)
+            {
+                int count = Physics.OverlapSphereNonAlloc(worldCamera.transform.position, maximumDistance,
+                    results, interactionLayers, QueryTriggerInteraction.Collide);
+                if (count < results.Length) return count;
+                // A saturated query cannot prove which colliders were omitted.
+                Array.Resize(ref results, results.Length * 2);
+            }
+        }
+
         public bool HasObstacle(Vector3 point, Transform targetRoot, ref bool synchronized, out Collider blocker)
             => HasObstacle(point, targetRoot, ref synchronized, out blocker, QueryTriggerInteraction.Ignore);
 
@@ -139,6 +182,7 @@ namespace Metroidbrainia.Hand3DExperiment
                 if (targetRoot != null && item.IsChildOf(targetRoot)) continue;
                 if (hit.distance < nearest) { nearest = hit.distance; blocker = hit.collider; }
             }
+            LastObstacleDistance = nearest;
             return blocker != null;
         }
 

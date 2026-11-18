@@ -48,9 +48,13 @@ Los clips de campanas e interruptor están sin asignar en la escena guardada; no
 
 ## Añadir instancias futuras
 
+**Descubrimiento automático actual:** no es obligatorio registrar objetos en Targets. La acción proyecta el índice visible al mundo y consulta el primer collider relevante, incluidos triggers según las reglas originales. Un collider no interactuable, un receptor desactivado o de otra escena bloquean la interacción con lo que haya detrás. No hay búsquedas globales por fotograma.
+
+Targets conserva únicamente overrides opcionales de alcance para una pareja Receiver/Collider exacta; prevalece la primera entrada coincidente y nunca amplía el alcance general. Las API originales conservan sus límites propios (1,8 m para campanas e interruptor). Los campos Interaction Point y Tolerance Pixels permanecen serializados como metadatos antiguos: no desplazan el rayo ni autorizan activar objetos junto al dedo. Esta restricción sustituye la antigua selección por tolerancia visual. Varias entradas o acciones ambientales no producen activaciones adicionales.
+
 1. Añadir/configurar el objeto con su IHandActionInteractable, collider y comportamiento originales; no modificar Input/Recognizer/Rig/PoseActions.
-2. Añadir una entrada a Targets del adaptador del rig. Receiver es el MonoBehaviour que implementa la interfaz; Collider debe resolverlo mediante GetComponentInParent. Se admiten varios colliders del mismo receiver, pero se elige una sola entrada/acción por solicitud.
-3. Copiar el alcance real del objeto a Maximum Distance y revisar capas/cámara. El objeto valida además su propio alcance; si se modifica su configuración, actualizar también esta entrada. Interaction Point y tolerancia son opcionales; empezar con contacto exacto.
+2. No añadir Targets para el uso normal. El collider debe resolver el receptor mediante GetComponentInParent; puede estar en un hijo del objeto que implementa la interfaz. Revisar capas y cámara.
+3. Añadir una entrada Receiver/Collider solo si hace falta limitar más su alcance. El objeto valida además su propio alcance. Se exige contacto físico proyectado exacto, también con entradas manuales.
 4. Mantener el binding Point con una acción visual y una ambiental. La marca protege duplicados, pero no se necesita duplicar definiciones para cada objeto.
 5. Para otra API, usar un adaptador pequeño que implemente el contrato compartido; no añadir casos de tipo al núcleo. No hay una lista de Bell/LightSwitch en runtime.
 
@@ -68,7 +72,9 @@ El runner actual escribe todas las ejecuciones nuevas en `Tools/Hand3DLocalResul
 
 `-PointOnly` sin build ejecuta Point en un solo Editor sobre la escena y biblioteca runtime guardadas: no reexporta perfiles ni copia suites 0, 2–4 y 6–8, y no inyecta contadores de rendimiento. Mantiene los fixtures de fases 1 y 5, sus snapshots y el probe necesario para compilarlos. Los arneses históricos no necesarios que existan en la copia aislada se mueven fuera de Assets; una ejecución completa los vuelve a preparar desde las fuentes canónicas.
 
-`-CaseFilter` selecciona nombres de casos completos, sin distinguir mayúsculas, con comodines `*` y `?`. Un filtro sin coincidencias falla; no se interpreta como éxito. Solo se permite con `-PointOnly`, sin preparación ni build. Los nombres disponibles están en `point-results.json`. Una selección parcial no equivale a validar toda la funcionalidad. Las comprobaciones originales no cambian y la ejecución sin filtro conserva los 57 grupos de Point.
+`-CaseFilter` selecciona nombres de casos completos, sin distinguir mayúsculas, con comodines `*` y `?`. Un filtro sin coincidencias falla; no se interpreta como éxito. Solo se permite con `-PointOnly`, sin preparación ni build. Los nombres disponibles están en `point-results.json`. Una selección parcial no equivale a validar toda la funcionalidad; sin filtro se ejecutan todos los grupos actuales de Point y sus regresiones directas.
+
+Los casos actuales incluyen `auto_*` y regresiones de contacto de puertas/documentos. Los casos antiguos que dependían de una lista de autorización o de proximidad se adaptaron al contacto exacto. En modo enfocado el runner protege por hash todos los archivos actuales de Assets/Packages/ProjectSettings durante la ejecución, admitiendo las integraciones manuales ya guardadas. La ruta histórica completa conserva sus requisitos de baseline originales; el snapshot enfocado no sustituye esa auditoría histórica.
 
 La ruta completa sin `-PointOnly`, con auditoría y build opcionales, conserva la preparación histórica y sus lanzamientos separados. Agrupar esas suites requiere separar sus llamadas a `EditorApplication.Exit` y garantizar la limpieza entre ellas; queda fuera de esta mejora mínima. Los manifiestos históricos siguen siendo obligatorios incluso en modo enfocado: no eliminar ni ignorar sus dependencias. Las pruebas numéricas automatizadas no sustituyen la validación visual en Unity.
 

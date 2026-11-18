@@ -15,9 +15,16 @@ $added=@('Assets/Scripts/Experiments/Hand3D/Hand3DPointInteractor.cs','Assets/Sc
 $runtimeFiles=@('Assets/Experiments/Hand3D/Actions.meta','Assets/Experiments/Hand3D/Actions/TestArmPointClick.asset','Assets/Experiments/Hand3D/Actions/TestArmPointClick.asset.meta','Assets/Experiments/Hand3D/Actions/TestArmPointWorld.asset','Assets/Experiments/Hand3D/Actions/TestArmPointWorld.asset.meta')
 $allowed=@($added)+@($added | ForEach-Object {$_+'.meta'})
 $records=Get-Content (Join-Path $PSScriptRoot 'before-files.json') -Raw | ConvertFrom-Json
+# Focused runs validate today's manually integrated project, not the original
+# Point installation baseline. Protect its current files for the entire run.
+if($focused){
+    $records=@(Get-ChildItem (Join-Path $root 'Assets'),(Join-Path $root 'Packages'),(Join-Path $root 'ProjectSettings') -Recurse -File | ForEach-Object {
+        [pscustomobject]@{path=$_.FullName.Substring($root.Length+1).Replace('\','/');sha256=(Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash}
+    })
+}
 function Verify-Scene {
     $installation=Join-Path $PSScriptRoot 'scene-installation.json'
-    if(Test-Path $installation){
+    if(!$focused -and (Test-Path $installation)){
         $expected=(Get-Content $installation -Raw | ConvertFrom-Json).sha256
         if((Get-FileHash (Join-Path $root 'Assets/Scenes/TestArmScene.unity') -Algorithm SHA256).Hash -ne $expected){throw 'Scene differs from the explicitly reviewed Point installation.'}
     }
@@ -28,7 +35,7 @@ function Verify {
         if((Get-FileHash -LiteralPath (Join-Path $root $r.path) -Algorithm SHA256).Hash -ne $r.sha256){throw "Historical artifact changed: $($r.path)"}
     }
     $known=@{}
-    foreach($r in $records){$known[$r.path]=$true; if($modified -notcontains $r.path -and (Get-FileHash -LiteralPath (Join-Path $root $r.path) -Algorithm SHA256).Hash -ne $r.sha256){throw "Protected file changed: $($r.path)"}}
+    foreach($r in $records){$known[$r.path]=$true; if(($focused -or $modified -notcontains $r.path) -and (Get-FileHash -LiteralPath (Join-Path $root $r.path) -Algorithm SHA256).Hash -ne $r.sha256){throw "Protected file changed: $($r.path)"}}
     foreach($file in Get-ChildItem (Join-Path $root 'Assets'),(Join-Path $root 'Packages'),(Join-Path $root 'ProjectSettings') -Recurse -File){
         $relative=$file.FullName.Substring($root.Length+1).Replace('\','/'); if(!$known.ContainsKey($relative) -and $allowed -notcontains $relative -and $runtimeFiles -notcontains $relative){throw "Unexpected asset: $relative"}
     }
@@ -185,6 +192,7 @@ try {
     Write-Output "RESULTS=$output"
 } finally {
     Verify
-    'Protected production files, original Editor library and all phase 0-8 artifacts unchanged. TestArmScene matches its reviewed Point installation hash. Only shared experimental detection, the explicitly prepared scene blocks and new Point scripts/assets are allowed to change.' | Set-Content (Join-Path $output 'integrity.txt')
+    $integrity=if($focused){'All current Assets, Packages and ProjectSettings files match their start-of-run hashes. Historical phase 0-8 artifacts unchanged. Only the marked isolated project was used for validation.'}else{'Protected production files, original Editor library and all phase 0-8 artifacts unchanged. TestArmScene matches its reviewed Point installation hash. Only shared experimental detection, the explicitly prepared scene blocks and new Point scripts/assets are allowed to change.'}
+    $integrity | Set-Content (Join-Path $output 'integrity.txt')
     @(@($modified)+$allowed+$runtimeFiles+@('Assets/Scenes/TestArmScene.unity') | Where-Object {Test-Path (Join-Path $root $_)} | ForEach-Object {[pscustomobject]@{path=$_;sha256=(Get-FileHash -LiteralPath (Join-Path $root $_) -Algorithm SHA256).Hash}}) | ConvertTo-Json | Set-Content (Join-Path $output 'tested-files.json')
 }

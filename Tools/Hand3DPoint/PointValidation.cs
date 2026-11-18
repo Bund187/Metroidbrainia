@@ -79,13 +79,39 @@ namespace Metroidbrainia
             {
                 bool u=universal;
                 foreach(var origin in new[]{Hand3DActionInput.Mouse,Hand3DActionInput.Gamepad})
-                {var source=origin;Case("bell_"+u+"_"+origin,()=>Bell(u,source));Case("switch_"+u+"_"+origin,()=>Switch(u,source));}
+                {var source=origin;Case("bell_"+u+"_"+origin,()=>Bell(u,source));Case("switch_"+u+"_"+origin,()=>Switch(u,source));
+                    Case("auto_bell_"+u+"_"+origin,()=>Bell(u,source,false));Case("auto_switch_"+u+"_"+origin,()=>Switch(u,source,false));}
+                foreach(string scenario in new[]{"empty","beside","original_reach","override_reach","positive_tolerance","aligned","disabled_front","destroyed","destroyed_before","collider_disabled_before","receiver_disabled_before","late_blocker","duplicate_targets","closed_door","parent_receiver","trigger_receiver","player_collider","other_scene"})
+                {string test=scenario;Case("auto_"+test+"_"+u,()=>Automatic(u,test));}
                 foreach(string scenario in new[]{"no_target","reach","wall","trigger","several","tie","rapid_tip","viewmodel_far","handedit","no_control","door","document","cancel","disable","move_target","gesture_before","disabled_target","blocked_layers","invisible_tip","gesture_after"})
                 {string test=scenario;Case(test+"_"+u,()=>Scenario(u,test));}
                 Case("32_masks_"+u,()=>Masks(u));Case("bell_puzzle_"+u,()=>Puzzle(u));
                 Case("reentrant_single_activation_"+u,()=>Reentrant(u));
                 Case("animated_geometric_fingertip_"+u,()=>Geometry(u));
             }
+            foreach(string scenario in new[]{"door_without_documents","door_wall","document","document_wall"})
+            {
+                string test=scenario;Case("contact_regression_"+test,()=>
+                {
+                    var result=typeof(Phase1Validation).GetMethod("Scenario",Flags).Invoke(null,new object[]{test,false});
+                    Check(Get<string>(result,"outcome")== (test.EndsWith("_wall")?"False":"True"),"Existing contact changed: "+test);
+                });
+            }
+            foreach(string scenario in new[]{"pickup_return","manual","several","duplicates","activation","spawn","reach","wall","initial_state","other_scene","source_refresh","occupied"})
+            {string test=scenario;Case("document_auto_"+test,()=>AutomaticDocument(test));}
+            Case("document_auto_related_contacts",()=>
+            {
+                foreach(string test in new[]{"door_without_documents","door_wall","document","document_wall"})
+                {
+                    var result=typeof(Phase1Validation).GetMethod("Scenario",Flags).Invoke(null,new object[]{test,false});
+                    Check(Get<string>(result,"outcome")== (test.EndsWith("_wall")?"False":"True"),"Related contact changed: "+test);
+                }
+            });
+            Case("document_auto_point_compatibility",()=>Bell(true,Hand3DActionInput.Mouse,false));
+            foreach(string scenario in new[]{"initial","manual","activated_slow","spawned_fast","registered_fast","source_reach","no_contact","far","wall","dense"})
+            {string test=scenario;Case("document_response_"+test,()=>DocumentResponse(test));}
+            foreach(string scenario in new[]{"off","throttle","references","not_ready","reach","obstacle","pickup","handedit","projection","display","callback_destroyed","display_transition"})
+            {string test=scenario;Case("document_diagnostic_"+test,()=>DocumentDiagnostics(test));}
             if(rows.Count==0)rows.Add(new Row{name="selection",status="FAIL",detail="No Point cases match: "+caseFilter});
             File.WriteAllText("point-results.json",JsonUtility.ToJson(new Report{runId=RunId(),scope="Isolated Unity numeric/state tests; input origin intentions Mouse/Gamepad, not physical devices or Game visual approval.",assertions=checks,maxTipError=maxTipError,cases=rows.ToArray()},true));
             EditorApplication.Exit(rows.Any(r=>r.status=="FAIL")?1:0);
@@ -133,9 +159,9 @@ namespace Metroidbrainia
             for(int i=0;i<4;i++){var bell=(BellInteractable)data.FindProperty("requiredSequence").GetArrayElementAtIndex(i).objectReferenceValue;Check(bell.name=="BellHinge "+(i+1),"Original sequence changed");Check(Get<BellSequencePuzzle>(bell,"puzzle")==puzzle,"Bell not connected to original puzzle logic");}
             Check(Hand3DPointPreparation.Path(((DoorHandInteractable)data.FindProperty("targetDoor").objectReferenceValue).transform)=="Mansion/Floor 1/Entrance/Wall_Door_ClosedDoor/DoorHinge","Wrong puzzle door");
         }
-        static void Bell(bool universal,Hand3DActionInput input)
+        static void Bell(bool universal,Hand3DActionInput input,bool registered=true)
         {
-            var f=Create(universal);var bell=MakeBell(f,f.center);Bind(f,0,bell);
+            var f=Create(universal);var bell=MakeBell(f,f.center);if(registered)Bind(f,0,bell);
             var sequence=new GameObject("Counter puzzle").AddComponent<BellSequencePuzzle>();Set(sequence,"requiredSequence",new List<BellInteractable>{bell,bell,bell,bell});Set(bell,"puzzle",sequence);
             int originalEvents=0;f.rig.GetComponent<Hand3DPoseRecognizer>().CurrentPose.OnAction.AddListener(()=>originalEvents++);
             Check(f.actions.TryExecute(input),"Point request rejected");Check(f.point.LastAccepted && Get<bool>(bell,"swinging"),"Bell original API not executed");
@@ -147,10 +173,10 @@ namespace Metroidbrainia
             Check(f.actions.TryExecute(input) && sequence.NextExpectedIndex==2,"Repeated bell strike blocked");
             Check(Get<float>(bell,"cosineAmplitude")==12f && Get<float>(bell,"sineAmplitude")<0 && Get<float>(bell,"swingTime")==0,"Original repeat-strike swing behavior changed");
         }
-        static void Switch(bool universal,Hand3DActionInput input)
+        static void Switch(bool universal,Hand3DActionInput input,bool registered=true)
         {
             var f=Create(universal);var item=ObjectAt<LightSwitchInteractable>(f,f.center,.7f);var rocker=new GameObject("Rocker").transform;rocker.SetParent(item.transform,false);
-            var light=new GameObject("Controlled light").AddComponent<Light>();Set(item,"switchTransform",rocker);Set(item,"controlledLights",new[]{light});Set(item,"onLocalEulerAngles",new Vector3(180,0,0));Call(item,"Awake");Bind(f,0,item);
+            var light=new GameObject("Controlled light").AddComponent<Light>();Set(item,"switchTransform",rocker);Set(item,"controlledLights",new[]{light});Set(item,"onLocalEulerAngles",new Vector3(180,0,0));Call(item,"Awake");if(registered)Bind(f,0,item);
             int on=0,off=0;item.OnTurnedOn.AddListener(()=>on++);item.OnTurnedOff.AddListener(()=>off++);
             Check(f.actions.TryExecute(input) && item.IsOn && light.enabled && on==1 && off==0,"Switch original toggle/events not invoked exactly once");
             Finish(f);Move(f,f.center);Check(f.actions.TryExecute(input) && !f.point.LastAccepted && on==1 && item.IsOn,"Original moving lock bypassed");
@@ -160,14 +186,14 @@ namespace Metroidbrainia
         static void Scenario(bool universal,string scenario)
         {
             var f=Create(universal);var bell=MakeBell(f,f.center,scenario=="reach"?2.1f:.7f);Bind(f,0,bell);
-            if(scenario=="no_target")Bind(f,0);
+            if(scenario=="no_target"){Bind(f,0);Object.DestroyImmediate(bell.GetComponent<Collider>());}
             if(scenario=="wall" || scenario=="trigger")
             {var wall=GameObject.CreatePrimitive(PrimitiveType.Cube);wall.transform.position=f.camera.ScreenToWorldPoint(new Vector3(f.center.x,f.center.y,.35f));wall.transform.localScale=Vector3.one*.1f;wall.GetComponent<Collider>().isTrigger=scenario=="trigger";}
             if(scenario=="several" || scenario=="tie")
             {
                 bell.transform.position=f.camera.ScreenToWorldPoint(new Vector3(f.center.x+20,f.center.y,.7f));bell.transform.localScale=Vector3.one*.008f;
                 var other=MakeBell(f,f.center+Vector2.right*(scenario=="tie"?-20:40));other.transform.localScale=Vector3.one*.008f;Bind(f,60,bell,other);
-                Check(f.actions.TryExecute() && f.point.LastTarget==bell && Get<bool>(bell,"swinging") && !Get<bool>(other,"swinging"),"Closest candidate/stable serialized tie-break failed");return;
+                Check(f.actions.TryExecute() && !f.point.LastAccepted && !Get<bool>(bell,"swinging") && !Get<bool>(other,"swinging"),"Nearby manual targets activated without a fingertip hit");return;
             }
             if(scenario=="rapid_tip")Move(f,f.center+Vector2.right*300);
             if(scenario=="viewmodel_far")
@@ -199,6 +225,263 @@ namespace Metroidbrainia
             Check(!Get<bool>(bell,"swinging"),"Invalid world contact activated bell: "+scenario);
             if(scenario=="rapid_tip")
             {Finish(f);Move(f,f.center);Check(f.actions.TryExecute() && Get<bool>(bell,"swinging"),"Fresh contact not sampled after rapid movement");}
+        }
+        static void DocumentDiagnostics(string scenario)
+        {
+            var f=Create(true);Mask(f,3);Move(f,f.center);
+            var interactor=(Hand3DDocumentInteractor)f.document;var detection=Get<Hand3DContactDetection>(interactor,"detection");
+            var doc=NewDocument(f,f.center,scenario=="reach"?1.2f:.7f);int picked=0;
+            Get<UnityEngine.Events.UnityEvent>(doc,"onPickedUp").AddListener(()=>picked++);
+            if(scenario=="callback_destroyed")Get<UnityEngine.Events.UnityEvent>(doc,"onPickedUp").AddListener(()=>Object.DestroyImmediate(doc.gameObject));
+            if(scenario=="off" || scenario=="throttle" || scenario=="display_transition")Move(f,f.center+Vector2.right*200);
+            if(scenario=="references")detection.Configure(null,detection.HandPoint,Get<UnityEngine.UI.RawImage>(f.original,"armImage"),null,Vector2.zero,Physics.DefaultRaycastLayers);
+            if(scenario=="not_ready")Get<MeshRenderer>(doc,"worldRenderer").enabled=false;
+            if(scenario=="obstacle")
+            {var wall=GameObject.CreatePrimitive(PrimitiveType.Cube);wall.transform.position=f.camera.ScreenToWorldPoint(new Vector3(f.center.x,f.center.y,.35f));wall.transform.localScale=Vector3.one*.1f;}
+            if(scenario=="handedit"){f.arm.ToggleMode();Call(f.arm,"UpdateMovement",1f);Call(f.rig,"UpdateRig",1f);}
+            if(scenario=="projection")Get<Transform>(f.original,"marker").position=f.arm.ArmCamera.transform.position-f.arm.ArmCamera.transform.forward*.1f;
+            if(scenario=="display")Set(f.rig.GetComponent<Hand3DDocumentDisplay>(),"paperGrip",null);
+            var logs=new List<string>();Application.LogCallback capture=(message,stack,type)=>{if(message.StartsWith("[Hand3D Documents]"))logs.Add(message);};
+            Application.logMessageReceived+=capture;
+            try
+            {
+                Set(interactor,"debugContact",scenario!="off");Call(interactor,"Tick",1f/60);
+                if(scenario=="off"){Check(logs.Count==0,"Debug-off emitted diagnostic logs");return;}
+                string expected=scenario=="references"?"References":scenario=="not_ready"?"BindingNotReady":scenario=="reach"?"Reach":scenario=="obstacle"?"Obstacle"
+                    :scenario=="pickup"?"Acquired":scenario=="handedit"?"ControlMode":scenario=="projection"?"HandProjection":scenario=="display" || scenario=="callback_destroyed"?"PickupRejected":"VisualContact";
+                Check(logs.Count==1 && logs[0].Contains("stage="+expected),"Wrong/missing diagnostic: "+string.Join(" | ",logs));
+                Check(logs[0].Contains("gesture=") && logs[0].Contains("detection=") && logs[0].Contains("coordinator="),"Missing diagnostic context");
+                if(scenario=="references")Check(logs[0].Contains("missing world camera"),"Reference rejection was not explained");
+                if(scenario=="not_ready")Check(logs[0].Contains("renderer disabled"),"Binding rejection was not explained");
+                if(scenario=="obstacle")Check(logs[0].Contains("blockerDistance=") && logs[0].Contains("occlusionRay="),"Missing obstacle distances");
+                if(scenario=="pickup")Check(picked==1 && interactor.IsHolding && logs[0].Contains("onPickedUp dispatched"),"Pickup/event diagnostic changed behavior");
+                if(scenario=="display")Check(!interactor.IsHolding && picked==0 && logs[0].Contains("missing visual root/grip"),"Display rejection not diagnosed");
+                if(scenario=="callback_destroyed")Check(picked==1 && logs[0].Contains("onPickedUp dispatched"),"Callback destruction broke diagnostic/event ordering");
+                if(scenario=="display_transition")
+                {
+                    Set(f.rig.GetComponent<Hand3DDocumentDisplay>(),"paperGrip",null);Move(f,f.center);Call(interactor,"Tick",1f/60);
+                    Check(logs.Count==2 && logs[1].Contains("stage=PickupRejected"),"Transient pickup rejection was hidden by log throttling");
+                    for(int i=0;i<60;i++)Call(interactor,"Tick",1f/60);
+                    Check(logs.Count==2 && picked==0,"Repeated display rejection flooded logs or invoked pickup");
+                }
+                if(scenario=="throttle")
+                {
+                    Check(logs[0].Contains("separation=") && logs[0].Contains("tolerance=") && logs[0].Contains("collider="),"Missing visual metrics");
+                    for(int i=0;i<120;i++)Call(interactor,"Tick",1f/60);
+                    Check(logs.Count==1,"Repeated frames flooded the console");
+                    double now=Time.unscaledTimeAsDouble;
+                    for(int i=1;i<=6;i++)Call(interactor,"ReportDiagnostic",now+i*2.1);
+                    Check(logs.Count==4 && logs.Count(l=>l.Contains("Summary"))==3,"Waiting summaries were not capped at three");
+                    Set(interactor,"debugContact",false);Call(interactor,"Tick",1f/60);Check(logs.Count==4,"Turning diagnostics off did not stop logs");
+                }
+            }
+            finally {Application.logMessageReceived-=capture;}
+        }
+        static void DocumentResponse(string scenario)
+        {
+            var f=Create(true);Mask(f,3);
+            var interactor=(Hand3DDocumentInteractor)f.document;var display=f.rig.GetComponent<Hand3DDocumentDisplay>();
+            var doc=NewDocument(f,f.center,scenario=="far"?1.2f:.7f);int picked=0;Get<UnityEngine.Events.UnityEvent>(doc,"onPickedUp").AddListener(()=>picked++);
+            if(scenario=="manual")
+            {
+                var binding=doc.gameObject.AddComponent<Hand3DDocumentBinding>();Set(binding,"document",doc);
+                foreach(string field in new[]{"worldRenderer","worldCollider","heldSprite","localizedText","onPickedUp"})Set(binding,field,doc.GetType().GetField(field,Flags).GetValue(doc));
+                Call(binding,"OnEnable");
+            }
+            if(scenario=="wall")
+            {var wall=GameObject.CreatePrimitive(PrimitiveType.Cube);wall.transform.position=f.camera.ScreenToWorldPoint(new Vector3(f.center.x,f.center.y,.35f));wall.transform.localScale=Vector3.one*.1f;}
+            if(scenario=="dense")
+                for(int i=0;i<40;i++){var blocker=GameObject.CreatePrimitive(PrimitiveType.Cube);blocker.transform.position=f.camera.ScreenToWorldPoint(new Vector3(f.center.x+250,f.center.y,.5f));blocker.transform.localScale=Vector3.one*.002f;}
+            bool fast=scenario=="spawned_fast" || scenario=="registered_fast";
+            bool delayed=scenario=="activated_slow" || scenario=="spawned_fast";
+            if(delayed)doc.gameObject.SetActive(false);
+            if(scenario=="source_reach")Set(doc,"maxInteractionDistance",.1f);
+            if(delayed || scenario=="registered_fast" || scenario=="source_reach")
+            {
+                Move(f,f.center-Vector2.right*120);Call(interactor,"Tick",1f/60);
+                Check(!interactor.IsHolding,"Setup acquired outside contact");
+                if(scenario=="spawned_fast")
+                {
+                    Object.DestroyImmediate(doc.gameObject);doc=NewDocument(f,f.center,.7f);
+                    Get<UnityEngine.Events.UnityEvent>(doc,"onPickedUp").AddListener(()=>picked++);
+                }
+                else if(delayed)doc.gameObject.SetActive(true);
+                if(scenario=="source_reach")Set(doc,"maxInteractionDistance",1.5f);
+            }
+            Move(f,f.center+Vector2.right*(fast?120:scenario=="activated_slow"?-Get<float>(f.original,"documentRadius")*.8f:scenario=="no_contact"?200:0));
+            Call(interactor,"Tick",1f/60);
+            bool expected=scenario!="no_contact" && scenario!="far" && scenario!="wall";
+            Check(interactor.IsHolding==expected,"First-frame result: "+scenario+"; elapsed="+Get<float>(interactor,"discoveryElapsed")+"; "+Get<string>(interactor,"reason"));
+            Check(picked==(expected?1:0),"Pickup event count on first contact: "+scenario);
+            if(scenario=="dense")Check(Get<Collider[]>(interactor,"nearbyColliders").Length>32,"Dense local query was not tested beyond its initial buffer");
+            if(!expected)return;
+            Call(interactor,"Tick",1f/60);Check(picked==1,"Held contact repeated pickup event");
+            Set(f.input,"<IsArmModeActive>k__BackingField",false);Call(interactor,"Tick",1f/60);Call(display,"Tick",1f);
+            Check(!interactor.IsHolding && Get<MeshRenderer>(doc,"worldRenderer").enabled && Get<Collider>(doc,"worldCollider").enabled,"First-frame pickup did not return correctly");
+        }
+        static DocumentHandInteractable NewDocument(Fixture f,Vector2 screen,float depth)
+        {
+            var template=Object.FindObjectsByType<DocumentHandInteractable>(FindObjectsInactive.Include,FindObjectsSortMode.None).First(d=>Get<Sprite>(d,"heldSprite")!=null);
+            var paper=GameObject.CreatePrimitive(PrimitiveType.Quad);paper.name="Automatic document";paper.transform.localScale=Vector3.one*.02f;
+            paper.transform.position=f.camera.ScreenToWorldPoint(new Vector3(screen.x,screen.y,depth));
+            var document=paper.AddComponent<DocumentHandInteractable>();
+            Set(document,"worldRenderer",paper.GetComponent<MeshRenderer>());Set(document,"worldCollider",paper.GetComponent<Collider>());
+            Set(document,"heldSprite",Get<Sprite>(template,"heldSprite"));Set(document,"localizedText",Get<UnityEngine.Localization.LocalizedString>(template,"localizedText"));
+            Set(document,"documentFont",template.DocumentFont);Set(document,"documentFontSize",37f);Set(document,"documentTextColor",Color.blue);
+            Set(document,"maxInteractionDistance",1.5f);Set(document,"onPickedUp",new UnityEngine.Events.UnityEvent());return document;
+        }
+        static void AutomaticDocument(string scenario)
+        {
+            var f=Create(true);Mask(f,3);Move(f,f.center);
+            var interactor=(Hand3DDocumentInteractor)f.document;
+            var display=f.rig.GetComponent<Hand3DDocumentDisplay>();
+            var doc=NewDocument(f,f.center,scenario=="reach"?1.2f:.7f);
+            var renderer=Get<MeshRenderer>(doc,"worldRenderer");var collider=Get<Collider>(doc,"worldCollider");
+            var originalEvent=Get<UnityEngine.Events.UnityEvent>(doc,"onPickedUp");int picked=0;originalEvent.AddListener(()=>picked++);
+            string serialized=EditorJsonUtility.ToJson(doc);Vector3 position=doc.transform.position,scale=doc.transform.localScale;Quaternion rotation=doc.transform.rotation;
+            Hand3DDocumentBinding manual=null;int manualPicked=0;Scene other=default;
+            if(scenario=="manual")
+            {
+                manual=doc.gameObject.AddComponent<Hand3DDocumentBinding>();Set(manual,"document",doc);Set(manual,"worldRenderer",renderer);Set(manual,"worldCollider",collider);
+                Set(manual,"heldSprite",Get<Sprite>(doc,"heldSprite"));Set(manual,"localizedText",Get<UnityEngine.Localization.LocalizedString>(doc,"localizedText"));
+                Set(manual,"maxInteractionDistance",.2f);var ev=new UnityEngine.Events.UnityEvent();ev.AddListener(()=>manualPicked++);Set(manual,"onPickedUp",ev);Call(manual,"OnEnable");
+            }
+            if(scenario=="activation")doc.gameObject.SetActive(false);
+            if(scenario=="spawn")Object.DestroyImmediate(doc.gameObject);
+            if(scenario=="initial_state"){renderer.enabled=false;collider.enabled=false;}
+            if(scenario=="other_scene")
+            {other=EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Additive);SceneManager.MoveGameObjectToScene(doc.gameObject,other);}
+            if(scenario=="several")
+            {var second=NewDocument(f,f.center+Vector2.right*200,.7f);Set(second,"documentFontSize",61f);Set(second,"documentTextColor",Color.red);}
+            if(scenario=="wall")
+            {var wall=GameObject.CreatePrimitive(PrimitiveType.Cube);wall.transform.position=f.camera.ScreenToWorldPoint(new Vector3(f.center.x,f.center.y,.35f));wall.transform.localScale=Vector3.one*.1f;}
+            if(scenario=="occupied")Check(f.coordinator.TryAcquire(f.door,Hand3DInteractionState.Door,true,Quaternion.identity),"Could not acquire door for document exclusion");
+            try
+            {
+                Call(interactor,"Tick",.02f);
+                if(scenario=="spawn")
+                {doc=NewDocument(f,f.center,.7f);originalEvent=Get<UnityEngine.Events.UnityEvent>(doc,"onPickedUp");originalEvent.AddListener(()=>picked++);renderer=Get<MeshRenderer>(doc,"worldRenderer");collider=Get<Collider>(doc,"worldCollider");Call(interactor,"Tick",1.1f);}
+                if(scenario=="activation")
+                {Check(doc.GetComponent<Hand3DDocumentBinding>()==null,"Inactive document was modified");doc.gameObject.SetActive(true);Call(interactor,"Tick",1.1f);}
+                if(scenario=="other_scene")
+                {Check(doc.GetComponent<Hand3DDocumentBinding>()==null && !interactor.IsHolding && picked==0,"Cross-scene discovery/pickup");return;}
+                var binding=doc.GetComponent<Hand3DDocumentBinding>();Check(binding!=null && binding.Document==doc,"Missing automatically configured binding");
+                if(scenario=="manual")
+                {
+                    Check(binding==manual && binding.MaximumDistance==.2f && !interactor.IsHolding && picked==0,"Manual settings overwritten");
+                    Set(binding,"maxInteractionDistance",1.5f);Call(interactor,"Tick",.02f);
+                    Check(interactor.IsHolding && manualPicked==1 && picked==0,"Manual event override was replaced");return;
+                }
+                if(scenario=="reach" || scenario=="wall" || scenario=="initial_state" || scenario=="occupied")
+                {
+                    Check(!interactor.IsHolding && picked==0,"Invalid document was picked up: "+scenario);
+                    if(scenario=="initial_state")Check(!renderer.enabled && !collider.enabled,"Discovery changed initial renderer/collider state");
+                    return;
+                }
+                Check(interactor.ActiveDocument==binding && picked==1 && f.coordinator.Owner==interactor,"Automatic document not held exclusively/exactly once: "+Get<string>(interactor,"reason")+"; ready="+binding.IsReady+"; picked="+picked);
+                Check(!renderer.enabled && !collider.enabled,"Held world document not hidden");
+                Check(ReferenceEquals(Get<UnityEngine.Localization.LocalizedString>(binding,"localizedText"),Get<UnityEngine.Localization.LocalizedString>(doc,"localizedText")),"LocalizedString was replaced");
+                Check(ReferenceEquals(Get<UnityEngine.Events.UnityEvent>(binding,"onPickedUp"),originalEvent),"Pickup listeners were copied instead of reusing the source event");
+                var image=Get<UnityEngine.UI.Image>(display,"documentImage");var text=Get<TMPro.TMP_Text>(display,"documentText");
+                Check(image.sprite==Get<Sprite>(doc,"heldSprite") && text.font==doc.DocumentFont && text.fontSize==doc.DocumentFontSize && text.color==doc.DocumentTextColor,"Document presentation/style changed");
+                Check(ReferenceEquals(Get<UnityEngine.Localization.LocalizedString>(display,"activeText"),Get<UnityEngine.Localization.LocalizedString>(doc,"localizedText")),"Display not subscribed to source localization");
+                Call(display,"UpdateText","Focused localized update");Check(text.text=="Focused localized update","Localization callback did not update text");
+                var overlay=Get<Hand3DThumbOverlay>(display,"thumbOverlay");Check(overlay.IsConfigured && overlay.HasValidMask && overlay.gameObject.activeSelf,"Thumb overlay routing/configuration lost");
+                Mask(f,29);Check(!f.actions.TryExecute(),"Point action accepted while holding a document");Mask(f,3);
+                Call(interactor,"Tick",1.1f);Check(picked==1 && doc.GetComponents<Hand3DDocumentBinding>().Length==1,"Refresh duplicated binding/event");
+                Check(doc.transform.position==position && doc.transform.localScale==scale && Quaternion.Angle(doc.transform.rotation,rotation)<.001f,"World placement changed");
+                Set(f.input,"<IsArmModeActive>k__BackingField",false);Call(interactor,"Tick",.02f);Call(display,"Tick",1f);Call(f.rig,"UpdateRig",1f);
+                Check(!interactor.IsHolding && renderer.enabled && collider.enabled && !overlay.gameObject.activeSelf,"Release did not restore document/overlay");
+                if(scenario=="source_refresh")
+                {
+                    Set(doc,"maxInteractionDistance",.1f);Set(f.input,"<IsArmModeActive>k__BackingField",true);Call(interactor,"Tick",.02f);
+                    Check(binding.MaximumDistance==.1f && !interactor.IsHolding && picked==1,"Changed source reach was ignored before the next discovery");
+                    Set(f.input,"<IsArmModeActive>k__BackingField",false);
+                    Set(doc,"maxInteractionDistance",1.5f);Call(interactor,"Tick",1.1f);
+                }
+                if(scenario=="activation")
+                {doc.gameObject.SetActive(false);doc.gameObject.SetActive(true);Call(interactor,"Tick",1.1f);Check(doc.GetComponents<Hand3DDocumentBinding>().Length==1,"Reactivation duplicated binding");}
+                if(scenario!="spawn")Check(EditorJsonUtility.ToJson(doc)==serialized,"Original serialized document data changed");
+                Set(f.input,"<IsArmModeActive>k__BackingField",true);Move(f,f.center);Call(interactor,"Tick",.02f);
+                Check(interactor.IsHolding && picked==2,"Second pickup did not emit exactly one original event");
+            }
+            finally
+            {
+                if(f.coordinator.IsOccupied)f.coordinator.CancelSession();Call(display,"Tick",1f);
+                if(other.IsValid())EditorSceneManager.CloseScene(other,true);
+            }
+        }
+        static void Automatic(bool universal,string scenario)
+        {
+            var f=Create(universal);var bell=MakeBell(f,f.center,scenario=="original_reach"?1.9f:.7f);
+            bool expected=true;BellInteractable front=null;Scene other=default;
+            if(scenario=="empty" || scenario=="destroyed"){Object.DestroyImmediate(bell.gameObject);expected=false;}
+            if(scenario=="beside" || scenario=="positive_tolerance")
+            {
+                bell.transform.position=f.camera.ScreenToWorldPoint(new Vector3(f.center.x+25,f.center.y,.7f));bell.transform.localScale=Vector3.one*.008f;
+                if(scenario=="positive_tolerance")Bind(f,100,bell);expected=false;
+            }
+            if(scenario=="original_reach")expected=false;
+            if(scenario=="override_reach")
+            {Bind(f,0,bell);Get<Hand3DPointInteractor.Target[]>(f.point,"targets")[0].maximumDistance=.3f;expected=false;}
+            BellSequencePuzzle puzzle=null;
+            if(scenario=="duplicate_targets")
+            {
+                Bind(f,0,bell,bell);puzzle=new GameObject("Duplicate target counter").AddComponent<BellSequencePuzzle>();
+                Set(puzzle,"requiredSequence",new List<BellInteractable>{bell,bell,bell,bell});Set(bell,"puzzle",puzzle);
+            }
+            if(scenario=="aligned" || scenario=="disabled_front")
+            {
+                front=MakeBell(f,f.center,.35f);Bind(f,0,bell);
+                if(scenario=="disabled_front"){front.enabled=false;expected=false;}
+            }
+            if(scenario=="closed_door")
+            {
+                var door=(DoorHandInteractable)typeof(Phase1Validation).GetMethod("Door",Flags).Invoke(null,new object[]{f.original,"Closed Point blocker",f.center,.35f,false,true});
+                var panel=GameObject.CreatePrimitive(PrimitiveType.Cube);panel.transform.position=f.camera.ScreenToWorldPoint(new Vector3(f.center.x,f.center.y,.35f));
+                panel.transform.localScale=Vector3.one*.1f;panel.transform.SetParent(door.transform,true);expected=false;
+            }
+            if(scenario=="parent_receiver")
+            {
+                bell.GetComponent<Collider>().enabled=false;
+                var child=new GameObject("Point child collider");child.transform.SetParent(bell.transform,false);child.AddComponent<SphereCollider>().radius=.5f;
+            }
+            if(scenario=="trigger_receiver")bell.GetComponent<Collider>().isTrigger=true;
+            if(scenario=="player_collider")
+            {
+                var own=GameObject.CreatePrimitive(PrimitiveType.Cube);own.transform.position=f.camera.ScreenToWorldPoint(new Vector3(f.center.x,f.center.y,.3f));
+                own.transform.localScale=Vector3.one*.1f;own.transform.SetParent(f.input.PlayerRoot,true);
+            }
+            if(scenario=="other_scene")
+            {other=EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Additive);SceneManager.MoveGameObjectToScene(bell.gameObject,other);expected=false;}
+            Hand3DEventAction ev=null;
+            if(scenario=="destroyed_before" || scenario=="collider_disabled_before" || scenario=="receiver_disabled_before" || scenario=="late_blocker")
+            {
+                expected=false;ev=ScriptableObject.CreateInstance<Hand3DEventAction>();var data=new SerializedObject(ev);
+                data.FindProperty("priority").intValue=-10;data.ApplyModifiedPropertiesWithoutUndo();
+                var binding=Get<Hand3DPoseActions.Binding[]>(f.actions,"bindings")[0];binding.actions=new[]{(Hand3DGestureAction)ev}.Concat(binding.actions).ToArray();
+                if(scenario=="destroyed_before")binding.onEvent.AddListener(()=>Object.DestroyImmediate(bell.gameObject));
+                else if(scenario=="collider_disabled_before")binding.onEvent.AddListener(()=>bell.GetComponent<Collider>().enabled=false);
+                else if(scenario=="receiver_disabled_before")binding.onEvent.AddListener(()=>bell.enabled=false);
+                else binding.onEvent.AddListener(()=>
+                {
+                    var wall=GameObject.CreatePrimitive(PrimitiveType.Cube);wall.transform.position=f.camera.ScreenToWorldPoint(new Vector3(f.center.x,f.center.y,.35f));wall.transform.localScale=Vector3.one*.1f;
+                });
+            }
+            try
+            {
+                Check(f.actions.TryExecute(),"Automatic contact blocked visual PointClick: "+scenario);
+                Check(f.point.LastAccepted==expected && f.actions.LastActionError==null,"Automatic Point acceptance changed: "+scenario);
+                if(expected)Check(f.point.LastTarget==(front!=null?front:bell),"Automatic selection skipped the first receiver");
+                if(bell!=null)Check(Get<bool>(bell,"swinging")== (expected && front==null),"Rear/rejected bell activated: "+scenario);
+                if(puzzle!=null)Check(puzzle.NextExpectedIndex==1,"Duplicate manual targets/actions emitted multiple activations");
+                Call(f.actions,"Tick",.04f);Check(f.actions.PointClickWeight>0,"PointClick missing: "+scenario);
+            }
+            finally
+            {
+                if(ev!=null)Object.DestroyImmediate(ev);
+                if(other.IsValid())EditorSceneManager.CloseScene(other,true);
+            }
         }
         static void Masks(bool universal)
         {

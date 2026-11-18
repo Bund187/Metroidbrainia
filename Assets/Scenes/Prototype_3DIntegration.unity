@@ -4973,7 +4973,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &203844587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16260,7 +16260,7 @@ GameObject:
   - component: {fileID: 656168747}
   - component: {fileID: 656168752}
   m_Layer: 0
-  m_Name: HabilityMemo
+  m_Name: HabilityMemoNote
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16294,7 +16294,7 @@ MonoBehaviour:
   documentFont: {fileID: 11400000, guid: 04900acdc2dfaba4b9f48b97a67bd74d, type: 2}
   documentFontSize: 60
   documentTextColor: {r: 0.19245279, g: 0.19245279, b: 0.19245279, a: 0.9137255}
-  maxInteractionDistance: 1.5
+  maxInteractionDistance: 2
   onPickedUp:
     m_PersistentCalls:
       m_Calls:
@@ -16400,7 +16400,7 @@ Transform:
   m_GameObject: {fileID: 656168746}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -19.996, y: 1.017, z: -1.135}
+  m_LocalPosition: {x: -20.769, y: 1.017, z: -1.135}
   m_LocalScale: {x: 0.21, y: 0.297, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -41402,7 +41402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.743
+      value: -1.07
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
       propertyPath: m_LocalPosition.y
@@ -41410,7 +41410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: -10.71
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
       propertyPath: m_LocalRotation.w
@@ -49445,32 +49445,7 @@ MonoBehaviour:
   fingertipOffset: {x: -0.00071634795, y: 0.0019294918, z: 0.0004194038}
   pointCombination: 29
   maximumDistance: 2
-  targets:
-  - receiver: {fileID: 521821432}
-    collider: {fileID: 63535996}
-    interactionPoint: {fileID: 0}
-    maximumDistance: 1.8
-    tolerancePixels: 0
-  - receiver: {fileID: 257027238}
-    collider: {fileID: 101836335}
-    interactionPoint: {fileID: 0}
-    maximumDistance: 1.8
-    tolerancePixels: 0
-  - receiver: {fileID: 156570340}
-    collider: {fileID: 514730549}
-    interactionPoint: {fileID: 0}
-    maximumDistance: 1.8
-    tolerancePixels: 0
-  - receiver: {fileID: 772258499}
-    collider: {fileID: 440048618}
-    interactionPoint: {fileID: 0}
-    maximumDistance: 1.8
-    tolerancePixels: 0
-  - receiver: {fileID: 970383792}
-    collider: {fileID: 970383791}
-    interactionPoint: {fileID: 0}
-    maximumDistance: 1.8
-    tolerancePixels: 0
+  targets: []
 --- !u!114 &2137798141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49492,14 +49467,15 @@ MonoBehaviour:
     gripScreenOffset: {x: 0, y: 0}
     interactionLayers:
       serializedVersion: 2
-      m_Bits: 4294967291
+      m_Bits: 115
   input: {fileID: 2137798147}
   movement: {fileID: 2137798149}
   pose: {fileID: 2137798145}
   display: {fileID: 2137798142}
   maximumReach: 0.9
-  screenContactRadius: 55
-  debugContact: 0
+  screenContactRadius: 200
+  debugContact: 1
+  documentRefreshInterval: 1
 --- !u!114 &2137798142
 MonoBehaviour:
   m_ObjectHideFlags: 0
